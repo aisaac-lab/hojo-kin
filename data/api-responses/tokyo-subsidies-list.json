@@ -1,0 +1,582 @@
+[
+  {
+    "id": "a0WJ200000CDPM7MAP",
+    "name": "S-00006769",
+    "title": "令和7年度第1回 事業承継を契機とした成長支援事業",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 8000000,
+    "acceptance_start_datetime": "2025-07-01T00:00:00.000Z",
+    "acceptance_end_datetime": "2025-07-31T07:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDQ9IMAX",
+    "name": "S-00006872",
+    "title": "令和７年度 高齢者向け新ビジネス創出支援事業",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 7500000,
+    "acceptance_start_datetime": "2025-06-15T15:00:00.000Z",
+    "acceptance_end_datetime": "2025-07-31T08:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDRauMAH",
+    "name": "S-00007030",
+    "title": "令和７年度リスキリング・キャリアデザイン応援事業_第1回",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 400000,
+    "acceptance_start_datetime": "2025-07-07T01:00:00.000Z",
+    "acceptance_end_datetime": "2025-07-31T08:00:00.000Z",
+    "target_number_of_employees": "300名以下"
+  },
+  {
+    "id": "a0WJ200000CDPXPMA5",
+    "name": "S-00006799",
+    "title": "東京都正規雇用等転換安定化支援助成金（令和７年度 第３回申請受付）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 1160000,
+    "acceptance_start_datetime": "2025-06-30T23:30:00.000Z",
+    "acceptance_end_datetime": "2025-07-31T08:15:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDQAKMA5",
+    "name": "S-00006874",
+    "title": "東京都若者世代職場定着促進助成金（令和７年度 第３回申請受付）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 1160000,
+    "acceptance_start_datetime": "2025-06-30T23:30:00.000Z",
+    "acceptance_end_datetime": "2025-07-31T08:15:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDQ9NMAX",
+    "name": "S-00006873",
+    "title": "東京都就職氷河期世代等待遇向上支援助成金（令和７年度 第３回申請受付）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 1460000,
+    "acceptance_start_datetime": "2025-06-30T23:30:00.000Z",
+    "acceptance_end_datetime": "2025-07-31T08:15:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDSKLMA5",
+    "name": "S-00007052",
+    "title": "令和７年度 介護現場のニーズに対応した製品開発支援事業",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 20000000,
+    "acceptance_start_datetime": "2025-07-15T15:00:00.000Z",
+    "acceptance_end_datetime": "2025-08-22T08:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0W5h00000ZueXcEAJ",
+    "name": "S-00004742",
+    "title": "ドローンを活用したツアー造成支援補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 5000000,
+    "acceptance_start_datetime": "2025-05-09T05:00:00.000Z",
+    "acceptance_end_datetime": "2025-08-29T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDJInMAP",
+    "name": "S-00005987",
+    "title": "【令和７年度】事業環境変化に対応した経営基盤強化事業（受動喫煙防止対策支援コース）助成金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 4000000,
+    "acceptance_start_datetime": "2025-04-14T01:00:00.000Z",
+    "acceptance_end_datetime": "2025-09-12T07:45:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDPL5MAP",
+    "name": "S-00006768",
+    "title": "フィンテック産業における協業基盤整備支援事業補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 10000000,
+    "acceptance_start_datetime": "2025-05-29T05:00:00.000Z",
+    "acceptance_end_datetime": "2025-09-12T15:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ20000088TQ4MAM",
+    "name": "S-00005298",
+    "title": "令和6年度【2年目申請用】ES（社員満足度）向上による若手人材確保・定着事業助成金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 3000000,
+    "acceptance_start_datetime": "2024-09-12T15:00:00.000Z",
+    "acceptance_end_datetime": "2025-09-30T14:59:00.000Z",
+    "target_number_of_employees": "300名以下"
+  },
+  {
+    "id": "a0WJ200000CDT0PMAX",
+    "name": "S-00007070",
+    "title": "子供の未来を育む「体験活動」推進区市町村支援事業（「遊び」特別推進枠）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 10000000,
+    "acceptance_start_datetime": "2025-05-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2025-09-30T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDIxpMAH",
+    "name": "S-00005906",
+    "title": "令和７年度東京都オンライン医療相談・診療等環境整備補助事業",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 400000,
+    "acceptance_start_datetime": "2025-04-01T00:00:00.000Z",
+    "acceptance_end_datetime": "2025-10-24T14:45:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDNiaMAH",
+    "name": "S-00006619",
+    "title": "令和7年度　ES（社員満足度）向上による若手人材確保・定着事業助成金　１年目申請用",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 3000000,
+    "acceptance_start_datetime": "2025-05-11T15:00:00.000Z",
+    "acceptance_end_datetime": "2025-11-14T15:00:00.000Z",
+    "target_number_of_employees": "300名以下"
+  },
+  {
+    "id": "a0WJ2000000pXJvMAM",
+    "name": "S-00004952",
+    "title": "令和7年度フィンテック企業に対する海外進出支援事業 海外展示会共同出展",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 0,
+    "acceptance_start_datetime": "2025-05-07T05:00:00.000Z",
+    "acceptance_end_datetime": "2025-11-28T15:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDP1wMAH",
+    "name": "S-00006746",
+    "title": "令和７年度東京都医療ＤＸ人材育成支援事業",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 500000,
+    "acceptance_start_datetime": "2025-07-23T00:00:00.000Z",
+    "acceptance_end_datetime": "2025-11-28T15:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CD9FpMAL",
+    "name": "S-00005644",
+    "title": "中小企業人材確保のための奨学金返還支援事業【令和7年度企業登録】",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 0,
+    "acceptance_start_datetime": "2025-02-05T05:00:00.000Z",
+    "acceptance_end_datetime": "2025-12-18T08:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDLNdMAP",
+    "name": "S-00006387",
+    "title": "令和７年度誰もが楽しめる自然体験型観光推進事業補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 5000000,
+    "acceptance_start_datetime": "2025-04-01T00:00:00.000Z",
+    "acceptance_end_datetime": "2025-12-26T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDLNeMAP",
+    "name": "S-00006388",
+    "title": "令和７年度多様な体験型観光推進事業補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 2000000,
+    "acceptance_start_datetime": "2025-04-01T00:00:00.000Z",
+    "acceptance_end_datetime": "2025-12-26T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ2000000pXJ2MAM",
+    "name": "S-00004951",
+    "title": "令和７年度フィンテック企業に対する海外進出支援事業補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 3000000,
+    "acceptance_start_datetime": "2025-05-07T05:00:00.000Z",
+    "acceptance_end_datetime": "2025-12-26T15:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDPJQMA5",
+    "name": "S-00006767",
+    "title": "令和７年度　東京都臨海副都心にぎわい・活力創出事業",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 0,
+    "acceptance_start_datetime": "2025-04-02T00:00:00.000Z",
+    "acceptance_end_datetime": "2025-12-31T08:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDK7NMAX",
+    "name": "S-00006097",
+    "title": "中小企業の外国人従業員に対する研修等支援助成金（一般コース）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 250000,
+    "acceptance_start_datetime": "2025-04-03T05:00:00.000Z",
+    "acceptance_end_datetime": "2026-01-15T14:59:00.000Z",
+    "target_number_of_employees": "300名以下"
+  },
+  {
+    "id": "a0WJ200000CDK7OMAX",
+    "name": "S-00006098",
+    "title": "中小企業の外国人従業員に対する研修等支援助成金（ウクライナ避難民採用企業コース）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 500000,
+    "acceptance_start_datetime": "2025-04-03T05:00:00.000Z",
+    "acceptance_end_datetime": "2026-01-15T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDMQvMAP",
+    "name": "S-00006428",
+    "title": "令和７年度フィンテック企業等に対するイノベーション支援事業（金融サービス事業化支援補助金）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 4000000,
+    "acceptance_start_datetime": "2025-03-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-01-30T15:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDMSsMAP",
+    "name": "S-00006444",
+    "title": "令和７年度デジタル証券（セキュリティトークン）市場拡大促進事業補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 5000000,
+    "acceptance_start_datetime": "2025-03-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-01-30T15:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDMRAMA5",
+    "name": "S-00006431",
+    "title": "令和７年度フィンテック企業等に対するイノベーション支援事業（金融オープンイノベーション支援補助金）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 2000000,
+    "acceptance_start_datetime": "2025-03-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-01-30T15:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDLNcMAP",
+    "name": "S-00006386",
+    "title": "令和７年度乗降用リフト装置付バス利用支援補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 50000,
+    "acceptance_start_datetime": "2025-04-01T00:00:00.000Z",
+    "acceptance_end_datetime": "2026-02-06T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDK76MAH",
+    "name": "S-00006080",
+    "title": "東京都民間事業者に係る低公害・低燃費車導入促進補助金（補助金申請）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 200000,
+    "acceptance_start_datetime": "2025-03-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-02-27T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDQNlMAP",
+    "name": "S-00006893",
+    "title": "令和7年度テレワーク定着強化奨励金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 200000,
+    "acceptance_start_datetime": "2025-06-18T00:00:00.000Z",
+    "acceptance_end_datetime": "2026-02-27T14:59:00.000Z",
+    "target_number_of_employees": "900名以下"
+  },
+  {
+    "id": "a0WJ200000CDQEEMA5",
+    "name": "S-00006877",
+    "title": "令和7年度ワーケーション勤務導入奨励金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 100000,
+    "acceptance_start_datetime": "2025-06-17T00:00:00.000Z",
+    "acceptance_end_datetime": "2026-02-27T14:59:00.000Z",
+    "target_number_of_employees": "900名以下"
+  },
+  {
+    "id": "a0WJ200000CDPkCMAX",
+    "name": "S-00006825",
+    "title": "令和7年度テレワークトータルサポート助成金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 2500000,
+    "acceptance_start_datetime": "2025-06-10T00:00:00.000Z",
+    "acceptance_end_datetime": "2026-02-27T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDNiXMAX",
+    "name": "S-00006616",
+    "title": "令和7年度サテライトオフィス勤務導入奨励金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 100000,
+    "acceptance_start_datetime": "2025-05-15T05:00:00.000Z",
+    "acceptance_end_datetime": "2026-02-27T14:59:00.000Z",
+    "target_number_of_employees": "900名以下"
+  },
+  {
+    "id": "a0WJ200000CDIpyMAH",
+    "name": "S-00005864",
+    "title": "令和７年度スキルアップ支援事業",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 3500000,
+    "acceptance_start_datetime": "2025-02-28T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-02-28T15:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0W5h00000UdcB3EAJ",
+    "name": "S-00004523",
+    "title": "令和７年度自動運転の実装に向けた社会受容性向上支援事業補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 10000000,
+    "acceptance_start_datetime": "2025-03-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-09T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDLytMAH",
+    "name": "S-00006403",
+    "title": "令和７年度　農林水産物認証取得支援事業（森林認証取得支援事業）補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 400000,
+    "acceptance_start_datetime": "2025-04-14T00:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-18T08:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0W5h00000GMoxsEAD",
+    "name": "S-00003664",
+    "title": "令和５年病院勤務者勤務環境改善事業補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 0,
+    "acceptance_start_datetime": "2023-01-20T00:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T03:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDIvKMAX",
+    "name": "S-00005878",
+    "title": "令和７年度医療機関におけるＡＩ技術活用促進事業（単年度型）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 10000000,
+    "acceptance_start_datetime": "2025-04-18T03:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T03:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ2000008BSKLMA4",
+    "name": "S-00005490",
+    "title": "令和７年度医療機関におけるＡＩ技術活用促進事業（２か年計画の場合）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 10000000,
+    "acceptance_start_datetime": "2025-04-16T03:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T14:45:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDK72MAH",
+    "name": "S-00006076",
+    "title": "令和7年度職場内障害者サポーター事業",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 240000,
+    "acceptance_start_datetime": "2025-03-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDSYnMAP",
+    "name": "S-00007061",
+    "title": "令和７年度　東京都医療施設浸水対策計画策定支援事業",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 4480000,
+    "acceptance_start_datetime": "2025-07-07T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDR9HMAX",
+    "name": "S-00006972",
+    "title": "令和７年度働くパパママ育業応援奨励金【もっとパパコース】",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 1700000,
+    "acceptance_start_datetime": "2025-07-01T01:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDR9GMAX",
+    "name": "S-00006971",
+    "title": "令和７年度働くパパママ育業応援奨励金【パパと協力！ママコース】",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 1000000,
+    "acceptance_start_datetime": "2025-07-01T01:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T14:59:00.000Z",
+    "target_number_of_employees": "300名以下"
+  },
+  {
+    "id": "a0WJ200000CDR9FMAX",
+    "name": "S-00006970",
+    "title": "令和７年度働くパパママ育業応援奨励金【働くママコースNEXT】",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 1250000,
+    "acceptance_start_datetime": "2025-07-01T01:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T14:59:00.000Z",
+    "target_number_of_employees": "300名以下"
+  },
+  {
+    "id": "a0WJ200000CDR9EMAX",
+    "name": "S-00006969",
+    "title": "令和７年度働くパパママ育業応援奨励金【働くパパコースNEXT】",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 3300000,
+    "acceptance_start_datetime": "2025-07-01T01:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T14:59:00.000Z",
+    "target_number_of_employees": "300名以下"
+  },
+  {
+    "id": "a0WJ200000CDR9DMAX",
+    "name": "S-00006968",
+    "title": "令和７年度介護休業取得応援奨励金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 550000,
+    "acceptance_start_datetime": "2025-07-01T01:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T14:59:00.000Z",
+    "target_number_of_employees": "300名以下"
+  },
+  {
+    "id": "a0WJ200000CDK7HMAX",
+    "name": "S-00006091",
+    "title": "東京都民間事業者に係る低公害・低燃費車導入促進補助金（財産処分申請）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 200000,
+    "acceptance_start_datetime": "2025-03-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDNiZMAX",
+    "name": "S-00006618",
+    "title": "令和７年度認定看護師資格取得支援事業",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 0,
+    "acceptance_start_datetime": "2025-03-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T15:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDNibMAH",
+    "name": "S-00006620",
+    "title": "令和７年度訪問看護ステーション代替職員確保支援事業",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 0,
+    "acceptance_start_datetime": "2025-03-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-03-31T15:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDOeFMAX",
+    "name": "S-00006688",
+    "title": "令和7年度「年収の壁突破」総合対策促進奨励金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 500000,
+    "acceptance_start_datetime": "2025-06-05T00:00:00.000Z",
+    "acceptance_end_datetime": "2026-04-24T03:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDRmrMAH",
+    "name": "S-00007035",
+    "title": "令和７年度私立学校等結核予防費都費補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 10000000,
+    "acceptance_start_datetime": "2025-07-10T01:00:00.000Z",
+    "acceptance_end_datetime": "2026-05-29T03:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDRawMAH",
+    "name": "S-00007032",
+    "title": "令和７年度東京都医療機関等物価高騰緊急対策支援金 （病院・有床診療所・有床助産所申請用）",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 5511246000,
+    "acceptance_start_datetime": "2025-05-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2026-05-31T03:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0W2x000007CStEEAW",
+    "name": "S-00002265",
+    "title": "農林水産物認証取得支援事業（農家認証取得支援事業）補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 0,
+    "acceptance_start_datetime": "2023-04-03T00:00:00.000Z",
+    "acceptance_end_datetime": "2026-12-28T08:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0W2x000007CStOEAW",
+    "name": "S-00002267",
+    "title": "農林水産物認証取得支援事業（水産認証取得支援事業）補助金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 0,
+    "acceptance_start_datetime": "2022-04-01T01:00:00.000Z",
+    "acceptance_end_datetime": "2026-12-28T08:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ200000CDOrTMAX",
+    "name": "S-00006731",
+    "title": "東京都中小企業障害者雇用スタート支援奨励金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 1200000,
+    "acceptance_start_datetime": "2025-05-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2028-03-31T14:59:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0WJ2000000qXpOMAU",
+    "name": "S-00005068",
+    "title": "生産性向上のためのICTツール導入助成金に係る設備状況報告等の各種報告について",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 0,
+    "acceptance_start_datetime": "2024-07-31T15:00:00.000Z",
+    "acceptance_end_datetime": "2028-05-01T15:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0W5h00000UbQnXEAV",
+    "name": "S-00003955",
+    "title": "東京都中小企業障害者雇用支援助成金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 1980000,
+    "acceptance_start_datetime": "2023-01-20T00:00:00.000Z",
+    "acceptance_end_datetime": "2029-03-31T14:59:00.000Z",
+    "target_number_of_employees": "300名以下"
+  },
+  {
+    "id": "a0W5h00000UbQnSEAV",
+    "name": "S-00003950",
+    "title": "東京都難病・がん患者就業支援奨励金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 900000,
+    "acceptance_start_datetime": "2024-04-01T00:00:00.000Z",
+    "acceptance_end_datetime": "2030-03-31T14:45:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  },
+  {
+    "id": "a0W5h00000UbQnPEAV",
+    "name": "S-00003947",
+    "title": "東京都障害者安定雇用奨励金",
+    "target_area_search": "東京都",
+    "subsidy_max_limit": 1500000,
+    "acceptance_start_datetime": "2024-04-01T00:00:00.000Z",
+    "acceptance_end_datetime": "2034-03-31T08:00:00.000Z",
+    "target_number_of_employees": "従業員数の制約なし"
+  }
+]
