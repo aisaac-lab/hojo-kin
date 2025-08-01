@@ -98,3 +98,9 @@ playwright/.cache/
 .claude/
 guides/
 instructions/
+
+
+# Dev
+scripts/
+data/scraped
+

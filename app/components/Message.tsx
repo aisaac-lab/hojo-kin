@@ -101,6 +101,17 @@ export function Message({ role, content, timestamp }: MessageProps) {
                           {children}
                         </td>
                       ),
+                      a: ({ children, href, ...props }) => (
+                        <a 
+                          href={href} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-800 underline"
+                          {...props}
+                        >
+                          {children}
+                        </a>
+                      ),
                     }}
                   >
                     {content}

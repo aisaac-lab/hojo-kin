@@ -1,13 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
 import { Form, useFetcher } from '@remix-run/react';
 import { Message } from './Message';
+import { EnhancedFilterPanel } from './EnhancedFilterPanel';
 import type { Message as MessageData, ChatResponse } from '~/types/chat';
+import type { EnhancedSubsidyFilter, EnhancedFilterState } from '~/types/enhanced-filter';
 
 export function ChatInterface() {
   const [messages, setMessages] = useState<MessageData[]>([]);
   const [input, setInput] = useState('');
   const [threadId, setThreadId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [filterState, setFilterState] = useState<EnhancedFilterState>({
+    isOpen: false,
+    filters: {},
+    activeSection: 'basic'
+  });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fetcher = useFetcher<ChatResponse>();
@@ -92,11 +99,12 @@ export function ChatInterface() {
 
 
     fetcher.submit(
-      {
+      JSON.stringify({
         message: currentInput,
         threadId: threadId || '',
         userId: 'demo-user',
-      },
+        filters: filterState.filters,
+      }),
       {
         method: 'post',
         action: '/api/chat',
@@ -106,7 +114,8 @@ export function ChatInterface() {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    // Shift+Enterで送信、Enterのみは改行
+    if (e.key === 'Enter' && e.shiftKey) {
       e.preventDefault();
       handleSubmit(e as any);
     }
@@ -122,6 +131,14 @@ export function ChatInterface() {
     }
   };
 
+  const handleFiltersChange = (filters: EnhancedSubsidyFilter) => {
+    setFilterState(prev => ({ ...prev, filters }));
+  };
+
+  const toggleFilterPanel = () => {
+    setFilterState(prev => ({ ...prev, isOpen: !prev.isOpen }));
+  };
+
   return (
     <div className="flex h-screen flex-col">
       {/* Header */}
@@ -132,6 +149,7 @@ export function ChatInterface() {
             onClick={() => {
               setMessages([]);
               setThreadId(null);
+              setFilterState({ isOpen: false, filters: {} });
             }}
             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
@@ -139,6 +157,14 @@ export function ChatInterface() {
           </button>
         )}
       </div>
+
+      {/* Filter Panel */}
+      <EnhancedFilterPanel
+        filters={filterState.filters}
+        onFiltersChange={handleFiltersChange}
+        isOpen={filterState.isOpen}
+        onToggle={toggleFilterPanel}
+      />
 
       {/* Messages area */}
       <div className="flex-1 overflow-y-auto">
@@ -242,8 +268,9 @@ export function ChatInterface() {
             </button>
           </div>
           
-          <div className="px-4 py-2 text-center text-xs text-gray-600">
-            <span>AIが提供する情報は参考情報です。最新情報は各補助金の公式サイトでご確認ください。</span>
+          <div className="px-4 py-2 text-center text-xs text-gray-600 space-y-1">
+            <span className="block">Shift+Enterで送信 / Enterで改行</span>
+            <span className="block">AIが提供する情報は参考情報です。最新情報は各補助金の公式サイトでご確認ください。</span>
           </div>
         </Form>
       </div>

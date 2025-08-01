@@ -1,0 +1,407 @@
+{
+  "metadata": {
+    "category": "equipment",
+    "count": 29,
+    "description": "設備投資・機械導入・改修関連の補助金",
+    "created_at": "2025-08-01T01:27:53.437Z"
+  },
+  "subsidies": [
+    {
+      "id": "TOKYO-00005",
+      "name": "S-00000005",
+      "title": "小規模事業者経営改善補助金",
+      "description": "経営力強化に取組む区内の小規模事業者が、計画作成をとおして経営を客観的に見直すとともに、収益を得るために必要となる設備投資や店舗改修、工場の操業環境の改善に要する経費の一部を補助することで、小規...",
+      "maxAmount": "250万円",
+      "categories": [
+        "経営改善",
+        "設備投資",
+        "小規模事業者"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/60353",
+      "officialUrl": "",
+      "organizationName": "",
+      "targetArea": "東京都",
+      "applicationPeriod": "",
+      "subsidyRate": "",
+      "targetBusiness": "小規模事業者",
+      "useCase": "設備投資、店舗改修、工場の操業環境改善",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/60353"
+    },
+    {
+      "title": "一般分譲マンションの耐震化支援制度",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "description": "区では、災害に強い安全なまちづくりを推進するため、区内の分譲マンションの耐震診断や補強設計、耐震改修工事に必要な費用の一部を助成しています。\n（注）既定の予算額に達した場合は終了となりますので...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/8900",
+      "targetArea": "東京都",
+      "areaName": "渋谷区",
+      "areaCode": "1110",
+      "id": "SCRAPED-1753970606630-p8b9qxouh",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8900"
+    },
+    {
+      "title": "電気自動車等用充電設備導入助成",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "description": "区内の電気自動車などの普及のための基盤整備を促し、地球温暖化の原因となる温室効果ガスの排出量を削減することで、持続可能な社会の実現に寄与することを目的として、電気自動車およびプラグインハイブリッ...",
+      "categories": [
+        "募集終了"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/28543",
+      "targetArea": "東京都",
+      "areaName": "渋谷区",
+      "areaCode": "1110",
+      "id": "SCRAPED-1753970606630-odbsmpklk",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/28543"
+    },
+    {
+      "title": "エレベーター安全装置等設置助成事業",
+      "maxAmount": "上限金額\n          950\n          万\n        円",
+      "description": "区内の建築物に設置されているエレベーターに安全装置等\n（戸開走行保護装置、地震時管制運転装置、耐震対策）を設置する修繕工事を行うために要した費用の一部を港区が助成します。",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/8436",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-uv5ayd680",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8436"
+    },
+    {
+      "title": "エレベーター安全装置等設置助成事業",
+      "maxAmount": "上限金額\n          950\n          万\n        円",
+      "description": "区内の建築物に設置されているエレベーターに安全装置等\n（戸開走行保護装置、地震時管制運転装置、耐震対策）を設置する修繕工事を行うために要した費用の一部を港区が助成します。",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/8436",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-oocpbe7ex",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8436"
+    },
+    {
+      "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+      "maxAmount": "上限金額\n          1,750\n          万\n        円",
+      "description": "区内の特定緊急輸送道路（東京都における緊急輸送道路沿道建築物の耐震化を推進する条例（以下「耐震化推進条例」）第7条で規定された緊急輸送道路のうち特に沿道建築物の耐震化を図る必要があると認めるもの...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/10150",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-izmf3dfbd",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10150"
+    },
+    {
+      "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+      "maxAmount": "上限金額\n          7,000\n          万\n        円",
+      "description": "木造又は非木造建築物の建替えに要する費用の一部を助成します。また、東京都耐震改修促進計画において位置づけられる一般緊急輸送道路の沿道建築物の建替え・除却に要する費用の一部を助成します。",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/10151",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-5k01w68e0",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10151"
+    },
+    {
+      "title": "民間建築物耐震化促進事業（補強設計・改修工事助成）",
+      "maxAmount": "上限金額\n          7,000\n          万\n        円",
+      "description": "木造又は非木造建築物の補強設計及び耐震改修工事に要する費用の一部を助成します。また、東京都耐震改修促進計画において位置づけられる一般緊急輸送道路の沿道建築物の補強設計及び耐震改修工事に要する費用...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/10152",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-1ox5s98ui",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10152"
+    },
+    {
+      "title": "エレベーター安全装置等設置助成事業",
+      "maxAmount": "上限金額\n          950\n          万\n        円",
+      "description": "区内の建築物に設置されているエレベーターに安全装置等\n（戸開走行保護装置、地震時管制運転装置、耐震対策）を設置する修繕工事を行うために要した費用の一部を港区が助成します。",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/8436",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-dj7p8rx19",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8436"
+    },
+    {
+      "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+      "maxAmount": "上限金額\n          1,750\n          万\n        円",
+      "description": "区内の特定緊急輸送道路（東京都における緊急輸送道路沿道建築物の耐震化を推進する条例（以下「耐震化推進条例」）第7条で規定された緊急輸送道路のうち特に沿道建築物の耐震化を図る必要があると認めるもの...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/10150",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-71gye6kzg",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10150"
+    },
+    {
+      "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+      "maxAmount": "上限金額\n          7,000\n          万\n        円",
+      "description": "木造又は非木造建築物の建替えに要する費用の一部を助成します。また、東京都耐震改修促進計画において位置づけられる一般緊急輸送道路の沿道建築物の建替え・除却に要する費用の一部を助成します。",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/10151",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-15k3wwb5l",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10151"
+    },
+    {
+      "title": "民間建築物耐震化促進事業（補強設計・改修工事助成）",
+      "maxAmount": "上限金額\n          7,000\n          万\n        円",
+      "description": "木造又は非木造建築物の補強設計及び耐震改修工事に要する費用の一部を助成します。また、東京都耐震改修促進計画において位置づけられる一般緊急輸送道路の沿道建築物の補強設計及び耐震改修工事に要する費用...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/10152",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-ncq7rabte",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10152"
+    },
+    {
+      "title": "小規模企業事業承継支援補助金",
+      "maxAmount": "区内小規模企業者の円滑な事業承継を支援するため、経営基盤を強化するための設備更新等に要する経費の一部を区が助成します。",
+      "description": "区内小規模企業者の円滑な事業承継を支援するため、経営基盤を強化するための設備更新等に要する経費の一部を区が助成します。",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/20778",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-e410qqipd",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/20778"
+    },
+    {
+      "title": "港区チャレンジ商店街店舗応援事業補助金",
+      "maxAmount": "上限金額\n          50\n          万\n        円",
+      "description": "区内商店会加盟店舗が新たに取り組む「新規顧客獲得事業」「多言語対応事業」「効率化・省人化事業」に向けた設備の導入費等の経費の一部を支援します。\n\n※先着９店舗追加募集します。",
+      "categories": [],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/37401",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-p7advog4a",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/37401"
+    },
+    {
+      "title": "小規模企業事業承継支援補助金",
+      "maxAmount": "区内小規模企業者の円滑な事業承継を支援するため、経営基盤を強化するための設備更新等に要する経費の一部を区が助成します。",
+      "description": "区内小規模企業者の円滑な事業承継を支援するため、経営基盤を強化するための設備更新等に要する経費の一部を区が助成します。",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/31740",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-0bz80usah",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/31740"
+    },
+    {
+      "title": "エレベーター安全装置等設置助成事業",
+      "maxAmount": "上限金額\n          300\n          万\n        円",
+      "description": "区内の建築物に設置されているエレベーターに安全装置等（戸開走行保護装置地震時等管制運転装置、耐震対策）を設置する修繕工事を行うために要した費用の一部を港区が助成します。\n工事完了報告書（領収書の...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/23689",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-vyxqtf0sf",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/23689"
+    },
+    {
+      "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+      "maxAmount": "上限金額\n          1,750\n          万\n        円",
+      "description": "区内の特定緊急輸送道路（東京都における緊急輸送道路沿道建築物の耐震化を推進する条例（以下「耐震化推進条例」）第7条で規定された緊急輸送道路のうち特に沿道建築物の耐震化を図る必要があると認めるもの...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/33804",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-3kq972ehu",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/33804"
+    },
+    {
+      "title": "がけ・擁壁改修工事等支援事業",
+      "maxAmount": "上限金額\n          5,000\n          万\n        円",
+      "description": "区内の個人又はマンション等管理組合、中小企業、宗教法人等が所有する敷地内のがけ又は擁壁（以下「がけ等」という。）について、擁壁の新設工事又は築造替え工事をする場合、工事費用の一部を助成します。ま...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/37445",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-25o328wmi",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/37445"
+    },
+    {
+      "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+      "maxAmount": "上限金額\n          1,750\n          万\n        円",
+      "description": "区内の特定緊急輸送道路（東京都における緊急輸送道路沿道建築物の耐震化を推進する条例（以下「耐震化推進条例」）第7条で規定された緊急輸送道路のうち特に沿道建築物の耐震化を図る必要があると認めるもの...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/10150",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-twakhepin",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10150"
+    },
+    {
+      "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+      "maxAmount": "上限金額\n          7,000\n          万\n        円",
+      "description": "木造又は非木造建築物の建替えに要する費用の一部を助成します。また、東京都耐震改修促進計画において位置づけられる一般緊急輸送道路の沿道建築物の建替え・除却に要する費用の一部を助成します。",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/10151",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-ywc38tmz3",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10151"
+    },
+    {
+      "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+      "maxAmount": "上限金額\n          7,000\n          万\n        円",
+      "description": "木造又は非木造建築物の建替えに要する費用の一部を助成します。また、東京都耐震改修促進計画において位置づけられる一般緊急輸送道路の沿道建築物の建替え・除却に要する費用の一部を助成します。",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/31085",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-v5m87ypam",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/31085"
+    },
+    {
+      "title": "私道整備助成",
+      "maxAmount": "",
+      "description": "区内の私道所有者等の皆様が私道を整備（舗装または排水設備の工事）する場合、一定の条件を満たしていれば新宿区から助成金を交付いたします。\n私道とは\n　私道とは、国・都・区で管理する公道以外の道...",
+      "categories": [],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/24444",
+      "targetArea": "東京都",
+      "areaName": "新宿区",
+      "areaCode": "462",
+      "id": "SCRAPED-1753970606632-z5mukgpm8",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/24444"
+    },
+    {
+      "title": "私道整備助成",
+      "maxAmount": "",
+      "description": "区内の私道所有者等の皆様が私道を整備（舗装または排水設備の工事）する場合、一定の条件を満たしていれば新宿区から助成金を交付いたします。\n私道とは\n　私道とは、国・都・区で管理する公道以外の道...",
+      "categories": [],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/24444",
+      "targetArea": "東京都",
+      "areaName": "新宿区",
+      "areaCode": "462",
+      "id": "SCRAPED-1753970606632-wxx8yfl6f",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/24444"
+    },
+    {
+      "title": "新宿区エレベーター防災対策改修支援事業",
+      "maxAmount": "上限金額\n          608\n          万\n        円",
+      "description": "新宿区では、既設エレベーターに防災対策改修を行う所有者に対して、工事費の一部を助成しています。",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/48528",
+      "targetArea": "東京都",
+      "areaName": "新宿区",
+      "areaCode": "462",
+      "id": "SCRAPED-1753970606632-35h4vd1t7",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/48528"
+    },
+    {
+      "title": "私道整備助成",
+      "maxAmount": "",
+      "description": "区内の私道所有者等の皆様が私道を整備（舗装または排水設備の工事）する場合、一定の条件を満たしていれば新宿区から助成金を交付いたします。\n私道とは\n　私道とは、国・都・区で管理する公道以外の道...",
+      "categories": [],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/24444",
+      "targetArea": "東京都",
+      "areaName": "新宿区",
+      "areaCode": "462",
+      "id": "SCRAPED-1753970606632-y17zn6uqr",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/24444"
+    },
+    {
+      "title": "一般分譲マンションの耐震化支援制度",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "description": "区では、災害に強い安全なまちづくりを推進するため、区内の分譲マンションの耐震診断や補強設計、耐震改修工事に必要な費用の一部を助成しています。\n（注）既定の予算額に達した場合は終了となりますので...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/8900",
+      "targetArea": "東京都",
+      "id": "SCRAPED-1753970606634-g5nvpwm4b",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8900"
+    },
+    {
+      "title": "電気自動車等用充電設備導入助成",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "description": "区内の電気自動車などの普及のための基盤整備を促し、地球温暖化の原因となる温室効果ガスの排出量を削減することで、持続可能な社会の実現に寄与することを目的として、電気自動車およびプラグインハイブリッ...",
+      "categories": [
+        "募集終了"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/28543",
+      "targetArea": "東京都",
+      "id": "SCRAPED-1753970606634-00qruth98",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/28543"
+    },
+    {
+      "title": "一般分譲マンションの耐震化支援制度",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "description": "区では、災害に強い安全なまちづくりを推進するため、区内の分譲マンションの耐震診断や補強設計、耐震改修工事に必要な費用の一部を助成しています。\n（注）既定の予算額に達した場合は終了となりますので...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/8900",
+      "targetArea": "東京都",
+      "id": "SCRAPED-1753970606638-2y5dt1uxy",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8900"
+    },
+    {
+      "title": "電気自動車等用充電設備導入助成",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "description": "区内の電気自動車などの普及のための基盤整備を促し、地球温暖化の原因となる温室効果ガスの排出量を削減することで、持続可能な社会の実現に寄与することを目的として、電気自動車およびプラグインハイブリッ...",
+      "categories": [
+        "募集終了"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/28543",
+      "targetArea": "東京都",
+      "id": "SCRAPED-1753970606639-82w0xjbcw",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/28543"
+    }
+  ]
+}

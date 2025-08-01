@@ -1,0 +1,58 @@
+{
+  "categories": {
+    "equipment": {
+      "name": "設備投資",
+      "keywords": ["設備", "機械", "装置", "導入", "更新", "改修"],
+      "description": "設備投資や機械導入に関する補助金"
+    },
+    "employment": {
+      "name": "人材・雇用",
+      "keywords": ["雇用", "人材", "採用", "育成", "研修", "正社員"],
+      "description": "人材雇用・育成に関する補助金"
+    },
+    "research": {
+      "name": "研究開発",
+      "keywords": ["研究", "開発", "R&D", "技術", "イノベーション"],
+      "description": "研究開発・技術開発に関する補助金"
+    },
+    "expansion": {
+      "name": "販路拡大・PR",
+      "keywords": ["販路", "マーケティング", "PR", "展示会", "海外展開"],
+      "description": "販路拡大・マーケティングに関する補助金"
+    },
+    "startup": {
+      "name": "創業・新事業",
+      "keywords": ["創業", "起業", "スタートアップ", "新事業", "ベンチャー"],
+      "description": "創業・新事業展開に関する補助金"
+    },
+    "digitalization": {
+      "name": "DX・IT導入",
+      "keywords": ["IT", "DX", "デジタル", "システム", "IoT", "AI"],
+      "description": "デジタル化・IT導入に関する補助金"
+    },
+    "environment": {
+      "name": "環境・エネルギー",
+      "keywords": ["環境", "エネルギー", "省エネ", "脱炭素", "SDGs"],
+      "description": "環境・エネルギーに関する補助金"
+    },
+    "welfare": {
+      "name": "福祉・健康",
+      "keywords": ["福祉", "介護", "医療", "健康", "高齢者", "障害者"],
+      "description": "福祉・健康に関する補助金"
+    }
+  },
+  "target_business": {
+    "sizes": {
+      "micro": "個人事業主・マイクロ法人",
+      "small": "小規模事業者",
+      "medium": "中小企業",
+      "large": "大企業"
+    },
+    "conditions": {
+      "woman_owned": "女性経営",
+      "young_entrepreneur": "若手起業家",
+      "succession": "事業承継",
+      "nonprofit": "NPO・非営利団体"
+    }
+  }
+}

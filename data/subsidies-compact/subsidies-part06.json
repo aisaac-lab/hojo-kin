@@ -1,0 +1,463 @@
+{
+  "metadata": {
+    "part": 6,
+    "total_parts": 7,
+    "count": 50,
+    "id_range": {
+      "first": "SCRAPED-1753970606635-j2o0ry4b4",
+      "last": "SCRAPED-1753970606635-fps9p40vc"
+    }
+  },
+  "subsidies": [
+    {
+      "id": "SCRAPED-1753970606635-j2o0ry4b4",
+      "title": "利島村",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1648",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-splg4g4g3",
+      "title": "北区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/753",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-4isdu49we",
+      "title": "千代田区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/749",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-zne5dvymr",
+      "title": "台東区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/802",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-mir7lpebm",
+      "title": "品川区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/751",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-w2xe4vfsd",
+      "title": "国分寺市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/55",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-36pdbxy61",
+      "title": "国立市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1119",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-agzhlflka",
+      "title": "墨田区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/754",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-tmtkiilwf",
+      "title": "多摩市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/468",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-frcehh7oh",
+      "title": "大島町",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/57",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-w1q3om33b",
+      "title": "大田区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/56",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-ul6zpdp3p",
+      "title": "小平市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/165",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-hth2445uy",
+      "title": "小笠原村",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1652",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-8dukjkxu2",
+      "title": "小金井市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1165",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-8yhy3mz3f",
+      "title": "御蔵島村",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1649",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-osfr1ipcp",
+      "title": "文京区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/752",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-zo4pjflua",
+      "title": "新宿区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/462",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-qnzrmyagx",
+      "title": "新島村",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1647",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-gp4zcdk6d",
+      "title": "日の出町",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/750",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-7klkv5iwl",
+      "title": "日野市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/464",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-n15gkitnh",
+      "title": "昭島市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/166",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-sbc7vdulf",
+      "title": "杉並区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/167",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-b8he9uyq7",
+      "title": "東久留米市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/677",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-hi3ou1p0i",
+      "title": "東大和市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1301",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-egs2wln1o",
+      "title": "東村山市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1022",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-1girl2avp",
+      "title": "板橋区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/173",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-4eyv24pj6",
+      "title": "檜原村",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1605",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-p0y09jm4o",
+      "title": "武蔵村山市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/951",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-13mtv74lw",
+      "title": "武蔵野市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/461",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-gdq0d6bd1",
+      "title": "江戸川区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/54",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-z83jx8xvg",
+      "title": "江東区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/748",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-d89exe3jq",
+      "title": "清瀬市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/676",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-7yn9irxog",
+      "title": "渋谷区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1110",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-z6ge4wf7w",
+      "title": "港区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/38",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-7z0e0w3p1",
+      "title": "狛江市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/164",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-edqwfg34w",
+      "title": "瑞穂町",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/466",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-eh15unlkk",
+      "title": "町田市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/172",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-l7ubnb2v2",
+      "title": "目黒区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/175",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-s5nabj3nx",
+      "title": "神津島村",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1646",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-yt9o9qxmw",
+      "title": "福生市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1302",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-b5dgdyg6i",
+      "title": "稲城市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/469",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-i4s48dbmf",
+      "title": "立川市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/463",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-bd82arcsa",
+      "title": "練馬区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/59",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-0nk5ejih7",
+      "title": "羽村市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/34",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-fs5q4etxx",
+      "title": "荒川区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1039",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-0vu383n7p",
+      "title": "葛飾区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/163",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-5pbrema61",
+      "title": "西東京市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1166",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-qx67s48nj",
+      "title": "調布市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/471",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-ju7tm23k1",
+      "title": "豊島区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/58",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-fps9p40vc",
+      "title": "あきる野市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1164",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    }
+  ]
+}

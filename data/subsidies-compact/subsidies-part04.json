@@ -1,0 +1,541 @@
+{
+  "metadata": {
+    "part": 4,
+    "total_parts": 7,
+    "count": 50,
+    "id_range": {
+      "first": "SCRAPED-1753970606632-cs40hulyh",
+      "last": "SCRAPED-1753970606632-mck6xums0"
+    }
+  },
+  "subsidies": [
+    {
+      "id": "SCRAPED-1753970606632-cs40hulyh",
+      "title": "新型コロナウイルスに感染した新宿区国民健康保険の被保険者等に係る傷病手当金",
+      "description": "新宿区の国民健康保険の被保険者で以下の要件を満たした方に対し、傷病手当金を支給します。\n支給を受けるためには本庁舎4階医療保険年金課国保給付係への申請が必要です。\nなお、個別に詳細のご案内を...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/16881",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-eacwwwna7",
+      "title": "民有灯の維持助成",
+      "description": "民有灯とは\n私道において、町会等で設置した照明灯で、交通の安全及び防犯を目的とするもの。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/24446",
+      "maxAmount": "上限金額\n          4,500\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-z5mukgpm8",
+      "title": "私道整備助成",
+      "description": "区内の私道所有者等の皆様が私道を整備（舗装または排水設備の工事）する場合、一定の条件を満たしていれば新宿区から助成金を交付いたします。\n私道とは\n　私道とは、国・都・区で管理する公道以外の道...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/24444",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-h29roexvn",
+      "title": "屋上緑化・壁面緑化助成制度",
+      "description": "新宿区では、都市の緑化を図りみどり豊かで快適な美しいまちづくりをすすめるため、平成20年4月から「屋上等緑化助成制度」をスタートしました。\n　この制度は、新たに屋上緑化･壁面緑化をされる方に...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10157",
+      "maxAmount": "上限金額\n          30\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-um6cyca54",
+      "title": "商店街灯の維持助成",
+      "description": "新宿区内にある商店街のうち、商店街灯を設置している団体に対して、商店街灯の電気料金を助成しています。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/24445",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-wxx8yfl6f",
+      "title": "私道整備助成",
+      "description": "区内の私道所有者等の皆様が私道を整備（舗装または排水設備の工事）する場合、一定の条件を満たしていれば新宿区から助成金を交付いたします。\n私道とは\n　私道とは、国・都・区で管理する公道以外の道...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/24444",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-ojrwq24jx",
+      "title": "民有灯の維持助成",
+      "description": "民有灯とは\n私道において、町会等で設置した照明灯で、交通の安全及び防犯を目的とするもの。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/24446",
+      "maxAmount": "上限金額\n          4,500\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-cut9x3r5m",
+      "title": "新型コロナウイルスに感染した新宿区国民健康保険の被保険者等に係る傷病手当金",
+      "description": "新宿区の国民健康保険の被保険者で以下の要件を満たした方に対し、傷病手当金を支給します。\n支給を受けるためには本庁舎4階医療保険年金課国保給付係への申請が必要です。\nなお、個別に詳細のご案内を...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/16881",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-n5ndfka7c",
+      "title": "出産育児一時金",
+      "description": "新宿区の国民健康保険に加入している被保険者が出産したときに、出産育児一時金として42万円（出生児一人あたり）が支給されます。\n妊娠12週と1日（85日）以上の出産であれば、死産、流産の場合でも...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/17916",
+      "maxAmount": "新宿区の国民健康保険に加入している被保険者が出産したときに、出産育児一時金として42万円（出生児一人あたり）が支給されます。\n妊娠12週と1日（85日）以上の出産であれば、死産、流産の場合でも...",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-12n4a0utn",
+      "title": "商店街灯の維持助成",
+      "description": "新宿区内にある商店街のうち、商店街灯を設置している団体に対して、商店街灯の電気料金を助成しています。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/24445",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-z0dm02zvn",
+      "title": "木造住宅密集地域における不燃化建替え促進事業",
+      "description": "区では、木造住宅密集地域を解消するため、平成28年6月1日から木造住宅の不燃化建替えや除却に対し助成を行っています。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/21502",
+      "maxAmount": "上限金額\n          300\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-9dbhf0mwy",
+      "title": "雇用関係助成金",
+      "description": "業主のみなさまへ、雇用関係助成金についてご案内します。\n雇用の安定、職場環境の改善、仕事と家庭の両立支援、従業員の能力向上などに、ぜひ、ご活用ください。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/46126",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-y57b0mrla",
+      "title": "信用保証料補助金",
+      "description": "新宿区中小企業向け制度融資を利用して、東京信用保証協会の保証付きの融資を受けた場合、信用保証料補助の対象になります。\n※補助率は融資の種類によって異なります。\n※信用保証料を分割して東京信用保証...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/46222",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-zm435u20m",
+      "title": "屋上緑化・壁面緑化助成制度",
+      "description": "新宿区では、都市の緑化を図りみどり豊かで快適な美しいまちづくりをすすめるため、平成20年4月から「屋上等緑化助成制度」をスタートしました。\n　この制度は、新たに屋上緑化･壁面緑化をされる方に...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10157",
+      "maxAmount": "上限金額\n          30\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-ntbowmkq1",
+      "title": "帯状疱疹ワクチン予防接種費用の助成について",
+      "description": "区は、区民の帯状疱疹の発症を防ぎ、区民の健康増進に寄与し、経済的負担の軽減を実施するため、定期予防接種に位置付けられるまでの間、帯状疱疹ワクチン予防接種事業を実施し、帯状疱疹予防対策の強化を図り...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/31754",
+      "maxAmount": "上限金額\n          2\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-mrgxfnoa1",
+      "title": "地域福祉権利擁護事業（日常生活自立支援事業）",
+      "description": "地域福祉権利擁護事業は、物忘れや認知症、知的障害、精神障害などにより、必要な福祉サービスを自分だけで判断し、手続きをするのが難しい方（本人）がご利用いただけます。\n　本人との契約により、日常生活...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51055",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-ptc66t6oe",
+      "title": "多胎児家庭への移動支援事業",
+      "description": "令和6年度から、新宿区では多胎児を育てる保護者の方を対象に、「多胎児家庭への移動支援事業」を開始しました。対象となるご家庭には、タクシー移動に利用できる商品券（こども商品券）をお送りします。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/49962",
+      "maxAmount": "上限金額\n          2\n          万\n          4,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-35h4vd1t7",
+      "title": "新宿区エレベーター防災対策改修支援事業",
+      "description": "新宿区では、既設エレベーターに防災対策改修を行う所有者に対して、工事費の一部を助成しています。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/48528",
+      "maxAmount": "上限金額\n          608\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-eiu5793gy",
+      "title": "特別障害給付金制度",
+      "description": "平成16年12月3日に「特定障害者に対する特別障害給付金の支給に関する法律案」が臨時国会で成立し、国民年金制度の発展過程において生じた特別な事情により、障害基礎年金等を受給していない障害者の方を...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/48276",
+      "maxAmount": "上限金額\n          5\n          万\n          5,350\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-y17zn6uqr",
+      "title": "私道整備助成",
+      "description": "区内の私道所有者等の皆様が私道を整備（舗装または排水設備の工事）する場合、一定の条件を満たしていれば新宿区から助成金を交付いたします。\n私道とは\n　私道とは、国・都・区で管理する公道以外の道...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/24444",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606632-88qw3mrtr",
+      "title": "令和6年度新宿区ベビーシッター利用支援事業（一時預かり利用支援）",
+      "description": "日常生活上の突発的な事情等により一時的にベビーシッターによる保育を必要とする保護者やベビーシッターを活用した共同保育を必要とする保護者に対し、その費用の一部を助成することにより保護者の負担軽減を...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/56933",
+      "maxAmount": "上限金額\n          3,500\n          \n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-wztfoytxf",
+      "title": "経営力強化支援事業補助金",
+      "description": "経営力強化の事業に取り組む中小企業者・個人事業主に対し経費の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/60168",
+      "maxAmount": "上限金額\n          140\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-00m7gpqph",
+      "title": "省エネルギー及び創エネルギー機器等補助制度",
+      "description": "新宿区では地球温暖化の原因となる温室効果ガスの削減に向け、省エネルギー及び創エネルギー機器等を導入した区民の皆様に、設置・施工費用の一部を補助します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/60167",
+      "maxAmount": "上限金額\n          210\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-nn5rtf86y",
+      "title": "省エネルギー及び創エネルギー機器等導入補助金",
+      "description": "新宿区では地球温暖化の原因となる温室効果ガスの削減に向け、省エネルギー及び創エネルギー機器等を導入した区民の皆様に、設置・施工費用の一部を補助します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/60151",
+      "maxAmount": "上限金額\n          210\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-7pfnux591",
+      "title": "学校給食費等助成（私立学校就学者等支援給付金）",
+      "description": "新宿区教育委員会では、子育て世帯の負担軽減を図るため、私立学校就学者等に対し、区立学校の給食費相当額を給付金として年3回に分けて支給します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/47787",
+      "maxAmount": "上限金額\n          6\n          万\n          3,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-fjdng557d",
+      "title": "学校給食費等助成（私立学校就学者等支援給付金）",
+      "description": "新宿区教育委員会では、子育て世帯の負担軽減を図るため、私立学校就学者等に対し、区立学校の給食費相当額を給付金として年3回に分けて支給します。\n本給付金は新宿区独自の事業で、所得制限はありません。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/56841",
+      "maxAmount": "上限金額\n          6\n          万\n          3,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-cm4wtp418",
+      "title": "喫煙専用室等整備費助成",
+      "description": "望まない受動喫煙を生じさせない社会環境の整備推進の一環として、新宿区内で中小事業者が屋内に「喫煙専用室等」を整備する場合に設置等費用を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/60281",
+      "maxAmount": "上限金額\n          250\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-a6ie1elqa",
+      "title": "公衆喫煙所整備費助成",
+      "description": "望まない受動喫煙を生じさせない社会環境の整備推進の一環として、新宿区内で「誰もが利用できる喫煙所（公衆喫煙所）」を整備する場合に設置等費用を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/60282",
+      "maxAmount": "上限金額\n          1,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-8jqza4man",
+      "title": "経営力強化支援事業補助金（新宿区）",
+      "description": "経営力強化の事業に取り組む中小企業者・個人事業主に対し経費の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/62036",
+      "maxAmount": "上限金額\n          140\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-11ds4tny4",
+      "title": "中高層マンション防災備蓄品購入助成金",
+      "description": "区内の中高層マンションにおけるマンション自主防災組織の結成促進のため、マンション自主防災組織の結成を前向きに検討している中高層マンションに対し、備蓄食料や携帯トイレ等の防災備蓄品の購入に係る経費...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/56850",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-am1mqg4xu",
+      "title": "新宿区物価高騰対策臨時給付金（低所得者支援及び定額減税補足給付）",
+      "description": "物価高により厳しい状況にある世帯を支援するために、 「新宿区物価高騰対策臨時給付金（低所得者支援及び定額減税補足給付）」を支給しています。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51732",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-xqhw6y1bv",
+      "title": "新宿区省エネルギー及び創エネルギー機器等補助制度（個人住宅・集合住宅・事業所）",
+      "description": "新宿区では地球温暖化の原因となる温室効果ガスの削減に向け、省エネルギー及び創エネルギー機器等を導入した区民の皆様に、設置・施工費用の一部を補助します。\n\n＜ご注意ください＞\n令和5年度より、「施...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/23710",
+      "maxAmount": "上限金額\n          80\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-ln5z6dklt",
+      "title": "在宅要介護者等への新型コロナウイルス感染症緊急生活支援事業",
+      "description": "在宅で介護を要する高齢者が新型コロナウイルス陽性となった場合、または、介護する家族等が陽性となったため、家族等の介護が受けられなくなった場合において、高齢者の安定的な在宅療養と日常生活を支援する...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/28053",
+      "maxAmount": "上限金額\n          1\n          万\n          5,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-6obz65n1h",
+      "title": "商工業緊急資金（特例）",
+      "description": "新型コロナウイルス感染症の流行及びウクライナ情勢や原油・原材料価格の高騰等により、事業活動に影響を受ける区内中小企業者を支援するために商工業緊急資金（特例）をあっせんし、利子と信用保証料を区が全...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/22555",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-gvuagkn34",
+      "title": "子育て世帯生活支援特別給付金（ひとり親世帯分）",
+      "description": "食費等の物価高騰等に直面し、影響を特に受ける低所得のひとり親世帯に対し、その実情を踏まえた生活の支援を行うため、子育て世帯生活支援特別給付金（ひとり親世帯分）を給付します。\n　子育て世帯生活支...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/29426",
+      "maxAmount": "上限金額\n          5\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-sepk8wjiq",
+      "title": "経営力強化支援事業補助金",
+      "description": "経営力強化の事業に取り組む中小企業者・個人事業主に対し経費の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/22554",
+      "maxAmount": "上限金額\n          80\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-infu3sq5t",
+      "title": "子育て世帯生活支援特別給付金（ひとり親世帯以外分）",
+      "description": "食費等の物価高騰に直面し、影響を特に受ける低所得の子育て世帯に対し、その実情を踏まえた生活の支援を行うため、「子育て世帯生活支援特別給付金（ひとり親世帯以外の低所得の子育て世帯分）」の支給を行い...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/29424",
+      "maxAmount": "上限金額\n          5\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-47v91zbj6",
+      "title": "公衆喫煙所整備費助成・喫煙専用室等整備費助成",
+      "description": "望まない受動喫煙を生じさせない社会環境の整備推進の一環として、新宿区内で「誰もが利用できる喫煙所（公衆喫煙所）」を整備する場合や、中小事業者が屋内に「喫煙専用室等」を整備する場合に設置等費用を助...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/23709",
+      "maxAmount": "上限金額\n          1,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-0o3cc936b",
+      "title": "歌舞伎町安全・安心対策事業助成",
+      "description": "歌舞伎町地区において若者や女性を犯罪被害から守る活動を行う特定非営利活動法人（NPO団体）又は公益法人（公益社団法人・公益財団法人）に歌舞伎町安全・安心対策事業助成金を交付します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/24443",
+      "maxAmount": "上限金額\n          50\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-21mamofta",
+      "title": "新宿区協働推進基金助成金(一般事業助成)",
+      "description": "新宿区では、地域課題を解決し区民の生活をよりよくするために、社会貢献活動への協働推進基金を活用した助成を通じて、NPO 等（特定非営利活動法人・ボランティア活動団体等）団体が安定した事業活動を行...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/22119",
+      "maxAmount": "上限金額\n          200\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-8gs1y3fpb",
+      "title": "新宿区子ども未来基金助成活動",
+      "description": "新宿区では、子育て家庭の福祉の向上を図るとともに、子どもたちの生きる力を育むため、平成28年4月に「新宿区子ども未来基金」を設置しました。\n区民の皆さまからの寄附を積み立てて「新宿区子ども未来...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/22556",
+      "maxAmount": "上限金額\n          50\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-q9iczh5zj",
+      "title": "専門家活用支援事業",
+      "description": "新型コロナウイルス感染症の影響を受ける区内中小企業・個人事業主の方が、今後に向けた販促計画をはじめとする、事業再興に向けた事業計画の策定等や、各種補助金・給付金等の申請にあたって、専門家の支援を...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/11854",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-py27e4vig",
+      "title": "商工業緊急資金（特例）",
+      "description": "新型コロナウイルス感染症の流行により、事業活動に影響を受ける区内中小企業者を支援するために商工業緊急資金（特例）をあっせんし、利子と信用保証料を区が全額補助します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/4077",
+      "maxAmount": "上限金額\n          1,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-9wy1t7ued",
+      "title": "おもてなし店舗支援事業補助金（感染拡大防止・業態転換・販売促進事業）",
+      "description": "来街者のおもてなし向上のため、店舗での感染拡大防止対策の実施や、飲食店が新たに宅配、テイクアウト等を始める経費、販売促進に取り組むための経費等の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/9343",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-zolfqdg3r",
+      "title": "中小企業展示会等出展支援補助金",
+      "description": "区内中小企業者の販路拡大を支援するため、販路拡大を目的とした展示会・見本市等出展に係る経費の一部に対して補助金を交付します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/3934",
+      "maxAmount": "上限金額\n          40\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-jm7nxg73f",
+      "title": "にぎわいにあふれ環境にもやさしい商店街支援事業補助金",
+      "description": "商店会等が実施する、イベント事業、地域力向上事業、活性化事業、商店街路灯のLED化による省電力化などを支援し、その経費の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/21501",
+      "maxAmount": "上限金額\n          1\n          億\n          2,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-d1sw5mzzj",
+      "title": "おもてなし店舗支援事業補助金（トイレの洋式化事業）",
+      "description": "来街者の利便性の向上と受け入れ対応の強化を図り、商店街の回遊を促進し、活性化に繋げることを目的として、「トイレの洋式化事業」を行う場合、経費の一部に対して、補助金を交付します。\n※令和元年度、...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/9342",
+      "maxAmount": "上限金額\n          30\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-l51jw181p",
+      "title": "（集合住宅・事業所用）令和4年度新宿区新エネルギー及び省エネルギー機器等導入補助金",
+      "description": "新宿区では地球温暖化の原因となる温室効果ガスの削減に向け、区内集合住宅もしくは事業所に新エネルギー及び省エネルギー機器等を導入する中小企業者（個人事業者を含む）、管理組合等の皆様に、設置費用の一...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/3048",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-hifyogd7e",
+      "title": "（個人住宅用）令和4年度新宿区新エネルギー及び省エネルギー機器等導入補助金",
+      "description": "新宿区では地球温暖化の原因となる温室効果ガスの削減に向け、新エネルギー及び省エネルギー機器等を導入する区民の皆様に、設置・施工費用の一部を補助します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/3055",
+      "maxAmount": "上限金額\n          1,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-mck6xums0",
+      "title": "公衆喫煙所整備費助成・喫煙専用室等整備費助成",
+      "description": "望まない受動喫煙を生じさせない社会環境の整備推進の一環として、新宿区内で「誰もが利用できる喫煙所（公衆喫煙所）」を整備する場合や、中小事業者が屋内に「喫煙専用室等」を整備する場合に設置等費用を助...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/5711",
+      "maxAmount": "上限金額\n          1,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    }
+  ]
+}

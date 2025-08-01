@@ -13,8 +13,11 @@ export interface ChatResponse {
   success?: boolean;
 }
 
+import type { EnhancedSubsidyFilter } from './enhanced-filter';
+
 export interface ChatRequest {
   message: string;
   threadId: string;
   userId: string;
+  filters?: EnhancedSubsidyFilter;
 }

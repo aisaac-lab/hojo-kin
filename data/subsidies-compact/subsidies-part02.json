@@ -1,0 +1,525 @@
+{
+  "metadata": {
+    "part": 2,
+    "total_parts": 7,
+    "count": 50,
+    "id_range": {
+      "first": "SCRAPED-1753970606630-bn4edhlk8",
+      "last": "SCRAPED-1753970606631-z6lmfs6br"
+    }
+  },
+  "subsidies": [
+    {
+      "id": "SCRAPED-1753970606630-bn4edhlk8",
+      "title": "渋谷区5G通信インフラ整備費補助金",
+      "description": "５G通信基地局を搭載した多機能通信基盤施設（スマートポール）を整備する方に、費用の一部を補助します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/50996",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-xm5ybo7g7",
+      "title": "商店街チャレンジ戦略支援事業補助金",
+      "description": "商店街チャレンジ戦略支援事業補助金は、東京都商店街チャレンジ戦略支援事業補助金を活用し、商店会などが主催するイベント事業に対して、渋谷区が予算の範囲内で助成する制度です。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51836",
+      "maxAmount": "上限金額\n          825\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-qt8apgvnl",
+      "title": "地域連携型商店街事業補助金",
+      "description": "商店会が地域団体などと連携して実施するイベント事業に対して、助成する制度です。\n\n渋谷区地域連携型商店街事業補助金は、東京都地域連携型商店街事業費補助金を活用し、区内の商店会が地域団体などと連携...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51837",
+      "maxAmount": "上限金額\n          800\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-3uj0jrrbj",
+      "title": "商店会等イベント事業費補助金",
+      "description": "商店会等イベント事業費補助金は、区内の商店会などが行うイベント事業に対し、事業に要する経費を渋谷区が予算の範囲内で助成する制度です。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51838",
+      "maxAmount": "上限金額\n          100\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-uokd9wi5w",
+      "title": "商店街活性化事業助成金",
+      "description": "商店街活性化事業助成金は、東京都商店街チャレンジ戦略支援事業補助金（活性化事業）を活用し、商店会の施設整備やIT機能の強化（ホームページ作成）など商店会の活性化を図るために、渋谷区が予算の範囲内...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51840",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-miw1dkik8",
+      "title": "ベビーシッター利用支援事業",
+      "description": "平成31年4月1日より、子どもが保育所などに入所できるまでの間、保育所などの代わりとして、東京都の認定を受けたベビーシッター事業者を利用する場合の利用料を一部助成する支援事業を開始しました。本事...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/57358",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-6clfm1q0e",
+      "title": "介護福祉士資格取得費用補助事業",
+      "description": "介護従事者の人材育成を支援することを目的として、介護福祉士資格を取得し、区内の介護事業所に一定期間従事した人に対し資格取得にかかった費用を補助します。ただし、ほかの補助金受給者を除きます。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/55428",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-0cu1o80r0",
+      "title": "物価高騰緊急支援給付金",
+      "description": "令和5年度住民税均等割のみ課税世帯および住民税非課税世帯を対象とした給付金（こども加算含む）に関するご案内ページです。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/44148",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-qchrctdxp",
+      "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+      "description": "CO₂排出削減のため水素エネルギーの利活用の推進を図り、持続可能な社会の実現に寄与するために家庭用燃料電池システム設置費助成を行います。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/29422",
+      "maxAmount": "上限金額\n          30\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-odbsmpklk",
+      "title": "電気自動車等用充電設備導入助成",
+      "description": "区内の電気自動車などの普及のための基盤整備を促し、地球温暖化の原因となる温室効果ガスの排出量を削減することで、持続可能な社会の実現に寄与することを目的として、電気自動車およびプラグインハイブリッ...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/28543",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-51oflurzo",
+      "title": "渋谷区介護職員宿舎借り上げ支援事業",
+      "description": "渋谷区では、介護事業者に対して職員宿舎の借り上げに必要な経費の一部を助成する「渋谷区介護職員宿舎借り上げ支援事業」を実施します。\n\n渋谷区内に所在する介護サービスを提供する事業所に対して、介護職...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/41051",
+      "maxAmount": "上限金額\n          32\n          万\n          8,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-7q0ebjiau",
+      "title": "渋谷区介護職員宿舎借り上げ支援事業",
+      "description": "渋谷区内に所在する介護サービスを提供する事業所に対して、介護職員の宿舎借り上げを支援し、住宅費負担を軽減することで、介護職員の働きやすい職場環境を実現し介護人材の確保定着を図ること、また、事業所...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/28047",
+      "maxAmount": "上限金額\n          393\n          万\n          6,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-gf251m123",
+      "title": "渋谷区介護施設物価高騰対策補助金",
+      "description": "コロナ禍において、原油価格や光熱水費を含む物価高騰の影響を受ける区内介護サービス事業所の負担を一部軽減し、安定した介護サービスの提供ができるよう、次のとおり補助金を交付します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/17914",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-rvgrhwptj",
+      "title": "住居確保給付金",
+      "description": "離職によって住居を喪失、または喪失するおそれのある人に就労支援とともに、3か月間の家賃助成を行う制度です。\n\n求職要件の緩和について\n令和4年5月から原油価格・物価高騰等総合緊急対策により...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/11845",
+      "maxAmount": "上限金額\n          20\n          万\n          9,400\n          \n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-si21idb4v",
+      "title": "地域観光資源開発補助金",
+      "description": "地域の特色や資源を活用し、地域の魅力を広く発信するために、観光振興事業を行う団体等に対して補助金を交付します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/12515",
+      "maxAmount": "上限金額\n          200\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-b516ur5zh",
+      "title": "太陽光発電システム、蓄電システムの設置協力事業",
+      "description": "再生可能エネルギー由来の電力の普及を図るため、太陽光発電システム又は蓄電システムの設置事業者等に対して協力金を支給します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/20783",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集中"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-6nzxcflr2",
+      "title": "港区商店街浸水対策支援補助金",
+      "description": "区内商店会加盟店舗が浸水対策に係る経費の一部を支援します。\nまた、当事業は、商店会加盟店舗での積極的かつ迅速な浸水対策を推し進めるため、令和９年度までの期間限定として実施します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/66838",
+      "maxAmount": "上限金額\n          60\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集中"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-61089gbja",
+      "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+      "description": "新型コロナウイルス感染症の影響により、世帯の主たる生計維持者の収入が減少したなどの理由で、介護保険料の納付が困難になった65歳以上の人（第1号被保険者）に対し、令和4年度の介護保険料が減免される...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8445",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-869szureb",
+      "title": "建築物耐震診断助成事業（診断助成）",
+      "description": "区内にある一定の基準を満たす建築物の所有者が建築物の耐震診断を行う場合、費用の一部を助成します。\n\n当事業は、申請が予算額に達した場合は、受付を終了いたします。\n\n既に診断の契約をしたも...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10148",
+      "maxAmount": "上限金額\n          450\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-uv5ayd680",
+      "title": "エレベーター安全装置等設置助成事業",
+      "description": "区内の建築物に設置されているエレベーターに安全装置等\n（戸開走行保護装置、地震時管制運転装置、耐震対策）を設置する修繕工事を行うために要した費用の一部を港区が助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8436",
+      "maxAmount": "上限金額\n          950\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-9qbo0986r",
+      "title": "ブロック塀等除却・設置工事支援事業",
+      "description": "区内の個人、マンション管理組合、又は中小企業者が所有する敷地内のブロック塀等\n\n※の除却工事及びそれに伴う新規塀の設置工事を実施する場合、工事費用の一部を助成します。\nまた、ブロック塀等の所有者...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/4533",
+      "maxAmount": "上限金額\n          20\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-nerh4urmc",
+      "title": "港区がん患者ウィッグ等購入費助成金",
+      "description": "港区では、がん治療中の区民のみなさまの就労や社会生活を応援し、より良い療養生活となるよう、ウィッグ（かつら）や帽子、胸部補整具の購入費用の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8439",
+      "maxAmount": "上限金額\n          3\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-p2e5im18c",
+      "title": "家庭用生ごみ処理機等購入費の助成制度",
+      "description": "生ごみには水分が多く含まれており、家庭用生ごみ処理機を使用することで、水分をとばし生ごみを減量することができます。\nこのことから、家庭から出る生ごみの減量を図るため、区では、生ごみ処理機や容器...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8438",
+      "maxAmount": "上限金額\n          2\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-zcnw9xfqc",
+      "title": "建築物耐震診断助成事業（診断助成）",
+      "description": "区内にある一定の基準を満たす建築物の所有者が建築物の耐震診断を行う場合、費用の一部を助成します。\n\n当事業は、申請が予算額に達した場合は、受付を終了いたします。\n\n既に診断の契約をしたも...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10147",
+      "maxAmount": "上限金額\n          450\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-q58o0ybgu",
+      "title": "高齢者エアコン購入設置費用助成事業",
+      "description": "経済的な理由で自宅にエアコンがない高齢者世帯に対し、エアコンの購入及び設置に要する費用を助成することにより、夏季における高齢者の熱中症対策を支援します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8443",
+      "maxAmount": "上限金額\n          6\n          万\n          5,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-oocpbe7ex",
+      "title": "エレベーター安全装置等設置助成事業",
+      "description": "区内の建築物に設置されているエレベーターに安全装置等\n（戸開走行保護装置、地震時管制運転装置、耐震対策）を設置する修繕工事を行うために要した費用の一部を港区が助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8436",
+      "maxAmount": "上限金額\n          950\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-izu43hl13",
+      "title": "高齢者エアコン購入設置費用助成事業",
+      "description": "経済的な理由で自宅にエアコンがない高齢者世帯に対し、エアコンの購入及び設置に要する費用を助成することにより、夏季における高齢者の熱中症対策を支援します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8443",
+      "maxAmount": "上限金額\n          6\n          万\n          5,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-7a74hewd3",
+      "title": "ブロック塀等除却・設置工事支援事業",
+      "description": "区内の個人、マンション管理組合、又は中小企業者が所有する敷地内のブロック塀等\n\n※の除却工事及びそれに伴う新規塀の設置工事を実施する場合、工事費用の一部を助成します。\nまた、ブロック塀等の所有者...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/4533",
+      "maxAmount": "上限金額\n          20\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-djzwa9yge",
+      "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+      "description": "新型コロナウイルス感染症の影響により、世帯の主たる生計維持者の収入が減少したなどの理由で、介護保険料の納付が困難になった65歳以上の人（第1号被保険者）に対し、令和4年度の介護保険料が減免される...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8445",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-j15p2xt4c",
+      "title": "建築物耐震診断助成事業（診断助成）",
+      "description": "区内にある一定の基準を満たす建築物の所有者が建築物の耐震診断を行う場合、費用の一部を助成します。\n\n当事業は、申請が予算額に達した場合は、受付を終了いたします。\n\n既に診断の契約をしたも...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10147",
+      "maxAmount": "上限金額\n          450\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-i2ao1cbu4",
+      "title": "家庭用生ごみ処理機等購入費の助成制度",
+      "description": "生ごみには水分が多く含まれており、家庭用生ごみ処理機を使用することで、水分をとばし生ごみを減量することができます。\nこのことから、家庭から出る生ごみの減量を図るため、区では、生ごみ処理機や容器...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8438",
+      "maxAmount": "上限金額\n          2\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-3on9452ab",
+      "title": "港区禁煙外来治療費助成金",
+      "description": "区では、区民の喫煙に伴う疾病の予防及びその家族等の受動喫煙による健康被害防止を図るため、保険が適用される禁煙外来治療を受けた方に、治療にかかった費用の一部を助成します。\n\n※現在、禁煙治療に...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10149",
+      "maxAmount": "上限金額\n          1\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-izmf3dfbd",
+      "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+      "description": "区内の特定緊急輸送道路（東京都における緊急輸送道路沿道建築物の耐震化を推進する条例（以下「耐震化推進条例」）第7条で規定された緊急輸送道路のうち特に沿道建築物の耐震化を図る必要があると認めるもの...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10150",
+      "maxAmount": "上限金額\n          1,750\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-5k01w68e0",
+      "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+      "description": "木造又は非木造建築物の建替えに要する費用の一部を助成します。また、東京都耐震改修促進計画において位置づけられる一般緊急輸送道路の沿道建築物の建替え・除却に要する費用の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10151",
+      "maxAmount": "上限金額\n          7,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-1ox5s98ui",
+      "title": "民間建築物耐震化促進事業（補強設計・改修工事助成）",
+      "description": "木造又は非木造建築物の補強設計及び耐震改修工事に要する費用の一部を助成します。また、東京都耐震改修促進計画において位置づけられる一般緊急輸送道路の沿道建築物の補強設計及び耐震改修工事に要する費用...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10152",
+      "maxAmount": "上限金額\n          7,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-4408l6cgw",
+      "title": "みなとマリアージュ制度",
+      "description": "区は、港区基本構想で人間性の尊重を掲げ、あらゆる人の人権を尊重し、個人の尊厳が守られる地域社会を実現することを目指しています。\n\n「みなとマリアージュ制度」は、性的マイノリティの方を対象とし...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/11837",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-5b58fzh1m",
+      "title": "高齢者デジタルデバイド解消事業",
+      "description": "スマートフォンを保有していない高齢者にスマートフォンの利便性を伝え、活用の機会を提供することで、スマートフォンの普及を進め、生活の質の向上や社会参加の促進につなげます。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/11838",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-dj7p8rx19",
+      "title": "エレベーター安全装置等設置助成事業",
+      "description": "区内の建築物に設置されているエレベーターに安全装置等\n（戸開走行保護装置、地震時管制運転装置、耐震対策）を設置する修繕工事を行うために要した費用の一部を港区が助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8436",
+      "maxAmount": "上限金額\n          950\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-7hruf8zlc",
+      "title": "ISO等取得支援事業補助金",
+      "description": "区内中小企業の方がISO27001、エコアクション21、プライバシーマークの認証を新規に取得する際に、その経費の一部を補助します。\n※更新の場合は対象になりません。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/20770",
+      "maxAmount": "上限金額\n          50\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-uwp4z2jz1",
+      "title": "高齢者エアコン購入設置費用助成事業",
+      "description": "経済的な理由で自宅にエアコンがない高齢者世帯に対し、エアコンの購入及び設置に要する費用を助成することにより、夏季における高齢者の熱中症対策を支援します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8443",
+      "maxAmount": "上限金額\n          6\n          万\n          5,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-94g5fsvi6",
+      "title": "共同住宅防犯対策助成事業",
+      "description": "港区では、共同住宅（分譲マンションや賃貸住宅）の共用部分等に対し、新たに防犯機器を設置する場合、かかった費用の一部を助成します。この度、本助成制度を利用して設置した防犯機器を、耐用年数等の理由に...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/19171",
+      "maxAmount": "上限金額\n          50\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-ob3u0f72w",
+      "title": "ブロック塀等除却・設置工事支援事業",
+      "description": "区内の個人、マンション管理組合、又は中小企業者が所有する敷地内のブロック塀等\n\n※の除却工事及びそれに伴う新規塀の設置工事を実施する場合、工事費用の一部を助成します。\nまた、ブロック塀等の所有者...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/4533",
+      "maxAmount": "上限金額\n          20\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-cd3fbdsr1",
+      "title": "新型コロナウイルス感染症に係る傷病手当金（国民健康保険）",
+      "description": "以下の要件に該当する方に対し、傷病手当金を支給します。\n※申請を希望する場合は、必ず事前にご連絡ください。\n※適用期間を、令和５年３月31日までに延長しました。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/20425",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-58q93zhs7",
+      "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+      "description": "新型コロナウイルス感染症の影響により、世帯の主たる生計維持者の収入が減少したなどの理由で、介護保険料の納付が困難になった65歳以上の人（第1号被保険者）に対し、令和4年度の介護保険料が減免される...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8445",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-qgvymhgti",
+      "title": "小規模事業者経営改善資金（マル経融資）利子補助",
+      "description": "東京商工会議所港支部の推薦を受け、日本政策金融公庫の小規模事業者経営改善資金（マル経融資）を受けた区内小規模事業者を対象に利子補助を行います。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/20779",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-ahgkpkf2x",
+      "title": "高齢者補聴器購入費助成事業",
+      "description": "加齢による聴力の低下のため、日常生活に支障がある高齢者へ補聴器の購入費を助成します。\n「補聴器相談医」および「認定補聴器技能者」と連携し、補聴器購入前の相談から、\n購入時の調整・アフターケアまで...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/4531",
+      "maxAmount": "上限金額\n          13\n          万\n          7,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-k5c2qlbyg",
+      "title": "分譲マンション共用部分リフォーム融資の債務保証料助成事業",
+      "description": "区内にある分譲マンション共用部分の修繕工事を行うために、必要な資金を住宅金融支援機構から借り入れる際、（公財）管理センターに債務保証委託をした場合、委託に要した保証料の一部を助成します。\n\n...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/20788",
+      "maxAmount": "上限金額\n          150\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-rtmwbiluz",
+      "title": "建築物耐震診断助成事業（診断助成）",
+      "description": "区内にある一定の基準を満たす建築物の所有者が建築物の耐震診断を行う場合、費用の一部を助成します。\n\n当事業は、申請が予算額に達した場合は、受付を終了いたします。\n\n既に診断の契約をしたも...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/10148",
+      "maxAmount": "上限金額\n          450\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606631-6sucl8k3d",
+      "title": "集団回収を行う古紙回収業者に対する助成金制度",
+      "description": "区では、集団回収のネットワークを支える資源回収業者の支援をするため、古紙の市況価格が大きく下落した場合に適用する、資源回収業者に対する助成制度を創設しました。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/20777",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606631-z6lmfs6br",
+      "title": "屋上等緑化の助成",
+      "description": "自然との共生をめざし、さらなる生活環境の向上を図るため、建築物の屋上等緑化に対して助成します。\n建築物上に新たな緑化（屋上3平方・壁面10平方メートル以上）をされる方に費用の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/28044",
+      "maxAmount": "上限金額\n          500\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    }
+  ]
+}

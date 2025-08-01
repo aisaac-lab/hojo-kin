@@ -1,0 +1,509 @@
+{
+  "metadata": {
+    "part": 5,
+    "total_parts": 7,
+    "count": 50,
+    "id_range": {
+      "first": "SCRAPED-1753970606632-ic8c5k009",
+      "last": "SCRAPED-1753970606635-53d8ahe9c"
+    }
+  },
+  "subsidies": [
+    {
+      "id": "SCRAPED-1753970606632-ic8c5k009",
+      "title": "令和4年度　新宿区地域コミュニティ事業助成",
+      "description": "新宿区では、区民主体の地域活動団体が行う取組みに対して支援を行い、地域コミュニティの活性化や絆づくりを推進しています。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/2403",
+      "maxAmount": "上限金額\n          200\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-8oo025i5x",
+      "title": "商店会共同販促支援事業",
+      "description": "区内商店会等が、コロナ禍における取組として、会員店の売上拡大に繋がる、デリバリー事業の実施や共同での販売促進事業の実施等、売上拡大に繋がる継続的な取組を行った際にかかる費用の補助を行います。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8448",
+      "maxAmount": "上限金額\n          100\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-e3l54k12j",
+      "title": "新宿区消費者活動促進等事業助成金",
+      "description": "区内消費者団体等の活動の活性化のため、事業に必要な経費の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/13184",
+      "maxAmount": "上限金額\n          40\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606632-uw63zpdyz",
+      "title": "住居確保給付金",
+      "description": "本事業は、常用就職を目指した就職活動を行うことを前提に、離職から2年以内の方又は個人の責に帰すべき理由・都合によらない就業機会等の減少により経済的に困窮している方を対象に、家賃相当額を有期で給付...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/11853",
+      "maxAmount": "上限金額\n          20\n          万\n          9,400\n          \n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-ip4rzecn1",
+      "title": "リターナブル容器利用促進助成金",
+      "description": "洗って繰り返し長く使用することのできる飲食容器（リターナブル容器）を導入する費用を助成しています。\n\n渋谷区内の町会、商店会、商店街振興組合、小中学校のPTAなどの団体が、渋谷区内で開催するイベ...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/44190",
+      "maxAmount": "上限金額\n          5\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-7nx0ljpe0",
+      "title": "帯状疱疹ワクチン接種費用の一部助成",
+      "description": "帯状疱疹の発症を抑制することで生活の質の向上を目的とし、渋谷区では帯状疱疹ワクチン任意予防接種費用の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/32849",
+      "maxAmount": "上限金額\n          1\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-9qytetl0f",
+      "title": "特定緊急輸送道路沿道建築物の耐震化",
+      "description": "「東京における緊急輸送道路沿道建築物の耐震化を推進する条例」が施行され、特に重要な緊急輸送道路が「特定緊急輸送道路」として指定されています。 沿道建築物については、耐震診断の実施が義務となって...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8901",
+      "maxAmount": "上限金額\n          5\n          億\n          6,300\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-4yzraw0xb",
+      "title": "家庭用生ごみ処理機など購入費補助金",
+      "description": "家庭用生ごみ処理機など購入費用の一部を補助します。\n家庭から出る可燃ごみの約３割は、生ごみが占めています。区では、家庭から出る生ごみの減量およびリサイクルを図るため、生ごみ処理機やコンポスト容器...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/44093",
+      "maxAmount": "上限金額\n          2\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-8i5z02njk",
+      "title": "葬祭費",
+      "description": "渋谷区国民健康保険の加入者が死亡したとき、その葬祭を行なった人に葬祭費70,000円が支給されます。\n（注）葬祭を行なった日の翌日から2年以内に申請してください。\n（注）社会保険等の他の保険...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/15172",
+      "maxAmount": "渋谷区国民健康保険の加入者が死亡したとき、その葬祭を行なった人に葬祭費70,000円が支給されます。\n（注）葬祭を行なった日の翌日から2年以内に申請してください。\n（注）社会保険等の他の保険...",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-g5nvpwm4b",
+      "title": "一般分譲マンションの耐震化支援制度",
+      "description": "区では、災害に強い安全なまちづくりを推進するため、区内の分譲マンションの耐震診断や補強設計、耐震改修工事に必要な費用の一部を助成しています。\n（注）既定の予算額に達した場合は終了となりますので...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8900",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-e1hxjb1g4",
+      "title": "出産育児一時金",
+      "description": "国民健康保険加入者が出産したとき、世帯主に出産育児一時金、42万円が支給されます。\n妊娠12週を超えて（85日以上）の死産・流産（医師の証明が必要）も支給されます。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/17915",
+      "maxAmount": "国民健康保険加入者が出産したとき、世帯主に出産育児一時金、42万円が支給されます。\n妊娠12週を超えて（85日以上）の死産・流産（医師の証明が必要）も支給されます。",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-cq3svuoq6",
+      "title": "落書き抑止カメラ設置経費一部補助",
+      "description": "落書きの再発および新たな落書きの発生を抑止するため、落書き防止カメラの設置に関する経費の一部を補助します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/19174",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-tttif2giv",
+      "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+      "description": "渋谷区の国民健康保険に加入している人が、新型コロナウイルス感染症に感染した場合または発熱などの症状があり当該感染症への感染が疑われた場合に、その療養のため労務に服することができなかった期間（一定...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/14627",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-ytfb9ghh7",
+      "title": "住居確保給付金",
+      "description": "離職により住居を喪失、または喪失するおそれのある人に就労支援と3か月間の家賃助成を行う制度です。\n\n住居確保給付金は、離職、自営業廃業から２年以内(条件により４年以内)、または休業などにより離職...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/43645",
+      "maxAmount": "上限金額\n          20\n          万\n          9,400\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-igjt48eiv",
+      "title": "養育費に関する公正証書作成手数料等補助金",
+      "description": "養育費の取り決めに係る経費の補助に関する案内ページです。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/53217",
+      "maxAmount": "上限金額\n          4\n          万\n          3,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-vida97am4",
+      "title": "渋谷区定額減税補足給付金（調整給付金）",
+      "description": "定額減税を十分に受けられないと見込まれる人に対する補足的な給付（調整給付）に関するご案内ページです。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/57292",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-scvk6enya",
+      "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+      "description": "渋谷区の国民健康保険に加入している人が、新型コロナウイルス感染症に感染した場合または発熱などの症状があり当該感染症への感染が疑われた場合に、その療養のため労務に服することができなかった期間（一定...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/14627",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-qb1w8xuic",
+      "title": "葬祭費",
+      "description": "渋谷区国民健康保険の加入者が死亡したとき、その葬祭を行なった人に葬祭費70,000円が支給されます。\n（注）葬祭を行なった日の翌日から2年以内に申請してください。\n（注）社会保険等の他の保険...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/15172",
+      "maxAmount": "渋谷区国民健康保険の加入者が死亡したとき、その葬祭を行なった人に葬祭費70,000円が支給されます。\n（注）葬祭を行なった日の翌日から2年以内に申請してください。\n（注）社会保険等の他の保険...",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-m5h4oh7jn",
+      "title": "出産育児一時金",
+      "description": "国民健康保険加入者が出産したとき、世帯主に出産育児一時金、42万円が支給されます。\n妊娠12週を超えて（85日以上）の死産・流産（医師の証明が必要）も支給されます。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/17915",
+      "maxAmount": "国民健康保険加入者が出産したとき、世帯主に出産育児一時金、42万円が支給されます。\n妊娠12週を超えて（85日以上）の死産・流産（医師の証明が必要）も支給されます。",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-91s4a7rz1",
+      "title": "落書き抑止カメラ設置経費一部補助",
+      "description": "落書きの再発および新たな落書きの発生を抑止するため、落書き防止カメラの設置に関する経費の一部を補助します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/19174",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-m5fn2ulvm",
+      "title": "帯状疱疹ワクチン接種費用の一部助成",
+      "description": "帯状疱疹の発症を抑制することで生活の質の向上を目的とし、渋谷区では帯状疱疹ワクチン任意予防接種費用の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/32849",
+      "maxAmount": "上限金額\n          1\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-qwu1pedu3",
+      "title": "住居確保給付金",
+      "description": "離職により住居を喪失、または喪失するおそれのある人に就労支援と3か月間の家賃助成を行う制度です。\n\n住居確保給付金は、離職、自営業廃業から２年以内(条件により４年以内)、または休業などにより離職...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/43645",
+      "maxAmount": "上限金額\n          20\n          万\n          9,400\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-siyepmd6t",
+      "title": "家庭用生ごみ処理機など購入費補助金",
+      "description": "家庭用生ごみ処理機など購入費用の一部を補助します。\n家庭から出る可燃ごみの約３割は、生ごみが占めています。区では、家庭から出る生ごみの減量およびリサイクルを図るため、生ごみ処理機やコンポスト容器...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/44093",
+      "maxAmount": "上限金額\n          2\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-5n1l2glwk",
+      "title": "リターナブル容器利用促進助成金",
+      "description": "洗って繰り返し長く使用することのできる飲食容器（リターナブル容器）を導入する費用を助成しています。\n\n渋谷区内の町会、商店会、商店街振興組合、小中学校のPTAなどの団体が、渋谷区内で開催するイベ...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/44190",
+      "maxAmount": "上限金額\n          5\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-96tfw64en",
+      "title": "年金生活者支援給付金制度",
+      "description": "年金生活者支援給付金は、公的年金とその他の所得などの合計額が一定額以下の場合に支給されます。\n\n年金生活者支援給付金は、消費税率引き上げ分を活用し、公的年金などの収入や所得額が一定基準以下の年金...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/50084",
+      "maxAmount": "上限金額\n          6,638\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606634-i3v2mnjuw",
+      "title": "渋谷区5G通信インフラ整備費補助金",
+      "description": "５G通信基地局を搭載した多機能通信基盤施設（スマートポール）を整備する方に、費用の一部を補助します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/50996",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-p9hl44b34",
+      "title": "商店街チャレンジ戦略支援事業補助金",
+      "description": "商店街チャレンジ戦略支援事業補助金は、東京都商店街チャレンジ戦略支援事業補助金を活用し、商店会などが主催するイベント事業に対して、渋谷区が予算の範囲内で助成する制度です。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51836",
+      "maxAmount": "上限金額\n          825\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-i2jknprh1",
+      "title": "地域連携型商店街事業補助金",
+      "description": "商店会が地域団体などと連携して実施するイベント事業に対して、助成する制度です。\n\n渋谷区地域連携型商店街事業補助金は、東京都地域連携型商店街事業費補助金を活用し、区内の商店会が地域団体などと連携...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51837",
+      "maxAmount": "上限金額\n          800\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-ij1gkj5ax",
+      "title": "商店会等イベント事業費補助金",
+      "description": "商店会等イベント事業費補助金は、区内の商店会などが行うイベント事業に対し、事業に要する経費を渋谷区が予算の範囲内で助成する制度です。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51838",
+      "maxAmount": "上限金額\n          100\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-01gic1ftd",
+      "title": "商店街活性化事業助成金",
+      "description": "商店街活性化事業助成金は、東京都商店街チャレンジ戦略支援事業補助金（活性化事業）を活用し、商店会の施設整備やIT機能の強化（ホームページ作成）など商店会の活性化を図るために、渋谷区が予算の範囲内...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51840",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-u4rtws74p",
+      "title": "ベビーシッター利用支援事業",
+      "description": "平成31年4月1日より、子どもが保育所などに入所できるまでの間、保育所などの代わりとして、東京都の認定を受けたベビーシッター事業者を利用する場合の利用料を一部助成する支援事業を開始しました。本事...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/57358",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-0ro4m0l4i",
+      "title": "介護福祉士資格取得費用補助事業",
+      "description": "介護従事者の人材育成を支援することを目的として、介護福祉士資格を取得し、区内の介護事業所に一定期間従事した人に対し資格取得にかかった費用を補助します。ただし、ほかの補助金受給者を除きます。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/55428",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-ii2yw7hx2",
+      "title": "物価高騰緊急支援給付金",
+      "description": "令和5年度住民税均等割のみ課税世帯および住民税非課税世帯を対象とした給付金（こども加算含む）に関するご案内ページです。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/44148",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-cxfpiih3a",
+      "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+      "description": "CO₂排出削減のため水素エネルギーの利活用の推進を図り、持続可能な社会の実現に寄与するために家庭用燃料電池システム設置費助成を行います。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/29422",
+      "maxAmount": "上限金額\n          30\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-00qruth98",
+      "title": "電気自動車等用充電設備導入助成",
+      "description": "区内の電気自動車などの普及のための基盤整備を促し、地球温暖化の原因となる温室効果ガスの排出量を削減することで、持続可能な社会の実現に寄与することを目的として、電気自動車およびプラグインハイブリッ...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/28543",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-ofmpdfxmk",
+      "title": "渋谷区介護職員宿舎借り上げ支援事業",
+      "description": "渋谷区では、介護事業者に対して職員宿舎の借り上げに必要な経費の一部を助成する「渋谷区介護職員宿舎借り上げ支援事業」を実施します。\n\n渋谷区内に所在する介護サービスを提供する事業所に対して、介護職...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/41051",
+      "maxAmount": "上限金額\n          32\n          万\n          8,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-5h8e7k5li",
+      "title": "渋谷区介護職員宿舎借り上げ支援事業",
+      "description": "渋谷区内に所在する介護サービスを提供する事業所に対して、介護職員の宿舎借り上げを支援し、住宅費負担を軽減することで、介護職員の働きやすい職場環境を実現し介護人材の確保定着を図ること、また、事業所...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/28047",
+      "maxAmount": "上限金額\n          393\n          万\n          6,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-gxe9d0uu6",
+      "title": "渋谷区介護施設物価高騰対策補助金",
+      "description": "コロナ禍において、原油価格や光熱水費を含む物価高騰の影響を受ける区内介護サービス事業所の負担を一部軽減し、安定した介護サービスの提供ができるよう、次のとおり補助金を交付します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/17914",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-et7ygum3d",
+      "title": "住居確保給付金",
+      "description": "離職によって住居を喪失、または喪失するおそれのある人に就労支援とともに、3か月間の家賃助成を行う制度です。\n\n求職要件の緩和について\n令和4年5月から原油価格・物価高騰等総合緊急対策により...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/11845",
+      "maxAmount": "上限金額\n          20\n          万\n          9,400\n          \n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606634-hnxv229b0",
+      "title": "地域観光資源開発補助金",
+      "description": "地域の特色や資源を活用し、地域の魅力を広く発信するために、観光振興事業を行う団体等に対して補助金を交付します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/12515",
+      "maxAmount": "上限金額\n          200\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606635-hd3qf375o",
+      "title": "東京都",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/33",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-vx2j08sns",
+      "title": "東京都足立区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/678",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-tf2rqmln7",
+      "title": "全国",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/48/areas/29",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-ef9cvt8u8",
+      "title": "三宅島三宅村",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1645",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-o3lr0vab1",
+      "title": "三鷹市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/465",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-xwycy8wpq",
+      "title": "世田谷区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/894",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-za9mwtr2e",
+      "title": "中央区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/169",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-j86ha5bvg",
+      "title": "中野区",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/859",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-w97j397gu",
+      "title": "八丈島八丈町",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1650",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606635-53d8ahe9c",
+      "title": "八王子市",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1111",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    }
+  ]
+}

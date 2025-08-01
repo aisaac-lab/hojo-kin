@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "category": "startup",
+    "count": 2,
+    "description": "創業・起業・スタートアップ・新事業関連の補助金",
+    "created_at": "2025-08-01T01:27:53.437Z"
+  },
+  "subsidies": [
+    {
+      "id": "TOKYO-00006",
+      "name": "S-00000006",
+      "title": "ディープテック・スタートアップ支援基金／ディープテック・スタートアップ支援事業",
+      "description": "技術の確立や事業化・社会実装までに長期の研究開発と大規模な資金を要し、リスクは高いものの国や世界全体で対処すべき経済社会課題の解決にも資すると考えられる革新的な技術の研究開発に取り組んでいる「デ...",
+      "maxAmount": "30億円",
+      "categories": [
+        "スタートアップ",
+        "研究開発",
+        "ディープテック"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/60776",
+      "officialUrl": "",
+      "organizationName": "",
+      "targetArea": "東京都",
+      "applicationPeriod": "",
+      "subsidyRate": "",
+      "targetBusiness": "ディープテック・スタートアップ",
+      "useCase": "革新的技術の研究開発",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/60776"
+    },
+    {
+      "title": "ホームページ作成支援事業補助金",
+      "maxAmount": "上限金額\n          75\n          万\n        円",
+      "description": "区内商工団体等や創業２年未満の区内中小企業者が、初めてホームページを作成する場合、制作費用等の一部を区が補助します。",
+      "categories": [],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/31734",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-a35qpwy29",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/31734"
+    }
+  ]
+}

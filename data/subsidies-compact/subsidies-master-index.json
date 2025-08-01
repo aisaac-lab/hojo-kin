@@ -1,0 +1,2082 @@
+{
+  "metadata": {
+    "total_subsidies": 338,
+    "total_files": 7,
+    "created_at": "2025-08-01T01:29:13.743Z",
+    "description": "補助金データベースのマスターインデックス"
+  },
+  "files": [
+    {
+      "file": "subsidies-part01.json",
+      "part": 1,
+      "count": 50,
+      "size_mb": 0.03
+    },
+    {
+      "file": "subsidies-part02.json",
+      "part": 2,
+      "count": 50,
+      "size_mb": 0.03
+    },
+    {
+      "file": "subsidies-part03.json",
+      "part": 3,
+      "count": 50,
+      "size_mb": 0.03
+    },
+    {
+      "file": "subsidies-part04.json",
+      "part": 4,
+      "count": 50,
+      "size_mb": 0.03
+    },
+    {
+      "file": "subsidies-part05.json",
+      "part": 5,
+      "count": 50,
+      "size_mb": 0.03
+    },
+    {
+      "file": "subsidies-part06.json",
+      "part": 6,
+      "count": 50,
+      "size_mb": 0.01
+    },
+    {
+      "file": "subsidies-part07.json",
+      "part": 7,
+      "count": 38,
+      "size_mb": 0.02
+    }
+  ],
+  "quick_search": [
+    {
+      "id": "TOKYO-00001",
+      "title": "介護現場のニーズに対応した製品開発支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/65958",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "TOKYO-00002",
+      "title": "令和６年度 ナイトタイム等(夜間・早朝)における観光促進助成金(第２回)",
+      "url": "https://www.smart-hojokin.jp/subsidies/61267",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "TOKYO-00003",
+      "title": "令和７年度 地域振興助成事業助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/65409",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "TOKYO-00004",
+      "title": "令和７年度 多摩・島しょ観光交通インフラ整備支援助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/65411",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "TOKYO-00005",
+      "title": "小規模事業者経営改善補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/60353",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "TOKYO-00006",
+      "title": "ディープテック・スタートアップ支援基金／ディープテック・スタートアップ支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/60776",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "TOKYO-00007",
+      "title": "令和７年度 観光まちづくり支援事業助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/65403",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "TOKYO-00008",
+      "title": "令和７年度 地域のサステナブル・ツーリズム推進助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/65404",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "TOKYO-00009",
+      "title": "IT・IoT導入補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/60352",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "TOKYO-00010",
+      "title": "令和７年度 東京都島しょ地域縁結び事業支援助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/65410",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDPM7MAP",
+      "title": "令和7年度第1回 事業承継を契機とした成長支援事業",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDPM7MAP",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDQ9IMAX",
+      "title": "令和７年度 高齢者向け新ビジネス創出支援事業",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDQ9IMAX",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDRauMAH",
+      "title": "令和７年度リスキリング・キャリアデザイン応援事業_第1回",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDRauMAH",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDPXPMA5",
+      "title": "東京都正規雇用等転換安定化支援助成金（令和７年度 第３回申請受付）",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDPXPMA5",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDQ9NMAX",
+      "title": "東京都就職氷河期世代等待遇向上支援助成金（令和７年度 第３回申請受付）",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDQ9NMAX",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDSKLMA5",
+      "title": "令和７年度 介護現場のニーズに対応した製品開発支援事業",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDSKLMA5",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0W5h00000ZueXcEAJ",
+      "title": "ドローンを活用したツアー造成支援補助金",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0W5h00000ZueXcEAJ",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDJInMAP",
+      "title": "【令和７年度】事業環境変化に対応した経営基盤強化事業（受動喫煙防止対策支援コース）助成金",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDJInMAP",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDT0PMAX",
+      "title": "子供の未来を育む「体験活動」推進区市町村支援事業（「遊び」特別推進枠）",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDT0PMAX",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ2000000pXJvMAM",
+      "title": "令和7年度フィンテック企業に対する海外進出支援事業 海外展示会共同出展",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ2000000pXJvMAM",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDP1wMAH",
+      "title": "令和７年度東京都医療ＤＸ人材育成支援事業",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDP1wMAH",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ2000000pXJ2MAM",
+      "title": "令和７年度フィンテック企業に対する海外進出支援事業補助金",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ2000000pXJ2MAM",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDK7NMAX",
+      "title": "中小企業の外国人従業員に対する研修等支援助成金（一般コース）",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDK7NMAX",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDMQvMAP",
+      "title": "令和７年度フィンテック企業等に対するイノベーション支援事業（金融サービス事業化支援補助金）",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDMQvMAP",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDMRAMA5",
+      "title": "令和７年度フィンテック企業等に対するイノベーション支援事業（金融オープンイノベーション支援補助金）",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDMRAMA5",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDK76MAH",
+      "title": "東京都民間事業者に係る低公害・低燃費車導入促進補助金（補助金申請）",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDK76MAH",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDQEEMA5",
+      "title": "令和7年度ワーケーション勤務導入奨励金",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDQEEMA5",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "a0WJ200000CDOeFMAX",
+      "title": "令和7年度「年収の壁突破」総合対策促進奨励金",
+      "url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDOeFMAX",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "API-1753970606629-5tzfyllah",
+      "title": "",
+      "url": "",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-8xr4wwnhc",
+      "title": "リターナブル容器利用促進助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44190",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-f3np6fvm9",
+      "title": "帯状疱疹ワクチン接種費用の一部助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/32849",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-wj6pao9jx",
+      "title": "特定緊急輸送道路沿道建築物の耐震化",
+      "url": "https://www.smart-hojokin.jp/subsidies/8901",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-nvivf55lb",
+      "title": "家庭用生ごみ処理機など購入費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44093",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-6hi5zuj6n",
+      "title": "葬祭費",
+      "url": "https://www.smart-hojokin.jp/subsidies/15172",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-p8b9qxouh",
+      "title": "一般分譲マンションの耐震化支援制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/8900",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-cu20cs19v",
+      "title": "出産育児一時金",
+      "url": "https://www.smart-hojokin.jp/subsidies/17915",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-r40wprmol",
+      "title": "落書き抑止カメラ設置経費一部補助",
+      "url": "https://www.smart-hojokin.jp/subsidies/19174",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-2vqac5u8h",
+      "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+      "url": "https://www.smart-hojokin.jp/subsidies/14627",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-n1aboo9su",
+      "title": "住居確保給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/43645",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-el5zm2mkl",
+      "title": "養育費に関する公正証書作成手数料等補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/53217",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-hhrivzlk3",
+      "title": "渋谷区定額減税補足給付金（調整給付金）",
+      "url": "https://www.smart-hojokin.jp/subsidies/57292",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-tngv3tcji",
+      "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+      "url": "https://www.smart-hojokin.jp/subsidies/14627",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-7jikeivye",
+      "title": "葬祭費",
+      "url": "https://www.smart-hojokin.jp/subsidies/15172",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-bi9j32gmn",
+      "title": "出産育児一時金",
+      "url": "https://www.smart-hojokin.jp/subsidies/17915",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-g4oqfa76j",
+      "title": "落書き抑止カメラ設置経費一部補助",
+      "url": "https://www.smart-hojokin.jp/subsidies/19174",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-swhoi2oks",
+      "title": "帯状疱疹ワクチン接種費用の一部助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/32849",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-ayysisogl",
+      "title": "住居確保給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/43645",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-fwpic0top",
+      "title": "家庭用生ごみ処理機など購入費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44093",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-p88tbeok5",
+      "title": "リターナブル容器利用促進助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44190",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-abouthnr8",
+      "title": "年金生活者支援給付金制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/50084",
+      "file": "subsidies-part01.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-bn4edhlk8",
+      "title": "渋谷区5G通信インフラ整備費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/50996",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-xm5ybo7g7",
+      "title": "商店街チャレンジ戦略支援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51836",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-qt8apgvnl",
+      "title": "地域連携型商店街事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51837",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-3uj0jrrbj",
+      "title": "商店会等イベント事業費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51838",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-uokd9wi5w",
+      "title": "商店街活性化事業助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51840",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-miw1dkik8",
+      "title": "ベビーシッター利用支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/57358",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-6clfm1q0e",
+      "title": "介護福祉士資格取得費用補助事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/55428",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-0cu1o80r0",
+      "title": "物価高騰緊急支援給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44148",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-qchrctdxp",
+      "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/29422",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-odbsmpklk",
+      "title": "電気自動車等用充電設備導入助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/28543",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-51oflurzo",
+      "title": "渋谷区介護職員宿舎借り上げ支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/41051",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-7q0ebjiau",
+      "title": "渋谷区介護職員宿舎借り上げ支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/28047",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-gf251m123",
+      "title": "渋谷区介護施設物価高騰対策補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/17914",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-rvgrhwptj",
+      "title": "住居確保給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/11845",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606630-si21idb4v",
+      "title": "地域観光資源開発補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/12515",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-b516ur5zh",
+      "title": "太陽光発電システム、蓄電システムの設置協力事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/20783",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-6nzxcflr2",
+      "title": "港区商店街浸水対策支援補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/66838",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-61089gbja",
+      "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+      "url": "https://www.smart-hojokin.jp/subsidies/8445",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-869szureb",
+      "title": "建築物耐震診断助成事業（診断助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10148",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-uv5ayd680",
+      "title": "エレベーター安全装置等設置助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/8436",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-9qbo0986r",
+      "title": "ブロック塀等除却・設置工事支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/4533",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-nerh4urmc",
+      "title": "港区がん患者ウィッグ等購入費助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/8439",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-p2e5im18c",
+      "title": "家庭用生ごみ処理機等購入費の助成制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/8438",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-zcnw9xfqc",
+      "title": "建築物耐震診断助成事業（診断助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10147",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-q58o0ybgu",
+      "title": "高齢者エアコン購入設置費用助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/8443",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-oocpbe7ex",
+      "title": "エレベーター安全装置等設置助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/8436",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-izu43hl13",
+      "title": "高齢者エアコン購入設置費用助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/8443",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-7a74hewd3",
+      "title": "ブロック塀等除却・設置工事支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/4533",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-djzwa9yge",
+      "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+      "url": "https://www.smart-hojokin.jp/subsidies/8445",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-j15p2xt4c",
+      "title": "建築物耐震診断助成事業（診断助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10147",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-i2ao1cbu4",
+      "title": "家庭用生ごみ処理機等購入費の助成制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/8438",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-3on9452ab",
+      "title": "港区禁煙外来治療費助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/10149",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-izmf3dfbd",
+      "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10150",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-5k01w68e0",
+      "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10151",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-1ox5s98ui",
+      "title": "民間建築物耐震化促進事業（補強設計・改修工事助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10152",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-4408l6cgw",
+      "title": "みなとマリアージュ制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/11837",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-5b58fzh1m",
+      "title": "高齢者デジタルデバイド解消事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/11838",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-dj7p8rx19",
+      "title": "エレベーター安全装置等設置助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/8436",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-7hruf8zlc",
+      "title": "ISO等取得支援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/20770",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-uwp4z2jz1",
+      "title": "高齢者エアコン購入設置費用助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/8443",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-94g5fsvi6",
+      "title": "共同住宅防犯対策助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/19171",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-ob3u0f72w",
+      "title": "ブロック塀等除却・設置工事支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/4533",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-cd3fbdsr1",
+      "title": "新型コロナウイルス感染症に係る傷病手当金（国民健康保険）",
+      "url": "https://www.smart-hojokin.jp/subsidies/20425",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-58q93zhs7",
+      "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+      "url": "https://www.smart-hojokin.jp/subsidies/8445",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-qgvymhgti",
+      "title": "小規模事業者経営改善資金（マル経融資）利子補助",
+      "url": "https://www.smart-hojokin.jp/subsidies/20779",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-ahgkpkf2x",
+      "title": "高齢者補聴器購入費助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/4531",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-k5c2qlbyg",
+      "title": "分譲マンション共用部分リフォーム融資の債務保証料助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/20788",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-rtmwbiluz",
+      "title": "建築物耐震診断助成事業（診断助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10148",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-6sucl8k3d",
+      "title": "集団回収を行う古紙回収業者に対する助成金制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/20777",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-z6lmfs6br",
+      "title": "屋上等緑化の助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/28044",
+      "file": "subsidies-part02.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-pzmqbty2k",
+      "title": "港区がん患者ウィッグ等購入費助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/8439",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-71gye6kzg",
+      "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10150",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-xmw1o76at",
+      "title": "新型コロナウイルス感染症に係る傷病手当金（国民健康保険）",
+      "url": "https://www.smart-hojokin.jp/subsidies/20425",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-15k3wwb5l",
+      "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10151",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-jr32hwpns",
+      "title": "ISO等取得支援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/20770",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-4dw9itmj5",
+      "title": "オンライン資格確認のシステム導入における助成金制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/20771",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-ncq7rabte",
+      "title": "民間建築物耐震化促進事業（補強設計・改修工事助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10152",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-3ffcji4ti",
+      "title": "みなとマリアージュ制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/11837",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-ogf8jza84",
+      "title": "帯状疱疹ワクチン予防接種費用の一部を助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/32848",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-vovyj8gi7",
+      "title": "高齢者デジタルデバイド解消事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/11838",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-yf0jnb2a2",
+      "title": "骨髄移植ドナー支援事業助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/20776",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-5l1e3psmv",
+      "title": "集団回収を行う古紙回収業者に対する助成金制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/20777",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-e410qqipd",
+      "title": "小規模企業事業承継支援補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/20778",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-89k1fwfct",
+      "title": "小規模事業者経営改善資金（マル経融資）利子補助",
+      "url": "https://www.smart-hojokin.jp/subsidies/20779",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-gplblgesd",
+      "title": "港区リユース食器利用費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/28045",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-nza6ny8di",
+      "title": "高齢者エアコン購入設置費用助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/8443",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-9jhotd6sc",
+      "title": "専門家派遣事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/20782",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-p7advog4a",
+      "title": "港区チャレンジ商店街店舗応援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/37401",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-z5bgyj9p0",
+      "title": "帯状疱疹ワクチン予防接種費用の一部を助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/20784",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-erpz9dr4a",
+      "title": "ブロック塀等除却・設置工事支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/4533",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-0bz80usah",
+      "title": "小規模企業事業承継支援補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/31740",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-ue3vttxcu",
+      "title": "販路拡大支援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/20787",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-gt14iz5um",
+      "title": "分譲マンション共用部分リフォーム融資の債務保証料助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/20788",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-vdst5dcnw",
+      "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+      "url": "https://www.smart-hojokin.jp/subsidies/8445",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-vyxqtf0sf",
+      "title": "エレベーター安全装置等設置助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/23689",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-3kq972ehu",
+      "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/33804",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-oicmmfosm",
+      "title": "販路拡大支援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/31743",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-we4vu54zs",
+      "title": "港区麻しん風しん混合（MR）ワクチン任意接種助成事業等",
+      "url": "https://www.smart-hojokin.jp/subsidies/38966",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-v5yeiel7k",
+      "title": "建築物耐震診断助成事業（診断助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/23693",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-v36qj0876",
+      "title": "家庭用生ごみ処理機等購入費の助成制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/8438",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-ww04o9ko2",
+      "title": "高齢者補聴器購入費助成事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/4531",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-so3huf44q",
+      "title": "建築物耐震診断助成事業（診断助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10148",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-a35qpwy29",
+      "title": "ホームページ作成支援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/31734",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-vmbdzskx9",
+      "title": "港区リユース食器利用費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/28045",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-25o328wmi",
+      "title": "がけ・擁壁改修工事等支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/37445",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-8na265dg6",
+      "title": "港区禁煙外来治療費助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/10149",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-9ywzxh3if",
+      "title": "港区住民税非課税世帯等臨時特別給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/37339",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-vjth6hnye",
+      "title": "港区がん患者ウィッグ等購入費助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/8439",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-3goz7tb6q",
+      "title": "高齢者民間賃貸住宅入居支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/38834",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-twakhepin",
+      "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10150",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-mw7y9ut1g",
+      "title": "屋上等緑化の助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/28044",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-cugltt33e",
+      "title": "港区リユース食器利用費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/28045",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-qt82r1xsf",
+      "title": "家庭用生ごみ処理機等購入費の助成制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/30133",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-ywc38tmz3",
+      "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/10151",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606631-v5m87ypam",
+      "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+      "url": "https://www.smart-hojokin.jp/subsidies/31085",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-vn70y410j",
+      "title": "物価高騰対策臨時給付金の区独自の支給",
+      "url": "https://www.smart-hojokin.jp/subsidies/42892",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-4ea5skjrl",
+      "title": "木造住宅密集地域における不燃化建替え促進事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/21502",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-xze6ok702",
+      "title": "帯状疱疹ワクチン予防接種費用の助成について",
+      "url": "https://www.smart-hojokin.jp/subsidies/31754",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-lv9ony5iy",
+      "title": "大人の風しん麻しん（はしか）抗体検査と予防接種の費用助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/32850",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-fw554zqtu",
+      "title": "出産育児一時金",
+      "url": "https://www.smart-hojokin.jp/subsidies/17916",
+      "file": "subsidies-part03.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-cs40hulyh",
+      "title": "新型コロナウイルスに感染した新宿区国民健康保険の被保険者等に係る傷病手当金",
+      "url": "https://www.smart-hojokin.jp/subsidies/16881",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-eacwwwna7",
+      "title": "民有灯の維持助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/24446",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-z5mukgpm8",
+      "title": "私道整備助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/24444",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-h29roexvn",
+      "title": "屋上緑化・壁面緑化助成制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/10157",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-um6cyca54",
+      "title": "商店街灯の維持助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/24445",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-wxx8yfl6f",
+      "title": "私道整備助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/24444",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-ojrwq24jx",
+      "title": "民有灯の維持助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/24446",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-cut9x3r5m",
+      "title": "新型コロナウイルスに感染した新宿区国民健康保険の被保険者等に係る傷病手当金",
+      "url": "https://www.smart-hojokin.jp/subsidies/16881",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-n5ndfka7c",
+      "title": "出産育児一時金",
+      "url": "https://www.smart-hojokin.jp/subsidies/17916",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-12n4a0utn",
+      "title": "商店街灯の維持助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/24445",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-z0dm02zvn",
+      "title": "木造住宅密集地域における不燃化建替え促進事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/21502",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-9dbhf0mwy",
+      "title": "雇用関係助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/46126",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-y57b0mrla",
+      "title": "信用保証料補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/46222",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-zm435u20m",
+      "title": "屋上緑化・壁面緑化助成制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/10157",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-ntbowmkq1",
+      "title": "帯状疱疹ワクチン予防接種費用の助成について",
+      "url": "https://www.smart-hojokin.jp/subsidies/31754",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-mrgxfnoa1",
+      "title": "地域福祉権利擁護事業（日常生活自立支援事業）",
+      "url": "https://www.smart-hojokin.jp/subsidies/51055",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-ptc66t6oe",
+      "title": "多胎児家庭への移動支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/49962",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-35h4vd1t7",
+      "title": "新宿区エレベーター防災対策改修支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/48528",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-eiu5793gy",
+      "title": "特別障害給付金制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/48276",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-y17zn6uqr",
+      "title": "私道整備助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/24444",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-88qw3mrtr",
+      "title": "令和6年度新宿区ベビーシッター利用支援事業（一時預かり利用支援）",
+      "url": "https://www.smart-hojokin.jp/subsidies/56933",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-wztfoytxf",
+      "title": "経営力強化支援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/60168",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-00m7gpqph",
+      "title": "省エネルギー及び創エネルギー機器等補助制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/60167",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-nn5rtf86y",
+      "title": "省エネルギー及び創エネルギー機器等導入補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/60151",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-7pfnux591",
+      "title": "学校給食費等助成（私立学校就学者等支援給付金）",
+      "url": "https://www.smart-hojokin.jp/subsidies/47787",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-fjdng557d",
+      "title": "学校給食費等助成（私立学校就学者等支援給付金）",
+      "url": "https://www.smart-hojokin.jp/subsidies/56841",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-cm4wtp418",
+      "title": "喫煙専用室等整備費助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/60281",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-a6ie1elqa",
+      "title": "公衆喫煙所整備費助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/60282",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-8jqza4man",
+      "title": "経営力強化支援事業補助金（新宿区）",
+      "url": "https://www.smart-hojokin.jp/subsidies/62036",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-11ds4tny4",
+      "title": "中高層マンション防災備蓄品購入助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/56850",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-am1mqg4xu",
+      "title": "新宿区物価高騰対策臨時給付金（低所得者支援及び定額減税補足給付）",
+      "url": "https://www.smart-hojokin.jp/subsidies/51732",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-xqhw6y1bv",
+      "title": "新宿区省エネルギー及び創エネルギー機器等補助制度（個人住宅・集合住宅・事業所）",
+      "url": "https://www.smart-hojokin.jp/subsidies/23710",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-ln5z6dklt",
+      "title": "在宅要介護者等への新型コロナウイルス感染症緊急生活支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/28053",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-6obz65n1h",
+      "title": "商工業緊急資金（特例）",
+      "url": "https://www.smart-hojokin.jp/subsidies/22555",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-gvuagkn34",
+      "title": "子育て世帯生活支援特別給付金（ひとり親世帯分）",
+      "url": "https://www.smart-hojokin.jp/subsidies/29426",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-sepk8wjiq",
+      "title": "経営力強化支援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/22554",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-infu3sq5t",
+      "title": "子育て世帯生活支援特別給付金（ひとり親世帯以外分）",
+      "url": "https://www.smart-hojokin.jp/subsidies/29424",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-47v91zbj6",
+      "title": "公衆喫煙所整備費助成・喫煙専用室等整備費助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/23709",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-0o3cc936b",
+      "title": "歌舞伎町安全・安心対策事業助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/24443",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-21mamofta",
+      "title": "新宿区協働推進基金助成金(一般事業助成)",
+      "url": "https://www.smart-hojokin.jp/subsidies/22119",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-8gs1y3fpb",
+      "title": "新宿区子ども未来基金助成活動",
+      "url": "https://www.smart-hojokin.jp/subsidies/22556",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-q9iczh5zj",
+      "title": "専門家活用支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/11854",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-py27e4vig",
+      "title": "商工業緊急資金（特例）",
+      "url": "https://www.smart-hojokin.jp/subsidies/4077",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-9wy1t7ued",
+      "title": "おもてなし店舗支援事業補助金（感染拡大防止・業態転換・販売促進事業）",
+      "url": "https://www.smart-hojokin.jp/subsidies/9343",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-zolfqdg3r",
+      "title": "中小企業展示会等出展支援補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/3934",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-jm7nxg73f",
+      "title": "にぎわいにあふれ環境にもやさしい商店街支援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/21501",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-d1sw5mzzj",
+      "title": "おもてなし店舗支援事業補助金（トイレの洋式化事業）",
+      "url": "https://www.smart-hojokin.jp/subsidies/9342",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-l51jw181p",
+      "title": "（集合住宅・事業所用）令和4年度新宿区新エネルギー及び省エネルギー機器等導入補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/3048",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-hifyogd7e",
+      "title": "（個人住宅用）令和4年度新宿区新エネルギー及び省エネルギー機器等導入補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/3055",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-mck6xums0",
+      "title": "公衆喫煙所整備費助成・喫煙専用室等整備費助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/5711",
+      "file": "subsidies-part04.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-ic8c5k009",
+      "title": "令和4年度　新宿区地域コミュニティ事業助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/2403",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-8oo025i5x",
+      "title": "商店会共同販促支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/8448",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-e3l54k12j",
+      "title": "新宿区消費者活動促進等事業助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/13184",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606632-uw63zpdyz",
+      "title": "住居確保給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/11853",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-ip4rzecn1",
+      "title": "リターナブル容器利用促進助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44190",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-7nx0ljpe0",
+      "title": "帯状疱疹ワクチン接種費用の一部助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/32849",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-9qytetl0f",
+      "title": "特定緊急輸送道路沿道建築物の耐震化",
+      "url": "https://www.smart-hojokin.jp/subsidies/8901",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-4yzraw0xb",
+      "title": "家庭用生ごみ処理機など購入費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44093",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-8i5z02njk",
+      "title": "葬祭費",
+      "url": "https://www.smart-hojokin.jp/subsidies/15172",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-g5nvpwm4b",
+      "title": "一般分譲マンションの耐震化支援制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/8900",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-e1hxjb1g4",
+      "title": "出産育児一時金",
+      "url": "https://www.smart-hojokin.jp/subsidies/17915",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-cq3svuoq6",
+      "title": "落書き抑止カメラ設置経費一部補助",
+      "url": "https://www.smart-hojokin.jp/subsidies/19174",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-tttif2giv",
+      "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+      "url": "https://www.smart-hojokin.jp/subsidies/14627",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-ytfb9ghh7",
+      "title": "住居確保給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/43645",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-igjt48eiv",
+      "title": "養育費に関する公正証書作成手数料等補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/53217",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-vida97am4",
+      "title": "渋谷区定額減税補足給付金（調整給付金）",
+      "url": "https://www.smart-hojokin.jp/subsidies/57292",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-scvk6enya",
+      "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+      "url": "https://www.smart-hojokin.jp/subsidies/14627",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-qb1w8xuic",
+      "title": "葬祭費",
+      "url": "https://www.smart-hojokin.jp/subsidies/15172",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-m5h4oh7jn",
+      "title": "出産育児一時金",
+      "url": "https://www.smart-hojokin.jp/subsidies/17915",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-91s4a7rz1",
+      "title": "落書き抑止カメラ設置経費一部補助",
+      "url": "https://www.smart-hojokin.jp/subsidies/19174",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-m5fn2ulvm",
+      "title": "帯状疱疹ワクチン接種費用の一部助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/32849",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-qwu1pedu3",
+      "title": "住居確保給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/43645",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-siyepmd6t",
+      "title": "家庭用生ごみ処理機など購入費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44093",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-5n1l2glwk",
+      "title": "リターナブル容器利用促進助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44190",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-96tfw64en",
+      "title": "年金生活者支援給付金制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/50084",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-i3v2mnjuw",
+      "title": "渋谷区5G通信インフラ整備費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/50996",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-p9hl44b34",
+      "title": "商店街チャレンジ戦略支援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51836",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-i2jknprh1",
+      "title": "地域連携型商店街事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51837",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-ij1gkj5ax",
+      "title": "商店会等イベント事業費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51838",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-01gic1ftd",
+      "title": "商店街活性化事業助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51840",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-u4rtws74p",
+      "title": "ベビーシッター利用支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/57358",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-0ro4m0l4i",
+      "title": "介護福祉士資格取得費用補助事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/55428",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-ii2yw7hx2",
+      "title": "物価高騰緊急支援給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44148",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-cxfpiih3a",
+      "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/29422",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-00qruth98",
+      "title": "電気自動車等用充電設備導入助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/28543",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-ofmpdfxmk",
+      "title": "渋谷区介護職員宿舎借り上げ支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/41051",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-5h8e7k5li",
+      "title": "渋谷区介護職員宿舎借り上げ支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/28047",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-gxe9d0uu6",
+      "title": "渋谷区介護施設物価高騰対策補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/17914",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-et7ygum3d",
+      "title": "住居確保給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/11845",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606634-hnxv229b0",
+      "title": "地域観光資源開発補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/12515",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-hd3qf375o",
+      "title": "東京都",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/33",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-vx2j08sns",
+      "title": "東京都足立区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/678",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-tf2rqmln7",
+      "title": "全国",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/48/areas/29",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-ef9cvt8u8",
+      "title": "三宅島三宅村",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1645",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-o3lr0vab1",
+      "title": "三鷹市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/465",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-xwycy8wpq",
+      "title": "世田谷区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/894",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-za9mwtr2e",
+      "title": "中央区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/169",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-j86ha5bvg",
+      "title": "中野区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/859",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-w97j397gu",
+      "title": "八丈島八丈町",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1650",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-53d8ahe9c",
+      "title": "八王子市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1111",
+      "file": "subsidies-part05.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-j2o0ry4b4",
+      "title": "利島村",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1648",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-splg4g4g3",
+      "title": "北区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/753",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-4isdu49we",
+      "title": "千代田区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/749",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-zne5dvymr",
+      "title": "台東区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/802",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-mir7lpebm",
+      "title": "品川区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/751",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-w2xe4vfsd",
+      "title": "国分寺市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/55",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-36pdbxy61",
+      "title": "国立市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1119",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-agzhlflka",
+      "title": "墨田区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/754",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-tmtkiilwf",
+      "title": "多摩市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/468",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-frcehh7oh",
+      "title": "大島町",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/57",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-w1q3om33b",
+      "title": "大田区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/56",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-ul6zpdp3p",
+      "title": "小平市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/165",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-hth2445uy",
+      "title": "小笠原村",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1652",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-8dukjkxu2",
+      "title": "小金井市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1165",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-8yhy3mz3f",
+      "title": "御蔵島村",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1649",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-osfr1ipcp",
+      "title": "文京区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/752",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-zo4pjflua",
+      "title": "新宿区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/462",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-qnzrmyagx",
+      "title": "新島村",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1647",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-gp4zcdk6d",
+      "title": "日の出町",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/750",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-7klkv5iwl",
+      "title": "日野市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/464",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-n15gkitnh",
+      "title": "昭島市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/166",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-sbc7vdulf",
+      "title": "杉並区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/167",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-b8he9uyq7",
+      "title": "東久留米市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/677",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-hi3ou1p0i",
+      "title": "東大和市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1301",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-egs2wln1o",
+      "title": "東村山市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1022",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-1girl2avp",
+      "title": "板橋区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/173",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-4eyv24pj6",
+      "title": "檜原村",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1605",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-p0y09jm4o",
+      "title": "武蔵村山市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/951",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-13mtv74lw",
+      "title": "武蔵野市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/461",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-gdq0d6bd1",
+      "title": "江戸川区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/54",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-z83jx8xvg",
+      "title": "江東区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/748",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-d89exe3jq",
+      "title": "清瀬市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/676",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-7yn9irxog",
+      "title": "渋谷区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1110",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-z6ge4wf7w",
+      "title": "港区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/38",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-7z0e0w3p1",
+      "title": "狛江市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/164",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-edqwfg34w",
+      "title": "瑞穂町",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/466",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-eh15unlkk",
+      "title": "町田市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/172",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-l7ubnb2v2",
+      "title": "目黒区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/175",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-s5nabj3nx",
+      "title": "神津島村",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1646",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-yt9o9qxmw",
+      "title": "福生市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1302",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-b5dgdyg6i",
+      "title": "稲城市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/469",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-i4s48dbmf",
+      "title": "立川市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/463",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-bd82arcsa",
+      "title": "練馬区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/59",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-0nk5ejih7",
+      "title": "羽村市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/34",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-fs5q4etxx",
+      "title": "荒川区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1039",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-0vu383n7p",
+      "title": "葛飾区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/163",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-5pbrema61",
+      "title": "西東京市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1166",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-qx67s48nj",
+      "title": "調布市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/471",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-ju7tm23k1",
+      "title": "豊島区",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/58",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-fps9p40vc",
+      "title": "あきる野市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1164",
+      "file": "subsidies-part06.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-kgfir3f4p",
+      "title": "青ヶ島村",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1651",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606635-jnb66qcx8",
+      "title": "青梅市",
+      "url": "https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/960",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606638-08b7dbr4e",
+      "title": "リターナブル容器利用促進助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44190",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606638-404wlsulh",
+      "title": "帯状疱疹ワクチン接種費用の一部助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/32849",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606638-yvimls6b6",
+      "title": "特定緊急輸送道路沿道建築物の耐震化",
+      "url": "https://www.smart-hojokin.jp/subsidies/8901",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606638-9mv5y66m0",
+      "title": "家庭用生ごみ処理機など購入費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44093",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606638-eutbx4uyq",
+      "title": "葬祭費",
+      "url": "https://www.smart-hojokin.jp/subsidies/15172",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606638-2y5dt1uxy",
+      "title": "一般分譲マンションの耐震化支援制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/8900",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606638-y3ul3f5i0",
+      "title": "出産育児一時金",
+      "url": "https://www.smart-hojokin.jp/subsidies/17915",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606638-f8orjgn1e",
+      "title": "落書き抑止カメラ設置経費一部補助",
+      "url": "https://www.smart-hojokin.jp/subsidies/19174",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-r2e0yt2kl",
+      "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+      "url": "https://www.smart-hojokin.jp/subsidies/14627",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-x6nqbn650",
+      "title": "住居確保給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/43645",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-4gc107ch3",
+      "title": "養育費に関する公正証書作成手数料等補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/53217",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-ww0pjdsn2",
+      "title": "渋谷区定額減税補足給付金（調整給付金）",
+      "url": "https://www.smart-hojokin.jp/subsidies/57292",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-8qvzfro6j",
+      "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+      "url": "https://www.smart-hojokin.jp/subsidies/14627",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-qv292bu1k",
+      "title": "葬祭費",
+      "url": "https://www.smart-hojokin.jp/subsidies/15172",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-ytgxbq0xb",
+      "title": "出産育児一時金",
+      "url": "https://www.smart-hojokin.jp/subsidies/17915",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-tt7egfm62",
+      "title": "落書き抑止カメラ設置経費一部補助",
+      "url": "https://www.smart-hojokin.jp/subsidies/19174",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-axqgte45i",
+      "title": "帯状疱疹ワクチン接種費用の一部助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/32849",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-hsgnram5k",
+      "title": "住居確保給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/43645",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-6zjv3p2v5",
+      "title": "家庭用生ごみ処理機など購入費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44093",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-oypsa0dou",
+      "title": "リターナブル容器利用促進助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44190",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-11x0qal4c",
+      "title": "年金生活者支援給付金制度",
+      "url": "https://www.smart-hojokin.jp/subsidies/50084",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-e2067hkju",
+      "title": "渋谷区5G通信インフラ整備費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/50996",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-kkoj2fuan",
+      "title": "商店街チャレンジ戦略支援事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51836",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-qm3ixt3jl",
+      "title": "地域連携型商店街事業補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51837",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-b2rgyjt1k",
+      "title": "商店会等イベント事業費補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51838",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-iai78tlkw",
+      "title": "商店街活性化事業助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/51840",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-u8yidsz7e",
+      "title": "ベビーシッター利用支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/57358",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-w43t91rrk",
+      "title": "介護福祉士資格取得費用補助事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/55428",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-kj8ba3xz5",
+      "title": "物価高騰緊急支援給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/44148",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-1uosks3sv",
+      "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+      "url": "https://www.smart-hojokin.jp/subsidies/29422",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-82w0xjbcw",
+      "title": "電気自動車等用充電設備導入助成",
+      "url": "https://www.smart-hojokin.jp/subsidies/28543",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-ey4jo1on8",
+      "title": "渋谷区介護職員宿舎借り上げ支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/41051",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-92w21geum",
+      "title": "渋谷区介護職員宿舎借り上げ支援事業",
+      "url": "https://www.smart-hojokin.jp/subsidies/28047",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-7np57vf05",
+      "title": "渋谷区介護施設物価高騰対策補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/17914",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-wdqli8gm4",
+      "title": "住居確保給付金",
+      "url": "https://www.smart-hojokin.jp/subsidies/11845",
+      "file": "subsidies-part07.json"
+    },
+    {
+      "id": "SCRAPED-1753970606639-vb2avf31i",
+      "title": "地域観光資源開発補助金",
+      "url": "https://www.smart-hojokin.jp/subsidies/12515",
+      "file": "subsidies-part07.json"
+    }
+  ]
+}

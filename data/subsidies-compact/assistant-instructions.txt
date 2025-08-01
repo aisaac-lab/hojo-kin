@@ -1,0 +1,15 @@
+
+【データ構造】
+補助金データは以下のファイルに分割されています：
+1. subsidies-master-index.json - 全体のインデックス
+2. subsidies-category-index.json - カテゴリ別インデックス
+3. subsidies-part01.json から subsidies-part07.json - 実際のデータ
+
+【検索手順】
+1. まず subsidies-master-index.json または subsidies-category-index.json で該当する補助金のIDとファイル名を特定
+2. 特定したファイル（subsidies-partXX.json）から詳細情報を取得
+3. front_subsidy_detail_page_url フィールドの値を「公式サイト」として表示
+
+【重要】
+- 各補助金データには必ず front_subsidy_detail_page_url が含まれています
+- このURLを「公式サイト: [URL]」形式で表示してください

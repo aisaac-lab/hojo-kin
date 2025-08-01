@@ -1,0 +1,513 @@
+{
+  "metadata": {
+    "part": 1,
+    "total_parts": 7,
+    "count": 50,
+    "id_range": {
+      "first": "TOKYO-00001",
+      "last": "SCRAPED-1753970606630-abouthnr8"
+    }
+  },
+  "subsidies": [
+    {
+      "id": "TOKYO-00001",
+      "title": "介護現場のニーズに対応した製品開発支援事業",
+      "description": "東京都及び（公財）東京都中小企業振興公社（以下、「公社」という。）は、介護従事者のニーズに応えるとともに中小企業の成長を促進することを目的として、都内の中小企業者等が介護現場のニーズに対応した次...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/65958",
+      "maxAmount": "2,000万円",
+      "targetArea": "東京都",
+      "categories": [
+        "製品開発",
+        "介護",
+        "中小企業支援"
+      ],
+      "applicationPeriod": "令和7年4月下旬～5月下旬（予定）",
+      "subsidyRate": "2/3以内",
+      "targetBusiness": "都内中小企業者等"
+    },
+    {
+      "id": "TOKYO-00002",
+      "title": "令和６年度 ナイトタイム等(夜間・早朝)における観光促進助成金(第２回)",
+      "description": "東京都と公益財団法人東京観光財団では、国内外からの旅行者誘致の促進を図るとともに、新たな東京観光を楽しんでもらうため、ナイトタイム等（夜間・早朝）における観光活性化に取り組んでいます。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/61267",
+      "maxAmount": "3,000万円",
+      "targetArea": "東京都",
+      "categories": [
+        "観光",
+        "地域振興",
+        "イベント"
+      ]
+    },
+    {
+      "id": "TOKYO-00003",
+      "title": "令和７年度 地域振興助成事業助成金",
+      "description": "東京都と公益財団法人東京観光財団では、観光の振興及び地域の活性化に寄与することを目的に、東京都内の観光協会等が、訪都旅行者の増加を図るために実施する公益を目的とした地域振興事業に係る経費の一部を...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/65409",
+      "maxAmount": "200万円",
+      "targetArea": "東京都",
+      "categories": [
+        "観光",
+        "地域振興"
+      ],
+      "targetBusiness": "東京都内の観光協会等"
+    },
+    {
+      "id": "TOKYO-00004",
+      "title": "令和７年度 多摩・島しょ観光交通インフラ整備支援助成金",
+      "description": "東京都及び（公財）東京観光財団では、多摩・島しょ地域において移動アクセス手段の更なる充実を図るため、観光客の二次交通手段として、新たな交通サービスの導入や交通インフラ開発を行うための取組を支援し...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/65411",
+      "maxAmount": "1,000万円",
+      "targetArea": "多摩・島しょ地域",
+      "categories": [
+        "観光",
+        "交通",
+        "インフラ"
+      ]
+    },
+    {
+      "id": "TOKYO-00005",
+      "title": "小規模事業者経営改善補助金",
+      "description": "経営力強化に取組む区内の小規模事業者が、計画作成をとおして経営を客観的に見直すとともに、収益を得るために必要となる設備投資や店舗改修、工場の操業環境の改善に要する経費の一部を補助することで、小規...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/60353",
+      "maxAmount": "250万円",
+      "targetArea": "東京都",
+      "categories": [
+        "経営改善",
+        "設備投資",
+        "小規模事業者"
+      ],
+      "targetBusiness": "小規模事業者"
+    },
+    {
+      "id": "TOKYO-00006",
+      "title": "ディープテック・スタートアップ支援基金／ディープテック・スタートアップ支援事業",
+      "description": "技術の確立や事業化・社会実装までに長期の研究開発と大規模な資金を要し、リスクは高いものの国や世界全体で対処すべき経済社会課題の解決にも資すると考えられる革新的な技術の研究開発に取り組んでいる「デ...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/60776",
+      "maxAmount": "30億円",
+      "targetArea": "東京都",
+      "categories": [
+        "スタートアップ",
+        "研究開発",
+        "ディープテック"
+      ],
+      "targetBusiness": "ディープテック・スタートアップ"
+    },
+    {
+      "id": "TOKYO-00007",
+      "title": "令和７年度 観光まちづくり支援事業助成金",
+      "description": "東京都と公益財団法人東京観光財団では、地域が主体となって取り組む観光まちづくりを推進することで、旅行者誘致を促進し、地域活性化につなげる取組を進めています。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/65403",
+      "maxAmount": "600万円",
+      "targetArea": "東京都",
+      "categories": [
+        "観光",
+        "まちづくり",
+        "地域活性化"
+      ]
+    },
+    {
+      "id": "TOKYO-00008",
+      "title": "令和７年度 地域のサステナブル・ツーリズム推進助成金",
+      "description": "東京都と公益財団法人東京観光財団では、都内地域の自主的なサステナブル・ツーリズムの推進を図るため、社会経済・文化・環境の観点をふまえ、地域におけるサステナブルな観光コンテンツの発掘・磨き上げや地...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/65404",
+      "maxAmount": "500万円",
+      "targetArea": "東京都",
+      "categories": [
+        "観光",
+        "サステナブル",
+        "地域振興"
+      ]
+    },
+    {
+      "id": "TOKYO-00009",
+      "title": "IT・IoT導入補助金",
+      "description": "この事業は、事業者が自らの強みと弱みを踏まえた経営上の課題を見出すとともに、自社でＩＴ・ＩｏＴを導入活用することで、生産性の向上及び業務の効率化等の実現を支援するものです。また、この支援を通じて...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/60352",
+      "maxAmount": "150万円",
+      "targetArea": "東京都",
+      "categories": [
+        "IT",
+        "IoT",
+        "生産性向上"
+      ]
+    },
+    {
+      "id": "TOKYO-00010",
+      "title": "令和７年度 東京都島しょ地域縁結び事業支援助成金",
+      "description": "東京都及び（公財）東京観光財団では、島しょ地域の町村・観光協会等・商工会等が行う縁結びに関連する観光施設整備、イベント実施等の新たな事業に対して必要な助成金を交付することにより、島しょ地域への観...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/65410",
+      "maxAmount": "1,000万円",
+      "targetArea": "東京都島しょ地域",
+      "categories": [
+        "観光",
+        "島しょ地域",
+        "地域振興"
+      ],
+      "targetBusiness": "島しょ地域の町村・観光協会等・商工会等"
+    },
+    {
+      "id": "a0WJ200000CDPM7MAP",
+      "title": "令和7年度第1回 事業承継を契機とした成長支援事業",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDPM7MAP",
+      "maxAmount": 8000000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDQ9IMAX",
+      "title": "令和７年度 高齢者向け新ビジネス創出支援事業",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDQ9IMAX",
+      "maxAmount": 7500000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDRauMAH",
+      "title": "令和７年度リスキリング・キャリアデザイン応援事業_第1回",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDRauMAH",
+      "maxAmount": 400000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDPXPMA5",
+      "title": "東京都正規雇用等転換安定化支援助成金（令和７年度 第３回申請受付）",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDPXPMA5",
+      "maxAmount": 1160000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDQ9NMAX",
+      "title": "東京都就職氷河期世代等待遇向上支援助成金（令和７年度 第３回申請受付）",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDQ9NMAX",
+      "maxAmount": 1460000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDSKLMA5",
+      "title": "令和７年度 介護現場のニーズに対応した製品開発支援事業",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDSKLMA5",
+      "maxAmount": 20000000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0W5h00000ZueXcEAJ",
+      "title": "ドローンを活用したツアー造成支援補助金",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0W5h00000ZueXcEAJ",
+      "maxAmount": 5000000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDJInMAP",
+      "title": "【令和７年度】事業環境変化に対応した経営基盤強化事業（受動喫煙防止対策支援コース）助成金",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDJInMAP",
+      "maxAmount": 4000000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDT0PMAX",
+      "title": "子供の未来を育む「体験活動」推進区市町村支援事業（「遊び」特別推進枠）",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDT0PMAX",
+      "maxAmount": 10000000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ2000000pXJvMAM",
+      "title": "令和7年度フィンテック企業に対する海外進出支援事業 海外展示会共同出展",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ2000000pXJvMAM",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDP1wMAH",
+      "title": "令和７年度東京都医療ＤＸ人材育成支援事業",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDP1wMAH",
+      "maxAmount": 500000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ2000000pXJ2MAM",
+      "title": "令和７年度フィンテック企業に対する海外進出支援事業補助金",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ2000000pXJ2MAM",
+      "maxAmount": 3000000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDK7NMAX",
+      "title": "中小企業の外国人従業員に対する研修等支援助成金（一般コース）",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDK7NMAX",
+      "maxAmount": 250000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDMQvMAP",
+      "title": "令和７年度フィンテック企業等に対するイノベーション支援事業（金融サービス事業化支援補助金）",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDMQvMAP",
+      "maxAmount": 4000000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDMRAMA5",
+      "title": "令和７年度フィンテック企業等に対するイノベーション支援事業（金融オープンイノベーション支援補助金）",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDMRAMA5",
+      "maxAmount": 2000000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDK76MAH",
+      "title": "東京都民間事業者に係る低公害・低燃費車導入促進補助金（補助金申請）",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDK76MAH",
+      "maxAmount": 200000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDQEEMA5",
+      "title": "令和7年度ワーケーション勤務導入奨励金",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDQEEMA5",
+      "maxAmount": 100000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "a0WJ200000CDOeFMAX",
+      "title": "令和7年度「年収の壁突破」総合対策促進奨励金",
+      "description": "",
+      "front_subsidy_detail_page_url": "https://www.jgrants-portal.go.jp/subsidy/a0WJ200000CDOeFMAX",
+      "maxAmount": 500000,
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "API-1753970606629-5tzfyllah",
+      "title": "",
+      "description": "",
+      "front_subsidy_detail_page_url": "",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-8xr4wwnhc",
+      "title": "リターナブル容器利用促進助成金",
+      "description": "洗って繰り返し長く使用することのできる飲食容器（リターナブル容器）を導入する費用を助成しています。\n\n渋谷区内の町会、商店会、商店街振興組合、小中学校のPTAなどの団体が、渋谷区内で開催するイベ...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/44190",
+      "maxAmount": "上限金額\n          5\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-f3np6fvm9",
+      "title": "帯状疱疹ワクチン接種費用の一部助成",
+      "description": "帯状疱疹の発症を抑制することで生活の質の向上を目的とし、渋谷区では帯状疱疹ワクチン任意予防接種費用の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/32849",
+      "maxAmount": "上限金額\n          1\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-wj6pao9jx",
+      "title": "特定緊急輸送道路沿道建築物の耐震化",
+      "description": "「東京における緊急輸送道路沿道建築物の耐震化を推進する条例」が施行され、特に重要な緊急輸送道路が「特定緊急輸送道路」として指定されています。 沿道建築物については、耐震診断の実施が義務となって...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8901",
+      "maxAmount": "上限金額\n          5\n          億\n          6,300\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-nvivf55lb",
+      "title": "家庭用生ごみ処理機など購入費補助金",
+      "description": "家庭用生ごみ処理機など購入費用の一部を補助します。\n家庭から出る可燃ごみの約３割は、生ごみが占めています。区では、家庭から出る生ごみの減量およびリサイクルを図るため、生ごみ処理機やコンポスト容器...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/44093",
+      "maxAmount": "上限金額\n          2\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-6hi5zuj6n",
+      "title": "葬祭費",
+      "description": "渋谷区国民健康保険の加入者が死亡したとき、その葬祭を行なった人に葬祭費70,000円が支給されます。\n（注）葬祭を行なった日の翌日から2年以内に申請してください。\n（注）社会保険等の他の保険...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/15172",
+      "maxAmount": "渋谷区国民健康保険の加入者が死亡したとき、その葬祭を行なった人に葬祭費70,000円が支給されます。\n（注）葬祭を行なった日の翌日から2年以内に申請してください。\n（注）社会保険等の他の保険...",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-p8b9qxouh",
+      "title": "一般分譲マンションの耐震化支援制度",
+      "description": "区では、災害に強い安全なまちづくりを推進するため、区内の分譲マンションの耐震診断や補強設計、耐震改修工事に必要な費用の一部を助成しています。\n（注）既定の予算額に達した場合は終了となりますので...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/8900",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": [
+        "おすすめ"
+      ]
+    },
+    {
+      "id": "SCRAPED-1753970606630-cu20cs19v",
+      "title": "出産育児一時金",
+      "description": "国民健康保険加入者が出産したとき、世帯主に出産育児一時金、42万円が支給されます。\n妊娠12週を超えて（85日以上）の死産・流産（医師の証明が必要）も支給されます。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/17915",
+      "maxAmount": "国民健康保険加入者が出産したとき、世帯主に出産育児一時金、42万円が支給されます。\n妊娠12週を超えて（85日以上）の死産・流産（医師の証明が必要）も支給されます。",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-r40wprmol",
+      "title": "落書き抑止カメラ設置経費一部補助",
+      "description": "落書きの再発および新たな落書きの発生を抑止するため、落書き防止カメラの設置に関する経費の一部を補助します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/19174",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-2vqac5u8h",
+      "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+      "description": "渋谷区の国民健康保険に加入している人が、新型コロナウイルス感染症に感染した場合または発熱などの症状があり当該感染症への感染が疑われた場合に、その療養のため労務に服することができなかった期間（一定...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/14627",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-n1aboo9su",
+      "title": "住居確保給付金",
+      "description": "離職により住居を喪失、または喪失するおそれのある人に就労支援と3か月間の家賃助成を行う制度です。\n\n住居確保給付金は、離職、自営業廃業から２年以内(条件により４年以内)、または休業などにより離職...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/43645",
+      "maxAmount": "上限金額\n          20\n          万\n          9,400\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-el5zm2mkl",
+      "title": "養育費に関する公正証書作成手数料等補助金",
+      "description": "養育費の取り決めに係る経費の補助に関する案内ページです。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/53217",
+      "maxAmount": "上限金額\n          4\n          万\n          3,000\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-hhrivzlk3",
+      "title": "渋谷区定額減税補足給付金（調整給付金）",
+      "description": "定額減税を十分に受けられないと見込まれる人に対する補足的な給付（調整給付）に関するご案内ページです。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/57292",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-tngv3tcji",
+      "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+      "description": "渋谷区の国民健康保険に加入している人が、新型コロナウイルス感染症に感染した場合または発熱などの症状があり当該感染症への感染が疑われた場合に、その療養のため労務に服することができなかった期間（一定...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/14627",
+      "maxAmount": "",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-7jikeivye",
+      "title": "葬祭費",
+      "description": "渋谷区国民健康保険の加入者が死亡したとき、その葬祭を行なった人に葬祭費70,000円が支給されます。\n（注）葬祭を行なった日の翌日から2年以内に申請してください。\n（注）社会保険等の他の保険...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/15172",
+      "maxAmount": "渋谷区国民健康保険の加入者が死亡したとき、その葬祭を行なった人に葬祭費70,000円が支給されます。\n（注）葬祭を行なった日の翌日から2年以内に申請してください。\n（注）社会保険等の他の保険...",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-bi9j32gmn",
+      "title": "出産育児一時金",
+      "description": "国民健康保険加入者が出産したとき、世帯主に出産育児一時金、42万円が支給されます。\n妊娠12週を超えて（85日以上）の死産・流産（医師の証明が必要）も支給されます。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/17915",
+      "maxAmount": "国民健康保険加入者が出産したとき、世帯主に出産育児一時金、42万円が支給されます。\n妊娠12週を超えて（85日以上）の死産・流産（医師の証明が必要）も支給されます。",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-g4oqfa76j",
+      "title": "落書き抑止カメラ設置経費一部補助",
+      "description": "落書きの再発および新たな落書きの発生を抑止するため、落書き防止カメラの設置に関する経費の一部を補助します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/19174",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-swhoi2oks",
+      "title": "帯状疱疹ワクチン接種費用の一部助成",
+      "description": "帯状疱疹の発症を抑制することで生活の質の向上を目的とし、渋谷区では帯状疱疹ワクチン任意予防接種費用の一部を助成します。",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/32849",
+      "maxAmount": "上限金額\n          1\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-ayysisogl",
+      "title": "住居確保給付金",
+      "description": "離職により住居を喪失、または喪失するおそれのある人に就労支援と3か月間の家賃助成を行う制度です。\n\n住居確保給付金は、離職、自営業廃業から２年以内(条件により４年以内)、または休業などにより離職...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/43645",
+      "maxAmount": "上限金額\n          20\n          万\n          9,400\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-fwpic0top",
+      "title": "家庭用生ごみ処理機など購入費補助金",
+      "description": "家庭用生ごみ処理機など購入費用の一部を補助します。\n家庭から出る可燃ごみの約３割は、生ごみが占めています。区では、家庭から出る生ごみの減量およびリサイクルを図るため、生ごみ処理機やコンポスト容器...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/44093",
+      "maxAmount": "上限金額\n          2\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-p88tbeok5",
+      "title": "リターナブル容器利用促進助成金",
+      "description": "洗って繰り返し長く使用することのできる飲食容器（リターナブル容器）を導入する費用を助成しています。\n\n渋谷区内の町会、商店会、商店街振興組合、小中学校のPTAなどの団体が、渋谷区内で開催するイベ...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/44190",
+      "maxAmount": "上限金額\n          5\n          万\n        円",
+      "targetArea": "東京都",
+      "categories": []
+    },
+    {
+      "id": "SCRAPED-1753970606630-abouthnr8",
+      "title": "年金生活者支援給付金制度",
+      "description": "年金生活者支援給付金は、公的年金とその他の所得などの合計額が一定額以下の場合に支給されます。\n\n年金生活者支援給付金は、消費税率引き上げ分を活用し、公的年金などの収入や所得額が一定基準以下の年金...",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/50084",
+      "maxAmount": "上限金額\n          6,638\n          \n        円",
+      "targetArea": "東京都",
+      "categories": []
+    }
+  ]
+}

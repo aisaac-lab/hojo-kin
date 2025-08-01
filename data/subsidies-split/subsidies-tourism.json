@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "category": "tourism",
+    "count": 8,
+    "description": "観光・ツーリズム・インバウンド関連の補助金",
+    "created_at": "2025-08-01T01:27:53.445Z"
+  },
+  "subsidies": [
+    {
+      "id": "TOKYO-00002",
+      "name": "S-00000002",
+      "title": "令和６年度 ナイトタイム等(夜間・早朝)における観光促進助成金(第２回)",
+      "description": "東京都と公益財団法人東京観光財団では、国内外からの旅行者誘致の促進を図るとともに、新たな東京観光を楽しんでもらうため、ナイトタイム等（夜間・早朝）における観光活性化に取り組んでいます。",
+      "maxAmount": "3,000万円",
+      "categories": [
+        "観光",
+        "地域振興",
+        "イベント"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/61267",
+      "officialUrl": "",
+      "organizationName": "公益財団法人東京観光財団",
+      "targetArea": "東京都",
+      "applicationPeriod": "",
+      "subsidyRate": "",
+      "targetBusiness": "",
+      "useCase": "ナイトタイム・早朝における観光コンテンツの開発・実施",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/61267"
+    },
+    {
+      "id": "TOKYO-00003",
+      "name": "S-00000003",
+      "title": "令和７年度 地域振興助成事業助成金",
+      "description": "東京都と公益財団法人東京観光財団では、観光の振興及び地域の活性化に寄与することを目的に、東京都内の観光協会等が、訪都旅行者の増加を図るために実施する公益を目的とした地域振興事業に係る経費の一部を...",
+      "maxAmount": "200万円",
+      "categories": [
+        "観光",
+        "地域振興"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/65409",
+      "officialUrl": "",
+      "organizationName": "公益財団法人東京観光財団",
+      "targetArea": "東京都",
+      "applicationPeriod": "",
+      "subsidyRate": "",
+      "targetBusiness": "東京都内の観光協会等",
+      "useCase": "地域振興事業",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/65409"
+    },
+    {
+      "id": "TOKYO-00004",
+      "name": "S-00000004",
+      "title": "令和７年度 多摩・島しょ観光交通インフラ整備支援助成金",
+      "description": "東京都及び（公財）東京観光財団では、多摩・島しょ地域において移動アクセス手段の更なる充実を図るため、観光客の二次交通手段として、新たな交通サービスの導入や交通インフラ開発を行うための取組を支援し...",
+      "maxAmount": "1,000万円",
+      "categories": [
+        "観光",
+        "交通",
+        "インフラ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/65411",
+      "officialUrl": "",
+      "organizationName": "公益財団法人東京観光財団",
+      "targetArea": "多摩・島しょ地域",
+      "applicationPeriod": "",
+      "subsidyRate": "",
+      "targetBusiness": "",
+      "useCase": "観光交通インフラの整備",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/65411"
+    },
+    {
+      "id": "TOKYO-00007",
+      "name": "S-00000007",
+      "title": "令和７年度 観光まちづくり支援事業助成金",
+      "description": "東京都と公益財団法人東京観光財団では、地域が主体となって取り組む観光まちづくりを推進することで、旅行者誘致を促進し、地域活性化につなげる取組を進めています。",
+      "maxAmount": "600万円",
+      "categories": [
+        "観光",
+        "まちづくり",
+        "地域活性化"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/65403",
+      "officialUrl": "",
+      "organizationName": "公益財団法人東京観光財団",
+      "targetArea": "東京都",
+      "applicationPeriod": "",
+      "subsidyRate": "",
+      "targetBusiness": "",
+      "useCase": "観光まちづくり事業",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/65403"
+    },
+    {
+      "id": "TOKYO-00010",
+      "name": "S-00000010",
+      "title": "令和７年度 東京都島しょ地域縁結び事業支援助成金",
+      "description": "東京都及び（公財）東京観光財団では、島しょ地域の町村・観光協会等・商工会等が行う縁結びに関連する観光施設整備、イベント実施等の新たな事業に対して必要な助成金を交付することにより、島しょ地域への観...",
+      "maxAmount": "1,000万円",
+      "categories": [
+        "観光",
+        "島しょ地域",
+        "地域振興"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/65410",
+      "officialUrl": "",
+      "organizationName": "公益財団法人東京観光財団",
+      "targetArea": "東京都島しょ地域",
+      "applicationPeriod": "",
+      "subsidyRate": "",
+      "targetBusiness": "島しょ地域の町村・観光協会等・商工会等",
+      "useCase": "縁結びに関連する観光施設整備、イベント実施",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/65410"
+    },
+    {
+      "title": "地域観光資源開発補助金",
+      "maxAmount": "上限金額\n          200\n          万\n        円",
+      "description": "地域の特色や資源を活用し、地域の魅力を広く発信するために、観光振興事業を行う団体等に対して補助金を交付します。",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/12515",
+      "targetArea": "東京都",
+      "areaName": "渋谷区",
+      "areaCode": "1110",
+      "id": "SCRAPED-1753970606630-si21idb4v",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/12515"
+    },
+    {
+      "title": "地域観光資源開発補助金",
+      "maxAmount": "上限金額\n          200\n          万\n        円",
+      "description": "地域の特色や資源を活用し、地域の魅力を広く発信するために、観光振興事業を行う団体等に対して補助金を交付します。",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/12515",
+      "targetArea": "東京都",
+      "id": "SCRAPED-1753970606634-hnxv229b0",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/12515"
+    },
+    {
+      "title": "地域観光資源開発補助金",
+      "maxAmount": "上限金額\n          200\n          万\n        円",
+      "description": "地域の特色や資源を活用し、地域の魅力を広く発信するために、観光振興事業を行う団体等に対して補助金を交付します。",
+      "categories": [
+        "募集終了",
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/12515",
+      "targetArea": "東京都",
+      "id": "SCRAPED-1753970606639-vb2avf31i",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/12515"
+    }
+  ]
+}
