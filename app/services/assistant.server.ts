@@ -188,6 +188,10 @@ export class AssistantService {
 		throw new Error(`Run failed with status: ${run.status}`);
 	}
 
+	async getMessages(threadId: string) {
+		return await openai.beta.threads.messages.list(threadId);
+	}
+	
 	async getThread(threadId: string) {
 		return await db.thread.findUnique({
 			where: { threadId },
