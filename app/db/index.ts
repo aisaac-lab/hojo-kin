@@ -21,361 +21,418 @@ let drizzleDb: ReturnType<typeof drizzle> | null = null;
 
 // Initialize database connection
 function getDb() {
-  if (!drizzleDb) {
-    // Get database path from env or use default
-    const envUrl = process.env.DATABASE_URL;
-    let dbPath: string;
-    
-    if (envUrl && envUrl.includes('prisma')) {
-      // If env URL contains 'prisma', use it as is
-      dbPath = envUrl.replace('file:', '');
-    } else if (envUrl) {
-      // If env URL exists but doesn't contain 'prisma', it might be the old path
-      dbPath = resolve(process.cwd(), 'prisma', 'dev.db');
-    } else {
-      // Use absolute path to ensure consistency
-      dbPath = resolve(process.cwd(), 'prisma', 'dev.db');
-    }
-    
-    
-    client = createClient({
-      url: `file:${dbPath}`,
-    });
-    drizzleDb = drizzle(client, { schema });
-  }
-  return drizzleDb;
+	if (!drizzleDb) {
+		// Get database path from env or use default
+		const envUrl = process.env.DATABASE_URL;
+		let dbPath: string;
+
+		if (envUrl) {
+			// Remove 'file:' prefix and resolve relative paths
+			const cleanPath = envUrl.replace('file:', '');
+			dbPath =
+				cleanPath.startsWith('./') || cleanPath.startsWith('../')
+					? resolve(process.cwd(), cleanPath)
+					: cleanPath;
+		} else {
+			// Default to db/dev.db
+			dbPath = resolve(process.cwd(), 'db', 'dev.db');
+		}
+
+		client = createClient({
+			url: `file:${dbPath}`,
+		});
+		drizzleDb = drizzle(client, { schema });
+	}
+	return drizzleDb;
 }
 
 // Close database connection
 export function closeDb(): void {
-  if (client) {
-    client.close();
-    client = null;
-    drizzleDb = null;
-  }
+	if (client) {
+		client.close();
+		client = null;
+		drizzleDb = null;
+	}
 }
 
 // Thread repository functions
 export const threadRepository = {
-  async create(data: {
-    threadId: string;
-    userId?: string;
-    metadata?: string;
-  }): Promise<Result<schema.Thread, DatabaseError>> {
-    try {
-      const db = getDb();
-      const [thread] = await db
-        .insert(schema.threads)
-        .values({
-          threadId: data.threadId,
-          userId: data.userId,
-          metadata: data.metadata,
-        })
-        .returning();
-      
-      return ok(thread);
-    } catch (error) {
-      return err(createDatabaseError(
-        'QUERY_ERROR',
-        `Failed to create thread: ${error instanceof Error ? error.message : 'Unknown error'}`
-      ));
-    }
-  },
+	async create(data: {
+		threadId: string;
+		userId?: string;
+		metadata?: string;
+	}): Promise<Result<schema.Thread, DatabaseError>> {
+		try {
+			const db = getDb();
+			const [thread] = await db
+				.insert(schema.threads)
+				.values({
+					threadId: data.threadId,
+					userId: data.userId,
+					metadata: data.metadata,
+				})
+				.returning();
 
-  async findUnique(threadId: string): Promise<Result<schema.Thread & { messages: schema.Message[] }, DatabaseError>> {
-    try {
-      const db = getDb();
-      const [thread] = await db
-        .select()
-        .from(schema.threads)
-        .where(eq(schema.threads.threadId, threadId))
-        .limit(1);
-      
-      if (!thread) {
-        return err(createDatabaseError('NOT_FOUND', 'Thread not found'));
-      }
+			return ok(thread);
+		} catch (error) {
+			return err(
+				createDatabaseError(
+					'QUERY_ERROR',
+					`Failed to create thread: ${
+						error instanceof Error ? error.message : 'Unknown error'
+					}`
+				)
+			);
+		}
+	},
 
-      const threadMessages = await db
-        .select()
-        .from(schema.messages)
-        .where(eq(schema.messages.threadId, threadId));
+	async findUnique(
+		threadId: string
+	): Promise<
+		Result<schema.Thread & { messages: schema.Message[] }, DatabaseError>
+	> {
+		try {
+			const db = getDb();
+			const [thread] = await db
+				.select()
+				.from(schema.threads)
+				.where(eq(schema.threads.threadId, threadId))
+				.limit(1);
 
-      return ok({
-        ...thread,
-        messages: threadMessages,
-      });
-    } catch (error) {
-      return err(createDatabaseError(
-        'QUERY_ERROR',
-        `Failed to find thread: ${error instanceof Error ? error.message : 'Unknown error'}`
-      ));
-    }
-  },
+			if (!thread) {
+				return err(createDatabaseError('NOT_FOUND', 'Thread not found'));
+			}
 
-  async findMany(userId?: string): Promise<Result<schema.Thread[], DatabaseError>> {
-    try {
-      const db = getDb();
-      const threads = userId
-        ? await db.select().from(schema.threads).where(eq(schema.threads.userId, userId))
-        : await db.select().from(schema.threads);
-      
-      return ok(threads);
-    } catch (error) {
-      return err(createDatabaseError(
-        'QUERY_ERROR',
-        `Failed to find threads: ${error instanceof Error ? error.message : 'Unknown error'}`
-      ));
-    }
-  },
+			const threadMessages = await db
+				.select()
+				.from(schema.messages)
+				.where(eq(schema.messages.threadId, threadId));
+
+			return ok({
+				...thread,
+				messages: threadMessages,
+			});
+		} catch (error) {
+			return err(
+				createDatabaseError(
+					'QUERY_ERROR',
+					`Failed to find thread: ${
+						error instanceof Error ? error.message : 'Unknown error'
+					}`
+				)
+			);
+		}
+	},
+
+	async findMany(
+		userId?: string
+	): Promise<Result<schema.Thread[], DatabaseError>> {
+		try {
+			const db = getDb();
+			const threads = userId
+				? await db
+						.select()
+						.from(schema.threads)
+						.where(eq(schema.threads.userId, userId))
+				: await db.select().from(schema.threads);
+
+			return ok(threads);
+		} catch (error) {
+			return err(
+				createDatabaseError(
+					'QUERY_ERROR',
+					`Failed to find threads: ${
+						error instanceof Error ? error.message : 'Unknown error'
+					}`
+				)
+			);
+		}
+	},
 };
 
 // Message repository functions
 export const messageRepository = {
-  async create(data: {
-    threadId: string;
-    role: 'user' | 'assistant';
-    content: string;
-  }): Promise<Result<schema.Message, DatabaseError>> {
-    try {
-      const db = getDb();
-      const [message] = await db
-        .insert(schema.messages)
-        .values({
-          threadId: data.threadId,
-          role: data.role,
-          content: data.content,
-        })
-        .returning();
-      
-      // Update thread's updated_at
-      await db
-        .update(schema.threads)
-        .set({ updatedAt: new Date().toISOString() })
-        .where(eq(schema.threads.threadId, data.threadId));
-      
-      return ok(message);
-    } catch (error) {
-      return err(createDatabaseError(
-        'QUERY_ERROR',
-        `Failed to create message: ${error instanceof Error ? error.message : 'Unknown error'}`
-      ));
-    }
-  },
+	async create(data: {
+		threadId: string;
+		role: 'user' | 'assistant';
+		content: string;
+	}): Promise<Result<schema.Message, DatabaseError>> {
+		try {
+			const db = getDb();
+			const [message] = await db
+				.insert(schema.messages)
+				.values({
+					threadId: data.threadId,
+					role: data.role,
+					content: data.content,
+				})
+				.returning();
+
+			// Update thread's updated_at
+			await db
+				.update(schema.threads)
+				.set({ updatedAt: new Date().toISOString() })
+				.where(eq(schema.threads.threadId, data.threadId));
+
+			return ok(message);
+		} catch (error) {
+			return err(
+				createDatabaseError(
+					'QUERY_ERROR',
+					`Failed to create message: ${
+						error instanceof Error ? error.message : 'Unknown error'
+					}`
+				)
+			);
+		}
+	},
 };
 
 // Subsidy repository functions
 export const subsidyRepository = {
-  async upsert(data: schema.NewSubsidy): Promise<Result<schema.Subsidy, DatabaseError>> {
-    try {
-      const db = getDb();
-      
-      // Check if exists
-      const [existing] = await db
-        .select()
-        .from(schema.subsidies)
-        .where(eq(schema.subsidies.jgrantsId, data.jgrantsId))
-        .limit(1);
-      
-      if (existing) {
-        // Update
-        const [updated] = await db
-          .update(schema.subsidies)
-          .set({
-            ...data,
-            updatedAt: new Date().toISOString(),
-          })
-          .where(eq(schema.subsidies.jgrantsId, data.jgrantsId))
-          .returning();
-        
-        return ok(updated);
-      } else {
-        // Insert
-        const [inserted] = await db
-          .insert(schema.subsidies)
-          .values(data)
-          .returning();
-        
-        return ok(inserted);
-      }
-    } catch (error) {
-      return err(createDatabaseError(
-        'QUERY_ERROR',
-        `Failed to upsert subsidy: ${error instanceof Error ? error.message : 'Unknown error'}`
-      ));
-    }
-  },
+	async upsert(
+		data: schema.NewSubsidy
+	): Promise<Result<schema.Subsidy, DatabaseError>> {
+		try {
+			const db = getDb();
 
-  async update(
-    id: number,
-    data: Partial<Pick<schema.Subsidy, 'vectorStoreId' | 'fileId'>>
-  ): Promise<Result<void, DatabaseError>> {
-    try {
-      const db = getDb();
-      
-      await db
-        .update(schema.subsidies)
-        .set({
-          ...data,
-          updatedAt: new Date().toISOString(),
-        })
-        .where(eq(schema.subsidies.id, id));
-      
-      return ok(undefined);
-    } catch (error) {
-      return err(createDatabaseError(
-        'QUERY_ERROR',
-        `Failed to update subsidy: ${error instanceof Error ? error.message : 'Unknown error'}`
-      ));
-    }
-  },
+			// Check if exists
+			const [existing] = await db
+				.select()
+				.from(schema.subsidies)
+				.where(eq(schema.subsidies.jgrantsId, data.jgrantsId))
+				.limit(1);
 
-  async findMany(): Promise<Result<schema.Subsidy[], DatabaseError>> {
-    try {
-      const db = getDb();
-      const subsidies = await db.select().from(schema.subsidies);
-      return ok(subsidies);
-    } catch (error) {
-      return err(createDatabaseError(
-        'QUERY_ERROR',
-        `Failed to find subsidies: ${error instanceof Error ? error.message : 'Unknown error'}`
-      ));
-    }
-  },
+			if (existing) {
+				// Update
+				const [updated] = await db
+					.update(schema.subsidies)
+					.set({
+						...data,
+						updatedAt: new Date().toISOString(),
+					})
+					.where(eq(schema.subsidies.jgrantsId, data.jgrantsId))
+					.returning();
 
-  async findUnique(where: { id?: number; jgrantsId?: string }): Promise<Result<schema.Subsidy | null, DatabaseError>> {
-    try {
-      const db = getDb();
-      let query;
-      
-      if (where.id !== undefined) {
-        query = db.select().from(schema.subsidies).where(eq(schema.subsidies.id, where.id));
-      } else if (where.jgrantsId) {
-        query = db.select().from(schema.subsidies).where(eq(schema.subsidies.jgrantsId, where.jgrantsId));
-      } else {
-        return err(createDatabaseError('INVALID_INPUT', 'Must provide either id or jgrantsId'));
-      }
-      
-      const [subsidy] = await query.limit(1);
-      return ok(subsidy || null);
-    } catch (error) {
-      return err(createDatabaseError(
-        'QUERY_ERROR',
-        `Failed to find subsidy: ${error instanceof Error ? error.message : 'Unknown error'}`
-      ));
-    }
-  },
+				return ok(updated);
+			} else {
+				// Insert
+				const [inserted] = await db
+					.insert(schema.subsidies)
+					.values(data)
+					.returning();
+
+				return ok(inserted);
+			}
+		} catch (error) {
+			return err(
+				createDatabaseError(
+					'QUERY_ERROR',
+					`Failed to upsert subsidy: ${
+						error instanceof Error ? error.message : 'Unknown error'
+					}`
+				)
+			);
+		}
+	},
+
+	async update(
+		id: number,
+		data: Partial<Pick<schema.Subsidy, 'vectorStoreId' | 'fileId'>>
+	): Promise<Result<void, DatabaseError>> {
+		try {
+			const db = getDb();
+
+			await db
+				.update(schema.subsidies)
+				.set({
+					...data,
+					updatedAt: new Date().toISOString(),
+				})
+				.where(eq(schema.subsidies.id, id));
+
+			return ok(undefined);
+		} catch (error) {
+			return err(
+				createDatabaseError(
+					'QUERY_ERROR',
+					`Failed to update subsidy: ${
+						error instanceof Error ? error.message : 'Unknown error'
+					}`
+				)
+			);
+		}
+	},
+
+	async findMany(): Promise<Result<schema.Subsidy[], DatabaseError>> {
+		try {
+			const db = getDb();
+			const subsidies = await db.select().from(schema.subsidies);
+			return ok(subsidies);
+		} catch (error) {
+			return err(
+				createDatabaseError(
+					'QUERY_ERROR',
+					`Failed to find subsidies: ${
+						error instanceof Error ? error.message : 'Unknown error'
+					}`
+				)
+			);
+		}
+	},
+
+	async findUnique(where: {
+		id?: number;
+		jgrantsId?: string;
+	}): Promise<Result<schema.Subsidy | null, DatabaseError>> {
+		try {
+			const db = getDb();
+			let query;
+
+			if (where.id !== undefined) {
+				query = db
+					.select()
+					.from(schema.subsidies)
+					.where(eq(schema.subsidies.id, where.id));
+			} else if (where.jgrantsId) {
+				query = db
+					.select()
+					.from(schema.subsidies)
+					.where(eq(schema.subsidies.jgrantsId, where.jgrantsId));
+			} else {
+				return err(
+					createDatabaseError(
+						'INVALID_INPUT',
+						'Must provide either id or jgrantsId'
+					)
+				);
+			}
+
+			const [subsidy] = await query.limit(1);
+			return ok(subsidy || null);
+		} catch (error) {
+			return err(
+				createDatabaseError(
+					'QUERY_ERROR',
+					`Failed to find subsidy: ${
+						error instanceof Error ? error.message : 'Unknown error'
+					}`
+				)
+			);
+		}
+	},
 };
 
-// Export db wrapper for direct access
+// Export db wrapper for direct access with Prisma-compatible interface
 export const db = {
-  subsidy: {
-    findMany: async () => {
-      const result = await subsidyRepository.findMany();
-      if (!result.ok) throw new Error(result.error.message);
-      return result.value;
-    },
-    findUnique: async (args: { where: { id?: number | string; jgrantsId?: string } }) => {
-      const whereClause = typeof args.where.id === 'string' 
-        ? { id: parseInt(args.where.id) }
-        : args.where as { id?: number; jgrantsId?: string };
-      const result = await subsidyRepository.findUnique(whereClause);
-      if (!result.ok) throw new Error(result.error.message);
-      return result.value;
-    },
-  },
-};
+	thread: {
+		create: async (args: { data: any }) => {
+			const result = await threadRepository.create(args.data);
+			if (!result.ok) throw new Error(result.error.message);
+			return result.value;
+		},
+		findUnique: async (args: {
+			where: { threadId: string };
+			include?: { messages: boolean };
+		}) => {
+			const result = await threadRepository.findUnique(args.where.threadId);
+			if (!result.ok) {
+				if (result.error.type === 'NOT_FOUND') return null;
+				throw new Error(result.error.message);
+			}
+			return result.value;
+		},
+		findMany: async (args?: {
+			where?: { userId?: string };
+			orderBy?: { updatedAt: 'desc' };
+		}) => {
+			const result = await threadRepository.findMany(args?.where?.userId);
+			if (!result.ok) throw new Error(result.error.message);
+			return result.value;
+		},
+	},
+	message: {
+		create: async (args: { data: any }) => {
+			const result = await messageRepository.create(args.data);
+			if (!result.ok) throw new Error(result.error.message);
+			return result.value;
+		},
+		findFirst: async (args?: {
+			where?: { threadId?: string; role?: 'user' | 'assistant' };
+			orderBy?: { createdAt: 'desc' };
+		}) => {
+			const db = getDb();
 
-// Export Prisma-compatible interface for easier migration
-export const prisma = {
-  thread: {
-    create: async (args: { data: any }) => {
-      const result = await threadRepository.create(args.data);
-      if (!result.ok) throw new Error(result.error.message);
-      return result.value;
-    },
-    findUnique: async (args: { where: { threadId: string }; include?: { messages: boolean } }) => {
-      const result = await threadRepository.findUnique(args.where.threadId);
-      if (!result.ok) {
-        if (result.error.type === 'NOT_FOUND') return null;
-        throw new Error(result.error.message);
-      }
-      return result.value;
-    },
-    findMany: async (args?: { where?: { userId?: string }; orderBy?: { updatedAt: 'desc' } }) => {
-      const result = await threadRepository.findMany(args?.where?.userId);
-      if (!result.ok) throw new Error(result.error.message);
-      return result.value;
-    },
-  },
-  message: {
-    create: async (args: { data: any }) => {
-      const result = await messageRepository.create(args.data);
-      if (!result.ok) throw new Error(result.error.message);
-      return result.value;
-    },
-    findFirst: async (args?: { where?: { threadId?: string; role?: 'user' | 'assistant' }; orderBy?: { createdAt: 'desc' } }) => {
-      const db = getDb();
-      
-      if (args?.where?.threadId && args?.where?.role) {
-        const messages = await db
-          .select()
-          .from(schema.messages)
-          .where(and(
-            eq(schema.messages.threadId, args.where.threadId),
-            eq(schema.messages.role, args.where.role)
-          ))
-          .limit(1);
-        return messages[0] || null;
-      } else if (args?.where?.threadId) {
-        const messages = await db
-          .select()
-          .from(schema.messages)
-          .where(eq(schema.messages.threadId, args.where.threadId))
-          .limit(1);
-        return messages[0] || null;
-      } else if (args?.where?.role) {
-        const messages = await db
-          .select()
-          .from(schema.messages)
-          .where(eq(schema.messages.role, args.where.role))
-          .limit(1);
-        return messages[0] || null;
-      } else {
-        const messages = await db
-          .select()
-          .from(schema.messages)
-          .limit(1);
-        return messages[0] || null;
-      }
-    },
-  },
-  subsidy: {
-    create: async (args: { data: any }) => {
-      const result = await subsidyRepository.upsert(args.data);
-      if (!result.ok) throw new Error(result.error.message);
-      return result.value;
-    },
-    upsert: async (args: { where: { jgrantsId: string }; create: any; update: any }) => {
-      const result = await subsidyRepository.upsert(args.create);
-      if (!result.ok) throw new Error(result.error.message);
-      return result.value;
-    },
-    update: async (args: { where: { id: number }; data: any }) => {
-      const result = await subsidyRepository.update(args.where.id, args.data);
-      if (!result.ok) throw new Error(result.error.message);
-    },
-    findMany: async () => {
-      const result = await subsidyRepository.findMany();
-      if (!result.ok) throw new Error(result.error.message);
-      return result.value;
-    },
-    findUnique: async (args: { where: { id?: number; jgrantsId?: string } }) => {
-      const result = await subsidyRepository.findUnique(args.where);
-      if (!result.ok) throw new Error(result.error.message);
-      return result.value;
-    },
-  },
-  $disconnect: async () => {
-    closeDb();
-  },
+			if (args?.where?.threadId && args?.where?.role) {
+				const messages = await db
+					.select()
+					.from(schema.messages)
+					.where(
+						and(
+							eq(schema.messages.threadId, args.where.threadId),
+							eq(schema.messages.role, args.where.role)
+						)
+					)
+					.limit(1);
+				return messages[0] || null;
+			} else if (args?.where?.threadId) {
+				const messages = await db
+					.select()
+					.from(schema.messages)
+					.where(eq(schema.messages.threadId, args.where.threadId))
+					.limit(1);
+				return messages[0] || null;
+			} else if (args?.where?.role) {
+				const messages = await db
+					.select()
+					.from(schema.messages)
+					.where(eq(schema.messages.role, args.where.role))
+					.limit(1);
+				return messages[0] || null;
+			} else {
+				const messages = await db.select().from(schema.messages).limit(1);
+				return messages[0] || null;
+			}
+		},
+	},
+	subsidy: {
+		create: async (args: { data: any }) => {
+			const result = await subsidyRepository.upsert(args.data);
+			if (!result.ok) throw new Error(result.error.message);
+			return result.value;
+		},
+		upsert: async (args: {
+			where: { jgrantsId: string };
+			create: any;
+			update: any;
+		}) => {
+			const result = await subsidyRepository.upsert(args.create);
+			if (!result.ok) throw new Error(result.error.message);
+			return result.value;
+		},
+		update: async (args: { where: { id: number }; data: any }) => {
+			const result = await subsidyRepository.update(args.where.id, args.data);
+			if (!result.ok) throw new Error(result.error.message);
+		},
+		findMany: async () => {
+			const result = await subsidyRepository.findMany();
+			if (!result.ok) throw new Error(result.error.message);
+			return result.value;
+		},
+		findUnique: async (args: {
+			where: { id?: number; jgrantsId?: string };
+		}) => {
+			const result = await subsidyRepository.findUnique(args.where);
+			if (!result.ok) throw new Error(result.error.message);
+			return result.value;
+		},
+	},
+	// Direct access to drizzle methods
+	insert: (table: any) => getDb().insert(table),
+	select: () => getDb().select(),
+	update: (table: any) => getDb().update(table),
+	delete: (table: any) => getDb().delete(table),
+	$disconnect: async () => {
+		closeDb();
+	},
 };

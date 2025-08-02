@@ -1,6 +1,10 @@
 import { json, type ActionFunctionArgs } from "@remix-run/node";
 import { AssistantService } from "../services/assistant.server";
+import { ReviewAgentService } from "../services/review-agent.server";
 import type { ChatResponse } from "~/types/chat";
+import type { ReviewContext } from "~/types/review";
+import { db } from "../db.server";
+import { reviewLogs } from "../db/schema";
 
 export async function action({ request }: ActionFunctionArgs) {
   
@@ -129,12 +133,18 @@ export async function action({ request }: ActionFunctionArgs) {
     }
 
     const additionalInstructions = `
-      【最重要】file_search ツールを使用して subsidies-master.json ファイルから補助金データを検索してください。
+      【最重要】file_search ツールを使用して補助金データを検索してください。
+      
+      【データ構造】
+      補助金データは以下のファイルに分割されています：
+      1. subsidies-master-index.json - 全体のインデックス（補助金IDとファイル名のマッピング）
+      2. subsidies-category-index.json - カテゴリ別インデックス
+      3. subsidies-part01.json から subsidies-part07.json - 実際の補助金詳細データ
       
       【検索手順】
-      1. file_search ツールを使用する
-      2. subsidies フィールド内の配列を検索する
-      3. title, description, categories フィールドでキーワードマッチングを行う
+      1. まず subsidies-master-index.json または subsidies-category-index.json で該当する補助金を検索
+      2. 見つかった補助金のIDとファイル名を確認
+      3. 該当するsubsidies-partXX.jsonファイルから詳細情報を取得
       4. front_subsidy_detail_page_url フィールドの値を必ず取得する
       
       ユーザーの質問: "${message}"
@@ -149,8 +159,10 @@ export async function action({ request }: ActionFunctionArgs) {
       例：[公式サイトで詳細を見る](https://www.tokyo-kosha.or.jp/support/josei/)
       これにより、ユーザーがクリックして別ページで開けるようになります。
       
-      【重要】file_searchを使用する際は、subsidies-master.json ファイルのデータを優先してください。
-      front_subsidy_detail_page_url フィールドには実際のURLが含まれています（example.comではありません）。
+      【重要】file_searchを使用する際の注意点：
+      - インデックスファイルで補助金を見つけたら、必ず詳細ファイル（subsidies-partXX.json）も確認してください
+      - front_subsidy_detail_page_url フィールドには実際のURLが含まれています（example.comではありません）
+      - 研究開発の補助金を検索する場合は、categories に "research" が含まれているものを探してください
       
       【ソース引用の完全非表示 - 最重要】
       - file_searchの結果に含まれる引用元情報を絶対に表示しないでください：
@@ -167,7 +179,8 @@ export async function action({ request }: ActionFunctionArgs) {
          - IT → "IT", "DX", "デジタル", "システム", "IoT"
          - 設備投資 → "設備", "機械", "装置", "導入"
       3. データが見つからない場合は、別のキーワードで再検索してください
-      4. subsidies-master.json には338件の補助金データが含まれています
+      4. 全体で338件の補助金データが分割ファイルに含まれています
+      5. 研究開発関連の場合は "研究", "開発", "R&D", "技術", "イノベーション" などのキーワードで検索してください
       
       【網羅性と対話的絞り込みに関する重要な指示】
       
@@ -251,10 +264,114 @@ export async function action({ request }: ActionFunctionArgs) {
     console.log('[DEBUG] Assistant response (truncated):', latestMessageContent.substring(0, 200) + '...');
     console.log('[DEBUG] Total messages in thread:', result.messages.data.length);
     
+    // レビューエージェントによる品質チェック
+    let finalResponse = latestMessageContent;
+    
+    if (latestMessageContent) {
+      const reviewAgentService = new ReviewAgentService();
+      const reviewContext: ReviewContext = {
+        hasFilters: !!filters && Object.keys(filters).length > 0,
+        // TODO: 過去のメッセージ履歴を追加
+      };
+      
+      const reviewResult = await reviewAgentService.reviewResponse(
+        message,
+        latestMessageContent,
+        reviewContext
+      );
+      
+      console.log('[REVIEW RESULT]', {
+        action: reviewResult.action,
+        scores: reviewResult.scores,
+        lowestScore: reviewResult.lowestScore,
+        passed: reviewResult.passed
+      });
+      
+      switch (reviewResult.action) {
+        case 'approve':
+          // 軽微な修正がある場合のみ適用（引用削除など）
+          if (reviewResult.improvedResponse) {
+            finalResponse = reviewResult.improvedResponse;
+            console.log('[REVIEW] Applied improved response (citation removal)');
+          }
+          break;
+          
+        case 'regenerate':
+          // 評価が低い項目に基づいて再生成
+          const regenerationInstructions = `
+            【再生成理由】
+            ${reviewResult.lowestScore.category}のスコアが${reviewResult.lowestScore.score}点でした。
+            
+            【改善指示】
+            ${reviewResult.regenerationHints?.join('\n') || ''}
+            
+            元の指示に従いつつ、上記の点を改善して回答してください。
+          `;
+          
+          console.log('[REVIEW] Regenerating response due to low score');
+          
+          const regeneratedResult = await assistantService.runAssistant(
+            currentThreadId,
+            additionalInstructions + regenerationInstructions
+          );
+          
+          // 再生成された回答を取得
+          for (const msg of regeneratedResult.messages.data) {
+            if (msg.role === "assistant" && 
+                (!regeneratedResult.lastAssistantMessageIdBefore || 
+                 msg.id !== regeneratedResult.lastAssistantMessageIdBefore)) {
+              if (msg.content[0].type === "text") {
+                finalResponse = msg.content[0].text.value;
+                break;
+              }
+            }
+          }
+          break;
+          
+        case 'ask_clarification':
+          // 深掘り質問を含む回答を生成
+          const clarificationSection = reviewResult.clarificationQuestions && reviewResult.clarificationQuestions.length > 0
+            ? `
+
+より最適な補助金をご提案するため、以下について教えていただけますか？
+
+${reviewResult.clarificationQuestions.map((q, i) => `${i + 1}. ${q}`).join('\n')}
+
+これらの情報をいただければ、より具体的で有益な補助金情報をご提供できます。`
+            : '';
+            
+          finalResponse = latestMessageContent + clarificationSection;
+          console.log('[REVIEW] Added clarification questions');
+          break;
+      }
+      
+      // レビューで問題が見つかった場合の記録
+      if (reviewResult.issues.length > 0) {
+        console.log('[REVIEW ISSUES]', reviewResult.issues);
+      }
+      
+      // レビュー結果をデータベースに保存
+      try {
+        await db.insert(reviewLogs).values({
+          threadId: currentThreadId,
+          userQuestion: message,
+          originalResponse: latestMessageContent,
+          finalResponse: finalResponse,
+          action: reviewResult.action,
+          scores: JSON.stringify(reviewResult.scores),
+          lowestScoreCategory: reviewResult.lowestScore.category,
+          lowestScoreValue: reviewResult.lowestScore.score,
+          issues: JSON.stringify(reviewResult.issues)
+        });
+      } catch (dbError) {
+        console.error('[REVIEW LOG ERROR] Failed to save review log:', dbError);
+        // ログ保存に失敗してもチャット処理は続行
+      }
+    }
 
     const response: ChatResponse = {
       threadId: currentThreadId,
-      messages: latestMessageContent ? [latestMessageContent] : [],
+      messages: finalResponse ? [finalResponse] : [],
       success: true,
     };
     

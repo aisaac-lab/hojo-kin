@@ -1,6 +1,12 @@
 /**
  * Database server module
- * Re-exports Drizzle ORM implementation with Prisma-compatible interface
+ * Re-exports Drizzle ORM implementation with db-compatible interface
  */
 
-export { prisma, threadRepository, messageRepository, subsidyRepository } from './db';
+export {
+	db,
+	threadRepository,
+	messageRepository,
+	subsidyRepository,
+	closeDb,
+} from './db';

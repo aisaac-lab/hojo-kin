@@ -75,7 +75,7 @@ subsidy-search-mvp/
 │   ├── services/
 │   │   ├── assistant.server.ts # Assistants API管理
 │   │   └── filestore.server.ts # ファイル管理
-│   └── db.server.ts           # Prismaクライアント
+│   └── db.server.ts           # dbクライアント
 ├── scripts/
 │   ├── create-assistant.ts    # Assistant作成スクリプト
 │   └── sync-subsidies.ts      # データ同期スクリプト
@@ -87,7 +87,7 @@ subsidy-search-mvp/
 
 - **フロントエンド**: Remix, React, TypeScript, Tailwind CSS
 - **バックエンド**: Remix (Node.js)
-- **データベース**: SQLite (Prisma ORM)
+- **データベース**: SQLite (db ORM)
 - **AI/検索**: OpenAI Assistants API (File Search)
 - **ファイル管理**: ローカルファイルシステム + OpenAI Files API
 

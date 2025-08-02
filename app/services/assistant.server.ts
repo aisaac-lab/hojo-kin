@@ -1,237 +1,235 @@
-import OpenAI from "openai";
-import { prisma } from "../db.server";
+import OpenAI from 'openai';
+import { db } from '../db.server';
 
 export class AssistantServiceError extends Error {
-  constructor(message: string, public code: string) {
-    super(message);
-    this.name = "AssistantServiceError";
-  }
+	constructor(message: string, public code: string) {
+		super(message);
+		this.name = 'AssistantServiceError';
+	}
 }
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+	apiKey: process.env.OPENAI_API_KEY,
 });
 
 export class AssistantService {
-  private assistantId: string;
+	private assistantId: string;
 
-  constructor() {
-    const assistantId = process.env.OPENAI_ASSISTANT_ID;
-    if (!assistantId) {
-      throw new AssistantServiceError(
-        "OPENAI_ASSISTANT_ID is not set in environment variables",
-        "MISSING_ASSISTANT_ID"
-      );
-    }
-    this.assistantId = assistantId;
-  }
+	constructor() {
+		const assistantId = process.env.OPENAI_ASSISTANT_ID;
+		if (!assistantId) {
+			throw new AssistantServiceError(
+				'OPENAI_ASSISTANT_ID is not set in environment variables',
+				'MISSING_ASSISTANT_ID'
+			);
+		}
+		this.assistantId = assistantId;
+	}
 
-  async createAssistant(
-    name: string,
-    instructions: string,
-    vectorStoreId?: string
-  ) {
-    if (!name || !instructions) {
-      throw new AssistantServiceError(
-        "Name and instructions are required to create an assistant",
-        "INVALID_PARAMS"
-      );
-    }
+	async createAssistant(
+		name: string,
+		instructions: string,
+		vectorStoreId?: string
+	) {
+		if (!name || !instructions) {
+			throw new AssistantServiceError(
+				'Name and instructions are required to create an assistant',
+				'INVALID_PARAMS'
+			);
+		}
 
-    try {
-      const tools = [
-        { type: "file_search" as const },
-      ];
+		try {
+			const tools = [{ type: 'file_search' as const }];
 
-      const toolResources = vectorStoreId
-        ? {
-            file_search: {
-              vector_store_ids: [vectorStoreId],
-            },
-          }
-        : undefined;
+			const toolResources = vectorStoreId
+				? {
+						file_search: {
+							vector_store_ids: [vectorStoreId],
+						},
+				  }
+				: undefined;
 
-      const assistant = await openai.beta.assistants.create({
-        name,
-        instructions,
-        model: "gpt-4-turbo-preview",
-        tools,
-        tool_resources: toolResources,
-      });
+			const assistant = await openai.beta.assistants.create({
+				name,
+				instructions,
+				model: 'gpt-4-turbo-preview',
+				tools,
+				tool_resources: toolResources,
+			});
 
-      this.assistantId = assistant.id;
-      return assistant;
-    } catch (error) {
-      throw new AssistantServiceError(
-        `Failed to create assistant: ${
-          error instanceof Error ? error.message : "Unknown error"
-        }`,
-        "CREATE_ASSISTANT_FAILED"
-      );
-    }
-  }
+			this.assistantId = assistant.id;
+			return assistant;
+		} catch (error) {
+			throw new AssistantServiceError(
+				`Failed to create assistant: ${
+					error instanceof Error ? error.message : 'Unknown error'
+				}`,
+				'CREATE_ASSISTANT_FAILED'
+			);
+		}
+	}
 
-  async createThread(userId?: string, metadata?: Record<string, any>) {
-    const threadMetadata: Record<string, string> = {};
-    if (userId) {
-      threadMetadata.userId = userId;
-    }
-    if (metadata) {
-      Object.entries(metadata).forEach(([key, value]) => {
-        threadMetadata[key] = String(value);
-      });
-    }
-    
-    const thread = await openai.beta.threads.create(
-      Object.keys(threadMetadata).length > 0 ? { metadata: threadMetadata } : {}
-    );
+	async createThread(userId?: string, metadata?: Record<string, any>) {
+		const threadMetadata: Record<string, string> = {};
+		if (userId) {
+			threadMetadata.userId = userId;
+		}
+		if (metadata) {
+			Object.entries(metadata).forEach(([key, value]) => {
+				threadMetadata[key] = String(value);
+			});
+		}
 
-    await prisma.thread.create({
-      data: {
-        threadId: thread.id,
-        userId,
-        metadata: metadata ? JSON.stringify(metadata) : null,
-      },
-    });
+		const thread = await openai.beta.threads.create(
+			Object.keys(threadMetadata).length > 0 ? { metadata: threadMetadata } : {}
+		);
 
-    return thread;
-  }
+		await db.thread.create({
+			data: {
+				threadId: thread.id,
+				userId,
+				metadata: metadata ? JSON.stringify(metadata) : null,
+			},
+		});
 
-  async addMessage(
-    threadId: string,
-    content: string,
-    role: "user" | "assistant" = "user"
-  ) {
-    if (!threadId || !content) {
-      throw new AssistantServiceError(
-        "Thread ID and content are required",
-        "INVALID_PARAMS"
-      );
-    }
+		return thread;
+	}
 
-    try {
-      const message = await openai.beta.threads.messages.create(threadId, {
-        role,
-        content,
-      });
+	async addMessage(
+		threadId: string,
+		content: string,
+		role: 'user' | 'assistant' = 'user'
+	) {
+		if (!threadId || !content) {
+			throw new AssistantServiceError(
+				'Thread ID and content are required',
+				'INVALID_PARAMS'
+			);
+		}
 
-      await prisma.message.create({
-        data: {
-          threadId,
-          role,
-          content,
-        },
-      });
+		try {
+			const message = await openai.beta.threads.messages.create(threadId, {
+				role,
+				content,
+			});
 
-      return message;
-    } catch (error) {
-      throw new AssistantServiceError(
-        `Failed to add message: ${
-          error instanceof Error ? error.message : "Unknown error"
-        }`,
-        "ADD_MESSAGE_FAILED"
-      );
-    }
-  }
+			await db.message.create({
+				data: {
+					threadId,
+					role,
+					content,
+				},
+			});
 
-  async runAssistant(threadId: string, additionalInstructions?: string) {
-    // Get the ID of the last assistant message before running
-    const messagesBefore = await openai.beta.threads.messages.list(threadId);
-    const lastAssistantMessageId = messagesBefore.data.find(
-      (msg) => msg.role === "assistant"
-    )?.id;
+			return message;
+		} catch (error) {
+			throw new AssistantServiceError(
+				`Failed to add message: ${
+					error instanceof Error ? error.message : 'Unknown error'
+				}`,
+				'ADD_MESSAGE_FAILED'
+			);
+		}
+	}
 
-    const run = await openai.beta.threads.runs.create(threadId, {
-      assistant_id: this.assistantId,
-      additional_instructions: additionalInstructions,
-    });
+	async runAssistant(threadId: string, additionalInstructions?: string) {
+		// Get the ID of the last assistant message before running
+		const messagesBefore = await openai.beta.threads.messages.list(threadId);
+		const lastAssistantMessageId = messagesBefore.data.find(
+			(msg) => msg.role === 'assistant'
+		)?.id;
 
-    const result = await this.waitForRunCompletion(threadId, run.id);
-    
-    // Return the messages along with the last message ID from before
-    return {
-      messages: result,
-      lastAssistantMessageIdBefore: lastAssistantMessageId
-    };
-  }
+		const run = await openai.beta.threads.runs.create(threadId, {
+			assistant_id: this.assistantId,
+			additional_instructions: additionalInstructions,
+		});
 
-  private async waitForRunCompletion(threadId: string, runId: string) {
-    let run = await openai.beta.threads.runs.retrieve(threadId, runId);
+		const result = await this.waitForRunCompletion(threadId, run.id);
 
-    while (run.status === "queued" || run.status === "in_progress") {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      run = await openai.beta.threads.runs.retrieve(threadId, runId);
-    }
+		// Return the messages along with the last message ID from before
+		return {
+			messages: result,
+			lastAssistantMessageIdBefore: lastAssistantMessageId,
+		};
+	}
 
-    if (run.status === "completed") {
-      const messages = await openai.beta.threads.messages.list(threadId);
-      const assistantMessages = messages.data.filter(
-        (msg) => msg.role === "assistant"
-      );
+	private async waitForRunCompletion(threadId: string, runId: string) {
+		let run = await openai.beta.threads.runs.retrieve(threadId, runId);
 
-      if (assistantMessages.length > 0) {
-        const latestMessage = assistantMessages[0];
-        const content = latestMessage.content[0];
+		while (run.status === 'queued' || run.status === 'in_progress') {
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+			run = await openai.beta.threads.runs.retrieve(threadId, runId);
+		}
 
-        if (content.type === "text") {
-          await prisma.message.create({
-            data: {
-              threadId,
-              role: "assistant",
-              content: content.text.value,
-            },
-          });
-        }
-      }
+		if (run.status === 'completed') {
+			const messages = await openai.beta.threads.messages.list(threadId);
+			const assistantMessages = messages.data.filter(
+				(msg) => msg.role === 'assistant'
+			);
 
-      return messages;
-    }
+			if (assistantMessages.length > 0) {
+				const latestMessage = assistantMessages[0];
+				const content = latestMessage.content[0];
 
-    throw new Error(`Run failed with status: ${run.status}`);
-  }
+				if (content.type === 'text') {
+					await db.message.create({
+						data: {
+							threadId,
+							role: 'assistant',
+							content: content.text.value,
+						},
+					});
+				}
+			}
 
-  async getThread(threadId: string) {
-    return await prisma.thread.findUnique({
-      where: { threadId },
-      include: { messages: true },
-    });
-  }
+			return messages;
+		}
 
-  async listThreads(userId?: string) {
-    return await prisma.thread.findMany({
-      where: userId ? { userId } : undefined,
-      orderBy: { updatedAt: "desc" },
-    });
-  }
+		throw new Error(`Run failed with status: ${run.status}`);
+	}
 
-  async createVectorStore(name: string) {
-    return await openai.vectorStores.create({
-      name,
-    });
-  }
+	async getThread(threadId: string) {
+		return await db.thread.findUnique({
+			where: { threadId },
+			include: { messages: true },
+		});
+	}
 
-  async uploadFileToVectorStore(vectorStoreId: string, file: File) {
-    const fileStream = file.stream();
+	async listThreads(userId?: string) {
+		return await db.thread.findMany({
+			where: userId ? { userId } : undefined,
+			orderBy: { updatedAt: 'desc' },
+		});
+	}
 
-    const openaiFile = await openai.files.create({
-      file: fileStream as any, // Type mismatch between Web File API and Node.js streams
-      purpose: "assistants",
-    });
+	async createVectorStore(name: string) {
+		return await openai.vectorStores.create({
+			name,
+		});
+	}
 
-    await openai.vectorStores.files.create(vectorStoreId, {
-      file_id: openaiFile.id,
-    });
+	async uploadFileToVectorStore(vectorStoreId: string, file: File) {
+		const fileStream = file.stream();
 
-    return openaiFile;
-  }
+		const openaiFile = await openai.files.create({
+			file: fileStream as any, // Type mismatch between Web File API and Node.js streams
+			purpose: 'assistants',
+		});
 
-  async updateAssistantVectorStore(vectorStoreId: string) {
-    return await openai.beta.assistants.update(this.assistantId, {
-      tool_resources: {
-        file_search: {
-          vector_store_ids: [vectorStoreId],
-        },
-      },
-    });
-  }
+		await openai.vectorStores.files.create(vectorStoreId, {
+			file_id: openaiFile.id,
+		});
+
+		return openaiFile;
+	}
+
+	async updateAssistantVectorStore(vectorStoreId: string) {
+		return await openai.beta.assistants.update(this.assistantId, {
+			tool_resources: {
+				file_search: {
+					vector_store_ids: [vectorStoreId],
+				},
+			},
+		});
+	}
 }

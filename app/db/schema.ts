@@ -43,6 +43,21 @@ export const subsidies = sqliteTable('subsidies', {
   updatedAt: text('updated_at').default(sql`CURRENT_TIMESTAMP`).notNull(),
 });
 
+// Review logs table
+export const reviewLogs = sqliteTable('review_logs', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  threadId: text('thread_id').notNull(),
+  userQuestion: text('user_question').notNull(),
+  originalResponse: text('original_response').notNull(),
+  finalResponse: text('final_response').notNull(),
+  action: text('action', { enum: ['approve', 'regenerate', 'ask_clarification'] }).notNull(),
+  scores: text('scores').notNull(), // JSON string
+  lowestScoreCategory: text('lowest_score_category').notNull(),
+  lowestScoreValue: integer('lowest_score_value').notNull(),
+  issues: text('issues').notNull(), // JSON string
+  createdAt: text('created_at').default(sql`CURRENT_TIMESTAMP`).notNull(),
+});
+
 // Type exports for TypeScript
 export type Thread = typeof threads.$inferSelect;
 export type NewThread = typeof threads.$inferInsert;
@@ -50,3 +65,5 @@ export type Message = typeof messages.$inferSelect;
 export type NewMessage = typeof messages.$inferInsert;
 export type Subsidy = typeof subsidies.$inferSelect;
 export type NewSubsidy = typeof subsidies.$inferInsert;
+export type ReviewLog = typeof reviewLogs.$inferSelect;
+export type NewReviewLog = typeof reviewLogs.$inferInsert;
