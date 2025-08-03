@@ -111,7 +111,7 @@ export class FileStoreService {
 
   async createFileForOpenAI(subsidyId: string): Promise<File | null> {
     const subsidy = await db.subsidy.findUnique({
-      where: { id: subsidyId },
+      where: { id: parseInt(subsidyId, 10) },
     });
 
     if (!subsidy) {

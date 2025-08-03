@@ -1,4 +1,4 @@
-import { prisma } from '../app/db.server';
+import { db } from '../app/db.server';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
 import { resolve, join } from 'path';
@@ -159,7 +159,7 @@ async function syncSubsidies() {
     // Sync sample subsidies to database and create markdown files
     for (const subsidyData of sampleSubsidies) {
 
-      const subsidy = await prisma.subsidy.upsert({
+      const subsidy = await db.subsidy.upsert({
         where: { jgrantsId: subsidyData.jgrantsId },
         update: subsidyData,
         create: subsidyData,
@@ -179,7 +179,7 @@ async function syncSubsidies() {
     console.error('Error syncing subsidies:', error);
     throw error;
   } finally {
-    await prisma.$disconnect();
+    // Database connection is managed by the db module
   }
 }
 
