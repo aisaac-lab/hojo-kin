@@ -99,6 +99,9 @@ playwright/.cache/
 guides/
 instructions/
 
+# MCP
+.serena/
+
 
 # Dev
 scripts/

@@ -78,6 +78,12 @@ export interface CompanyFilter {
   // 企業規模
   companySize?: 'micro' | 'small' | 'medium' | 'large' | 'any';
   
+  // 従業員数
+  employeeCount?: {
+    min?: number;
+    max?: number;
+  };
+  
   // 設立年数（スタートアップ向けなど）
   yearsInBusiness?: {
     min?: number;

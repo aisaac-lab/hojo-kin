@@ -185,7 +185,11 @@ export class AssistantService {
 			return messages;
 		}
 
-		throw new Error(`Run failed with status: ${run.status}`);
+		// Include more error details
+		const errorDetails = run.status === 'failed' && run.last_error 
+			? ` - ${run.last_error.code}: ${run.last_error.message}`
+			: '';
+		throw new Error(`Run failed with status: ${run.status}${errorDetails}`);
 	}
 
 	async getMessages(threadId: string) {
