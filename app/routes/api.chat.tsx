@@ -13,6 +13,15 @@ export async function action({ request }: ActionFunctionArgs) {
 	}
 
 	try {
+		// Log environment info for debugging
+		console.log('[API.CHAT] Environment:', {
+			NODE_ENV: process.env.NODE_ENV,
+			hasTursoUrl: !!process.env.TURSO_DATABASE_URL,
+			hasTursoToken: !!process.env.TURSO_AUTH_TOKEN,
+			hasOpenAIKey: !!process.env.OPENAI_API_KEY,
+			hasAssistantId: !!process.env.OPENAI_ASSISTANT_ID,
+		});
+
 		const { threadId, message, userId, filters } = await request.json();
 
 		if (!message) {
