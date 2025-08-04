@@ -13,6 +13,28 @@ export async function action({ request }: ActionFunctionArgs) {
 	}
 
 	try {
+		// Check critical environment variables first
+		const requiredEnvVars = {
+			TURSO_DATABASE_URL: process.env.TURSO_DATABASE_URL,
+			TURSO_AUTH_TOKEN: process.env.TURSO_AUTH_TOKEN,
+			OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+			OPENAI_ASSISTANT_ID: process.env.OPENAI_ASSISTANT_ID,
+		};
+		
+		const missingVars = Object.entries(requiredEnvVars)
+			.filter(([_, value]) => !value)
+			.map(([key]) => key);
+		
+		if (missingVars.length > 0) {
+			console.error('[API.CHAT] Missing required environment variables:', missingVars);
+			return json({ 
+				error: 'Service configuration error', 
+				details: process.env.NODE_ENV === 'development' 
+					? `Missing environment variables: ${missingVars.join(', ')}` 
+					: 'Please contact support'
+			}, { status: 503 });
+		}
+		
 		// Log environment info for debugging
 		console.log('[API.CHAT] Environment:', {
 			NODE_ENV: process.env.NODE_ENV,
@@ -20,6 +42,7 @@ export async function action({ request }: ActionFunctionArgs) {
 			hasTursoToken: !!process.env.TURSO_AUTH_TOKEN,
 			hasOpenAIKey: !!process.env.OPENAI_API_KEY,
 			hasAssistantId: !!process.env.OPENAI_ASSISTANT_ID,
+			hasVectorStoreId: !!process.env.OPENAI_VECTOR_STORE_ID,
 		});
 
 		const { threadId, message, userId, filters } = await request.json();
@@ -720,14 +743,48 @@ ${validationResult.clarificationQuestions
 
 		return json(response);
 	} catch (error) {
-		console.error('Chat error:', error);
+		console.error('[API.CHAT] Error:', error);
 		const errorMessage = error instanceof Error ? error.message : 'Unknown error';
 		const errorStack = error instanceof Error ? error.stack : '';
-		console.error('Error details:', { message: errorMessage, stack: errorStack });
+		console.error('[API.CHAT] Error details:', { 
+			message: errorMessage, 
+			stack: errorStack,
+			type: error?.constructor?.name 
+		});
+		
+		// Check for specific error types
+		if (error instanceof AssistantServiceError) {
+			return json({ 
+				error: 'Assistant service error',
+				details: process.env.NODE_ENV === 'development' 
+					? `${error.code}: ${errorMessage}` 
+					: 'Please try again later'
+			}, { status: 503 });
+		}
+		
+		// Database connection errors
+		if (errorMessage.includes('Database') || errorMessage.includes('TURSO')) {
+			return json({ 
+				error: 'Database connection error',
+				details: process.env.NODE_ENV === 'development' 
+					? errorMessage 
+					: 'Please try again later'
+			}, { status: 503 });
+		}
+		
+		// OpenAI API errors
+		if (errorMessage.includes('OpenAI') || errorMessage.includes('API')) {
+			return json({ 
+				error: 'External API error',
+				details: process.env.NODE_ENV === 'development' 
+					? errorMessage 
+					: 'Please try again later'
+			}, { status: 503 });
+		}
 		
 		return json({ 
 			error: 'Failed to process chat message',
-			details: process.env.NODE_ENV === 'development' ? errorMessage : undefined
+			details: process.env.NODE_ENV === 'development' ? errorMessage : 'An unexpected error occurred'
 		}, { status: 500 });
 	}
 }

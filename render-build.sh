@@ -56,6 +56,43 @@ if [ $? -eq 0 ]; then
     echo "Warning: post-build.ts not found, skipping post-build checks"
   fi
   
+  # Verify build output
+  echo "Verifying build output..."
+  
+  # Check if public/build directory exists
+  if [ ! -d "public/build" ]; then
+    echo "ERROR: public/build directory not found!"
+    echo "Creating public/build directory..."
+    mkdir -p public/build
+  fi
+  
+  # Check if build directory exists
+  if [ ! -d "build" ]; then
+    echo "ERROR: build directory not found!"
+    exit 1
+  fi
+  
+  # List build contents for debugging
+  echo "Build directory contents:"
+  ls -la build/
+  
+  echo "Public/build directory contents:"
+  ls -la public/build/ || echo "Empty or missing"
+  
+  # Check for critical files
+  if [ ! -f "build/index.js" ]; then
+    echo "ERROR: build/index.js not found!"
+    exit 1
+  fi
+  
+  # Count files in public/build
+  file_count=$(find public/build -type f | wc -l)
+  echo "Found $file_count files in public/build"
+  
+  if [ "$file_count" -eq 0 ]; then
+    echo "WARNING: No files found in public/build directory"
+  fi
+  
   # Important: Tell Render to include public directory
   echo "Setting up for Render deployment..."
   

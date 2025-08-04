@@ -20,6 +20,29 @@ app.get("/healthz", (req, res) => {
   res.status(200).send("OK");
 });
 
+// API health check with environment variables status
+app.get("/api/health", (req, res) => {
+  const envStatus = {
+    NODE_ENV: process.env.NODE_ENV || 'not set',
+    TURSO_DATABASE_URL: process.env.TURSO_DATABASE_URL ? 'configured' : 'missing',
+    TURSO_AUTH_TOKEN: process.env.TURSO_AUTH_TOKEN ? 'configured' : 'missing',
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY ? 'configured' : 'missing',
+    OPENAI_ASSISTANT_ID: process.env.OPENAI_ASSISTANT_ID ? 'configured' : 'missing',
+    OPENAI_VECTOR_STORE_ID: process.env.OPENAI_VECTOR_STORE_ID ? 'configured' : 'missing',
+    OPENAI_REVIEW_MODEL: process.env.OPENAI_REVIEW_MODEL || 'not set',
+  };
+  
+  const allConfigured = Object.entries(envStatus).every(
+    ([key, value]) => value !== 'missing'
+  );
+  
+  res.status(allConfigured ? 200 : 503).json({
+    status: allConfigured ? 'healthy' : 'unhealthy',
+    environment: envStatus,
+    timestamp: new Date().toISOString(),
+  });
+});
+
 // Serve static files from public/build
 app.use(
   "/build",
@@ -74,8 +97,22 @@ const host = '0.0.0.0'; // Bind to all interfaces for Render
 const server = app.listen(port, host, () => {
   console.log(`✅ Server ready at http://${host}:${port}`);
   console.log(`📦 Build mode: ${process.env.NODE_ENV}`);
-  console.log(`🔐 Turso DB: ${process.env.TURSO_DATABASE_URL ? 'Configured' : 'Not configured'}`);
-  console.log(`🤖 OpenAI: ${process.env.OPENAI_API_KEY ? 'Configured' : 'Not configured'}`);
+  console.log(`🔐 Environment status:`);
+  console.log(`   - Turso DB: ${process.env.TURSO_DATABASE_URL ? '✓ Configured' : '✗ Missing'}`);
+  console.log(`   - Turso Auth: ${process.env.TURSO_AUTH_TOKEN ? '✓ Configured' : '✗ Missing'}`);
+  console.log(`   - OpenAI API Key: ${process.env.OPENAI_API_KEY ? '✓ Configured' : '✗ Missing'}`);
+  console.log(`   - OpenAI Assistant ID: ${process.env.OPENAI_ASSISTANT_ID ? '✓ Configured' : '✗ Missing'}`);
+  console.log(`   - OpenAI Vector Store: ${process.env.OPENAI_VECTOR_STORE_ID ? '✓ Configured' : '✗ Missing'}`);
+  console.log(`   - Review Model: ${process.env.OPENAI_REVIEW_MODEL || 'Not set (using default)'}`);
+  
+  // Warn if critical environment variables are missing
+  const criticalVars = ['TURSO_DATABASE_URL', 'TURSO_AUTH_TOKEN', 'OPENAI_API_KEY', 'OPENAI_ASSISTANT_ID'];
+  const missingVars = criticalVars.filter(varName => !process.env[varName]);
+  
+  if (missingVars.length > 0) {
+    console.error(`⚠️  WARNING: Critical environment variables are missing: ${missingVars.join(', ')}`);
+    console.error(`   The application may not function properly.`);
+  }
 });
 
 // Graceful shutdown
