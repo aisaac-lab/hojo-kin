@@ -68,9 +68,11 @@ app.all(
   })
 );
 
-const port = process.env.PORT || 3000;
-const server = app.listen(port, () => {
-  console.log(`✅ Server ready at http://localhost:${port}`);
+const port = process.env.PORT || 10000;
+const host = '0.0.0.0'; // Bind to all interfaces for Render
+
+const server = app.listen(port, host, () => {
+  console.log(`✅ Server ready at http://${host}:${port}`);
   console.log(`📦 Build mode: ${process.env.NODE_ENV}`);
   console.log(`🔐 Turso DB: ${process.env.TURSO_DATABASE_URL ? 'Configured' : 'Not configured'}`);
   console.log(`🤖 OpenAI: ${process.env.OPENAI_API_KEY ? 'Configured' : 'Not configured'}`);
