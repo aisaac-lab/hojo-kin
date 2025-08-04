@@ -47,6 +47,58 @@ app.get("/api/health", (req, res) => {
   });
 });
 
+// Diagnostic endpoint for debugging build issues
+app.get("/api/diagnostics", (req, res) => {
+  const fs = require('fs');
+  const path = require('path');
+  
+  const diagnostics = {
+    timestamp: new Date().toISOString(),
+    nodeVersion: process.version,
+    platform: process.platform,
+    cwd: process.cwd(),
+    env: {
+      NODE_ENV: process.env.NODE_ENV,
+      PORT: process.env.PORT,
+    },
+    paths: {
+      build: fs.existsSync('./build'),
+      publicBuild: fs.existsSync('./public/build'),
+      buildIndex: fs.existsSync('./build/index.js'),
+    },
+    files: {
+      publicBuild: [],
+      manifest: [],
+      entryClient: [],
+    },
+  };
+  
+  // List files in public/build if it exists
+  if (fs.existsSync('./public/build')) {
+    try {
+      const files = fs.readdirSync('./public/build');
+      diagnostics.files.publicBuild = files.slice(0, 20);
+      diagnostics.files.manifest = files.filter(f => f.startsWith('manifest-'));
+      diagnostics.files.entryClient = files.filter(f => f.startsWith('entry.client'));
+    } catch (err) {
+      diagnostics.files.error = err.message;
+    }
+  }
+  
+  // Check if we can access the build module
+  try {
+    diagnostics.buildModule = {
+      loaded: !!build,
+      hasRoutes: !!build.routes,
+      routeCount: build.routes ? Object.keys(build.routes).length : 0,
+    };
+  } catch (err) {
+    diagnostics.buildModule = { error: err.message };
+  }
+  
+  res.json(diagnostics);
+});
+
 // Serve static files from public/build
 app.use(
   "/build",
@@ -56,8 +108,12 @@ app.use(
     setHeaders: (res, path) => {
       // Set proper headers for JavaScript files
       if (path.endsWith(".js")) {
-        res.setHeader("Content-Type", "application/javascript");
+        res.setHeader("Content-Type", "application/javascript; charset=utf-8");
       }
+      if (path.includes("manifest-")) {
+        res.setHeader("Cache-Control", "public, max-age=3600");
+      }
+      console.log(`[STATIC] Serving: ${path}`);
     },
   })
 );
@@ -66,6 +122,7 @@ app.use(
 app.use(
   express.static("public", {
     maxAge: "1h",
+    index: false, // Don't serve index.html, let Remix handle it
   })
 );
 
@@ -103,9 +160,20 @@ app.use((err, req, res, next) => {
   next();
 });
 
-// Remix handler
+// Specific manifest handling
+app.get("/build/manifest-*.js", (req, res, next) => {
+  console.log(`[SERVER] Manifest request: ${req.url}`);
+  next();
+});
+
+// Remix handler with error handling
 app.all(
   "*",
+  (req, res, next) => {
+    // Log all requests that reach Remix handler
+    console.log(`[REMIX] Handling: ${req.method} ${req.url}`);
+    next();
+  },
   createRequestHandler({
     build,
     mode: process.env.NODE_ENV,
@@ -139,10 +207,22 @@ const server = app.listen(port, host, () => {
   }
 });
 
+// Unmatched routes handler (before global error handler)
+app.use((req, res, next) => {
+  console.error(`[SERVER] 404 - Not found: ${req.method} ${req.url}`);
+  res.status(404).json({
+    error: 'Not found',
+    path: req.url,
+    method: req.method,
+    timestamp: new Date().toISOString(),
+  });
+});
+
 // Global error handler
 app.use((err, req, res, next) => {
   console.error('[SERVER] Unhandled error:', err);
   console.error('[SERVER] Error stack:', err.stack);
+  console.error('[SERVER] Request:', req.method, req.url);
   
   // Don't leak error details in production
   const isDevelopment = process.env.NODE_ENV === 'development';
@@ -150,6 +230,7 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     error: 'Internal server error',
     details: isDevelopment ? err.message : 'An unexpected error occurred',
+    path: req.url,
     timestamp: new Date().toISOString(),
   });
 });

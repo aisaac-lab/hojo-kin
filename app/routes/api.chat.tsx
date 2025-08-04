@@ -52,7 +52,7 @@ export async function action({ request }: ActionFunctionArgs) {
 		// Check if the request is FormData or JSON
 		const contentType = request.headers.get('content-type') || '';
 		
-		if (contentType.includes('multipart/form-data')) {
+		if (contentType.includes('multipart/form-data') || contentType.includes('application/x-www-form-urlencoded')) {
 			// Handle FormData from Remix fetcher
 			try {
 				const formData = await request.formData();
