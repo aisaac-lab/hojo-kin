@@ -1,0 +1,479 @@
+{
+  "metadata": {
+    "category": "digitalization",
+    "categoryName": "DX・IT導入",
+    "totalCount": 10,
+    "lastUpdated": "2025-08-03T02:15:44.621Z",
+    "description": "IT、DX、デジタル化、システム導入関連の補助金"
+  },
+  "subsidies": [
+    {
+      "id": "TOKYO-00009",
+      "name": "S-00000009",
+      "title": "IT・IoT導入補助金",
+      "description": "この事業は、事業者が自らの強みと弱みを踏まえた経営上の課題を見出すとともに、自社でＩＴ・ＩｏＴを導入活用することで、生産性の向上及び業務の効率化等の実現を支援するものです。また、この支援を通じて...",
+      "maxAmount": "150万円",
+      "categories": [
+        "IT",
+        "IoT",
+        "生産性向上"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/60352",
+      "officialUrl": "",
+      "organizationName": "",
+      "targetArea": "東京都",
+      "applicationPeriod": "",
+      "subsidyRate": "",
+      "targetBusiness": "",
+      "useCase": "IT・IoTシステムの導入",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/60352",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "micro",
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "digitalization",
+          "secondary": [
+            "equipment"
+          ],
+          "keywords": [
+            "IT",
+            "IoT",
+            "生産性向上",
+            "導入"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown"
+        },
+        "amountDetails": {
+          "maxAmount": 1500000
+        },
+        "areaDetails": {
+          "prefectures": [
+            "東京都"
+          ],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 70,
+        "lastUpdated": "2025-08-03T01:28:48.316Z"
+      }
+    },
+    {
+      "title": "商店街活性化事業助成金",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "description": "商店街活性化事業助成金は、東京都商店街チャレンジ戦略支援事業補助金（活性化事業）を活用し、商店会の施設整備やIT機能の強化（ホームページ作成）など商店会の活性化を図るために、渋谷区が予算の範囲内...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/51840",
+      "targetArea": "東京都",
+      "areaName": "渋谷区",
+      "areaCode": "1110",
+      "id": "SCRAPED-1753970606630-uokd9wi5w",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51840",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "micro",
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "digitalization",
+          "keywords": [
+            "おすすめ",
+            "IT"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown"
+        },
+        "amountDetails": {
+          "maxAmount": 20000000
+        },
+        "areaDetails": {
+          "prefectures": [
+            "東京都"
+          ],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 70,
+        "lastUpdated": "2025-08-03T01:28:48.317Z"
+      }
+    },
+    {
+      "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+      "maxAmount": "上限金額\n          30\n          万\n        円",
+      "description": "CO₂排出削減のため水素エネルギーの利活用の推進を図り、持続可能な社会の実現に寄与するために家庭用燃料電池システム設置費助成を行います。",
+      "categories": [
+        "募集終了"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/29422",
+      "targetArea": "東京都",
+      "areaName": "渋谷区",
+      "areaCode": "1110",
+      "id": "SCRAPED-1753970606630-qchrctdxp",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/29422",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "micro",
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "digitalization",
+          "secondary": [
+            "environment"
+          ],
+          "keywords": [
+            "募集終了",
+            "システム",
+            "エネルギー"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown"
+        },
+        "amountDetails": {
+          "maxAmount": 300000
+        },
+        "areaDetails": {
+          "prefectures": [
+            "東京都"
+          ],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 70,
+        "lastUpdated": "2025-08-03T01:28:48.317Z"
+      }
+    },
+    {
+      "title": "高齢者デジタルデバイド解消事業",
+      "maxAmount": "",
+      "description": "スマートフォンを保有していない高齢者にスマートフォンの利便性を伝え、活用の機会を提供することで、スマートフォンの普及を進め、生活の質の向上や社会参加の促進につなげます。",
+      "categories": [],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/11838",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-5b58fzh1m",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/11838",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "micro",
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "digitalization",
+          "secondary": [
+            "welfare"
+          ],
+          "keywords": [
+            "デジタル",
+            "高齢者"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown"
+        },
+        "amountDetails": {},
+        "areaDetails": {
+          "prefectures": [
+            "東京都"
+          ],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 55,
+        "lastUpdated": "2025-08-03T01:28:48.317Z"
+      }
+    },
+    {
+      "title": "オンライン資格確認のシステム導入における助成金制度",
+      "maxAmount": "上限金額\n          10\n          万\n        円",
+      "description": "区では、診療所や薬局のマイナンバーカードを用いたオンラインによる資格確認（以下「オンライン資格確認」といいます。）のシステム整備に当たり、必要な機器の導入、既存システムの改修等を行う場合の費用の...",
+      "categories": [],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/20771",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-4dw9itmj5",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/20771",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "micro",
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "digitalization",
+          "secondary": [
+            "equipment"
+          ],
+          "keywords": [
+            "システム",
+            "オンライン",
+            "導入",
+            "改修"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown",
+          "applicationMethod": "online"
+        },
+        "amountDetails": {
+          "maxAmount": 100000
+        },
+        "areaDetails": {
+          "prefectures": [
+            "東京都"
+          ],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 70,
+        "lastUpdated": "2025-08-03T01:28:48.318Z"
+      }
+    },
+    {
+      "title": "高齢者デジタルデバイド解消事業",
+      "maxAmount": "",
+      "description": "スマートフォンを保有していない高齢者にスマートフォンの利便性を伝え、活用の機会を提供することで、スマートフォンの普及を進め、生活の質の向上や社会参加の促進につなげます。",
+      "categories": [],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/11838",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-vovyj8gi7",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/11838",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "micro",
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "digitalization",
+          "secondary": [
+            "welfare"
+          ],
+          "keywords": [
+            "デジタル",
+            "高齢者"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown"
+        },
+        "amountDetails": {},
+        "areaDetails": {
+          "prefectures": [
+            "東京都"
+          ],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 55,
+        "lastUpdated": "2025-08-03T01:28:48.318Z"
+      }
+    },
+    {
+      "title": "商店街活性化事業助成金",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "description": "商店街活性化事業助成金は、東京都商店街チャレンジ戦略支援事業補助金（活性化事業）を活用し、商店会の施設整備やIT機能の強化（ホームページ作成）など商店会の活性化を図るために、渋谷区が予算の範囲内...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/51840",
+      "targetArea": "東京都",
+      "id": "SCRAPED-1753970606634-01gic1ftd",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51840",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "micro",
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "digitalization",
+          "keywords": [
+            "おすすめ",
+            "IT"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown"
+        },
+        "amountDetails": {
+          "maxAmount": 20000000
+        },
+        "areaDetails": {
+          "prefectures": [
+            "東京都"
+          ],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 70,
+        "lastUpdated": "2025-08-03T01:28:48.319Z"
+      }
+    },
+    {
+      "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+      "maxAmount": "上限金額\n          30\n          万\n        円",
+      "description": "CO₂排出削減のため水素エネルギーの利活用の推進を図り、持続可能な社会の実現に寄与するために家庭用燃料電池システム設置費助成を行います。",
+      "categories": [
+        "募集終了"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/29422",
+      "targetArea": "東京都",
+      "id": "SCRAPED-1753970606634-cxfpiih3a",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/29422",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "micro",
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "digitalization",
+          "secondary": [
+            "environment"
+          ],
+          "keywords": [
+            "募集終了",
+            "システム",
+            "エネルギー"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown"
+        },
+        "amountDetails": {
+          "maxAmount": 300000
+        },
+        "areaDetails": {
+          "prefectures": [
+            "東京都"
+          ],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 70,
+        "lastUpdated": "2025-08-03T01:28:48.320Z"
+      }
+    },
+    {
+      "title": "商店街活性化事業助成金",
+      "maxAmount": "上限金額\n          2,000\n          万\n        円",
+      "description": "商店街活性化事業助成金は、東京都商店街チャレンジ戦略支援事業補助金（活性化事業）を活用し、商店会の施設整備やIT機能の強化（ホームページ作成）など商店会の活性化を図るために、渋谷区が予算の範囲内...",
+      "categories": [
+        "おすすめ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/51840",
+      "targetArea": "東京都",
+      "id": "SCRAPED-1753970606639-iai78tlkw",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/51840",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "micro",
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "digitalization",
+          "keywords": [
+            "おすすめ",
+            "IT"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown"
+        },
+        "amountDetails": {
+          "maxAmount": 20000000
+        },
+        "areaDetails": {
+          "prefectures": [
+            "東京都"
+          ],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 70,
+        "lastUpdated": "2025-08-03T01:28:48.321Z"
+      }
+    },
+    {
+      "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+      "maxAmount": "上限金額\n          30\n          万\n        円",
+      "description": "CO₂排出削減のため水素エネルギーの利活用の推進を図り、持続可能な社会の実現に寄与するために家庭用燃料電池システム設置費助成を行います。",
+      "categories": [
+        "募集終了"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/29422",
+      "targetArea": "東京都",
+      "id": "SCRAPED-1753970606639-1uosks3sv",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/29422",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "micro",
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "digitalization",
+          "secondary": [
+            "environment"
+          ],
+          "keywords": [
+            "募集終了",
+            "システム",
+            "エネルギー"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown"
+        },
+        "amountDetails": {
+          "maxAmount": 300000
+        },
+        "areaDetails": {
+          "prefectures": [
+            "東京都"
+          ],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 70,
+        "lastUpdated": "2025-08-03T01:28:48.321Z"
+      }
+    }
+  ]
+}

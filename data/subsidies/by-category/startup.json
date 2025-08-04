@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "category": "startup",
+    "categoryName": "創業・新事業",
+    "totalCount": 1,
+    "lastUpdated": "2025-08-03T02:15:44.795Z",
+    "description": "創業・新事業展開に関する補助金"
+  },
+  "subsidies": [
+    {
+      "title": "ホームページ作成支援事業補助金",
+      "maxAmount": "上限金額\n          75\n          万\n        円",
+      "description": "区内商工団体等や創業２年未満の区内中小企業者が、初めてホームページを作成する場合、制作費用等の一部を区が補助します。",
+      "categories": [],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/31734",
+      "targetArea": "東京都",
+      "areaName": "港区",
+      "areaCode": "38",
+      "id": "SCRAPED-1753970606631-a35qpwy29",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/31734",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "startup",
+          "keywords": [
+            "創業"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown"
+        },
+        "amountDetails": {
+          "maxAmount": 750000
+        },
+        "areaDetails": {
+          "prefectures": [
+            "東京都"
+          ],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 70,
+        "lastUpdated": "2025-08-03T01:28:48.318Z"
+      }
+    }
+  ]
+}
