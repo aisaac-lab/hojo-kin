@@ -20,7 +20,7 @@ let client: ReturnType<typeof createClient> | null = null;
 let drizzleDb: ReturnType<typeof drizzle> | null = null;
 
 // Initialize database connection
-function getDb() {
+async function getDb() {
 	if (!drizzleDb) {
 		try {
 			// Get database path from env or use default
@@ -50,10 +50,24 @@ function getDb() {
 			if (tursoUrl && tursoAuthToken) {
 				// Using Turso with embedded replica
 				console.log('[DB] Using Turso database with embedded replica');
-				client = createClient({
-					url: tursoUrl,
-					authToken: tursoAuthToken,
-				});
+				console.log('[DB] Turso URL:', tursoUrl.replace(/\/\/.*@/, '//***@')); // Hide credentials
+				
+				try {
+					client = createClient({
+						url: tursoUrl,
+						authToken: tursoAuthToken,
+						// Add timeout settings
+						intMode: 'number',
+					});
+					
+					// Test connection
+					console.log('[DB] Testing Turso connection...');
+					await client.execute('SELECT 1');
+					console.log('[DB] Turso connection successful');
+				} catch (tursoError) {
+					console.error('[DB] Failed to connect to Turso:', tursoError);
+					throw new Error(`Turso connection failed: ${tursoError instanceof Error ? tursoError.message : 'Unknown error'}`);
+				}
 			} else {
 				// Using local SQLite file
 				console.log('[DB] Using local SQLite file');
@@ -89,7 +103,7 @@ export const threadRepository = {
 		metadata?: string;
 	}): Promise<Result<schema.Thread, DatabaseError>> {
 		try {
-			const db = getDb();
+			const db = await getDb();
 			const [thread] = await db
 				.insert(schema.threads)
 				.values({
@@ -118,7 +132,7 @@ export const threadRepository = {
 		Result<schema.Thread & { messages: schema.Message[] }, DatabaseError>
 	> {
 		try {
-			const db = getDb();
+			const db = await getDb();
 			const [thread] = await db
 				.select()
 				.from(schema.threads)
@@ -154,7 +168,7 @@ export const threadRepository = {
 		userId?: string
 	): Promise<Result<schema.Thread[], DatabaseError>> {
 		try {
-			const db = getDb();
+			const db = await getDb();
 			const threads = userId
 				? await db
 						.select()
@@ -184,7 +198,7 @@ export const messageRepository = {
 		content: string;
 	}): Promise<Result<schema.Message, DatabaseError>> {
 		try {
-			const db = getDb();
+			const db = await getDb();
 			const [message] = await db
 				.insert(schema.messages)
 				.values({
@@ -220,7 +234,7 @@ export const subsidyRepository = {
 		data: schema.NewSubsidy
 	): Promise<Result<schema.Subsidy, DatabaseError>> {
 		try {
-			const db = getDb();
+			const db = await getDb();
 
 			// Check if exists
 			const [existing] = await db
@@ -267,7 +281,7 @@ export const subsidyRepository = {
 		data: Partial<Pick<schema.Subsidy, 'vectorStoreId' | 'fileId'>>
 	): Promise<Result<void, DatabaseError>> {
 		try {
-			const db = getDb();
+			const db = await getDb();
 
 			await db
 				.update(schema.subsidies)
@@ -292,7 +306,7 @@ export const subsidyRepository = {
 
 	async findMany(): Promise<Result<schema.Subsidy[], DatabaseError>> {
 		try {
-			const db = getDb();
+			const db = await getDb();
 			const subsidies = await db.select().from(schema.subsidies);
 			return ok(subsidies);
 		} catch (error) {
@@ -312,7 +326,7 @@ export const subsidyRepository = {
 		jgrantsId?: string;
 	}): Promise<Result<schema.Subsidy | null, DatabaseError>> {
 		try {
-			const db = getDb();
+			const db = await getDb();
 			let query;
 
 			if (where.id !== undefined) {
@@ -387,7 +401,7 @@ export const db = {
 			where?: { threadId?: string; role?: 'user' | 'assistant' };
 			orderBy?: { createdAt: 'desc' };
 		}) => {
-			const db = getDb();
+			const db = await getDb();
 
 			if (args?.where?.threadId && args?.where?.role) {
 				const messages = await db
@@ -454,10 +468,10 @@ export const db = {
 		},
 	},
 	// Direct access to drizzle methods
-	insert: (table: any) => getDb().insert(table),
-	select: () => getDb().select(),
-	update: (table: any) => getDb().update(table),
-	delete: (table: any) => getDb().delete(table),
+	insert: async (table: any) => (await getDb()).insert(table),
+	select: async () => (await getDb()).select(),
+	update: async (table: any) => (await getDb()).update(table),
+	delete: async (table: any) => (await getDb()).delete(table),
 	$disconnect: async () => {
 		closeDb();
 	},

@@ -12,6 +12,10 @@ const app = express();
 // Logging
 app.use(morgan("tiny"));
 
+// Body parsing middleware with size limits
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
 // Compression
 app.use(compression());
 
@@ -75,7 +79,27 @@ app.use((req, res, next) => {
 
 // Add request logging for debugging
 app.use((req, res, next) => {
+  const start = Date.now();
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  
+  // Log response when finished
+  res.on('finish', () => {
+    const duration = Date.now() - start;
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url} - ${res.statusCode} (${duration}ms)`);
+  });
+  
+  next();
+});
+
+// JSON parsing error handler
+app.use((err, req, res, next) => {
+  if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+    console.error('[SERVER] JSON parse error:', err.message);
+    return res.status(400).json({ 
+      error: 'Invalid JSON', 
+      details: err.message 
+    });
+  }
   next();
 });
 
@@ -113,6 +137,21 @@ const server = app.listen(port, host, () => {
     console.error(`⚠️  WARNING: Critical environment variables are missing: ${missingVars.join(', ')}`);
     console.error(`   The application may not function properly.`);
   }
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error('[SERVER] Unhandled error:', err);
+  console.error('[SERVER] Error stack:', err.stack);
+  
+  // Don't leak error details in production
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  
+  res.status(err.status || 500).json({
+    error: 'Internal server error',
+    details: isDevelopment ? err.message : 'An unexpected error occurred',
+    timestamp: new Date().toISOString(),
+  });
 });
 
 // Graceful shutdown

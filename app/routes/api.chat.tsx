@@ -45,13 +45,43 @@ export async function action({ request }: ActionFunctionArgs) {
 			hasVectorStoreId: !!process.env.OPENAI_VECTOR_STORE_ID,
 		});
 
-		const { threadId, message, userId, filters } = await request.json();
+		// Parse and validate request body
+		let requestBody;
+		try {
+			requestBody = await request.json();
+			console.log('[API.CHAT] Request body received:', {
+				hasMessage: !!requestBody?.message,
+				hasThreadId: !!requestBody?.threadId,
+				hasUserId: !!requestBody?.userId,
+				hasFilters: !!requestBody?.filters,
+				messageLength: requestBody?.message?.length,
+			});
+		} catch (parseError) {
+			console.error('[API.CHAT] Failed to parse request body:', parseError);
+			return json({ 
+				error: 'Invalid request body',
+				details: 'Request body must be valid JSON'
+			}, { status: 400 });
+		}
+
+		const { threadId, message, userId, filters } = requestBody;
 
 		if (!message) {
 			return json({ error: 'Message is required' }, { status: 400 });
 		}
 
-		const assistantService = new AssistantService();
+		// Initialize services with error handling
+		let assistantService;
+		try {
+			assistantService = new AssistantService();
+			console.log('[API.CHAT] AssistantService initialized successfully');
+		} catch (serviceError) {
+			console.error('[API.CHAT] Failed to initialize AssistantService:', serviceError);
+			return json({ 
+				error: 'Service initialization failed',
+				details: serviceError instanceof Error ? serviceError.message : 'Unknown error'
+			}, { status: 503 });
+		}
 
 		let currentThreadId = threadId;
 
@@ -749,16 +779,17 @@ ${validationResult.clarificationQuestions
 		console.error('[API.CHAT] Error details:', { 
 			message: errorMessage, 
 			stack: errorStack,
-			type: error?.constructor?.name 
+			type: error?.constructor?.name,
+			// Add more debug info for production
+			timestamp: new Date().toISOString(),
+			env: process.env.NODE_ENV,
 		});
 		
 		// Check for specific error types
 		if (error instanceof AssistantServiceError) {
 			return json({ 
 				error: 'Assistant service error',
-				details: process.env.NODE_ENV === 'development' 
-					? `${error.code}: ${errorMessage}` 
-					: 'Please try again later'
+				details: `${error.code}: ${errorMessage}` // Show details in production temporarily for debugging
 			}, { status: 503 });
 		}
 		
@@ -766,9 +797,7 @@ ${validationResult.clarificationQuestions
 		if (errorMessage.includes('Database') || errorMessage.includes('TURSO')) {
 			return json({ 
 				error: 'Database connection error',
-				details: process.env.NODE_ENV === 'development' 
-					? errorMessage 
-					: 'Please try again later'
+				details: errorMessage // Show details in production temporarily for debugging
 			}, { status: 503 });
 		}
 		
@@ -776,15 +805,13 @@ ${validationResult.clarificationQuestions
 		if (errorMessage.includes('OpenAI') || errorMessage.includes('API')) {
 			return json({ 
 				error: 'External API error',
-				details: process.env.NODE_ENV === 'development' 
-					? errorMessage 
-					: 'Please try again later'
+				details: errorMessage // Show details in production temporarily for debugging
 			}, { status: 503 });
 		}
 		
 		return json({ 
 			error: 'Failed to process chat message',
-			details: process.env.NODE_ENV === 'development' ? errorMessage : 'An unexpected error occurred'
+			details: errorMessage // Show details in production temporarily for debugging
 		}, { status: 500 });
 	}
 }
