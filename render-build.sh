@@ -14,15 +14,18 @@ fi
 # Run TypeScript compilation without type checking for faster builds
 echo "Building application..."
 
+# Set NODE_ENV to production for proper build
+export NODE_ENV=production
+
 # Always use pnpm/npm to run the build script
 # This ensures proper binary execution across different Node versions
-echo "Running build with package manager..."
+echo "Running build with package manager (NODE_ENV=$NODE_ENV)..."
 if command -v pnpm &> /dev/null; then
   echo "Using pnpm..."
-  pnpm run build
+  NODE_ENV=production pnpm run build:production
 else
   echo "Using npm..."
-  npm run build
+  NODE_ENV=production npm run build:production
 fi
 
 if [ $? -eq 0 ]; then
