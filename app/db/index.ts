@@ -38,10 +38,15 @@ function getDb() {
 			dbPath = resolve(process.cwd(), 'db', 'dev.db');
 		}
 
+		console.log('[DB] Initializing database with path:', dbPath);
+		console.log('[DB] Database URL from env:', envUrl);
+		
 		client = createClient({
 			url: `file:${dbPath}`,
 		});
 		drizzleDb = drizzle(client, { schema });
+		
+		console.log('[DB] Database initialized successfully');
 	}
 	return drizzleDb;
 }

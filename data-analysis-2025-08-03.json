@@ -1,0 +1,1357 @@
+{
+  "totalFiles": 89,
+  "totalSize": 420946614,
+  "totalSizeMB": "401.45",
+  "filesByType": {
+    "json": 69,
+    "txt": 20
+  },
+  "oldFiles": [],
+  "largeFiles": [
+    {
+      "path": "api-responses/tokyo-subsidies-details.json",
+      "size": 45210053,
+      "sizeDisplay": "43.12MB",
+      "lastModified": "2025-07-29T01:39:14.237Z",
+      "ageDays": 5,
+      "type": "json",
+      "content": {
+        "recordCount": 18,
+        "structure": "Array[18]",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/backup/subsidies-master-20250803-111448.json",
+      "size": 46703453,
+      "sizeDisplay": "44.54MB",
+      "lastModified": "2025-08-03T02:14:48.616Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-area/nationwide.json",
+      "size": 45717913,
+      "sizeDisplay": "43.60MB",
+      "lastModified": "2025-08-03T02:15:45.148Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/employment.json",
+      "size": 8166642,
+      "sizeDisplay": "7.79MB",
+      "lastModified": "2025-08-03T02:15:44.723Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/equipment.json",
+      "size": 9404261,
+      "sizeDisplay": "8.97MB",
+      "lastModified": "2025-08-03T02:15:44.678Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/other.json",
+      "size": 11930208,
+      "sizeDisplay": "11.38MB",
+      "lastModified": "2025-08-03T02:15:44.878Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/research.json",
+      "size": 10671336,
+      "sizeDisplay": "10.18MB",
+      "lastModified": "2025-08-03T02:15:44.786Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/subsidies-clean.json",
+      "size": 45397456,
+      "sizeDisplay": "43.29MB",
+      "lastModified": "2025-08-03T03:42:05.063Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/subsidies-enhanced-refined.json",
+      "size": 46930303,
+      "sizeDisplay": "44.76MB",
+      "lastModified": "2025-08-03T02:33:52.562Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/subsidies-enhanced.json",
+      "size": 46930402,
+      "sizeDisplay": "44.76MB",
+      "lastModified": "2025-08-03T01:28:48.569Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/subsidies-master.json",
+      "size": 46703453,
+      "sizeDisplay": "44.54MB",
+      "lastModified": "2025-07-31T14:03:26.876Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-split/subsidies-others.json",
+      "size": 39063597,
+      "sizeDisplay": "37.25MB",
+      "lastModified": "2025-08-01T01:27:53.644Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-split/subsidies-welfare.json",
+      "size": 5957746,
+      "sizeDisplay": "5.68MB",
+      "lastModified": "2025-08-01T01:27:53.470Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    }
+  ],
+  "duplicateContent": [
+    {
+      "files": [
+        "scraped/smart-hojokin-2025-07-30T07-12-01-864Z.json",
+        "scraped/smart-hojokin-2025-07-30T07-14-29-557Z.json",
+        "scraped/smart-hojokin-2025-07-30T07-16-09-152Z.json",
+        "scraped/smart-hojokin-2025-07-30T07-23-45-578Z.json"
+      ],
+      "reason": "Similar filenames (base: scraped/smart-hojokin-)"
+    },
+    {
+      "files": [
+        "scraped/tokyo-subsidies-playwright-2025-07-31T12-42-33.json",
+        "scraped/tokyo-subsidies-playwright-2025-07-31T12-44-24.json",
+        "scraped/tokyo-subsidies-playwright-2025-07-31T12-49-04.json"
+      ],
+      "reason": "Similar filenames (base: scraped/tokyo-subsidies-playwright-)"
+    },
+    {
+      "files": [
+        "scraped/tokyo-subsidies-with-official-links-2025-07-31T12-20-21.json",
+        "scraped/tokyo-subsidies-with-official-links-2025-07-31T12-22-21.json"
+      ],
+      "reason": "Similar filenames (base: scraped/tokyo-subsidies-with-official-links-)"
+    },
+    {
+      "files": [
+        "subsidies-compact/subsidies-part01.json",
+        "subsidies-compact/subsidies-part02.json",
+        "subsidies-compact/subsidies-part03.json",
+        "subsidies-compact/subsidies-part04.json",
+        "subsidies-compact/subsidies-part05.json",
+        "subsidies-compact/subsidies-part06.json",
+        "subsidies-compact/subsidies-part07.json"
+      ],
+      "reason": "Similar filenames (base: subsidies-compact/subsidies-partX.json)"
+    },
+    {
+      "files": [
+        "scraped/tokyo-subsidies-complete-2025-07-31T13-33-00.json",
+        "scraped/tokyo-subsidies-final-2025-07-31T13-09-22.json",
+        "scraped/tokyo-subsidies-playwright-2025-07-31T12-44-24.json",
+        "scraped/tokyo-subsidies-playwright-2025-07-31T12-49-04.json",
+        "scraped/tokyo-subsidies-stealth-2025-07-31T13-00-56.json",
+        "scraped/tokyo-subsidies-with-official-2025-07-31T13-30-11.json"
+      ],
+      "reason": "Same file size (7.77KB)"
+    },
+    {
+      "files": [
+        "scraped/smart-hojokin-2025-07-30T07-12-01-864Z.json",
+        "scraped/tokyo-subsidies-shibuya.json"
+      ],
+      "reason": "Same file size (427.68KB)"
+    },
+    {
+      "files": [
+        "subsidies/backup/subsidies-master-20250803-111448.json",
+        "subsidies/subsidies-master.json"
+      ],
+      "reason": "Same file size (44.54MB)"
+    }
+  ],
+  "recommendations": [
+    "Consider optimizing or archiving 13 large files (>5MB)",
+    "Investigate 7 groups of potentially duplicate files",
+    "Move backup files to dedicated backup directory (1 files found)"
+  ],
+  "files": [
+    {
+      "path": "api-responses/fetch-summary.json",
+      "size": 14760,
+      "sizeDisplay": "14.41KB",
+      "lastModified": "2025-07-29T01:39:14.240Z",
+      "ageDays": 5,
+      "type": "json",
+      "content": {
+        "recordCount": 4,
+        "structure": "Object{fetchedAt, totalSubsidies, detailsFetched, subsidySummary}",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "api-responses/shibuya-subsidies.json",
+      "size": 439205,
+      "sizeDisplay": "428.91KB",
+      "lastModified": "2025-07-30T07:25:09.757Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{success, data}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "api-responses/tokyo-all-subsidies.json",
+      "size": 77223,
+      "sizeDisplay": "75.41KB",
+      "lastModified": "2025-07-30T07:35:02.945Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{success, data}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "api-responses/tokyo-scraping-summary.json",
+      "size": 484,
+      "sizeDisplay": "0.47KB",
+      "lastModified": "2025-07-30T07:35:02.945Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 4,
+        "structure": "Object{totalSubsidies, byArea, lastUpdated, sources}",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "api-responses/tokyo-subsidies-details-scraped.json",
+      "size": 161961,
+      "sizeDisplay": "158.17KB",
+      "lastModified": "2025-07-30T07:54:08.456Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 123,
+        "structure": "Array[123]",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "api-responses/tokyo-subsidies-details.json",
+      "size": 45210053,
+      "sizeDisplay": "43.12MB",
+      "lastModified": "2025-07-29T01:39:14.237Z",
+      "ageDays": 5,
+      "type": "json",
+      "content": {
+        "recordCount": 18,
+        "structure": "Array[18]",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "api-responses/tokyo-subsidies-list.json",
+      "size": 24323,
+      "sizeDisplay": "23.75KB",
+      "lastModified": "2025-07-29T01:39:09.483Z",
+      "ageDays": 5,
+      "type": "json",
+      "content": {
+        "recordCount": 58,
+        "structure": "Array[58]",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "scraped/1110-渋谷区-2025-07-30T07-30-04-060Z.json",
+      "size": 22157,
+      "sizeDisplay": "21.64KB",
+      "lastModified": "2025-07-30T07:30:04.062Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 36,
+        "structure": "Array[36]",
+        "hasUrls": true,
+        "categories": [
+          "おすすめ",
+          "募集終了"
+        ]
+      }
+    },
+    {
+      "path": "scraped/38-港区-2025-07-30T07-32-24-927Z.json",
+      "size": 49541,
+      "sizeDisplay": "48.38KB",
+      "lastModified": "2025-07-30T07:32:24.929Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 80,
+        "structure": "Array[80]",
+        "hasUrls": true,
+        "categories": [
+          "募集中",
+          "おすすめ"
+        ]
+      }
+    },
+    {
+      "path": "scraped/462-新宿区-2025-07-30T07-30-46-742Z.json",
+      "size": 36524,
+      "sizeDisplay": "35.67KB",
+      "lastModified": "2025-07-30T07:30:46.743Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 59,
+        "structure": "Array[59]",
+        "hasUrls": true,
+        "categories": [
+          "おすすめ",
+          "募集終了"
+        ]
+      }
+    },
+    {
+      "path": "scraped/749-千代田区-2025-07-30T07-33-20-599Z.json",
+      "size": 2,
+      "sizeDisplay": "0.00KB",
+      "lastModified": "2025-07-30T07:33:20.600Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 0,
+        "structure": "Array[0]",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "scraped/894-世田谷区-2025-07-30T07-34-16-293Z.json",
+      "size": 2,
+      "sizeDisplay": "0.00KB",
+      "lastModified": "2025-07-30T07:34:16.295Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 0,
+        "structure": "Array[0]",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "scraped/smart-hojokin-2025-07-30T07-12-01-864Z.json",
+      "size": 437942,
+      "sizeDisplay": "427.68KB",
+      "lastModified": "2025-07-30T07:12:01.870Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 36,
+        "structure": "Array[36]",
+        "hasUrls": true,
+        "categories": [
+          "おすすめ",
+          "募集終了"
+        ]
+      }
+    },
+    {
+      "path": "scraped/smart-hojokin-2025-07-30T07-14-29-557Z.json",
+      "size": 2,
+      "sizeDisplay": "0.00KB",
+      "lastModified": "2025-07-30T07:14:29.563Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 0,
+        "structure": "Array[0]",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "scraped/smart-hojokin-2025-07-30T07-16-09-152Z.json",
+      "size": 2,
+      "sizeDisplay": "0.00KB",
+      "lastModified": "2025-07-30T07:16:09.156Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 0,
+        "structure": "Array[0]",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "scraped/smart-hojokin-2025-07-30T07-23-45-578Z.json",
+      "size": 2,
+      "sizeDisplay": "0.00KB",
+      "lastModified": "2025-07-30T07:23:45.580Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 0,
+        "structure": "Array[0]",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "scraped/tokyo-areas.json",
+      "size": 8037,
+      "sizeDisplay": "7.85KB",
+      "lastModified": "2025-07-30T07:28:45.737Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 62,
+        "structure": "Array[62]",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "scraped/tokyo-subsidies-complete-2025-07-31T13-33-00.json",
+      "size": 7953,
+      "sizeDisplay": "7.77KB",
+      "lastModified": "2025-07-31T13:33:00.160Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 10,
+        "structure": "Array[10]",
+        "hasUrls": true,
+        "categories": []
+      }
+    },
+    {
+      "path": "scraped/tokyo-subsidies-final-2025-07-31T13-09-22.json",
+      "size": 7953,
+      "sizeDisplay": "7.77KB",
+      "lastModified": "2025-07-31T13:09:22.615Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 10,
+        "structure": "Array[10]",
+        "hasUrls": true,
+        "categories": []
+      }
+    },
+    {
+      "path": "scraped/tokyo-subsidies-playwright-2025-07-31T12-42-33.json",
+      "size": 2,
+      "sizeDisplay": "0.00KB",
+      "lastModified": "2025-07-31T12:42:33.849Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 0,
+        "structure": "Array[0]",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "scraped/tokyo-subsidies-playwright-2025-07-31T12-44-24.json",
+      "size": 7953,
+      "sizeDisplay": "7.77KB",
+      "lastModified": "2025-07-31T12:44:24.213Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 10,
+        "structure": "Array[10]",
+        "hasUrls": true,
+        "categories": []
+      }
+    },
+    {
+      "path": "scraped/tokyo-subsidies-playwright-2025-07-31T12-49-04.json",
+      "size": 7953,
+      "sizeDisplay": "7.77KB",
+      "lastModified": "2025-07-31T12:49:04.970Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 10,
+        "structure": "Array[10]",
+        "hasUrls": true,
+        "categories": []
+      }
+    },
+    {
+      "path": "scraped/tokyo-subsidies-shibuya.json",
+      "size": 437942,
+      "sizeDisplay": "427.68KB",
+      "lastModified": "2025-07-30T07:24:03.821Z",
+      "ageDays": 3,
+      "type": "json",
+      "content": {
+        "recordCount": 36,
+        "structure": "Array[36]",
+        "hasUrls": true,
+        "categories": [
+          "おすすめ",
+          "募集終了"
+        ]
+      }
+    },
+    {
+      "path": "scraped/tokyo-subsidies-stealth-2025-07-31T13-00-56.json",
+      "size": 7953,
+      "sizeDisplay": "7.77KB",
+      "lastModified": "2025-07-31T13:00:56.230Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 10,
+        "structure": "Array[10]",
+        "hasUrls": true,
+        "categories": []
+      }
+    },
+    {
+      "path": "scraped/tokyo-subsidies-with-official-2025-07-31T13-30-11.json",
+      "size": 7953,
+      "sizeDisplay": "7.77KB",
+      "lastModified": "2025-07-31T13:30:11.723Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 10,
+        "structure": "Array[10]",
+        "hasUrls": true,
+        "categories": []
+      }
+    },
+    {
+      "path": "scraped/tokyo-subsidies-with-official-links-2025-07-31T12-20-21.json",
+      "size": 2,
+      "sizeDisplay": "0.00KB",
+      "lastModified": "2025-07-31T12:20:21.032Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 0,
+        "structure": "Array[0]",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "scraped/tokyo-subsidies-with-official-links-2025-07-31T12-22-21.json",
+      "size": 2,
+      "sizeDisplay": "0.00KB",
+      "lastModified": "2025-07-31T12:22:21.364Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 0,
+        "structure": "Array[0]",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "scraped/tokyo-subsidies-with-official-links-final.json",
+      "size": 8943,
+      "sizeDisplay": "8.73KB",
+      "lastModified": "2025-07-31T13:35:25.141Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 10,
+        "structure": "Array[10]",
+        "hasUrls": true,
+        "categories": [
+          "製品開発",
+          "介護",
+          "中小企業支援",
+          "観光",
+          "地域振興",
+          "イベント",
+          "交通",
+          "インフラ",
+          "経営改善",
+          "設備投資",
+          "小規模事業者",
+          "スタートアップ",
+          "研究開発",
+          "ディープテック",
+          "まちづくり",
+          "地域活性化",
+          "サステナブル",
+          "IT",
+          "IoT",
+          "生産性向上",
+          "島しょ地域"
+        ]
+      }
+    },
+    {
+      "path": "subsidies/backup/subsidies-master-20250803-111448.json",
+      "size": 46703453,
+      "sizeDisplay": "44.54MB",
+      "lastModified": "2025-08-03T02:14:48.616Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-area/nationwide.json",
+      "size": 45717913,
+      "sizeDisplay": "43.60MB",
+      "lastModified": "2025-08-03T02:15:45.148Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-area/other.json",
+      "size": 1980,
+      "sizeDisplay": "1.93KB",
+      "lastModified": "2025-08-03T02:15:45.148Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-area/tokyo.json",
+      "size": 1210566,
+      "sizeDisplay": "1.15MB",
+      "lastModified": "2025-08-03T02:15:44.883Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/digitalization.json",
+      "size": 15614,
+      "sizeDisplay": "15.25KB",
+      "lastModified": "2025-08-03T02:15:44.623Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/employment.json",
+      "size": 8166642,
+      "sizeDisplay": "7.79MB",
+      "lastModified": "2025-08-03T02:15:44.723Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/environment.json",
+      "size": 30694,
+      "sizeDisplay": "29.97KB",
+      "lastModified": "2025-08-03T02:15:44.796Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/equipment.json",
+      "size": 9404261,
+      "sizeDisplay": "8.97MB",
+      "lastModified": "2025-08-03T02:15:44.678Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/expansion.json",
+      "size": 1851168,
+      "sizeDisplay": "1.77MB",
+      "lastModified": "2025-08-03T02:15:44.796Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/other.json",
+      "size": 11930208,
+      "sizeDisplay": "11.38MB",
+      "lastModified": "2025-08-03T02:15:44.878Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/research.json",
+      "size": 10671336,
+      "sizeDisplay": "10.18MB",
+      "lastModified": "2025-08-03T02:15:44.786Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/startup.json",
+      "size": 1574,
+      "sizeDisplay": "1.54KB",
+      "lastModified": "2025-08-03T02:15:44.796Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/by-category/welfare.json",
+      "size": 4860789,
+      "sizeDisplay": "4.64MB",
+      "lastModified": "2025-08-03T02:15:44.820Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/duplicate-report.json",
+      "size": 42751,
+      "sizeDisplay": "41.75KB",
+      "lastModified": "2025-08-03T03:42:05.064Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 3,
+        "structure": "Object{summary, duplicates, realITSubsidies}",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "subsidies/index/master-index.json",
+      "size": 62040,
+      "sizeDisplay": "60.59KB",
+      "lastModified": "2025-08-03T02:15:45.151Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 3,
+        "structure": "Object{totalCount, lastUpdated, index}",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "subsidies/index/search-index.json",
+      "size": 125444,
+      "sizeDisplay": "122.50KB",
+      "lastModified": "2025-08-03T02:15:45.150Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 1,
+        "structure": "Object{index}",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "subsidies/subsidies-clean.json",
+      "size": 45397456,
+      "sizeDisplay": "43.29MB",
+      "lastModified": "2025-08-03T03:42:05.063Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/subsidies-enhanced-refined.json",
+      "size": 46930303,
+      "sizeDisplay": "44.76MB",
+      "lastModified": "2025-08-03T02:33:52.562Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/subsidies-enhanced.json",
+      "size": 46930402,
+      "sizeDisplay": "44.76MB",
+      "lastModified": "2025-08-03T01:28:48.569Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/subsidies-master.json",
+      "size": 46703453,
+      "sizeDisplay": "44.54MB",
+      "lastModified": "2025-07-31T14:03:26.876Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/subsidy-categories.json",
+      "size": 2133,
+      "sizeDisplay": "2.08KB",
+      "lastModified": "2025-07-31T15:21:34.415Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{categories, target_business}",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "subsidies/subsidy-faq.json",
+      "size": 1922,
+      "sizeDisplay": "1.88KB",
+      "lastModified": "2025-07-31T15:21:52.751Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{faqs, application_tips}",
+        "hasUrls": false
+      }
+    },
+    {
+      "path": "subsidies/text-format/all-subsidies-summary.txt",
+      "size": 18082,
+      "sizeDisplay": "17.66KB",
+      "lastModified": "2025-08-03T02:16:46.999Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/by-employee-count/under-50.txt",
+      "size": 15569,
+      "sizeDisplay": "15.20KB",
+      "lastModified": "2025-08-03T02:16:47.108Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-individual/it-subsidy-01-TOKYO-00009.txt",
+      "size": 917,
+      "sizeDisplay": "0.90KB",
+      "lastModified": "2025-08-03T02:32:24.660Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-individual/it-subsidy-02-SCRAPED-1753970606630-uokd9wi5w.txt",
+      "size": 973,
+      "sizeDisplay": "0.95KB",
+      "lastModified": "2025-08-03T02:32:24.661Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-individual/it-subsidy-03-SCRAPED-1753970606630-qchrctdxp.txt",
+      "size": 943,
+      "sizeDisplay": "0.92KB",
+      "lastModified": "2025-08-03T02:32:24.661Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-individual/it-subsidy-04-SCRAPED-1753970606631-5b58fzh1m.txt",
+      "size": 869,
+      "sizeDisplay": "0.85KB",
+      "lastModified": "2025-08-03T02:32:24.661Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-individual/it-subsidy-05-SCRAPED-1753970606631-4dw9itmj5.txt",
+      "size": 1042,
+      "sizeDisplay": "1.02KB",
+      "lastModified": "2025-08-03T02:32:24.661Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-individual/it-subsidy-06-SCRAPED-1753970606631-vovyj8gi7.txt",
+      "size": 869,
+      "sizeDisplay": "0.85KB",
+      "lastModified": "2025-08-03T02:32:24.661Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-individual/it-subsidy-07-SCRAPED-1753970606634-01gic1ftd.txt",
+      "size": 973,
+      "sizeDisplay": "0.95KB",
+      "lastModified": "2025-08-03T02:32:24.661Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-individual/it-subsidy-08-SCRAPED-1753970606634-cxfpiih3a.txt",
+      "size": 943,
+      "sizeDisplay": "0.92KB",
+      "lastModified": "2025-08-03T02:32:24.661Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-individual/it-subsidy-09-SCRAPED-1753970606639-iai78tlkw.txt",
+      "size": 973,
+      "sizeDisplay": "0.95KB",
+      "lastModified": "2025-08-03T02:32:24.662Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-individual/it-subsidy-10-SCRAPED-1753970606639-1uosks3sv.txt",
+      "size": 944,
+      "sizeDisplay": "0.92KB",
+      "lastModified": "2025-08-03T02:32:24.662Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-subsidies-count.txt",
+      "size": 103,
+      "sizeDisplay": "0.10KB",
+      "lastModified": "2025-08-03T02:32:24.660Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-subsidies-searchable.txt",
+      "size": 9455,
+      "sizeDisplay": "9.23KB",
+      "lastModified": "2025-08-03T02:32:24.659Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-subsidies-summary.txt",
+      "size": 1415,
+      "sizeDisplay": "1.38KB",
+      "lastModified": "2025-08-03T02:32:24.659Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format/it-subsidies.txt",
+      "size": 8044,
+      "sizeDisplay": "7.86KB",
+      "lastModified": "2025-08-03T02:16:46.881Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format-accurate/it-subsidies-accurate.json",
+      "size": 8013,
+      "sizeDisplay": "7.83KB",
+      "lastModified": "2025-08-03T04:03:08.184Z",
+      "ageDays": 0,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies/text-format-accurate/it-subsidies-count.txt",
+      "size": 215,
+      "sizeDisplay": "0.21KB",
+      "lastModified": "2025-08-03T04:03:08.169Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format-accurate/it-subsidies-searchable.txt",
+      "size": 4243,
+      "sizeDisplay": "4.14KB",
+      "lastModified": "2025-08-03T04:03:08.182Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies/text-format-accurate/it-subsidies-summary.txt",
+      "size": 1225,
+      "sizeDisplay": "1.20KB",
+      "lastModified": "2025-08-03T04:03:08.183Z",
+      "ageDays": 0,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies-compact/assistant-instructions.txt",
+      "size": 813,
+      "sizeDisplay": "0.79KB",
+      "lastModified": "2025-08-01T01:29:13.746Z",
+      "ageDays": 2,
+      "type": "txt"
+    },
+    {
+      "path": "subsidies-compact/subsidies-category-index.json",
+      "size": 80669,
+      "sizeDisplay": "78.78KB",
+      "lastModified": "2025-08-01T01:29:13.746Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, categories}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-compact/subsidies-master-index.json",
+      "size": 77289,
+      "sizeDisplay": "75.48KB",
+      "lastModified": "2025-08-01T01:29:13.745Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 3,
+        "structure": "Object{metadata, files, quick_search}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-compact/subsidies-part01.json",
+      "size": 27940,
+      "sizeDisplay": "27.29KB",
+      "lastModified": "2025-08-01T01:29:13.742Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-compact/subsidies-part02.json",
+      "size": 32726,
+      "sizeDisplay": "31.96KB",
+      "lastModified": "2025-08-01T01:29:13.742Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-compact/subsidies-part03.json",
+      "size": 33544,
+      "sizeDisplay": "32.76KB",
+      "lastModified": "2025-08-01T01:29:13.743Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-compact/subsidies-part04.json",
+      "size": 32576,
+      "sizeDisplay": "31.81KB",
+      "lastModified": "2025-08-01T01:29:13.743Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-compact/subsidies-part05.json",
+      "size": 29039,
+      "sizeDisplay": "28.36KB",
+      "lastModified": "2025-08-01T01:29:13.743Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-compact/subsidies-part06.json",
+      "size": 15075,
+      "sizeDisplay": "14.72KB",
+      "lastModified": "2025-08-01T01:29:13.743Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-compact/subsidies-part07.json",
+      "size": 24123,
+      "sizeDisplay": "23.56KB",
+      "lastModified": "2025-08-01T01:29:13.744Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-split/subsidies-employment.json",
+      "size": 1624639,
+      "sizeDisplay": "1.55MB",
+      "lastModified": "2025-08-01T01:27:53.444Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-split/subsidies-environment.json",
+      "size": 17506,
+      "sizeDisplay": "17.10KB",
+      "lastModified": "2025-08-01T01:27:53.446Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-split/subsidies-equipment.json",
+      "size": 23532,
+      "sizeDisplay": "22.98KB",
+      "lastModified": "2025-08-01T01:27:53.438Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-split/subsidies-index.json",
+      "size": 73229,
+      "sizeDisplay": "71.51KB",
+      "lastModified": "2025-08-01T01:27:53.682Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, search_index}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-split/subsidies-it_dx.json",
+      "size": 8465,
+      "sizeDisplay": "8.27KB",
+      "lastModified": "2025-08-01T01:27:53.437Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-split/subsidies-others.json",
+      "size": 39063597,
+      "sizeDisplay": "37.25MB",
+      "lastModified": "2025-08-01T01:27:53.644Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-split/subsidies-startup.json",
+      "size": 1981,
+      "sizeDisplay": "1.93KB",
+      "lastModified": "2025-08-01T01:27:53.437Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-split/subsidies-tourism.json",
+      "size": 7384,
+      "sizeDisplay": "7.21KB",
+      "lastModified": "2025-08-01T01:27:53.446Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    },
+    {
+      "path": "subsidies-split/subsidies-welfare.json",
+      "size": 5957746,
+      "sizeDisplay": "5.68MB",
+      "lastModified": "2025-08-01T01:27:53.470Z",
+      "ageDays": 2,
+      "type": "json",
+      "content": {
+        "recordCount": 2,
+        "structure": "Object{metadata, subsidies}",
+        "hasUrls": true
+      }
+    }
+  ]
+}

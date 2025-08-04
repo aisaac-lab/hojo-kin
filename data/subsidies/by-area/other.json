@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "area": "other",
+    "totalCount": 1,
+    "lastUpdated": "2025-08-03T02:15:45.148Z"
+  },
+  "subsidies": [
+    {
+      "id": "TOKYO-00004",
+      "name": "S-00000004",
+      "title": "令和７年度 多摩・島しょ観光交通インフラ整備支援助成金",
+      "description": "東京都及び（公財）東京観光財団では、多摩・島しょ地域において移動アクセス手段の更なる充実を図るため、観光客の二次交通手段として、新たな交通サービスの導入や交通インフラ開発を行うための取組を支援し...",
+      "maxAmount": "1,000万円",
+      "categories": [
+        "観光",
+        "交通",
+        "インフラ"
+      ],
+      "detailUrl": "https://www.smart-hojokin.jp/subsidies/65411",
+      "officialUrl": "",
+      "organizationName": "公益財団法人東京観光財団",
+      "targetArea": "多摩・島しょ地域",
+      "applicationPeriod": "",
+      "subsidyRate": "",
+      "targetBusiness": "",
+      "useCase": "観光交通インフラの整備",
+      "front_subsidy_detail_page_url": "https://www.smart-hojokin.jp/subsidies/65411",
+      "metadata": {
+        "targetCompany": {
+          "companySize": [
+            "micro",
+            "small",
+            "medium"
+          ]
+        },
+        "categoryTags": {
+          "primary": "equipment",
+          "secondary": [
+            "research"
+          ],
+          "keywords": [
+            "観光",
+            "交通",
+            "インフラ",
+            "導入",
+            "開発"
+          ]
+        },
+        "applicationDetails": {
+          "status": "unknown"
+        },
+        "amountDetails": {
+          "maxAmount": 10000000
+        },
+        "areaDetails": {
+          "prefectures": [],
+          "isNationwide": false,
+          "isRegionSpecific": true
+        },
+        "confidenceScore": 55,
+        "lastUpdated": "2025-08-03T01:28:48.316Z"
+      }
+    }
+  ]
+}

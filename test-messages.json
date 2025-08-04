@@ -1,0 +1,14 @@
+[
+  {
+    "message": "介護現場のニーズに対応した製品開発支援事業について教えてください",
+    "description": "特定の補助金（TOKYO-00001）を検索"
+  },
+  {
+    "message": "front_subsidy_detail_page_urlフィールドを含む補助金データを1件表示してください",
+    "description": "フィールドを明示的に要求"
+  },
+  {
+    "message": "東京都の補助金を1件、公式サイトのURLと共に教えてください",
+    "description": "URLを明示的に要求"
+  }
+]

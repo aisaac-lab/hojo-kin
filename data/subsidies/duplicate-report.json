@@ -1,0 +1,1347 @@
+{
+  "summary": {
+    "original": 338,
+    "unique": 134,
+    "duplicatesRemoved": 204,
+    "realITCount": 5
+  },
+  "duplicates": [
+    {
+      "title": "リターナブル容器利用促進助成金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-8xr4wwnhc",
+          "title": "リターナブル容器利用促進助成金",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606630-p88tbeok5",
+          "title": "リターナブル容器利用促進助成金",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606634-ip4rzecn1",
+          "title": "リターナブル容器利用促進助成金",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606634-5n1l2glwk",
+          "title": "リターナブル容器利用促進助成金",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606638-08b7dbr4e",
+          "title": "リターナブル容器利用促進助成金",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606639-oypsa0dou",
+          "title": "リターナブル容器利用促進助成金",
+          "category": "expansion"
+        }
+      ]
+    },
+    {
+      "title": "帯状疱疹ワクチン接種費用の一部助成",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-f3np6fvm9",
+          "title": "帯状疱疹ワクチン接種費用の一部助成",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606630-swhoi2oks",
+          "title": "帯状疱疹ワクチン接種費用の一部助成",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-7nx0ljpe0",
+          "title": "帯状疱疹ワクチン接種費用の一部助成",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-m5fn2ulvm",
+          "title": "帯状疱疹ワクチン接種費用の一部助成",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606638-404wlsulh",
+          "title": "帯状疱疹ワクチン接種費用の一部助成",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-axqgte45i",
+          "title": "帯状疱疹ワクチン接種費用の一部助成",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "特定緊急輸送道路沿道建築物の耐震化",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-wj6pao9jx",
+          "title": "特定緊急輸送道路沿道建築物の耐震化",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-9qytetl0f",
+          "title": "特定緊急輸送道路沿道建築物の耐震化",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606638-yvimls6b6",
+          "title": "特定緊急輸送道路沿道建築物の耐震化",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "家庭用生ごみ処理機など購入費補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-nvivf55lb",
+          "title": "家庭用生ごみ処理機など購入費補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606630-fwpic0top",
+          "title": "家庭用生ごみ処理機など購入費補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-4yzraw0xb",
+          "title": "家庭用生ごみ処理機など購入費補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-siyepmd6t",
+          "title": "家庭用生ごみ処理機など購入費補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606638-9mv5y66m0",
+          "title": "家庭用生ごみ処理機など購入費補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-6zjv3p2v5",
+          "title": "家庭用生ごみ処理機など購入費補助金",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "葬祭費",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-6hi5zuj6n",
+          "title": "葬祭費",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606630-7jikeivye",
+          "title": "葬祭費",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606634-8i5z02njk",
+          "title": "葬祭費",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606634-qb1w8xuic",
+          "title": "葬祭費",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606638-eutbx4uyq",
+          "title": "葬祭費",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606639-qv292bu1k",
+          "title": "葬祭費",
+          "category": "welfare"
+        }
+      ]
+    },
+    {
+      "title": "一般分譲マンションの耐震化支援制度",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-p8b9qxouh",
+          "title": "一般分譲マンションの耐震化支援制度",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606634-g5nvpwm4b",
+          "title": "一般分譲マンションの耐震化支援制度",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606638-2y5dt1uxy",
+          "title": "一般分譲マンションの耐震化支援制度",
+          "category": "equipment"
+        }
+      ]
+    },
+    {
+      "title": "出産育児一時金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-cu20cs19v",
+          "title": "出産育児一時金",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606630-bi9j32gmn",
+          "title": "出産育児一時金",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606632-fw554zqtu",
+          "title": "出産育児一時金",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606632-n5ndfka7c",
+          "title": "出産育児一時金",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606634-e1hxjb1g4",
+          "title": "出産育児一時金",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606634-m5h4oh7jn",
+          "title": "出産育児一時金",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606638-y3ul3f5i0",
+          "title": "出産育児一時金",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606639-ytgxbq0xb",
+          "title": "出産育児一時金",
+          "category": "welfare"
+        }
+      ]
+    },
+    {
+      "title": "落書き抑止カメラ設置経費一部補助",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-r40wprmol",
+          "title": "落書き抑止カメラ設置経費一部補助",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606630-g4oqfa76j",
+          "title": "落書き抑止カメラ設置経費一部補助",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-cq3svuoq6",
+          "title": "落書き抑止カメラ設置経費一部補助",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-91s4a7rz1",
+          "title": "落書き抑止カメラ設置経費一部補助",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606638-f8orjgn1e",
+          "title": "落書き抑止カメラ設置経費一部補助",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-tt7egfm62",
+          "title": "落書き抑止カメラ設置経費一部補助",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-2vqac5u8h",
+          "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606630-tngv3tcji",
+          "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606634-tttif2giv",
+          "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606634-scvk6enya",
+          "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606639-r2e0yt2kl",
+          "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606639-8qvzfro6j",
+          "title": "新型コロナウイルス感染症に係る傷病手当金の支給",
+          "category": "welfare"
+        }
+      ]
+    },
+    {
+      "title": "住居確保給付金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-n1aboo9su",
+          "title": "住居確保給付金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606630-ayysisogl",
+          "title": "住居確保給付金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606630-rvgrhwptj",
+          "title": "住居確保給付金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606632-uw63zpdyz",
+          "title": "住居確保給付金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-ytfb9ghh7",
+          "title": "住居確保給付金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-qwu1pedu3",
+          "title": "住居確保給付金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-et7ygum3d",
+          "title": "住居確保給付金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-x6nqbn650",
+          "title": "住居確保給付金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-hsgnram5k",
+          "title": "住居確保給付金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-wdqli8gm4",
+          "title": "住居確保給付金",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "養育費に関する公正証書作成手数料等補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-el5zm2mkl",
+          "title": "養育費に関する公正証書作成手数料等補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-igjt48eiv",
+          "title": "養育費に関する公正証書作成手数料等補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-4gc107ch3",
+          "title": "養育費に関する公正証書作成手数料等補助金",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "渋谷区定額減税補足給付金（調整給付金）",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-hhrivzlk3",
+          "title": "渋谷区定額減税補足給付金（調整給付金）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-vida97am4",
+          "title": "渋谷区定額減税補足給付金（調整給付金）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-ww0pjdsn2",
+          "title": "渋谷区定額減税補足給付金（調整給付金）",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "年金生活者支援給付金制度",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-abouthnr8",
+          "title": "年金生活者支援給付金制度",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-96tfw64en",
+          "title": "年金生活者支援給付金制度",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-11x0qal4c",
+          "title": "年金生活者支援給付金制度",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "渋谷区5G通信インフラ整備費補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-bn4edhlk8",
+          "title": "渋谷区5G通信インフラ整備費補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-i3v2mnjuw",
+          "title": "渋谷区5G通信インフラ整備費補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-e2067hkju",
+          "title": "渋谷区5G通信インフラ整備費補助金",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "商店街チャレンジ戦略支援事業補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-xm5ybo7g7",
+          "title": "商店街チャレンジ戦略支援事業補助金",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606634-p9hl44b34",
+          "title": "商店街チャレンジ戦略支援事業補助金",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606639-kkoj2fuan",
+          "title": "商店街チャレンジ戦略支援事業補助金",
+          "category": "expansion"
+        }
+      ]
+    },
+    {
+      "title": "地域連携型商店街事業補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-qt8apgvnl",
+          "title": "地域連携型商店街事業補助金",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606634-i2jknprh1",
+          "title": "地域連携型商店街事業補助金",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606639-qm3ixt3jl",
+          "title": "地域連携型商店街事業補助金",
+          "category": "expansion"
+        }
+      ]
+    },
+    {
+      "title": "商店会等イベント事業費補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-3uj0jrrbj",
+          "title": "商店会等イベント事業費補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-ij1gkj5ax",
+          "title": "商店会等イベント事業費補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-b2rgyjt1k",
+          "title": "商店会等イベント事業費補助金",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "商店街活性化事業助成金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-uokd9wi5w",
+          "title": "商店街活性化事業助成金",
+          "category": "digitalization"
+        },
+        {
+          "id": "SCRAPED-1753970606634-01gic1ftd",
+          "title": "商店街活性化事業助成金",
+          "category": "digitalization"
+        },
+        {
+          "id": "SCRAPED-1753970606639-iai78tlkw",
+          "title": "商店街活性化事業助成金",
+          "category": "digitalization"
+        }
+      ]
+    },
+    {
+      "title": "ベビーシッター利用支援事業",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-miw1dkik8",
+          "title": "ベビーシッター利用支援事業",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-u4rtws74p",
+          "title": "ベビーシッター利用支援事業",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-u8yidsz7e",
+          "title": "ベビーシッター利用支援事業",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "介護福祉士資格取得費用補助事業",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-6clfm1q0e",
+          "title": "介護福祉士資格取得費用補助事業",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606634-0ro4m0l4i",
+          "title": "介護福祉士資格取得費用補助事業",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606639-w43t91rrk",
+          "title": "介護福祉士資格取得費用補助事業",
+          "category": "welfare"
+        }
+      ]
+    },
+    {
+      "title": "物価高騰緊急支援給付金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-0cu1o80r0",
+          "title": "物価高騰緊急支援給付金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606634-ii2yw7hx2",
+          "title": "物価高騰緊急支援給付金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606639-kj8ba3xz5",
+          "title": "物価高騰緊急支援給付金",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-qchrctdxp",
+          "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+          "category": "environment"
+        },
+        {
+          "id": "SCRAPED-1753970606634-cxfpiih3a",
+          "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+          "category": "environment"
+        },
+        {
+          "id": "SCRAPED-1753970606639-1uosks3sv",
+          "title": "家庭用燃料電池システム（エネファーム）設置助成金",
+          "category": "environment"
+        }
+      ]
+    },
+    {
+      "title": "電気自動車等用充電設備導入助成",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-odbsmpklk",
+          "title": "電気自動車等用充電設備導入助成",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606634-00qruth98",
+          "title": "電気自動車等用充電設備導入助成",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606639-82w0xjbcw",
+          "title": "電気自動車等用充電設備導入助成",
+          "category": "equipment"
+        }
+      ]
+    },
+    {
+      "title": "渋谷区介護職員宿舎借り上げ支援事業",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-51oflurzo",
+          "title": "渋谷区介護職員宿舎借り上げ支援事業",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606630-7q0ebjiau",
+          "title": "渋谷区介護職員宿舎借り上げ支援事業",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606634-ofmpdfxmk",
+          "title": "渋谷区介護職員宿舎借り上げ支援事業",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606634-5h8e7k5li",
+          "title": "渋谷区介護職員宿舎借り上げ支援事業",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606639-ey4jo1on8",
+          "title": "渋谷区介護職員宿舎借り上げ支援事業",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606639-92w21geum",
+          "title": "渋谷区介護職員宿舎借り上げ支援事業",
+          "category": "welfare"
+        }
+      ]
+    },
+    {
+      "title": "渋谷区介護施設物価高騰対策補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-gf251m123",
+          "title": "渋谷区介護施設物価高騰対策補助金",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606634-gxe9d0uu6",
+          "title": "渋谷区介護施設物価高騰対策補助金",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606639-7np57vf05",
+          "title": "渋谷区介護施設物価高騰対策補助金",
+          "category": "welfare"
+        }
+      ]
+    },
+    {
+      "title": "地域観光資源開発補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606630-si21idb4v",
+          "title": "地域観光資源開発補助金",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606634-hnxv229b0",
+          "title": "地域観光資源開発補助金",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606639-vb2avf31i",
+          "title": "地域観光資源開発補助金",
+          "category": "expansion"
+        }
+      ]
+    },
+    {
+      "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-61089gbja",
+          "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606631-djzwa9yge",
+          "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606631-58q93zhs7",
+          "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606631-vdst5dcnw",
+          "title": "新型コロナウイルス感染症の影響による介護保険料の減免",
+          "category": "welfare"
+        }
+      ]
+    },
+    {
+      "title": "建築物耐震診断助成事業（診断助成）",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-869szureb",
+          "title": "建築物耐震診断助成事業（診断助成）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-zcnw9xfqc",
+          "title": "建築物耐震診断助成事業（診断助成）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-j15p2xt4c",
+          "title": "建築物耐震診断助成事業（診断助成）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-rtmwbiluz",
+          "title": "建築物耐震診断助成事業（診断助成）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-v5yeiel7k",
+          "title": "建築物耐震診断助成事業（診断助成）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-so3huf44q",
+          "title": "建築物耐震診断助成事業（診断助成）",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "エレベーター安全装置等設置助成事業",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-uv5ayd680",
+          "title": "エレベーター安全装置等設置助成事業",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-oocpbe7ex",
+          "title": "エレベーター安全装置等設置助成事業",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-dj7p8rx19",
+          "title": "エレベーター安全装置等設置助成事業",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-vyxqtf0sf",
+          "title": "エレベーター安全装置等設置助成事業",
+          "category": "equipment"
+        }
+      ]
+    },
+    {
+      "title": "ブロック塀等除却・設置工事支援事業",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-9qbo0986r",
+          "title": "ブロック塀等除却・設置工事支援事業",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-7a74hewd3",
+          "title": "ブロック塀等除却・設置工事支援事業",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-ob3u0f72w",
+          "title": "ブロック塀等除却・設置工事支援事業",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-erpz9dr4a",
+          "title": "ブロック塀等除却・設置工事支援事業",
+          "category": "equipment"
+        }
+      ]
+    },
+    {
+      "title": "港区がん患者ウィッグ等購入費助成金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-nerh4urmc",
+          "title": "港区がん患者ウィッグ等購入費助成金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-pzmqbty2k",
+          "title": "港区がん患者ウィッグ等購入費助成金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-vjth6hnye",
+          "title": "港区がん患者ウィッグ等購入費助成金",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "家庭用生ごみ処理機等購入費の助成制度",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-p2e5im18c",
+          "title": "家庭用生ごみ処理機等購入費の助成制度",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-i2ao1cbu4",
+          "title": "家庭用生ごみ処理機等購入費の助成制度",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-v36qj0876",
+          "title": "家庭用生ごみ処理機等購入費の助成制度",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-qt82r1xsf",
+          "title": "家庭用生ごみ処理機等購入費の助成制度",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "高齢者エアコン購入設置費用助成事業",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-q58o0ybgu",
+          "title": "高齢者エアコン購入設置費用助成事業",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-izu43hl13",
+          "title": "高齢者エアコン購入設置費用助成事業",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-uwp4z2jz1",
+          "title": "高齢者エアコン購入設置費用助成事業",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-nza6ny8di",
+          "title": "高齢者エアコン購入設置費用助成事業",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "港区禁煙外来治療費助成金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-3on9452ab",
+          "title": "港区禁煙外来治療費助成金",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606631-8na265dg6",
+          "title": "港区禁煙外来治療費助成金",
+          "category": "welfare"
+        }
+      ]
+    },
+    {
+      "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-izmf3dfbd",
+          "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-71gye6kzg",
+          "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-3kq972ehu",
+          "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-twakhepin",
+          "title": "特定緊急輸送道路沿道建築物耐震化促進事業（補強設計・改修工事・建替え・除却助成）",
+          "category": "equipment"
+        }
+      ]
+    },
+    {
+      "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-5k01w68e0",
+          "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-15k3wwb5l",
+          "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-ywc38tmz3",
+          "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-v5m87ypam",
+          "title": "民間建築物耐震化促進事業（建替え・除却助成）",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "民間建築物耐震化促進事業（補強設計・改修工事助成）",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-1ox5s98ui",
+          "title": "民間建築物耐震化促進事業（補強設計・改修工事助成）",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-ncq7rabte",
+          "title": "民間建築物耐震化促進事業（補強設計・改修工事助成）",
+          "category": "equipment"
+        }
+      ]
+    },
+    {
+      "title": "みなとマリアージュ制度",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-4408l6cgw",
+          "title": "みなとマリアージュ制度",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-3ffcji4ti",
+          "title": "みなとマリアージュ制度",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "高齢者デジタルデバイド解消事業",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-5b58fzh1m",
+          "title": "高齢者デジタルデバイド解消事業",
+          "category": "digitalization"
+        },
+        {
+          "id": "SCRAPED-1753970606631-vovyj8gi7",
+          "title": "高齢者デジタルデバイド解消事業",
+          "category": "digitalization"
+        }
+      ]
+    },
+    {
+      "title": "ISO等取得支援事業補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-7hruf8zlc",
+          "title": "ISO等取得支援事業補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-jr32hwpns",
+          "title": "ISO等取得支援事業補助金",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "新型コロナウイルス感染症に係る傷病手当金（国民健康保険）",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-cd3fbdsr1",
+          "title": "新型コロナウイルス感染症に係る傷病手当金（国民健康保険）",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606631-xmw1o76at",
+          "title": "新型コロナウイルス感染症に係る傷病手当金（国民健康保険）",
+          "category": "welfare"
+        }
+      ]
+    },
+    {
+      "title": "小規模事業者経営改善資金（マル経融資）利子補助",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-qgvymhgti",
+          "title": "小規模事業者経営改善資金（マル経融資）利子補助",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-89k1fwfct",
+          "title": "小規模事業者経営改善資金（マル経融資）利子補助",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "高齢者補聴器購入費助成事業",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-ahgkpkf2x",
+          "title": "高齢者補聴器購入費助成事業",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-ww04o9ko2",
+          "title": "高齢者補聴器購入費助成事業",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "分譲マンション共用部分リフォーム融資の債務保証料助成事業",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-k5c2qlbyg",
+          "title": "分譲マンション共用部分リフォーム融資の債務保証料助成事業",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-gt14iz5um",
+          "title": "分譲マンション共用部分リフォーム融資の債務保証料助成事業",
+          "category": "equipment"
+        }
+      ]
+    },
+    {
+      "title": "集団回収を行う古紙回収業者に対する助成金制度",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-6sucl8k3d",
+          "title": "集団回収を行う古紙回収業者に対する助成金制度",
+          "category": "digitalization"
+        },
+        {
+          "id": "SCRAPED-1753970606631-5l1e3psmv",
+          "title": "集団回収を行う古紙回収業者に対する助成金制度",
+          "category": "digitalization"
+        }
+      ]
+    },
+    {
+      "title": "屋上等緑化の助成",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-z6lmfs6br",
+          "title": "屋上等緑化の助成",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-mw7y9ut1g",
+          "title": "屋上等緑化の助成",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "帯状疱疹ワクチン予防接種費用の一部を助成",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-ogf8jza84",
+          "title": "帯状疱疹ワクチン予防接種費用の一部を助成",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-z5bgyj9p0",
+          "title": "帯状疱疹ワクチン予防接種費用の一部を助成",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "小規模企業事業承継支援補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-e410qqipd",
+          "title": "小規模企業事業承継支援補助金",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606631-0bz80usah",
+          "title": "小規模企業事業承継支援補助金",
+          "category": "equipment"
+        }
+      ]
+    },
+    {
+      "title": "港区リユース食器利用費補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-gplblgesd",
+          "title": "港区リユース食器利用費補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-vmbdzskx9",
+          "title": "港区リユース食器利用費補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-cugltt33e",
+          "title": "港区リユース食器利用費補助金",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "販路拡大支援事業補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606631-ue3vttxcu",
+          "title": "販路拡大支援事業補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606631-oicmmfosm",
+          "title": "販路拡大支援事業補助金",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "木造住宅密集地域における不燃化建替え促進事業",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606632-4ea5skjrl",
+          "title": "木造住宅密集地域における不燃化建替え促進事業",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606632-z0dm02zvn",
+          "title": "木造住宅密集地域における不燃化建替え促進事業",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "帯状疱疹ワクチン予防接種費用の助成について",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606632-xze6ok702",
+          "title": "帯状疱疹ワクチン予防接種費用の助成について",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606632-ntbowmkq1",
+          "title": "帯状疱疹ワクチン予防接種費用の助成について",
+          "category": "welfare"
+        }
+      ]
+    },
+    {
+      "title": "新型コロナウイルスに感染した新宿区国民健康保険の被保険者等に係る傷病手当金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606632-cs40hulyh",
+          "title": "新型コロナウイルスに感染した新宿区国民健康保険の被保険者等に係る傷病手当金",
+          "category": "welfare"
+        },
+        {
+          "id": "SCRAPED-1753970606632-cut9x3r5m",
+          "title": "新型コロナウイルスに感染した新宿区国民健康保険の被保険者等に係る傷病手当金",
+          "category": "welfare"
+        }
+      ]
+    },
+    {
+      "title": "民有灯の維持助成",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606632-eacwwwna7",
+          "title": "民有灯の維持助成",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606632-ojrwq24jx",
+          "title": "民有灯の維持助成",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "私道整備助成",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606632-z5mukgpm8",
+          "title": "私道整備助成",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606632-wxx8yfl6f",
+          "title": "私道整備助成",
+          "category": "equipment"
+        },
+        {
+          "id": "SCRAPED-1753970606632-y17zn6uqr",
+          "title": "私道整備助成",
+          "category": "equipment"
+        }
+      ]
+    },
+    {
+      "title": "屋上緑化・壁面緑化助成制度",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606632-h29roexvn",
+          "title": "屋上緑化・壁面緑化助成制度",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606632-zm435u20m",
+          "title": "屋上緑化・壁面緑化助成制度",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "商店街灯の維持助成",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606632-um6cyca54",
+          "title": "商店街灯の維持助成",
+          "category": "expansion"
+        },
+        {
+          "id": "SCRAPED-1753970606632-12n4a0utn",
+          "title": "商店街灯の維持助成",
+          "category": "expansion"
+        }
+      ]
+    },
+    {
+      "title": "経営力強化支援事業補助金",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606632-wztfoytxf",
+          "title": "経営力強化支援事業補助金",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606632-sepk8wjiq",
+          "title": "経営力強化支援事業補助金",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "学校給食費等助成（私立学校就学者等支援給付金）",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606632-7pfnux591",
+          "title": "学校給食費等助成（私立学校就学者等支援給付金）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606632-fjdng557d",
+          "title": "学校給食費等助成（私立学校就学者等支援給付金）",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "商工業緊急資金（特例）",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606632-6obz65n1h",
+          "title": "商工業緊急資金（特例）",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606632-py27e4vig",
+          "title": "商工業緊急資金（特例）",
+          "category": "other"
+        }
+      ]
+    },
+    {
+      "title": "公衆喫煙所整備費助成・喫煙専用室等整備費助成",
+      "subsidies": [
+        {
+          "id": "SCRAPED-1753970606632-47v91zbj6",
+          "title": "公衆喫煙所整備費助成・喫煙専用室等整備費助成",
+          "category": "other"
+        },
+        {
+          "id": "SCRAPED-1753970606632-mck6xums0",
+          "title": "公衆喫煙所整備費助成・喫煙専用室等整備費助成",
+          "category": "other"
+        }
+      ]
+    }
+  ],
+  "realITSubsidies": [
+    {
+      "id": "TOKYO-00009",
+      "title": "IT・IoT導入補助金"
+    },
+    {
+      "id": "SCRAPED-1753970606630-uokd9wi5w",
+      "title": "商店街活性化事業助成金"
+    },
+    {
+      "id": "SCRAPED-1753970606631-5b58fzh1m",
+      "title": "高齢者デジタルデバイド解消事業"
+    },
+    {
+      "id": "SCRAPED-1753970606631-4dw9itmj5",
+      "title": "オンライン資格確認のシステム導入における助成金制度"
+    },
+    {
+      "id": "SCRAPED-1753970606631-a35qpwy29",
+      "title": "ホームページ作成支援事業補助金"
+    }
+  ]
+}

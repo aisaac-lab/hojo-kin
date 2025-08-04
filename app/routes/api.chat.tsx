@@ -1,6 +1,5 @@
 import { json, type ActionFunctionArgs } from '@remix-run/node';
 import { AssistantService } from '../services/assistant.server';
-import { ReviewAgentService } from '../services/review-agent.server';
 import { ValidationAgentService } from '../services/validation-agent.server';
 import type { ChatResponse } from '~/types/chat';
 import type { ReviewContext } from '~/types/review';
@@ -147,7 +146,7 @@ export async function action({ request }: ActionFunctionArgs) {
 						filterContext += `- 従業員数: ${effectiveFilters.company.employeeCount.min}名以上\n`;
 					}
 				}
-				
+
 				if (
 					effectiveFilters.company.specialConditions &&
 					effectiveFilters.company.specialConditions.length > 0
@@ -214,10 +213,10 @@ export async function action({ request }: ActionFunctionArgs) {
 
 		const additionalInstructions = `
       【最重要】file_search ツールを使用して補助金データを検索してください。
-      
+
       【検索の具体例】
       Q: "IT企業で社員数50名以内の助成金を列挙する"
-      
+
       【重要】検索手順:
       1. subsidies-master.json または subsidies-enhanced.json から条件に合う補助金を検索
       2. 複数のキーワードで広く検索（"IT", "DX", "デジタル", "システム", "ホームページ", "ソフトウェア"等）
@@ -254,25 +253,25 @@ export async function action({ request }: ActionFunctionArgs) {
       3. front_subsidy_detail_page_url フィールドの値を必ず取得する
       4. 【最重要】検索結果の総件数を正確にカウントし、「申請可能な補助金は○○件です」の○○に実際の件数を記載する
       5. 【重要】検索は必ず全データ（338件）から行い、条件に合致する全ての補助金をカウントすること
-      
+
       【検索条件の解釈】
       - 「IT企業」→ metadata.categoryTags.primaryが"digitalization"またはsecondaryに"digitalization"を含む補助金
       - 「社員数50名以内」→ metadata.targetCompany.employeeCount.maxが50以下、または未設定の補助金
       - 「中小企業」→ metadata.targetCompany.companySizeに"small"または"medium"を含む補助金
       - 大企業限定（companySizeが"large"のみ）の補助金は除外
-      
+
       【IT関連補助金の検索キーワード】
       IT企業向けの補助金を検索する場合は、以下の複数のキーワードで包括的に検索：
       - 基本キーワード: "IT", "DX", "デジタル", "システム", "IoT", "AI", "IT導入"
       - 追加キーワード: "ソフトウェア", "ホームページ", "EC", "オンライン", "クラウド", "セキュリティ"
       - カテゴリー横断: digitalizationカテゴリーだけでなく、startup、expansionカテゴリーも検索
-      
+
       【全て列挙の場合の対応】
       「全て」「すべて」「全部」「一覧」という要求の場合：
       - 最低でも20件以上の補助金を検索・提示することを目標とする
       - 複数のカテゴリーを横断的に検索
       - 見つかった件数が少ない場合は、さらに関連キーワードで再検索
-      
+
       ユーザーの質問: "${message}"
 
       回答の原則：
@@ -583,9 +582,10 @@ export async function action({ request }: ActionFunctionArgs) {
 			'[DEBUG] Total messages in thread:',
 			result.messages.data.length
 		);
-		
+
 		// 応答から補助金件数を抽出してログ出力
-		const subsidyCountMatch = latestMessageContent.match(/申請可能な補助金は(\d+)件です/);
+		const subsidyCountMatch =
+			latestMessageContent.match(/申請可能な補助金は(\d+)件です/);
 		if (subsidyCountMatch) {
 			console.log('[DEBUG] Extracted subsidy count:', subsidyCountMatch[1]);
 		}
@@ -688,7 +688,7 @@ ${validationResult.clarificationQuestions
 					bestScores: JSON.stringify(validationResult.bestScores),
 					failurePatterns: JSON.stringify(validationResult.failurePatterns),
 					successPatterns: JSON.stringify(validationResult.successPatterns),
-					duration: Date.now() - Date.now(), // This will be calculated in the service
+					duration: 0, // Duration should be calculated properly
 				});
 			} catch (dbError) {
 				console.error(
@@ -709,6 +709,13 @@ ${validationResult.clarificationQuestions
 		return json(response);
 	} catch (error) {
 		console.error('Chat error:', error);
-		return json({ error: 'Failed to process chat message' }, { status: 500 });
+		const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+		const errorStack = error instanceof Error ? error.stack : '';
+		console.error('Error details:', { message: errorMessage, stack: errorStack });
+		
+		return json({ 
+			error: 'Failed to process chat message',
+			details: process.env.NODE_ENV === 'development' ? errorMessage : undefined
+		}, { status: 500 });
 	}
 }
