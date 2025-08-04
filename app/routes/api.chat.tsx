@@ -44,6 +44,14 @@ export async function action({ request }: ActionFunctionArgs) {
 			hasAssistantId: !!process.env.OPENAI_ASSISTANT_ID,
 			hasVectorStoreId: !!process.env.OPENAI_VECTOR_STORE_ID,
 		});
+		
+		// Log request details for debugging
+		console.log('[API.CHAT] Request details:', {
+			method: request.method,
+			url: request.url,
+			contentType: request.headers.get('content-type'),
+			contentLength: request.headers.get('content-length'),
+		});
 
 		// Parse and validate request body
 		let requestBody;
@@ -52,8 +60,9 @@ export async function action({ request }: ActionFunctionArgs) {
 		// Check if the request is FormData or JSON
 		const contentType = request.headers.get('content-type') || '';
 		
-		if (contentType.includes('multipart/form-data') || contentType.includes('application/x-www-form-urlencoded')) {
+		if (contentType.includes('multipart/form-data') || contentType.includes('application/x-www-form-urlencoded') || !contentType) {
 			// Handle FormData from Remix fetcher
+			console.log('[API.CHAT] Attempting to parse FormData with content-type:', contentType || 'empty');
 			try {
 				const formData = await request.formData();
 				message = formData.get('message')?.toString() || '';
@@ -71,6 +80,12 @@ export async function action({ request }: ActionFunctionArgs) {
 				});
 			} catch (parseError) {
 				console.error('[API.CHAT] Failed to parse FormData:', parseError);
+				console.error('[API.CHAT] FormData parse error details:', {
+					errorMessage: parseError instanceof Error ? parseError.message : 'Unknown error',
+					errorStack: parseError instanceof Error ? parseError.stack : '',
+					contentType: request.headers.get('content-type'),
+					contentLength: request.headers.get('content-length'),
+				});
 				return json({ 
 					error: 'Invalid form data',
 					details: 'Failed to parse form data'
@@ -759,7 +774,7 @@ ${validationResult.clarificationQuestions
 				
 				// 各ループの記録を保存
 				for (const loop of validationResult.loops) {
-					await db.insert(validationLoops).values({
+					await (await db.insert(validationLoops)).values({
 						threadId: currentThreadId,
 						userQuestion: message,
 						loopNumber: loop.loopNumber,
@@ -774,7 +789,7 @@ ${validationResult.clarificationQuestions
 				}
 
 				// 最終的な検証結果を保存
-				await db.insert(validationResults).values({
+				await (await db.insert(validationResults)).values({
 					threadId: currentThreadId,
 					userQuestion: message,
 					initialResponse: latestMessageContent,
