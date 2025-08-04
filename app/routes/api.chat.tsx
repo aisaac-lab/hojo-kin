@@ -1,5 +1,5 @@
 import { json, type ActionFunctionArgs } from '@remix-run/node';
-import { AssistantService } from '../services/assistant.server';
+import { AssistantService, AssistantServiceError } from '../services/assistant.server';
 import { ValidationAgentService } from '../services/validation-agent.server';
 import type { ChatResponse } from '~/types/chat';
 import type { ReviewContext } from '~/types/review';
@@ -47,24 +47,56 @@ export async function action({ request }: ActionFunctionArgs) {
 
 		// Parse and validate request body
 		let requestBody;
-		try {
-			requestBody = await request.json();
-			console.log('[API.CHAT] Request body received:', {
-				hasMessage: !!requestBody?.message,
-				hasThreadId: !!requestBody?.threadId,
-				hasUserId: !!requestBody?.userId,
-				hasFilters: !!requestBody?.filters,
-				messageLength: requestBody?.message?.length,
-			});
-		} catch (parseError) {
-			console.error('[API.CHAT] Failed to parse request body:', parseError);
-			return json({ 
-				error: 'Invalid request body',
-				details: 'Request body must be valid JSON'
-			}, { status: 400 });
+		let threadId, message, userId, filters;
+		
+		// Check if the request is FormData or JSON
+		const contentType = request.headers.get('content-type') || '';
+		
+		if (contentType.includes('multipart/form-data')) {
+			// Handle FormData from Remix fetcher
+			try {
+				const formData = await request.formData();
+				message = formData.get('message')?.toString() || '';
+				threadId = formData.get('threadId')?.toString() || '';
+				userId = formData.get('userId')?.toString() || '';
+				const filtersStr = formData.get('filters')?.toString() || '{}';
+				filters = JSON.parse(filtersStr);
+				
+				console.log('[API.CHAT] FormData received:', {
+					hasMessage: !!message,
+					hasThreadId: !!threadId,
+					hasUserId: !!userId,
+					hasFilters: !!filters,
+					messageLength: message?.length,
+				});
+			} catch (parseError) {
+				console.error('[API.CHAT] Failed to parse FormData:', parseError);
+				return json({ 
+					error: 'Invalid form data',
+					details: 'Failed to parse form data'
+				}, { status: 400 });
+			}
+		} else {
+			// Handle JSON body
+			try {
+				requestBody = await request.json();
+				({ threadId, message, userId, filters } = requestBody);
+				
+				console.log('[API.CHAT] JSON body received:', {
+					hasMessage: !!message,
+					hasThreadId: !!threadId,
+					hasUserId: !!userId,
+					hasFilters: !!filters,
+					messageLength: message?.length,
+				});
+			} catch (parseError) {
+				console.error('[API.CHAT] Failed to parse JSON body:', parseError);
+				return json({ 
+					error: 'Invalid request body',
+					details: 'Request body must be valid JSON'
+				}, { status: 400 });
+			}
 		}
-
-		const { threadId, message, userId, filters } = requestBody;
 
 		if (!message) {
 			return json({ error: 'Message is required' }, { status: 400 });
@@ -789,7 +821,7 @@ ${validationResult.clarificationQuestions
 		if (error instanceof AssistantServiceError) {
 			return json({ 
 				error: 'Assistant service error',
-				details: `${error.code}: ${errorMessage}` // Show details in production temporarily for debugging
+				details: `${(error as AssistantServiceError).code}: ${errorMessage}` // Show details in production temporarily for debugging
 			}, { status: 503 });
 		}
 		

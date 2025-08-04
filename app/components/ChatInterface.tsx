@@ -98,17 +98,18 @@ export function ChatInterface() {
     }
 
 
+    // Create FormData for Remix fetcher
+    const formData = new FormData();
+    formData.append('message', currentInput);
+    formData.append('threadId', threadId || '');
+    formData.append('userId', 'demo-user');
+    formData.append('filters', JSON.stringify(filterState.filters));
+    
     fetcher.submit(
-      JSON.stringify({
-        message: currentInput,
-        threadId: threadId || '',
-        userId: 'demo-user',
-        filters: filterState.filters,
-      }),
+      formData,
       {
         method: 'post',
         action: '/api/chat',
-        encType: 'application/json',
       }
     );
   };
