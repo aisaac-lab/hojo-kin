@@ -22,31 +22,52 @@ let drizzleDb: ReturnType<typeof drizzle> | null = null;
 // Initialize database connection
 function getDb() {
 	if (!drizzleDb) {
-		// Get database path from env or use default
-		const envUrl = process.env.DATABASE_URL;
-		let dbPath: string;
+		try {
+			// Get database path from env or use default
+			const envUrl = process.env.DATABASE_URL;
+			let dbPath: string;
 
-		if (envUrl) {
-			// Remove 'file:' prefix and resolve relative paths
-			const cleanPath = envUrl.replace('file:', '');
-			dbPath =
-				cleanPath.startsWith('./') || cleanPath.startsWith('../')
-					? resolve(process.cwd(), cleanPath)
-					: cleanPath;
-		} else {
-			// Default to db/dev.db
-			dbPath = resolve(process.cwd(), 'db', 'dev.db');
+			if (envUrl) {
+				// Remove 'file:' prefix and resolve relative paths
+				const cleanPath = envUrl.replace('file:', '');
+				dbPath =
+					cleanPath.startsWith('./') || cleanPath.startsWith('../')
+						? resolve(process.cwd(), cleanPath)
+						: cleanPath;
+			} else {
+				// Default to db/dev.db
+				dbPath = resolve(process.cwd(), 'db', 'dev.db');
+			}
+
+			console.log('[DB] Initializing database with path:', dbPath);
+			console.log('[DB] Database URL from env:', envUrl);
+			console.log('[DB] Current working directory:', process.cwd());
+			
+			// Check if we're using Turso (remote database)
+			const tursoUrl = process.env.TURSO_DATABASE_URL;
+			const tursoAuthToken = process.env.TURSO_AUTH_TOKEN;
+			
+			if (tursoUrl && tursoAuthToken) {
+				// Using Turso with embedded replica
+				console.log('[DB] Using Turso database with embedded replica');
+				client = createClient({
+					url: tursoUrl,
+					authToken: tursoAuthToken,
+				});
+			} else {
+				// Using local SQLite file
+				console.log('[DB] Using local SQLite file');
+				client = createClient({
+					url: `file:${dbPath}`,
+				});
+			}
+			drizzleDb = drizzle(client, { schema });
+			
+			console.log('[DB] Database initialized successfully');
+		} catch (error) {
+			console.error('[DB] Failed to initialize database:', error);
+			throw new Error(`Database initialization failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
 		}
-
-		console.log('[DB] Initializing database with path:', dbPath);
-		console.log('[DB] Database URL from env:', envUrl);
-		
-		client = createClient({
-			url: `file:${dbPath}`,
-		});
-		drizzleDb = drizzle(client, { schema });
-		
-		console.log('[DB] Database initialized successfully');
 	}
 	return drizzleDb;
 }

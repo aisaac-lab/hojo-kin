@@ -91,6 +91,21 @@ subsidy-search-mvp/
 - **AI/検索**: OpenAI Assistants API (File Search)
 - **ファイル管理**: ローカルファイルシステム + OpenAI Files API
 
+## デプロイメント
+
+### Renderへのデプロイ
+
+本プロジェクトはRenderへのデプロイに対応しています。詳細な手順は以下のドキュメントを参照してください：
+
+- [Tursoセットアップガイド](./docs/TURSO_SETUP.md) - Tursoデータベースの設定
+- [Renderデプロイメントガイド](./docs/RENDER_DEPLOYMENT.md) - Renderへのデプロイ手順
+
+簡易手順：
+1. Tursoアカウントを作成してデータベースをセットアップ
+2. Renderでリポジトリを接続
+3. 環境変数を設定
+4. デプロイ！
+
 ## 注意事項
 
 - OpenAI APIキーが必要です

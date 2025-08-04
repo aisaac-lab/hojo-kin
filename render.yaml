@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: subsidy-search-mvp
+    runtime: node
+    plan: free # Change to 'starter' or higher for production
+    buildCommand: ./render-build.sh
+    startCommand: pnpm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TURSO_DATABASE_URL
+        sync: false # Set manually in Render dashboard
+      - key: TURSO_AUTH_TOKEN
+        sync: false # Set manually in Render dashboard
+      - key: OPENAI_API_KEY
+        sync: false # Set manually in Render dashboard
+      - key: OPENAI_ASSISTANT_ID
+        sync: false # Set manually in Render dashboard
+      - key: OPENAI_VECTOR_STORE_ID
+        sync: false # Set manually in Render dashboard
+      - key: OPENAI_REVIEW_MODEL
+        value: gpt-4-turbo-preview
+      - key: REVIEW_SCORE_THRESHOLD
+        value: "70"
+      - key: MAX_VALIDATION_LOOPS
+        value: "3"
+      - key: SCORE_IMPROVEMENT_THRESHOLD
+        value: "10"
+      - key: ENABLE_PROGRESSIVE_HINTS
+        value: "true"
+      - key: ENABLE_FAILURE_ANALYSIS
+        value: "true"
+      - key: ENABLE_VALIDATION_LOGGING
+        value: "true"

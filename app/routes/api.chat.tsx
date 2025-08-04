@@ -660,6 +660,9 @@ ${validationResult.clarificationQuestions
 
 			// 検証結果と各ループをデータベースに保存
 			try {
+				// テーブルの存在を確認（エラーハンドリングのため）
+				console.log('[VALIDATION] Attempting to save validation logs...');
+				
 				// 各ループの記録を保存
 				for (const loop of validationResult.loops) {
 					await db.insert(validationLoops).values({
