@@ -17,6 +17,10 @@ echo "Building application..."
 # Set NODE_ENV to production for proper build
 export NODE_ENV=production
 
+# Ensure NODE_ENV is set for all child processes
+echo "Setting NODE_ENV=production for build process..."
+echo "Current NODE_ENV: $NODE_ENV"
+
 # Always use pnpm/npm to run the build script
 # This ensures proper binary execution across different Node versions
 echo "Running build with package manager (NODE_ENV=$NODE_ENV)..."
@@ -25,19 +29,27 @@ if command -v pnpm &> /dev/null; then
   # Run setup-production first if it exists
   if [ -f "scripts/setup-production.ts" ]; then
     echo "Running production setup..."
-    npx tsx scripts/setup-production.ts || echo "Setup failed, continuing..."
+    NODE_ENV=production npx tsx scripts/setup-production.ts || echo "Setup failed, continuing..."
   fi
-  # Run remix build directly with production environment
+  # Run remix build with explicit NODE_ENV
+  echo "Running Remix build in production mode..."
   NODE_ENV=production pnpm exec remix build
+  
+  # Verify NODE_ENV was used
+  echo "Build completed with NODE_ENV=$NODE_ENV"
 else
   echo "Using npm..."
   # Run setup-production first if it exists
   if [ -f "scripts/setup-production.ts" ]; then
     echo "Running production setup..."
-    npx tsx scripts/setup-production.ts || echo "Setup failed, continuing..."
+    NODE_ENV=production npx tsx scripts/setup-production.ts || echo "Setup failed, continuing..."
   fi
-  # Run remix build directly with production environment
+  # Run remix build with explicit NODE_ENV
+  echo "Running Remix build in production mode..."
   NODE_ENV=production npx remix build
+  
+  # Verify NODE_ENV was used
+  echo "Build completed with NODE_ENV=$NODE_ENV"
 fi
 
 if [ $? -eq 0 ]; then
