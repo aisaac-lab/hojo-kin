@@ -22,10 +22,22 @@ export NODE_ENV=production
 echo "Running build with package manager (NODE_ENV=$NODE_ENV)..."
 if command -v pnpm &> /dev/null; then
   echo "Using pnpm..."
-  NODE_ENV=production pnpm run build:production
+  # Run setup-production first if it exists
+  if [ -f "scripts/setup-production.ts" ]; then
+    echo "Running production setup..."
+    npx tsx scripts/setup-production.ts || echo "Setup failed, continuing..."
+  fi
+  # Run remix build directly with production environment
+  NODE_ENV=production pnpm exec remix build
 else
   echo "Using npm..."
-  NODE_ENV=production npm run build:production
+  # Run setup-production first if it exists
+  if [ -f "scripts/setup-production.ts" ]; then
+    echo "Running production setup..."
+    npx tsx scripts/setup-production.ts || echo "Setup failed, continuing..."
+  fi
+  # Run remix build directly with production environment
+  NODE_ENV=production npx remix build
 fi
 
 if [ $? -eq 0 ]; then
