@@ -8,14 +8,17 @@ import { resolve } from 'path';
 import { existsSync, mkdirSync } from 'fs';
 import { readFile } from 'fs/promises';
 import { join } from 'path';
+import { createLogger } from '../app/utils/logger';
+
+const logger = createLogger('Setup');
 
 async function setupProduction() {
-  console.log('[Setup] Starting production setup...');
+  logger.info('Starting production setup...');
   
   try {
     // Get database URL
     const databaseUrl = process.env.DATABASE_URL || 'file:./db/dev.db';
-    console.log('[Setup] Database URL:', databaseUrl);
+    logger.info('Database URL:', databaseUrl);
     
     // Extract path from URL
     const dbPath = databaseUrl.replace('file:', '');
@@ -23,7 +26,7 @@ async function setupProduction() {
     
     // Ensure directory exists
     if (!existsSync(dbDir)) {
-      console.log('[Setup] Creating database directory:', dbDir);
+      logger.info('Creating database directory:', dbDir);
       mkdirSync(dbDir, { recursive: true });
     }
     
@@ -61,32 +64,32 @@ async function setupProduction() {
           try {
             await client.execute(sql);
           } catch (err) {
-            console.error('[Setup] Error executing statement:', err);
-            console.error('[Setup] Statement:', sql.substring(0, 100) + '...');
+            logger.error('Error executing statement:', err);
+            logger.error('Statement:', sql.substring(0, 100) + '...');
           }
         }
       }
       
-      console.log('[Setup] Migrations completed!');
+      logger.info('Migrations completed!');
       
       // Verify tables were created
       const newTables = await client.execute(
         "SELECT name FROM sqlite_master WHERE type='table'"
       );
-      console.log('[Setup] Tables after migration:', newTables.rows.map(r => r.name));
+      logger.info('Tables after migration:', newTables.rows.map(r => r.name));
     } else {
-      console.log('[Setup] All required tables exist!');
+      logger.info('All required tables exist!');
     }
     
     // Close connection
     client.close();
     
-    console.log('[Setup] Production setup completed successfully!');
+    logger.info('Production setup completed successfully!');
     
   } catch (error) {
-    console.error('[Setup] Error during production setup:', error);
+    logger.error('Error during production setup:', error);
     // Don't exit with error to allow the app to start anyway
-    console.log('[Setup] Continuing despite errors...');
+    logger.info('Continuing despite errors...');
   }
 }
 
@@ -94,11 +97,11 @@ async function setupProduction() {
 if (import.meta.url === `file://${process.argv[1]}`) {
   setupProduction()
     .then(() => {
-      console.log('[Setup] Done!');
+      logger.info('Done!');
       process.exit(0);
     })
     .catch((error) => {
-      console.error('[Setup] Failed:', error);
+      logger.error('Failed:', error);
       process.exit(1);
     });
 }

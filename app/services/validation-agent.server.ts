@@ -1,5 +1,5 @@
 import { ReviewAgentService } from './review-agent.server';
-import { AssistantService } from './assistant.server';
+import { AssistantService } from './assistant.service';
 import type { 
   ValidationResult, 
   ValidationLoop, 
@@ -163,6 +163,12 @@ export class ValidationAgentService extends ReviewAgentService {
         // 新しいレスポンスを取得
         currentResponse = this.extractLatestAssistantMessage(regeneratedResult);
         previousScores = reviewResult.scores;
+        
+        // 中間応答であることをログに記録
+        console.log(`[VALIDATION] Generated intermediate response for loop ${loopNum}`);
+        if (this.defaultConfig.enableLogging) {
+          console.log(`[VALIDATION] Intermediate response length: ${currentResponse.length} chars`);
+        }
       } else {
         // ask_clarification または approve の場合はループを終了
         break;

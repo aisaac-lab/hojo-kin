@@ -1,6 +1,6 @@
 import type { LoaderFunctionArgs } from '@remix-run/node';
 import { json } from '@remix-run/node';
-import { db } from '~/db';
+import { threadRepository } from '~/utils/database-simple';
 
 export async function loader({ request }: LoaderFunctionArgs) {
 	try {
@@ -40,9 +40,10 @@ export async function loader({ request }: LoaderFunctionArgs) {
 async function checkDatabase(): Promise<{ healthy: boolean; message: string }> {
 	try {
 		// Try a simple query to test database connection
-		await db.thread.findMany({
-			where: { userId: 'health-check' }
-		});
+		const result = await threadRepository.findMany('health-check');
+		if ('ok' in result && !result.ok) {
+			throw new Error(result.error.message);
+		}
 		return {
 			healthy: true,
 			message: 'Database connection successful',

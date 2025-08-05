@@ -4,7 +4,7 @@
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { createAssistantService } from '../../../app/services/assistant.server.functional';
+import { createAssistantService } from '../../../app/services/assistant.service';
 import { ok, err } from '../../../app/types/result';
 import { createAssistantError } from '../../../app/types/errors';
 

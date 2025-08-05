@@ -11,6 +11,7 @@ export interface ChatResponse {
   messages?: string[];
   error?: string;
   success?: boolean;
+  responseId?: string;
 }
 
 import type { EnhancedSubsidyFilter } from './enhanced-filter';

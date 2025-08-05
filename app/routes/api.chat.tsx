@@ -1,5 +1,5 @@
 import { json, type ActionFunctionArgs } from '@remix-run/node';
-import { AssistantService, AssistantServiceError } from '../services/assistant.server';
+import { AssistantService, AssistantServiceError } from '../services/assistant.service';
 import { ValidationAgentService } from '../services/validation-agent.server';
 import type { ChatResponse } from '~/types/chat';
 import type { ReviewContext } from '~/types/review';
@@ -700,6 +700,11 @@ export async function action({ request }: ActionFunctionArgs) {
 
 		// 検証エージェントによる品質チェックとフィードバックループ
 		let finalResponse = latestMessageContent;
+		
+		// 検証ループ前のメッセージIDを記録
+		const messagesBeforeValidation = await assistantService.getMessages(currentThreadId);
+		const messageIdsBeforeValidation = new Set(messagesBeforeValidation.data.map(m => m.id));
+		console.log('[VALIDATION] Messages before validation:', messageIdsBeforeValidation.size);
 
 		if (latestMessageContent) {
 			const validationAgentService = new ValidationAgentService();
@@ -731,6 +736,24 @@ export async function action({ request }: ActionFunctionArgs) {
 
 			// 検証結果に基づいて最終的なレスポンスを設定
 			finalResponse = validationResult.bestResponse;
+			
+			// 検証ループ後のメッセージを確認し、新しく追加されたメッセージを特定
+			const messagesAfterValidation = await assistantService.getMessages(currentThreadId);
+			const newMessagesDuringValidation = messagesAfterValidation.data.filter(
+				m => !messageIdsBeforeValidation.has(m.id) && m.role === 'assistant'
+			);
+			
+			console.log('[VALIDATION] New messages during validation:', newMessagesDuringValidation.length);
+			
+			// 検証ループで複数のメッセージが追加された場合、最新のもののみを使用
+			if (newMessagesDuringValidation.length > 1) {
+				console.log('[VALIDATION] Multiple messages detected during validation loop, using only the final response');
+				// 最新のメッセージ（配列の最初の要素）のコンテンツを取得
+				const latestValidationMessage = newMessagesDuringValidation[0];
+				if (latestValidationMessage.content[0]?.type === 'text') {
+					finalResponse = latestValidationMessage.content[0].text.value;
+				}
+			}
 
 			// 承認されなかった場合で、深掘り質問がある場合は追加
 			if (
@@ -811,12 +834,17 @@ ${validationResult.clarificationQuestions
 			}
 		}
 
+		// 一意のレスポンスIDを生成（タイムスタンプ + ランダム文字列）
+		const responseId = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+		
 		const response: ChatResponse = {
 			threadId: currentThreadId,
 			messages: finalResponse ? [finalResponse] : [],
 			success: true,
+			responseId, // レスポンスIDを追加
 		};
 
+		console.log('[API.CHAT] Sending response with ID:', responseId);
 		return json(response);
 	} catch (error) {
 		console.error('[API.CHAT] Error:', error);

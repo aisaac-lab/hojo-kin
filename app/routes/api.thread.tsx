@@ -1,5 +1,5 @@
 import { json, type ActionFunctionArgs, type LoaderFunctionArgs } from '@remix-run/node';
-import { AssistantService } from '~/services/assistant.server';
+import { AssistantService } from '~/services/assistant.service';
 
 export async function loader({ request, params }: LoaderFunctionArgs) {
   const url = new URL(request.url);

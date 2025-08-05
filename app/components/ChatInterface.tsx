@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Form, useFetcher } from '@remix-run/react';
 import { Message } from './Message';
 import { EnhancedFilterPanel } from './EnhancedFilterPanel';
+import { Button } from './ui/Button';
 import type { Message as MessageData, ChatResponse } from '~/types/chat';
 import type { EnhancedSubsidyFilter, EnhancedFilterState } from '~/types/enhanced-filter';
 
@@ -25,22 +26,27 @@ export function ChatInterface() {
   // Handle fetcher response
   useEffect(() => {
     if (fetcher.state === 'idle' && fetcher.data?.success && fetcher.data.messages && fetcher.data.messages.length > 0) {
-      // Create a unique identifier for this response
-      const responseId = `${fetcher.data.threadId}-${fetcher.data.messages[0]}`;
+      // Use the responseId from the server if available, otherwise create one
+      const responseId = fetcher.data.responseId || `${fetcher.data.threadId}-${fetcher.data.messages[0]}-${Date.now()}`;
       
       // Only process if we haven't seen this exact response before
       if (responseId !== lastProcessedResponse.current) {
         lastProcessedResponse.current = responseId;
         
+        console.log('[ChatInterface] Processing response with ID:', responseId);
+        
         if (fetcher.data.threadId) {
           setThreadId(fetcher.data.threadId);
         }
         
+        // 検証ループで複数のメッセージが返された場合は最初のもののみを使用
         const assistantMessage: MessageData = {
           role: 'assistant',
           content: fetcher.data.messages[0],
         };
         setMessages((prev) => [...prev, assistantMessage]);
+      } else {
+        console.log('[ChatInterface] Skipping duplicate response with ID:', responseId);
       }
     }
   }, [fetcher.state, fetcher.data]);
@@ -120,12 +126,13 @@ export function ChatInterface() {
       <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2 bg-white">
         <h1 className="text-lg font-semibold text-gray-900">補助金検索アシスタント</h1>
         {threadId && (
-          <button
+          <Button
             onClick={handleReset}
-            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            variant="ghost"
+            size="sm"
           >
             新しいチャット
-          </button>
+          </Button>
         )}
       </div>
 
@@ -226,16 +233,18 @@ export function ChatInterface() {
               rows={1}
             />
             
-            <button
+            <Button
               type="submit"
               disabled={isLoading || !input.trim()}
-              className="absolute p-1 rounded-md bottom-3 right-3 text-gray-600 hover:text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              variant="ghost"
+              size="sm"
+              className="absolute bottom-3 right-3 !p-1"
             >
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <circle cx="12" cy="12" r="11" stroke="currentColor" strokeWidth="2"/>
               </svg>
-            </button>
+            </Button>
           </div>
           
           <div className="px-4 py-2 text-center text-xs text-gray-600 space-y-1">

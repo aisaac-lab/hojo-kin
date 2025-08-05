@@ -6,7 +6,7 @@
   "scripts": {
     "build": "remix build",
     "build:production": "pnpm run setup:production && remix build",
-    "dev": "remix dev --manual",
+    "dev": "remix dev",
     "start": "bash scripts/start-production.sh",
     "start:dev": "node server.js",
     "setup:production": "tsx scripts/setup-production.ts",

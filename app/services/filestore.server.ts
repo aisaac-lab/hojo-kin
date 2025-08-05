@@ -1,6 +1,6 @@
 import { writeFile, readFile, mkdir } from 'fs/promises';
 import { join } from 'path';
-import { db } from '~/db';
+import { subsidyRepository } from '../utils/database-simple';
 import type { Subsidy } from '~/db/schema';
 
 export class FileStoreService {
@@ -46,7 +46,11 @@ export class FileStoreService {
   async getAllSubsidyFiles() {
     await this.ensureDataDirectory();
     
-    const subsidies = await db.subsidy.findMany();
+    const result = await subsidyRepository.findMany();
+    if ('ok' in result && !result.ok) {
+      throw new Error(result.error.message);
+    }
+    const subsidies = result.value;
     const files = [];
     
     for (const subsidy of subsidies) {
@@ -110,19 +114,28 @@ export class FileStoreService {
   }
 
   async createFileForOpenAI(subsidyId: string): Promise<File | null> {
-    const subsidy = await db.subsidy.findUnique({
-      where: { id: parseInt(subsidyId, 10) },
+    const result = await subsidyRepository.findUnique({
+      id: parseInt(subsidyId, 10),
     });
+    
+    if ('ok' in result) {
+      if (!result.ok) {
+        throw new Error(result.error.message);
+      }
+      const subsidy = result.value;
+      
+      if (!subsidy) {
+        return null;
+      }
 
-    if (!subsidy) {
-      return null;
+      const content = this.generateMarkdownContent(subsidy);
+      const blob = new Blob([content], { type: 'text/markdown' });
+      const file = new File([blob], `${subsidy.jgrantsId}.md`, { type: 'text/markdown' });
+
+      return file;
     }
-
-    const content = this.generateMarkdownContent(subsidy);
-    const blob = new Blob([content], { type: 'text/markdown' });
-    const file = new File([blob], `${subsidy.jgrantsId}.md`, { type: 'text/markdown' });
-
-    return file;
+    
+    return null;
   }
 
   async batchCreateFiles(subsidyIds: string[]): Promise<File[]> {
