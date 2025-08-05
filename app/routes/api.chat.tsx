@@ -90,7 +90,7 @@ export async function action({ request }: ActionFunctionArgs) {
 			console.log('[API.CHAT] FormData parse failed, will try JSON:', formDataError instanceof Error ? formDataError.message : 'Unknown error');
 		}
 		
-		if (!isParsedAsFormData && (contentType.includes('application/json') || !message)) {
+		if (!isParsedAsFormData) {
 			// Handle JSON body
 			try {
 				requestBody = await request.json();

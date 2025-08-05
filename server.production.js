@@ -105,10 +105,14 @@ app.get("/api/diagnostics", (req, res) => {
 // Serve static files from public/build
 // Log the actual path being used
 const publicBuildPath = path.join(process.cwd(), 'public/build');
-console.log('[STATIC] Configuring static file serving from:', publicBuildPath);
-console.log('[STATIC] Directory exists:', existsSync(publicBuildPath));
-if (existsSync(publicBuildPath)) {
-  console.log('[STATIC] Files in directory:', readdirSync(publicBuildPath).slice(0, 10));
+try {
+  console.log('[STATIC] Configuring static file serving from:', publicBuildPath);
+  console.log('[STATIC] Directory exists:', existsSync(publicBuildPath));
+  if (existsSync(publicBuildPath)) {
+    console.log('[STATIC] Files in directory:', readdirSync(publicBuildPath).slice(0, 10));
+  }
+} catch (err) {
+  console.error('[STATIC] Error checking build directory:', err);
 }
 
 app.use(
@@ -126,7 +130,7 @@ app.use(
       }
       console.log(`[STATIC] Serving: ${filePath}`);
     },
-    fallthrough: false, // Don't continue to other middleware if file not found
+    fallthrough: true, // Allow Remix to handle if file not found
   })
 );
 
@@ -172,23 +176,50 @@ app.use((err, req, res, next) => {
   next();
 });
 
-// Handle specific build file requests with detailed logging
-app.get("/build/*", (req, res, next) => {
-  const filePath = path.join(process.cwd(), 'public', req.path);
-  console.log(`[BUILD] Request for: ${req.path}`);
-  console.log(`[BUILD] Looking for file at: ${filePath}`);
-  console.log(`[BUILD] File exists: ${existsSync(filePath)}`);
-  
-  if (!existsSync(filePath)) {
-    console.error(`[BUILD] 404 - File not found: ${req.path}`);
-    console.error(`[BUILD] Expected location: ${filePath}`);
-    
-    // List available files for debugging
+// Redirect legacy entry.client.js requests to the actual file
+app.get("/build/entry.client.js", (req, res) => {
+  // Find the actual entry.client file with hash
+  try {
     const buildDir = path.join(process.cwd(), 'public/build');
     if (existsSync(buildDir)) {
       const files = readdirSync(buildDir);
-      console.error(`[BUILD] Available files in build directory:`, files.slice(0, 10));
+      const entryClientFile = files.find(f => f.startsWith('entry.client-') && f.endsWith('.js'));
+      if (entryClientFile) {
+        console.log(`[BUILD] Redirecting entry.client.js to ${entryClientFile}`);
+        return res.redirect(301, `/build/${entryClientFile}`);
+      }
     }
+  } catch (err) {
+    console.error('[BUILD] Error finding entry.client file:', err);
+  }
+  return res.status(404).json({ error: 'Entry client file not found' });
+});
+
+// Handle specific build file requests with detailed logging
+app.get("/build/*", (req, res, next) => {
+  try {
+    const filePath = path.join(process.cwd(), 'public', req.path);
+    console.log(`[BUILD] Request for: ${req.path}`);
+    console.log(`[BUILD] Looking for file at: ${filePath}`);
+    console.log(`[BUILD] File exists: ${existsSync(filePath)}`);
+    
+    if (!existsSync(filePath)) {
+      console.error(`[BUILD] 404 - File not found: ${req.path}`);
+      console.error(`[BUILD] Expected location: ${filePath}`);
+      
+      // List available files for debugging
+      const buildDir = path.join(process.cwd(), 'public/build');
+      if (existsSync(buildDir)) {
+        try {
+          const files = readdirSync(buildDir);
+          console.error(`[BUILD] Available files in build directory:`, files.slice(0, 10));
+        } catch (err) {
+          console.error(`[BUILD] Error reading build directory:`, err);
+        }
+      }
+    }
+  } catch (err) {
+    console.error(`[BUILD] Error in build handler:`, err);
   }
   
   next();
@@ -200,6 +231,17 @@ app.all(
   (req, res, next) => {
     // Log all requests that reach Remix handler
     console.log(`[REMIX] Handling: ${req.method} ${req.url}`);
+    
+    // Log additional details for POST requests to help debug 400 errors
+    if (req.method === 'POST' && req.url.includes('/api/')) {
+      console.log(`[REMIX] POST request details:`, {
+        url: req.url,
+        contentType: req.headers['content-type'],
+        contentLength: req.headers['content-length'],
+        body: req.body ? '(body present)' : '(no body)',
+      });
+    }
+    
     next();
   },
   createRequestHandler({
