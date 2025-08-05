@@ -29,10 +29,13 @@ export class ReviewAgentService {
 				const indexJson = JSON.parse(indexData);
 				
 				// インデックスから補助金名のリストを作成
-				this.subsidiesData = Object.values(indexJson).map((subsidy: any) => ({
+				// indexJson.indexが配列として存在
+				const subsidiesArray = indexJson.index || [];
+				this.subsidiesData = subsidiesArray.map((subsidy: any) => ({
 					id: subsidy.id,
-					name: subsidy.name,
-					summary: subsidy.summary
+					name: subsidy.title || subsidy.name, // titleフィールドを優先
+					title: subsidy.title,
+					summary: subsidy.summary || ''
 				}));
 				
 				console.log(

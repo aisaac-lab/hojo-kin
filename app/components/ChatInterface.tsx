@@ -9,7 +9,6 @@ export function ChatInterface() {
   const [messages, setMessages] = useState<MessageData[]>([]);
   const [input, setInput] = useState('');
   const [threadId, setThreadId] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
   const [filterState, setFilterState] = useState<EnhancedFilterState>({
     isOpen: false,
     filters: {},
@@ -18,38 +17,16 @@ export function ChatInterface() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fetcher = useFetcher<ChatResponse>();
-  const lastProcessedDataRef = useRef<ChatResponse | null>(null);
+  const prevFetcherData = useRef<ChatResponse | null>(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  // Derived state - no need for separate isLoading state
+  const isLoading = fetcher.state === 'submitting' || fetcher.state === 'loading';
 
+  // Handle fetcher response
   useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
-
-  useEffect(() => {
-    
-    // Handle loading state
-    if (fetcher.state === 'submitting' || fetcher.state === 'loading') {
-      // Ensure loading state is true
-      if (!isLoading) {
-        setIsLoading(true);
-      }
-    }
-    
-    // Handle response when fetcher completes
-    if (fetcher.state === 'idle' && fetcher.data) {
+    if (fetcher.state === 'idle' && fetcher.data && fetcher.data !== prevFetcherData.current) {
+      prevFetcherData.current = fetcher.data;
       
-      // Check if we already processed this data
-      if (lastProcessedDataRef.current === fetcher.data) {
-        return;
-      }
-      
-      // Mark as processed
-      lastProcessedDataRef.current = fetcher.data;
-      
-      // Process the response
       if (fetcher.data.success !== false) {
         if (fetcher.data.threadId) {
           setThreadId(fetcher.data.threadId);
@@ -61,24 +38,19 @@ export function ChatInterface() {
             content: fetcher.data.messages[0],
             timestamp: new Date(),
           };
-          setMessages((prev) => {
-            return [...prev, assistantMessage];
-          });
-        } else {
+          setMessages((prev) => [...prev, assistantMessage]);
         }
-      } else if (fetcher.data.error) {
-        console.error('ChatInterface - Error in response:', fetcher.data.error);
-        // You might want to show an error message to the user here
       }
-      
-      // Always clear loading state when idle
-      setIsLoading(false);
     }
-  }, [fetcher, isLoading]);
+  }, [fetcher.state, fetcher.data]);
+
+  // Auto-scroll on new messages
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!input.trim() || isLoading) return;
 
     const userMessage: MessageData = {
@@ -90,34 +62,27 @@ export function ChatInterface() {
     setMessages((prev) => [...prev, userMessage]);
     const currentInput = input;
     setInput('');
-    setIsLoading(true);
 
     // Reset textarea height
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
     }
 
-
-    // Create FormData for Remix fetcher
+    // Submit to API
     const formData = new FormData();
-    console.log('[ChatInterface] Submitting message:', currentInput);
     formData.append('message', currentInput);
     formData.append('threadId', threadId || '');
     formData.append('userId', 'demo-user');
     formData.append('filters', JSON.stringify(filterState.filters));
     
-    fetcher.submit(
-      formData,
-      {
-        method: 'post',
-        action: '/api/chat',
-        encType: 'multipart/form-data',
-      }
-    );
+    fetcher.submit(formData, {
+      method: 'post',
+      action: '/api/chat',
+      encType: 'multipart/form-data',
+    });
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    // Shift+Enterで送信、Enterのみは改行
     if (e.key === 'Enter' && e.shiftKey) {
       e.preventDefault();
       handleSubmit(e as any);
@@ -142,6 +107,13 @@ export function ChatInterface() {
     setFilterState(prev => ({ ...prev, isOpen: !prev.isOpen }));
   };
 
+  const handleReset = () => {
+    setMessages([]);
+    setThreadId(null);
+    setFilterState({ isOpen: false, filters: {}, activeSection: 'basic' });
+    prevFetcherData.current = null;
+  };
+
   return (
     <div className="flex h-screen flex-col">
       {/* Header */}
@@ -149,11 +121,7 @@ export function ChatInterface() {
         <h1 className="text-lg font-semibold text-gray-900">補助金検索アシスタント</h1>
         {threadId && (
           <button
-            onClick={() => {
-              setMessages([]);
-              setThreadId(null);
-              setFilterState({ isOpen: false, filters: {} });
-            }}
+            onClick={handleReset}
             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
             新しいチャット
