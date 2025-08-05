@@ -176,17 +176,19 @@ app.use((err, req, res, next) => {
   next();
 });
 
-// Redirect legacy entry.client.js requests to the actual file
+// Serve the actual entry.client file instead of redirecting
 app.get("/build/entry.client.js", (req, res) => {
-  // Find the actual entry.client file with hash
   try {
     const buildDir = path.join(process.cwd(), 'public/build');
     if (existsSync(buildDir)) {
       const files = readdirSync(buildDir);
       const entryClientFile = files.find(f => f.startsWith('entry.client-') && f.endsWith('.js'));
       if (entryClientFile) {
-        console.log(`[BUILD] Redirecting entry.client.js to ${entryClientFile}`);
-        return res.redirect(301, `/build/${entryClientFile}`);
+        const filePath = path.join(buildDir, entryClientFile);
+        console.log(`[BUILD] Serving entry.client.js from ${entryClientFile}`);
+        res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+        res.sendFile(filePath);
+        return;
       }
     }
   } catch (err) {
