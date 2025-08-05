@@ -108,7 +108,7 @@ function handleBrowserRequest(
         abortDelay={ABORT_DELAY}
       />,
       {
-        bootstrapScripts: [remixContext.manifest.entry.module],
+        bootstrapModules: ["/build/entry.client.js"],
         onShellReady() {
           shellRendered = true;
           const body = new PassThrough();

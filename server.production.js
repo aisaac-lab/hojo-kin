@@ -180,27 +180,26 @@ app.use((err, req, res, next) => {
   next();
 });
 
-// Redirect entry.client.js to the actual hashed file
-app.get("/build/entry.client.js", async (req, res, next) => {
+// Serve entry.client.js by finding and serving the actual hashed file
+app.get("/build/entry.client.js", (req, res) => {
   try {
     console.log('[BUILD] Handling entry.client.js request');
     
-    // Import the build to get the manifest
-    const buildModule = await import('./build/index.js');
-    if (buildModule.default?.manifest?.entry?.module) {
-      const actualPath = buildModule.default.manifest.entry.module;
-      console.log(`[BUILD] Redirecting to actual entry module: ${actualPath}`);
-      return res.redirect(actualPath);
-    }
-    
-    // Fallback: find the actual file
     const buildDir = path.join(process.cwd(), 'public/build');
     if (existsSync(buildDir)) {
       const files = readdirSync(buildDir);
       const entryClientFile = files.find(f => f.startsWith('entry.client-') && f.endsWith('.js'));
+      
       if (entryClientFile) {
-        console.log(`[BUILD] Redirecting to found entry.client file: /build/${entryClientFile}`);
-        return res.redirect(`/build/${entryClientFile}`);
+        const filePath = path.join(buildDir, entryClientFile);
+        console.log(`[BUILD] Serving entry.client.js from ${entryClientFile}`);
+        
+        // Set proper headers for ES module
+        res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
+        res.setHeader('X-Content-Type-Options', 'nosniff');
+        
+        // Send the file
+        return res.sendFile(filePath);
       }
     }
   } catch (err) {
@@ -333,14 +332,35 @@ process.on("SIGTERM", () => {
 process.on('uncaughtException', (error) => {
   console.error('[SERVER] Uncaught Exception:', error);
   console.error('[SERVER] Stack:', error.stack);
-  // Don't exit in production to prevent 502 errors
-  // process.exit(1);
+  
+  // Log specific error details
+  if (error.code === 'MODULE_NOT_FOUND') {
+    console.error('[SERVER] Missing module:', error.message);
+  }
+  
+  // Keep the server running but log the error
+  console.error('[SERVER] Server continuing despite uncaught exception');
 });
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (reason, promise) => {
   console.error('[SERVER] Unhandled Rejection at:', promise);
   console.error('[SERVER] Reason:', reason);
-  // Don't exit in production to prevent 502 errors
-  // process.exit(1);
+  
+  // Keep the server running but log the error
+  console.error('[SERVER] Server continuing despite unhandled rejection');
+});
+
+// Log when server is about to crash
+process.on('beforeExit', (code) => {
+  console.error('[SERVER] Process is about to exit with code:', code);
+});
+
+// Handle SIGINT (Ctrl+C)
+process.on('SIGINT', () => {
+  console.log('[SERVER] SIGINT received, shutting down gracefully...');
+  server.close(() => {
+    console.log('[SERVER] Server closed');
+    process.exit(0);
+  });
 });

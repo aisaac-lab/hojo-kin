@@ -39,4 +39,6 @@ fi
 
 # Start the server with proper error handling
 echo "Starting server on port ${PORT:-10000}..."
-exec node server.production.js
+
+# Use node with ES module support
+exec node --experimental-modules --es-module-specifier-resolution=node server.production.js

@@ -4,6 +4,8 @@ export default {
   publicPath: "/build/",
   serverBuildPath: "build/index.js",
   assetsBuildDirectory: "public/build",
+  serverModuleFormat: "esm",
+  serverPlatform: "node",
   postcss: true,
   tailwind: true,
   future: {
