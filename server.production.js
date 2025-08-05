@@ -5,6 +5,7 @@ import compression from "compression";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
+import { existsSync, readdirSync } from "fs";
 import * as build from "./build/index.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -53,8 +54,6 @@ app.get("/api/health", (req, res) => {
 
 // Diagnostic endpoint for debugging build issues
 app.get("/api/diagnostics", (req, res) => {
-  const fs = require('fs');
-  const path = require('path');
   
   const diagnostics = {
     timestamp: new Date().toISOString(),
@@ -66,9 +65,9 @@ app.get("/api/diagnostics", (req, res) => {
       PORT: process.env.PORT,
     },
     paths: {
-      build: fs.existsSync('./build'),
-      publicBuild: fs.existsSync('./public/build'),
-      buildIndex: fs.existsSync('./build/index.js'),
+      build: existsSync('./build'),
+      publicBuild: existsSync('./public/build'),
+      buildIndex: existsSync('./build/index.js'),
     },
     files: {
       publicBuild: [],
@@ -78,9 +77,9 @@ app.get("/api/diagnostics", (req, res) => {
   };
   
   // List files in public/build if it exists
-  if (fs.existsSync('./public/build')) {
+  if (existsSync('./public/build')) {
     try {
-      const files = fs.readdirSync('./public/build');
+      const files = readdirSync('./public/build');
       diagnostics.files.publicBuild = files.slice(0, 20);
       diagnostics.files.manifest = files.filter(f => f.startsWith('manifest-'));
       diagnostics.files.entryClient = files.filter(f => f.startsWith('entry.client'));
@@ -107,9 +106,9 @@ app.get("/api/diagnostics", (req, res) => {
 // Log the actual path being used
 const publicBuildPath = path.join(process.cwd(), 'public/build');
 console.log('[STATIC] Configuring static file serving from:', publicBuildPath);
-console.log('[STATIC] Directory exists:', require('fs').existsSync(publicBuildPath));
-if (require('fs').existsSync(publicBuildPath)) {
-  console.log('[STATIC] Files in directory:', require('fs').readdirSync(publicBuildPath).slice(0, 10));
+console.log('[STATIC] Directory exists:', existsSync(publicBuildPath));
+if (existsSync(publicBuildPath)) {
+  console.log('[STATIC] Files in directory:', readdirSync(publicBuildPath).slice(0, 10));
 }
 
 app.use(
@@ -178,16 +177,16 @@ app.get("/build/*", (req, res, next) => {
   const filePath = path.join(process.cwd(), 'public', req.path);
   console.log(`[BUILD] Request for: ${req.path}`);
   console.log(`[BUILD] Looking for file at: ${filePath}`);
-  console.log(`[BUILD] File exists: ${require('fs').existsSync(filePath)}`);
+  console.log(`[BUILD] File exists: ${existsSync(filePath)}`);
   
-  if (!require('fs').existsSync(filePath)) {
+  if (!existsSync(filePath)) {
     console.error(`[BUILD] 404 - File not found: ${req.path}`);
     console.error(`[BUILD] Expected location: ${filePath}`);
     
     // List available files for debugging
     const buildDir = path.join(process.cwd(), 'public/build');
-    if (require('fs').existsSync(buildDir)) {
-      const files = require('fs').readdirSync(buildDir);
+    if (existsSync(buildDir)) {
+      const files = readdirSync(buildDir);
       console.error(`[BUILD] Available files in build directory:`, files.slice(0, 10));
     }
   }
