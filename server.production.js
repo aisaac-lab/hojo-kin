@@ -373,9 +373,7 @@ process.on('uncaughtException', (error) => {
 process.on('unhandledRejection', (reason, promise) => {
   console.error('[SERVER] Unhandled Rejection at:', promise);
   console.error('[SERVER] Reason:', reason);
-  
-  // Keep the server running but log the error
-  console.error('[SERVER] Server continuing despite unhandled rejection');
+  // Don't exit the process
 });
 
 // Log when server is about to crash

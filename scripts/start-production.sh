@@ -40,6 +40,9 @@ fi
 # Start the server with proper error handling
 echo "Starting server on port ${PORT:-10000}..."
 
-# Use node with increased heap size and ES module support
+# Set up signal handlers to prevent ELIFECYCLE error
+trap 'echo "Received signal, shutting down gracefully..."; exit 0' SIGTERM SIGINT
+
+# Use node with increased heap size
 # Set max heap size to 512MB (or 1GB on higher tier Render instances)
-exec node --max-old-space-size=512 --experimental-modules --es-module-specifier-resolution=node server.production.js
+exec node --max-old-space-size=512 server.production.js
