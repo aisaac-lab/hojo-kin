@@ -14,37 +14,52 @@ export class ReviewAgentService {
 
 	private async loadSubsidiesData() {
 		try {
-			// 複数のデータソースから補助金データを読み込む
+			// メモリ効率のため、必要最小限のデータのみ読み込む
 			const fs = await import('fs/promises');
 			const path = await import('path');
 
-			// メインの補助金データ
-			const mainDataPath = path.join(
+			// マスターインデックスのみを読み込む（軽量）
+			const indexPath = path.join(
 				process.cwd(),
-				'data/subsidies/subsidies-clean.json'
+				'data/subsidies/index/master-index.json'
 			);
-			const mainData = await fs.readFile(mainDataPath, 'utf-8');
-			const mainJson = JSON.parse(mainData);
-			const mainSubsidies = mainJson.subsidies || [];
-
-			// エンハンスドデータ
-			const enhancedDataPath = path.join(
-				process.cwd(),
-				'data/subsidies/subsidies-enhanced.json'
-			);
-			const enhancedData = await fs.readFile(enhancedDataPath, 'utf-8');
-			const enhancedJson = JSON.parse(enhancedData);
-			const enhancedSubsidies = Array.isArray(enhancedJson) ? enhancedJson : (enhancedJson.subsidies || []);
-
-			// データを統合
-			this.subsidiesData = [...mainSubsidies, ...enhancedSubsidies];
-
-			console.log(
-				`[ReviewAgent] Loaded ${this.subsidiesData.length} subsidies for validation`
-			);
+			
+			try {
+				const indexData = await fs.readFile(indexPath, 'utf-8');
+				const indexJson = JSON.parse(indexData);
+				
+				// インデックスから補助金名のリストを作成
+				this.subsidiesData = Object.values(indexJson).map((subsidy: any) => ({
+					id: subsidy.id,
+					name: subsidy.name,
+					summary: subsidy.summary
+				}));
+				
+				console.log(
+					`[ReviewAgent] Loaded ${this.subsidiesData.length} subsidies from index`
+				);
+			} catch (indexError) {
+				// インデックスが存在しない場合は、最小限のデータを読み込む
+				console.warn('[ReviewAgent] Index not found, loading minimal data');
+				
+				// 検索用メタデータのみ読み込む（より軽量）
+				const metadataPath = path.join(
+					process.cwd(),
+					'data/subsidies/search-optimized/search-metadata.json'
+				);
+				
+				const metadataData = await fs.readFile(metadataPath, 'utf-8');
+				const metadata = JSON.parse(metadataData);
+				
+				// 補助金名のリストを作成
+				this.subsidiesData = metadata.subsidies || [];
+			}
 		} catch (error) {
 			console.error('[ReviewAgent] Error loading subsidies data:', error);
-			this.subsidiesData = [];
+			// フォールバック: 固定の補助金リストを使用
+			this.subsidiesData = [
+				{ id: 'fallback', name: 'データ読み込みエラー', summary: '' }
+			];
 		}
 	}
 
@@ -300,17 +315,14 @@ export class ReviewAgentService {
 				console.log(`[ReviewAgent] Checking subsidy ${index + 1}: "${subsidy.name}"`);
 			}
 
-			// 実在性チェック
+			// 実在性チェック（簡略化してメモリ効率を改善）
 			const found = this.subsidiesData.find((data) => {
-				// 完全一致または部分一致でチェック
-				return (
-					data.name === subsidy.name ||
-					data.title === subsidy.name ||
-					(data.name && data.name.includes(subsidy.name)) ||
-					(data.title && data.title.includes(subsidy.name)) ||
-					(subsidy.name && data.name && subsidy.name.includes(data.name)) ||
-					(subsidy.name && data.title && subsidy.name.includes(data.title))
-				);
+				// 名前の正規化
+				const subsidyNameNormalized = subsidy.name.toLowerCase().trim();
+				const dataNameNormalized = (data.name || '').toLowerCase().trim();
+				
+				// 完全一致のみチェック（部分一致は省略してメモリ節約）
+				return dataNameNormalized === subsidyNameNormalized;
 			});
 
 			if (!found) {

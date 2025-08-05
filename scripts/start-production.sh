@@ -40,5 +40,6 @@ fi
 # Start the server with proper error handling
 echo "Starting server on port ${PORT:-10000}..."
 
-# Use node with ES module support
-exec node --experimental-modules --es-module-specifier-resolution=node server.production.js
+# Use node with increased heap size and ES module support
+# Set max heap size to 512MB (or 1GB on higher tier Render instances)
+exec node --max-old-space-size=512 --experimental-modules --es-module-specifier-resolution=node server.production.js

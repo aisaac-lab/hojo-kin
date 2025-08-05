@@ -17,6 +17,9 @@ echo "Building application..."
 # Set NODE_ENV to production for proper build
 export NODE_ENV=production
 
+# Set Node options for memory limit
+export NODE_OPTIONS="--max-old-space-size=512"
+
 # Ensure NODE_ENV is set for all child processes
 echo "Setting NODE_ENV=production for build process..."
 echo "Current NODE_ENV: $NODE_ENV"
