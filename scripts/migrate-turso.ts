@@ -12,6 +12,12 @@ import { join } from 'path';
 async function migrateTurso() {
   console.log('[Migrate] Starting Turso database migration...');
   
+  // Check for command line arguments
+  const skipExisting = process.argv.includes('--skip-existing');
+  if (skipExisting) {
+    console.log('[Migrate] Running in skip-existing mode');
+  }
+  
   // Check for required environment variables
   const tursoUrl = process.env.TURSO_DATABASE_URL;
   const tursoAuthToken = process.env.TURSO_AUTH_TOKEN;
@@ -57,8 +63,35 @@ async function migrateTurso() {
       if (sql) {
         try {
           console.log(`[Migrate] Executing statement ${i + 1}/${statements.length}...`);
+          
+          // Check if it's a CREATE TABLE statement
+          if (sql.toUpperCase().startsWith('CREATE TABLE')) {
+            // Extract table name
+            const tableNameMatch = sql.match(/CREATE TABLE\s+`?(\w+)`?/i);
+            if (tableNameMatch) {
+              const tableName = tableNameMatch[1];
+              
+              // Check if table already exists
+              const tableExists = tables.rows.some(
+                row => row.name === tableName
+              );
+              
+              if (tableExists) {
+                console.log(`[Migrate] Table ${tableName} already exists, skipping...`);
+                continue;
+              }
+            }
+          }
+          
           await client.execute(sql);
-        } catch (err) {
+          console.log(`[Migrate] Statement ${i + 1} executed successfully`);
+        } catch (err: any) {
+          // If table already exists error, continue
+          if (err.message && err.message.includes('already exists')) {
+            console.log(`[Migrate] Table already exists, continuing...`);
+            continue;
+          }
+          
           console.error(`[Migrate] Error executing statement ${i + 1}:`, err);
           console.error('[Migrate] Statement:', sql.substring(0, 100) + '...');
           throw err;
@@ -79,6 +112,11 @@ async function migrateTurso() {
     
   } catch (error) {
     console.error('[Migrate] Migration failed:', error);
+    // Don't exit with error if tables already exist
+    if (error instanceof Error && error.message.includes('already exists')) {
+      console.log('[Migrate] Tables already exist, migration not needed');
+      process.exit(0);
+    }
     process.exit(1);
   }
 }

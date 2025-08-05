@@ -38,7 +38,7 @@ if command -v pnpm &> /dev/null; then
   # Run Turso migration if environment variables are set
   if [ -n "$TURSO_DATABASE_URL" ] && [ -n "$TURSO_AUTH_TOKEN" ]; then
     echo "Running Turso database migration..."
-    NODE_ENV=production npx tsx scripts/migrate-turso.ts || echo "Migration failed, continuing..."
+    NODE_ENV=production npx tsx scripts/migrate-turso.ts --skip-existing || echo "Migration failed, continuing..."
   fi
   # Run remix build with explicit NODE_ENV
   echo "Running Remix build in production mode..."
@@ -57,7 +57,7 @@ else
   # Run Turso migration if environment variables are set
   if [ -n "$TURSO_DATABASE_URL" ] && [ -n "$TURSO_AUTH_TOKEN" ]; then
     echo "Running Turso database migration..."
-    NODE_ENV=production npx tsx scripts/migrate-turso.ts || echo "Migration failed, continuing..."
+    NODE_ENV=production npx tsx scripts/migrate-turso.ts --skip-existing || echo "Migration failed, continuing..."
   fi
   # Run remix build with explicit NODE_ENV
   echo "Running Remix build in production mode..."
