@@ -100,6 +100,7 @@ export function ChatInterface() {
 
     // Create FormData for Remix fetcher
     const formData = new FormData();
+    console.log('[ChatInterface] Submitting message:', currentInput);
     formData.append('message', currentInput);
     formData.append('threadId', threadId || '');
     formData.append('userId', 'demo-user');
@@ -110,6 +111,7 @@ export function ChatInterface() {
       {
         method: 'post',
         action: '/api/chat',
+        encType: 'multipart/form-data',
       }
     );
   };
