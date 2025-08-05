@@ -124,6 +124,10 @@ app.use(
       // Set proper headers for JavaScript files
       if (filePath.endsWith(".js")) {
         res.setHeader("Content-Type", "application/javascript; charset=utf-8");
+        // For entry.client files, ensure they're treated as modules
+        if (filePath.includes("entry.client")) {
+          res.setHeader("X-Content-Type-Options", "nosniff");
+        }
       }
       if (filePath.includes("manifest-")) {
         res.setHeader("Cache-Control", "public, max-age=3600");
@@ -176,24 +180,34 @@ app.use((err, req, res, next) => {
   next();
 });
 
-// Serve the actual entry.client file instead of redirecting
-app.get("/build/entry.client.js", (req, res) => {
+// Redirect entry.client.js to the actual hashed file
+app.get("/build/entry.client.js", async (req, res, next) => {
   try {
+    console.log('[BUILD] Handling entry.client.js request');
+    
+    // Import the build to get the manifest
+    const buildModule = await import('./build/index.js');
+    if (buildModule.default?.manifest?.entry?.module) {
+      const actualPath = buildModule.default.manifest.entry.module;
+      console.log(`[BUILD] Redirecting to actual entry module: ${actualPath}`);
+      return res.redirect(actualPath);
+    }
+    
+    // Fallback: find the actual file
     const buildDir = path.join(process.cwd(), 'public/build');
     if (existsSync(buildDir)) {
       const files = readdirSync(buildDir);
       const entryClientFile = files.find(f => f.startsWith('entry.client-') && f.endsWith('.js'));
       if (entryClientFile) {
-        const filePath = path.join(buildDir, entryClientFile);
-        console.log(`[BUILD] Serving entry.client.js from ${entryClientFile}`);
-        res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
-        res.sendFile(filePath);
-        return;
+        console.log(`[BUILD] Redirecting to found entry.client file: /build/${entryClientFile}`);
+        return res.redirect(`/build/${entryClientFile}`);
       }
     }
   } catch (err) {
-    console.error('[BUILD] Error finding entry.client file:', err);
+    console.error('[BUILD] Error handling entry.client.js:', err);
   }
+  
+  console.error('[BUILD] Could not find entry.client.js');
   return res.status(404).json({ error: 'Entry client file not found' });
 });
 
@@ -313,4 +327,20 @@ process.on("SIGTERM", () => {
   server.close(() => {
     console.log("HTTP server closed");
   });
+});
+
+// Handle uncaught exceptions
+process.on('uncaughtException', (error) => {
+  console.error('[SERVER] Uncaught Exception:', error);
+  console.error('[SERVER] Stack:', error.stack);
+  // Don't exit in production to prevent 502 errors
+  // process.exit(1);
+});
+
+// Handle unhandled promise rejections
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('[SERVER] Unhandled Rejection at:', promise);
+  console.error('[SERVER] Reason:', reason);
+  // Don't exit in production to prevent 502 errors
+  // process.exit(1);
 });
