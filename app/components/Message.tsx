@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import type { Message as MessageProps } from '~/types/chat';
 
-export function Message({ role, content, timestamp }: MessageProps) {
+export function Message({ role, content }: MessageProps) {
   const isUser = role === 'user';
 
   return (

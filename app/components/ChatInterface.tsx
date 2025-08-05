@@ -17,29 +17,30 @@ export function ChatInterface() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fetcher = useFetcher<ChatResponse>();
-  const prevFetcherData = useRef<ChatResponse | null>(null);
+  const lastProcessedResponse = useRef<string>('');
 
   // Derived state - no need for separate isLoading state
   const isLoading = fetcher.state === 'submitting' || fetcher.state === 'loading';
 
   // Handle fetcher response
   useEffect(() => {
-    if (fetcher.state === 'idle' && fetcher.data && fetcher.data !== prevFetcherData.current) {
-      prevFetcherData.current = fetcher.data;
+    if (fetcher.state === 'idle' && fetcher.data?.success && fetcher.data.messages && fetcher.data.messages.length > 0) {
+      // Create a unique identifier for this response
+      const responseId = `${fetcher.data.threadId}-${fetcher.data.messages[0]}`;
       
-      if (fetcher.data.success !== false) {
+      // Only process if we haven't seen this exact response before
+      if (responseId !== lastProcessedResponse.current) {
+        lastProcessedResponse.current = responseId;
+        
         if (fetcher.data.threadId) {
           setThreadId(fetcher.data.threadId);
         }
         
-        if (fetcher.data.messages && fetcher.data.messages.length > 0) {
-          const assistantMessage: MessageData = {
-            role: 'assistant',
-            content: fetcher.data.messages[0],
-            timestamp: new Date(),
-          };
-          setMessages((prev) => [...prev, assistantMessage]);
-        }
+        const assistantMessage: MessageData = {
+          role: 'assistant',
+          content: fetcher.data.messages[0],
+        };
+        setMessages((prev) => [...prev, assistantMessage]);
       }
     }
   }, [fetcher.state, fetcher.data]);
@@ -56,7 +57,6 @@ export function ChatInterface() {
     const userMessage: MessageData = {
       role: 'user',
       content: input,
-      timestamp: new Date(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
@@ -111,7 +111,7 @@ export function ChatInterface() {
     setMessages([]);
     setThreadId(null);
     setFilterState({ isOpen: false, filters: {}, activeSection: 'basic' });
-    prevFetcherData.current = null;
+    lastProcessedResponse.current = '';
   };
 
   return (
@@ -179,10 +179,9 @@ export function ChatInterface() {
         <div className="flex flex-col">
           {messages.map((message, index) => (
             <Message
-              key={index}
+              key={`${message.role}-${index}`}
               role={message.role}
               content={message.content}
-              timestamp={message.timestamp}
             />
           ))}
 

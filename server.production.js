@@ -29,6 +29,15 @@ app.get("/healthz", (req, res) => {
   res.status(200).send("OK");
 });
 
+// Alternative health check for Render
+app.get("/", (req, res, next) => {
+  // Only handle root path without any query params for health check
+  if (req.path === "/" && Object.keys(req.query).length === 0 && req.headers["user-agent"]?.includes("Render")) {
+    return res.status(200).send("OK");
+  }
+  next();
+});
+
 // API health check with environment variables status
 app.get("/api/health", (req, res) => {
   const envStatus = {
@@ -292,8 +301,25 @@ const server = app.listen(port, host, () => {
   }
 });
 
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('SIGTERM signal received: closing HTTP server');
+  server.close(() => {
+    console.log('HTTP server closed');
+    process.exit(0);
+  });
+});
+
+process.on('SIGINT', () => {
+  console.log('SIGINT signal received: closing HTTP server');
+  server.close(() => {
+    console.log('HTTP server closed');
+    process.exit(0);
+  });
+});
+
 // Unmatched routes handler (before global error handler)
-app.use((req, res, next) => {
+app.use((req, res) => {
   console.error(`[SERVER] 404 - Not found: ${req.method} ${req.url}`);
   res.status(404).json({
     error: 'Not found',
@@ -304,6 +330,7 @@ app.use((req, res, next) => {
 });
 
 // Global error handler
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((err, req, res, next) => {
   console.error('[SERVER] Unhandled error:', err);
   console.error('[SERVER] Error stack:', err.stack);

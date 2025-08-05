@@ -9,7 +9,6 @@ import {
 import { AssistantService } from '../../app/services/assistant.server.js';
 import { FileStoreService } from '../../app/services/filestore.server.js';
 import { db } from '../../app/db.server.js';
-import { SmartHojokinScraper } from '../../scripts/scrape-smart-hojokin.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -85,30 +84,6 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 				inputSchema: {
 					type: 'object',
 					properties: {},
-				},
-			},
-			{
-				name: 'scrape_smart_hojokin',
-				description: 'スマート補助金サイトから補助金情報をスクレイピングします',
-				inputSchema: {
-					type: 'object',
-					properties: {
-						url: {
-							type: 'string',
-							description:
-								'スクレイピング開始URL（デフォルト: 東京都の補助金一覧）',
-						},
-						saveToDb: {
-							type: 'boolean',
-							description: 'スクレイピングしたデータをデータベースに保存するか',
-							default: false,
-						},
-						withDetails: {
-							type: 'boolean',
-							description: '各補助金の詳細ページもスクレイピングするか',
-							default: false,
-						},
-					},
 				},
 			},
 		],
@@ -226,73 +201,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 						},
 					],
 				};
-			}
-
-			case 'scrape_smart_hojokin': {
-				const url =
-					(args?.url as string) ||
-					'https://www.smart-hojokin.jp/subsidy/prefectures/13/areas/1110?exclude=true&page=1';
-				const saveToDb = (args?.saveToDb as boolean) || false;
-				const withDetails = (args?.withDetails as boolean) || false;
-
-				const scraper = new SmartHojokinScraper();
-
-				try {
-					await scraper.initialize();
-
-					const subsidies = withDetails
-						? await scraper.scrapeWithDetails(url)
-						: await scraper.scrapeAllPages(url);
-
-					// Save to file
-					const filePath = await scraper.saveToFile(subsidies);
-
-					// Optionally save to database
-					let savedToDb = 0;
-					if (saveToDb) {
-						for (const subsidy of subsidies) {
-							try {
-								await db.subsidy.create({
-									data: {
-										jgrantsId: `SCRAPED-${Date.now()}-${Math.random()
-											.toString(36)
-											.substr(2, 9)}`,
-										title: subsidy.title,
-										description: subsidy.description || '',
-										targetAudience: subsidy.targetArea,
-										amount: subsidy.maxAmount,
-										deadline: subsidy.deadline,
-										requirements: subsidy.categories.join(', '),
-										applicationUrl: subsidy.detailUrl,
-										ministry: '不明',
-									},
-								});
-								savedToDb++;
-							} catch (error) {
-								console.error('Error saving to database:', error);
-							}
-						}
-					}
-
-					const summary = {
-						totalScraped: subsidies.length,
-						savedToFile: filePath,
-						savedToDatabase: saveToDb,
-						databaseCount: savedToDb,
-						sampleData: subsidies.slice(0, 3),
-					};
-
-					return {
-						content: [
-							{
-								type: 'text',
-								text: JSON.stringify(summary, null, 2),
-							},
-						],
-					};
-				} finally {
-					await scraper.close();
-				}
 			}
 
 			default:
