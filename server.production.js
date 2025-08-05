@@ -3,7 +3,11 @@ import express from "express";
 import { installGlobals } from "@remix-run/node";
 import compression from "compression";
 import morgan from "morgan";
+import path from "path";
+import { fileURLToPath } from "url";
 import * as build from "./build/index.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 installGlobals();
 
@@ -100,21 +104,30 @@ app.get("/api/diagnostics", (req, res) => {
 });
 
 // Serve static files from public/build
+// Log the actual path being used
+const publicBuildPath = path.join(process.cwd(), 'public/build');
+console.log('[STATIC] Configuring static file serving from:', publicBuildPath);
+console.log('[STATIC] Directory exists:', require('fs').existsSync(publicBuildPath));
+if (require('fs').existsSync(publicBuildPath)) {
+  console.log('[STATIC] Files in directory:', require('fs').readdirSync(publicBuildPath).slice(0, 10));
+}
+
 app.use(
   "/build",
-  express.static("public/build", {
+  express.static(publicBuildPath, {
     immutable: true,
     maxAge: "1y",
-    setHeaders: (res, path) => {
+    setHeaders: (res, filePath) => {
       // Set proper headers for JavaScript files
-      if (path.endsWith(".js")) {
+      if (filePath.endsWith(".js")) {
         res.setHeader("Content-Type", "application/javascript; charset=utf-8");
       }
-      if (path.includes("manifest-")) {
+      if (filePath.includes("manifest-")) {
         res.setHeader("Cache-Control", "public, max-age=3600");
       }
-      console.log(`[STATIC] Serving: ${path}`);
+      console.log(`[STATIC] Serving: ${filePath}`);
     },
+    fallthrough: false, // Don't continue to other middleware if file not found
   })
 );
 
@@ -160,9 +173,25 @@ app.use((err, req, res, next) => {
   next();
 });
 
-// Specific manifest handling
-app.get("/build/manifest-*.js", (req, res, next) => {
-  console.log(`[SERVER] Manifest request: ${req.url}`);
+// Handle specific build file requests with detailed logging
+app.get("/build/*", (req, res, next) => {
+  const filePath = path.join(process.cwd(), 'public', req.path);
+  console.log(`[BUILD] Request for: ${req.path}`);
+  console.log(`[BUILD] Looking for file at: ${filePath}`);
+  console.log(`[BUILD] File exists: ${require('fs').existsSync(filePath)}`);
+  
+  if (!require('fs').existsSync(filePath)) {
+    console.error(`[BUILD] 404 - File not found: ${req.path}`);
+    console.error(`[BUILD] Expected location: ${filePath}`);
+    
+    // List available files for debugging
+    const buildDir = path.join(process.cwd(), 'public/build');
+    if (require('fs').existsSync(buildDir)) {
+      const files = require('fs').readdirSync(buildDir);
+      console.error(`[BUILD] Available files in build directory:`, files.slice(0, 10));
+    }
+  }
+  
   next();
 });
 

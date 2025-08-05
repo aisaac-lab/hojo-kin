@@ -60,38 +60,37 @@ export async function action({ request }: ActionFunctionArgs) {
 		// Check if the request is FormData or JSON
 		const contentType = request.headers.get('content-type') || '';
 		
-		if (contentType.includes('multipart/form-data') || contentType.includes('application/x-www-form-urlencoded') || !contentType) {
-			// Handle FormData from Remix fetcher
-			console.log('[API.CHAT] Attempting to parse FormData with content-type:', contentType || 'empty');
-			try {
-				const formData = await request.formData();
-				message = formData.get('message')?.toString() || '';
-				threadId = formData.get('threadId')?.toString() || '';
-				userId = formData.get('userId')?.toString() || '';
-				const filtersStr = formData.get('filters')?.toString() || '{}';
-				filters = JSON.parse(filtersStr);
-				
-				console.log('[API.CHAT] FormData received:', {
-					hasMessage: !!message,
-					hasThreadId: !!threadId,
-					hasUserId: !!userId,
-					hasFilters: !!filters,
-					messageLength: message?.length,
-				});
-			} catch (parseError) {
-				console.error('[API.CHAT] Failed to parse FormData:', parseError);
-				console.error('[API.CHAT] FormData parse error details:', {
-					errorMessage: parseError instanceof Error ? parseError.message : 'Unknown error',
-					errorStack: parseError instanceof Error ? parseError.stack : '',
-					contentType: request.headers.get('content-type'),
-					contentLength: request.headers.get('content-length'),
-				});
-				return json({ 
-					error: 'Invalid form data',
-					details: 'Failed to parse form data'
-				}, { status: 400 });
-			}
-		} else {
+		// Try to parse as FormData first (Remix fetcher default)
+		let isParsedAsFormData = false;
+		
+		// Special handling for Remix fetcher requests
+		if (request.url.includes('_data=')) {
+			console.log('[API.CHAT] Detected Remix data request');
+		}
+		
+		try {
+			// Always try FormData first for Remix fetcher compatibility
+			const formData = await request.clone().formData();
+			message = formData.get('message')?.toString() || '';
+			threadId = formData.get('threadId')?.toString() || '';
+			userId = formData.get('userId')?.toString() || '';
+			const filtersStr = formData.get('filters')?.toString() || '{}';
+			filters = JSON.parse(filtersStr);
+			isParsedAsFormData = true;
+			
+			console.log('[API.CHAT] Successfully parsed as FormData:', {
+				hasMessage: !!message,
+				hasThreadId: !!threadId,
+				hasUserId: !!userId,
+				hasFilters: !!filters,
+				messageLength: message?.length,
+				contentType,
+			});
+		} catch (formDataError) {
+			console.log('[API.CHAT] FormData parse failed, will try JSON:', formDataError instanceof Error ? formDataError.message : 'Unknown error');
+		}
+		
+		if (!isParsedAsFormData && (contentType.includes('application/json') || !message)) {
 			// Handle JSON body
 			try {
 				requestBody = await request.json();
