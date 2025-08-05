@@ -31,6 +31,12 @@ if command -v pnpm &> /dev/null; then
     echo "Running production setup..."
     NODE_ENV=production npx tsx scripts/setup-production.ts || echo "Setup failed, continuing..."
   fi
+  
+  # Run Turso migration if environment variables are set
+  if [ -n "$TURSO_DATABASE_URL" ] && [ -n "$TURSO_AUTH_TOKEN" ]; then
+    echo "Running Turso database migration..."
+    NODE_ENV=production npx tsx scripts/migrate-turso.ts || echo "Migration failed, continuing..."
+  fi
   # Run remix build with explicit NODE_ENV
   echo "Running Remix build in production mode..."
   NODE_ENV=production pnpm exec remix build
@@ -43,6 +49,12 @@ else
   if [ -f "scripts/setup-production.ts" ]; then
     echo "Running production setup..."
     NODE_ENV=production npx tsx scripts/setup-production.ts || echo "Setup failed, continuing..."
+  fi
+  
+  # Run Turso migration if environment variables are set
+  if [ -n "$TURSO_DATABASE_URL" ] && [ -n "$TURSO_AUTH_TOKEN" ]; then
+    echo "Running Turso database migration..."
+    NODE_ENV=production npx tsx scripts/migrate-turso.ts || echo "Migration failed, continuing..."
   fi
   # Run remix build with explicit NODE_ENV
   echo "Running Remix build in production mode..."
