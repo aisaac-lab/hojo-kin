@@ -1,13 +1,13 @@
 {
-  "assistant_id": "asst_nlc817s7XAiRwxJ3CGeAsWO3",
-  "assistant_name": "SUBSIDY_AGENT",
-  "model": "gpt-4o",
-  "instructions_length": 6202,
-  "tools_count": 1,
-  "vector_stores": [],
-  "total_files": 0,
-  "duplicate_files": [],
-  "old_files": [],
-  "large_files": [],
-  "recommendations": []
+	"assistant_id": "asst_nlc817s7XAiRwxJ3CGeAsWO3",
+	"assistant_name": "SUBSIDY_AGENT",
+	"model": "gpt-4.1-mini",
+	"instructions_length": 6202,
+	"tools_count": 1,
+	"vector_stores": [],
+	"total_files": 0,
+	"duplicate_files": [],
+	"old_files": [],
+	"large_files": [],
+	"recommendations": []
 }

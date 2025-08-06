@@ -5,20 +5,18 @@ import { resolve } from 'path';
 dotenv.config({ path: resolve(process.cwd(), '.env') });
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+	apiKey: process.env.OPENAI_API_KEY,
 });
 
 async function createSubsidySearchAssistant() {
-  try {
+	try {
+		const vectorStore = await openai.vectorStores.create({
+			name: 'Subsidy Database',
+		});
 
-    const vectorStore = await openai.vectorStores.create({
-      name: 'Subsidy Database',
-    });
-
-
-    const assistant = await openai.beta.assistants.create({
-      name: '補助金検索アシスタント',
-      instructions: `
+		const assistant = await openai.beta.assistants.create({
+			name: '補助金検索アシスタント',
+			instructions: `
 あなたは日本の補助金・助成金の専門アドバイザーです。
 ユーザーの事業内容、規模、目的に基づいて最適な補助金・助成金を提案します。
 
@@ -36,28 +34,27 @@ async function createSubsidySearchAssistant() {
 
 すべての回答は日本語で行ってください。
       `,
-      model: 'gpt-4-turbo-preview',
-      tools: [{ type: 'file_search' }],
-      tool_resources: {
-        file_search: {
-          vector_store_ids: [vectorStore.id],
-        },
-      },
-    });
+			model: 'gpt-4.1-mini',
+			tools: [{ type: 'file_search' }],
+			tool_resources: {
+				file_search: {
+					vector_store_ids: [vectorStore.id],
+				},
+			},
+		});
 
-
-    return { assistant, vectorStore };
-  } catch (error) {
-    console.error('Error creating assistant:', error);
-    throw error;
-  }
+		return { assistant, vectorStore };
+	} catch (error) {
+		console.error('Error creating assistant:', error);
+		throw error;
+	}
 }
 
 // Run if called directly
 if (import.meta.url === `file://${process.argv[1]}`) {
-  createSubsidySearchAssistant()
-    .then(() => process.exit(0))
-    .catch(() => process.exit(1));
+	createSubsidySearchAssistant()
+		.then(() => process.exit(0))
+		.catch(() => process.exit(1));
 }
 
 export { createSubsidySearchAssistant };

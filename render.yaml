@@ -20,7 +20,7 @@ services:
       - key: OPENAI_VECTOR_STORE_ID
         sync: false # Set manually in Render dashboard
       - key: OPENAI_REVIEW_MODEL
-        value: gpt-4-turbo-preview
+        value: gpt-4.1-mini
       - key: REVIEW_SCORE_THRESHOLD
         value: "70"
       - key: MAX_VALIDATION_LOOPS

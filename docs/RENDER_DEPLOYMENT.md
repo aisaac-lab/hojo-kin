@@ -46,7 +46,7 @@ NODE_ENV=production
 
 ```bash
 # Review Agent Configuration
-OPENAI_REVIEW_MODEL=gpt-4-turbo-preview
+OPENAI_REVIEW_MODEL=gpt-4.1-mini
 REVIEW_SCORE_THRESHOLD=70
 
 # Validation Agent Configuration

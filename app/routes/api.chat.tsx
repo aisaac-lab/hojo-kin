@@ -841,51 +841,55 @@ ${validationResult.clarificationQuestions
 			}
 
 			// 検証結果と各ループをデータベースに保存
-			try {
-				// テーブルの存在を確認（エラーハンドリングのため）
-				console.log('[VALIDATION] Attempting to save validation logs...');
+			// TODO: データベーステーブルが存在しない可能性があるため、一時的に無効化
+			const ENABLE_VALIDATION_LOGGING = false;
+			
+			if (ENABLE_VALIDATION_LOGGING) {
+				try {
+					// テーブルの存在を確認（エラーハンドリングのため）
+					console.log('[VALIDATION] Attempting to save validation logs...');
 
-				// 各ループの記録を保存
-				for (const loop of validationResult.loops) {
-					await (
-						await db.insert(validationLoops)
-					).values({
+					// 各ループの記録を保存
+					const dbInstance = await db;
+					for (const loop of validationResult.loops) {
+						await (await dbInstance.insert(validationLoops)).values({
+							threadId: currentThreadId,
+							userQuestion: message,
+							loopNumber: loop.loopNumber,
+							reviewScores: JSON.stringify(loop.reviewResult.scores),
+							lowestScoreCategory: loop.reviewResult.lowestScore.category,
+							lowestScoreValue: loop.reviewResult.lowestScore.score,
+							improvementHints: JSON.stringify(loop.improvementHints),
+							scoreImprovement: loop.scoreImprovement,
+							response: loop.reviewResult.improvedResponse || '',
+							action: loop.reviewResult.action,
+						});
+					}
+
+					// 最終的な検証結果を保存
+					await (await dbInstance.insert(validationResults)).values({
 						threadId: currentThreadId,
 						userQuestion: message,
-						loopNumber: loop.loopNumber,
-						reviewScores: JSON.stringify(loop.reviewResult.scores),
-						lowestScoreCategory: loop.reviewResult.lowestScore.category,
-						lowestScoreValue: loop.reviewResult.lowestScore.score,
-						improvementHints: JSON.stringify(loop.improvementHints),
-						scoreImprovement: loop.scoreImprovement,
-						response: loop.reviewResult.improvedResponse || '',
-						action: loop.reviewResult.action,
+						initialResponse: latestMessageContent,
+						finalResponse: finalResponse,
+						bestResponse: validationResult.bestResponse,
+						totalLoops: validationResult.finalLoop,
+						totalImprovement: validationResult.totalImprovement,
+						bestScores: JSON.stringify(validationResult.bestScores),
+						failurePatterns: JSON.stringify(validationResult.failurePatterns),
+						successPatterns: JSON.stringify(validationResult.successPatterns),
+						duration: 0, // Duration should be calculated properly
 					});
+				} catch (dbError) {
+					console.error(
+						'[VALIDATION LOG ERROR] Failed to save validation logs:',
+						dbError
+					);
+
+					// ログ保存に失敗してもチャット処理は続行
 				}
-
-				// 最終的な検証結果を保存
-				await (
-					await db.insert(validationResults)
-				).values({
-					threadId: currentThreadId,
-					userQuestion: message,
-					initialResponse: latestMessageContent,
-					finalResponse: finalResponse,
-					bestResponse: validationResult.bestResponse,
-					totalLoops: validationResult.finalLoop,
-					totalImprovement: validationResult.totalImprovement,
-					bestScores: JSON.stringify(validationResult.bestScores),
-					failurePatterns: JSON.stringify(validationResult.failurePatterns),
-					successPatterns: JSON.stringify(validationResult.successPatterns),
-					duration: 0, // Duration should be calculated properly
-				});
-			} catch (dbError) {
-				console.error(
-					'[VALIDATION LOG ERROR] Failed to save validation logs:',
-					dbError
-				);
-
-				// ログ保存に失敗してもチャット処理は続行
+			} else {
+				console.log('[VALIDATION] Validation logging is disabled');
 			}
 		}
 

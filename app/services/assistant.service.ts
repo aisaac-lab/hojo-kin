@@ -62,13 +62,17 @@ export class AssistantService {
 	private assistantId: AssistantId;
 
 	constructor(apiKey?: string, assistantId?: string) {
-		const validatedApiKey = validateApiKey(apiKey || process.env.OPENAI_API_KEY);
-		this.assistantId = validateAssistantId(assistantId || process.env.OPENAI_ASSISTANT_ID);
-		
+		const validatedApiKey = validateApiKey(
+			apiKey || process.env.OPENAI_API_KEY
+		);
+		this.assistantId = validateAssistantId(
+			assistantId || process.env.OPENAI_ASSISTANT_ID
+		);
+
 		this.openai = new OpenAI({
 			apiKey: validatedApiKey,
 		});
-		
+
 		logger.info('AssistantService initialized');
 	}
 
@@ -86,7 +90,7 @@ export class AssistantService {
 
 		try {
 			logger.debug(`Creating assistant: ${name}`);
-			
+
 			const tools = [{ type: 'file_search' as const }];
 			const toolResources = vectorStoreId
 				? {
@@ -99,14 +103,14 @@ export class AssistantService {
 			const assistant = await this.openai.beta.assistants.create({
 				name,
 				instructions,
-				model: 'gpt-4-turbo-preview',
+				model: 'gpt-4.1-mini',
 				tools,
 				tool_resources: toolResources,
 			});
 
 			this.assistantId = assistant.id as AssistantId;
 			logger.info(`Assistant created successfully: ${assistant.id}`);
-			
+
 			return assistant;
 		} catch (error) {
 			handleServiceError(
@@ -118,13 +122,18 @@ export class AssistantService {
 		}
 	}
 
-	async createThread(userId?: string, metadata?: Record<string, any>): Promise<Thread> {
+	async createThread(
+		userId?: string,
+		metadata?: Record<string, any>
+	): Promise<Thread> {
 		try {
 			logger.debug('Creating thread', { userId });
-			
+
 			const threadMetadata = processThreadMetadata(userId, metadata);
 			const thread = await this.openai.beta.threads.create(
-				Object.keys(threadMetadata).length > 0 ? { metadata: threadMetadata } : {}
+				Object.keys(threadMetadata).length > 0
+					? { metadata: threadMetadata }
+					: {}
 			);
 
 			const result = await threadRepository.create({
@@ -132,13 +141,13 @@ export class AssistantService {
 				userId,
 				metadata: metadata ? JSON.stringify(metadata) : undefined,
 			});
-			
+
 			if ('ok' in result && !result.ok) {
 				throw new Error(result.error.message);
 			}
 
 			logger.info(`Thread created: ${thread.id}`);
-			
+
 			return {
 				id: thread.id as ThreadId,
 				userId,
@@ -168,7 +177,7 @@ export class AssistantService {
 
 		try {
 			logger.debug(`Adding ${role} message to thread ${threadId}`);
-			
+
 			const message = await this.openai.beta.threads.messages.create(threadId, {
 				role,
 				content,
@@ -179,13 +188,13 @@ export class AssistantService {
 				role,
 				content,
 			});
-			
+
 			if ('ok' in msgResult && !msgResult.ok) {
 				throw new Error(msgResult.error.message);
 			}
 
 			logger.info(`Message added to thread ${threadId}`);
-			
+
 			return {
 				threadId: threadId as ThreadId,
 				role,
@@ -204,9 +213,11 @@ export class AssistantService {
 	async runAssistant(threadId: string, additionalInstructions?: string) {
 		try {
 			logger.debug(`Running assistant on thread ${threadId}`);
-			
+
 			// Get the ID of the last assistant message before running
-			const messagesBefore = await this.openai.beta.threads.messages.list(threadId);
+			const messagesBefore = await this.openai.beta.threads.messages.list(
+				threadId
+			);
 			const lastAssistantMessageId = messagesBefore.data.find(
 				(msg) => msg.role === 'assistant'
 			)?.id;
@@ -217,7 +228,7 @@ export class AssistantService {
 			});
 
 			logger.debug(`Run created: ${run.id}`);
-			
+
 			const messages = await this.waitForRunCompletion(threadId, run.id);
 
 			return {
@@ -245,7 +256,7 @@ export class AssistantService {
 
 		if (run.status === 'completed') {
 			logger.info(`Run ${runId} completed successfully`);
-			
+
 			const messages = await this.openai.beta.threads.messages.list(threadId);
 			const assistantMessages = messages.data.filter(
 				(msg) => msg.role === 'assistant'
@@ -262,7 +273,7 @@ export class AssistantService {
 						role: 'assistant',
 						content: content.text.value,
 					});
-					
+
 					if ('ok' in msgResult && !msgResult.ok) {
 						throw new Error(msgResult.error.message);
 					}
@@ -273,11 +284,14 @@ export class AssistantService {
 		}
 
 		// Include more error details
-		const errorDetails = run.status === 'failed' && run.last_error 
-			? ` - ${run.last_error.code}: ${run.last_error.message}`
-			: '';
-		
-		logger.error(`Run ${runId} failed with status: ${run.status}${errorDetails}`);
+		const errorDetails =
+			run.status === 'failed' && run.last_error
+				? ` - ${run.last_error.code}: ${run.last_error.message}`
+				: '';
+
+		logger.error(
+			`Run ${runId} failed with status: ${run.status}${errorDetails}`
+		);
 		throw new AssistantServiceError(
 			`Run failed with status: ${run.status}${errorDetails}`,
 			'RUN_FAILED'
@@ -288,7 +302,7 @@ export class AssistantService {
 		logger.debug(`Getting messages for thread ${threadId}`);
 		return await this.openai.beta.threads.messages.list(threadId);
 	}
-	
+
 	async getThread(threadId: string) {
 		logger.debug(`Getting thread ${threadId}`);
 		const result = await threadRepository.findUnique(threadId);
@@ -326,7 +340,7 @@ export class AssistantService {
 	async uploadFileToVectorStore(vectorStoreId: string, file: File) {
 		try {
 			logger.debug(`Uploading file to vector store ${vectorStoreId}`);
-			
+
 			const fileStream = file.stream();
 			const openaiFile = await this.openai.files.create({
 				file: fileStream as any, // Type mismatch between Web File API and Node.js streams
@@ -351,16 +365,21 @@ export class AssistantService {
 
 	async updateAssistantVectorStore(vectorStoreId: string) {
 		try {
-			logger.debug(`Updating assistant ${this.assistantId} with vector store ${vectorStoreId}`);
-			
-			const assistant = await this.openai.beta.assistants.update(this.assistantId, {
-				tool_resources: {
-					file_search: {
-						vector_store_ids: [vectorStoreId],
+			logger.debug(
+				`Updating assistant ${this.assistantId} with vector store ${vectorStoreId}`
+			);
+
+			const assistant = await this.openai.beta.assistants.update(
+				this.assistantId,
+				{
+					tool_resources: {
+						file_search: {
+							vector_store_ids: [vectorStoreId],
+						},
 					},
-				},
-			});
-			
+				}
+			);
+
 			logger.info(`Assistant vector store updated`);
 			return assistant;
 		} catch (error) {

@@ -23,11 +23,11 @@ export class ReviewAgentService {
 				process.cwd(),
 				'data/subsidies/index/master-index.json'
 			);
-			
+
 			try {
 				const indexData = await fs.readFile(indexPath, 'utf-8');
 				const indexJson = JSON.parse(indexData);
-				
+
 				// インデックスから補助金名のリストを作成
 				// indexJson.indexが配列として存在
 				const subsidiesArray = indexJson.index || [];
@@ -35,25 +35,25 @@ export class ReviewAgentService {
 					id: subsidy.id,
 					name: subsidy.title || subsidy.name, // titleフィールドを優先
 					title: subsidy.title,
-					summary: subsidy.summary || ''
+					summary: subsidy.summary || '',
 				}));
-				
+
 				console.log(
 					`[ReviewAgent] Loaded ${this.subsidiesData.length} subsidies from index`
 				);
 			} catch (indexError) {
 				// インデックスが存在しない場合は、最小限のデータを読み込む
 				console.warn('[ReviewAgent] Index not found, loading minimal data');
-				
+
 				// 検索用メタデータのみ読み込む（より軽量）
 				const metadataPath = path.join(
 					process.cwd(),
 					'data/subsidies/search-optimized/search-metadata.json'
 				);
-				
+
 				const metadataData = await fs.readFile(metadataPath, 'utf-8');
 				const metadata = JSON.parse(metadataData);
-				
+
 				// 補助金名のリストを作成
 				this.subsidiesData = metadata.subsidies || [];
 			}
@@ -61,7 +61,7 @@ export class ReviewAgentService {
 			console.error('[ReviewAgent] Error loading subsidies data:', error);
 			// フォールバック: 固定の補助金リストを使用
 			this.subsidiesData = [
-				{ id: 'fallback', name: 'データ読み込みエラー', summary: '' }
+				{ id: 'fallback', name: 'データ読み込みエラー', summary: '' },
 			];
 		}
 	}
@@ -85,7 +85,7 @@ export class ReviewAgentService {
 
 		try {
 			const completion = await this.openai.chat.completions.create({
-				model: process.env.OPENAI_REVIEW_MODEL || 'gpt-4-turbo-preview',
+				model: process.env.OPENAI_REVIEW_MODEL || 'gpt-4.1-mini',
 				messages: [
 					{ role: 'system', content: this.getReviewerInstructions() },
 					{ role: 'user', content: reviewPrompt },
@@ -107,52 +107,72 @@ export class ReviewAgentService {
 			);
 
 			// 特別チェック項目の実装
-			const subsidyCountMatch = assistantResponse.match(/申請可能な補助金は(\d+)件です/);
-			const proposedCount = subsidyCountMatch ? parseInt(subsidyCountMatch[1]) : extractedSubsidies.length;
-			
+			const subsidyCountMatch =
+				assistantResponse.match(/申請可能な補助金は(\d+)件です/);
+			const proposedCount = subsidyCountMatch
+				? parseInt(subsidyCountMatch[1])
+				: extractedSubsidies.length;
+
 			// 「全て」「すべて」「一覧」などの要求チェック
 			const isAllRequest = /全て|すべて|全部|一覧|列挙/.test(userQuestion);
-			const isITRequest = /IT|デジタル|DX|システム|ソフトウェア/.test(userQuestion);
-			
+			const isITRequest = /IT|デジタル|DX|システム|ソフトウェア/.test(
+				userQuestion
+			);
+
 			// IT関連の全て要求の場合、10件あれば十分（実際に10件しか存在しないため）
 			if (isAllRequest && isITRequest && proposedCount < 8) {
-				parsedResult.scores.dataAccuracy = Math.min(parsedResult.scores.dataAccuracy || 0, 60);
+				parsedResult.scores.dataAccuracy = Math.min(
+					parsedResult.scores.dataAccuracy || 0,
+					60
+				);
 				parsedResult.action = 'regenerate';
 				parsedResult.issues = parsedResult.issues || [];
 				parsedResult.issues.push({
 					type: 'data_source',
 					description: `IT関連の全て列挙要求に対して提案件数が少なすぎます（${proposedCount}件のみ）`,
-					severity: 'critical'
+					severity: 'critical',
 				});
 				parsedResult.regenerationHints = parsedResult.regenerationHints || [];
-				parsedResult.regenerationHints.push('IT関連補助金は10件存在します。最低でも8件以上を提示してください');
+				parsedResult.regenerationHints.push(
+					'IT関連補助金は10件存在します。最低でも8件以上を提示してください'
+				);
 			}
 			// IT以外の全て要求の場合
 			else if (isAllRequest && !isITRequest && proposedCount < 10) {
-				parsedResult.scores.dataAccuracy = Math.min(parsedResult.scores.dataAccuracy || 0, 25);
+				parsedResult.scores.dataAccuracy = Math.min(
+					parsedResult.scores.dataAccuracy || 0,
+					25
+				);
 				parsedResult.action = 'regenerate';
 				parsedResult.issues = parsedResult.issues || [];
 				parsedResult.issues.push({
 					type: 'data_source',
 					description: `全て列挙の要求に対して提案件数が少なすぎます（${proposedCount}件のみ）`,
-					severity: 'critical'
+					severity: 'critical',
 				});
 				parsedResult.regenerationHints = parsedResult.regenerationHints || [];
-				parsedResult.regenerationHints.push('最低でも20件以上の補助金を検索・提示してください。複数のカテゴリーを横断的に検索してください');
+				parsedResult.regenerationHints.push(
+					'最低でも20件以上の補助金を検索・提示してください。複数のカテゴリーを横断的に検索してください'
+				);
 			}
-			
+
 			// IT関連の質問チェック
 			if (isITRequest && proposedCount <= 5) {
-				parsedResult.scores.dataAccuracy = Math.min(parsedResult.scores.dataAccuracy || 0, 35);
+				parsedResult.scores.dataAccuracy = Math.min(
+					parsedResult.scores.dataAccuracy || 0,
+					35
+				);
 				parsedResult.action = 'regenerate';
 				parsedResult.issues = parsedResult.issues || [];
 				parsedResult.issues.push({
 					type: 'data_source',
 					description: `IT関連補助金の提案件数が少なすぎます（${proposedCount}件のみ）`,
-					severity: 'critical'
+					severity: 'critical',
 				});
 				parsedResult.regenerationHints = parsedResult.regenerationHints || [];
-				parsedResult.regenerationHints.push('digitalization以外のカテゴリー（startup、expansion等）からもIT企業が活用できる補助金を探してください');
+				parsedResult.regenerationHints.push(
+					'digitalization以外のカテゴリー（startup、expansion等）からもIT企業が活用できる補助金を探してください'
+				);
 			}
 
 			// データ検証結果を反映
@@ -197,17 +217,18 @@ export class ReviewAgentService {
 				followUp: parsedResult.scores?.followUp || 0,
 				presentationQuality: parsedResult.scores?.presentationQuality || 0,
 			};
-			
+
 			// 最低スコアを計算
 			const scoreEntries = Object.entries(scores);
-			const lowestScoreEntry = scoreEntries.reduce((min, [category, score]) => 
-				score < min.score ? { category, score } : min,
+			const lowestScoreEntry = scoreEntries.reduce(
+				(min, [category, score]) =>
+					score < min.score ? { category, score } : min,
 				{ category: scoreEntries[0][0], score: scoreEntries[0][1] }
 			);
-			
+
 			const threshold = parseInt(process.env.REVIEW_SCORE_THRESHOLD || '85');
-			const passed = Object.values(scores).every(score => score >= threshold);
-			
+			const passed = Object.values(scores).every((score) => score >= threshold);
+
 			const result: ReviewResult = {
 				passed,
 				scores,
@@ -254,7 +275,7 @@ export class ReviewAgentService {
 				try {
 					// 補助金名から余分な*を削除
 					const name = match[1].trim().replace(/\*+$/, '').replace(/^\*+/, '');
-					
+
 					// 正規表現で使用する際にエスケープ
 					const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
@@ -272,7 +293,10 @@ export class ReviewAgentService {
 
 					subsidies.push({ name, amount, url });
 				} catch (err) {
-					console.warn(`[ReviewAgent] Failed to extract subsidy info for: ${match[0]}`, err);
+					console.warn(
+						`[ReviewAgent] Failed to extract subsidy info for: ${match[0]}`,
+						err
+					);
 					continue;
 				}
 			}
@@ -284,9 +308,14 @@ export class ReviewAgentService {
 				index === self.findIndex((t) => t.name === item.name)
 		);
 
-		console.log(`[ReviewAgent] Extracted ${uniqueSubsidies.length} unique subsidies`);
+		console.log(
+			`[ReviewAgent] Extracted ${uniqueSubsidies.length} unique subsidies`
+		);
 		if (uniqueSubsidies.length > 0) {
-			console.log('[ReviewAgent] Sample extracted subsidy:', uniqueSubsidies[0]);
+			console.log(
+				'[ReviewAgent] Sample extracted subsidy:',
+				uniqueSubsidies[0]
+			);
 		}
 
 		return uniqueSubsidies;
@@ -315,7 +344,9 @@ export class ReviewAgentService {
 
 			// デバッグ: 最初の3件の補助金名を表示
 			if (index < 3) {
-				console.log(`[ReviewAgent] Checking subsidy ${index + 1}: "${subsidy.name}"`);
+				console.log(
+					`[ReviewAgent] Checking subsidy ${index + 1}: "${subsidy.name}"`
+				);
 			}
 
 			// 実在性チェック（簡略化してメモリ効率を改善）
@@ -323,7 +354,7 @@ export class ReviewAgentService {
 				// 名前の正規化
 				const subsidyNameNormalized = subsidy.name.toLowerCase().trim();
 				const dataNameNormalized = (data.name || '').toLowerCase().trim();
-				
+
 				// 完全一致のみチェック（部分一致は省略してメモリ節約）
 				return dataNameNormalized === subsidyNameNormalized;
 			});
@@ -428,7 +459,7 @@ ${assistantResponse}`;
   → dataAccuracyを25点以下にして、action: "regenerate"
   → issuesに「全て列挙の要求に対して提案件数が少なすぎます（10件未満）」を追加
   → regenerationHintsに「最低でも20件以上の補助金を検索・提示してください。複数のカテゴリーを横断的に検索してください」を追加
-  
+
 - IT関連の質問で提案件数が5件以下の場合
   → dataAccuracyを35点以下にして、action: "regenerate"
   → issuesに「IT関連補助金の提案件数が少なすぎます」を追加
