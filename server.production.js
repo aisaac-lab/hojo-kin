@@ -1,14 +1,27 @@
-import { createRequestHandler } from "@remix-run/express";
-import express from "express";
-import { installGlobals } from "@remix-run/node";
-import compression from "compression";
-import morgan from "morgan";
-import path from "path";
-import { fileURLToPath } from "url";
-import { existsSync, readdirSync } from "fs";
-import * as build from "./build/index.js";
+const { createRequestHandler } = require("@remix-run/express");
+const express = require("express");
+const { installGlobals } = require("@remix-run/node");
+const compression = require("compression");
+const morgan = require("morgan");
+const path = require("path");
+const { existsSync, readdirSync } = require("fs");
+// Import build module with error handling
+let build;
+try {
+  build = require('./build/index.js');
+  console.log('[SERVER] Build module loaded successfully');
+  console.log('[SERVER] Build module exports:', Object.keys(build || {}));
+} catch (error) {
+  console.error('[SERVER] Failed to load build module:', error.message);
+  console.error('[SERVER] Build path:', './build/index.js');
+  // Try to provide more details about the error
+  if (error.code === 'MODULE_NOT_FOUND') {
+    console.error('[SERVER] Build file not found. Make sure to run "pnpm build" first.');
+  }
+  process.exit(1);
+}
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// __dirname is available in CommonJS
 
 installGlobals();
 
@@ -101,8 +114,11 @@ app.get("/api/diagnostics", (req, res) => {
   try {
     diagnostics.buildModule = {
       loaded: !!build,
-      hasRoutes: !!build.routes,
-      routeCount: build.routes ? Object.keys(build.routes).length : 0,
+      hasRoutes: !!(build && build.routes),
+      hasAssets: !!(build && build.assets),
+      hasEntry: !!(build && build.entry),
+      routeCount: build && build.routes ? Object.keys(build.routes).length : 0,
+      exports: build ? Object.keys(build) : [],
     };
   } catch (err) {
     diagnostics.buildModule = { error: err.message };
@@ -269,7 +285,7 @@ app.all(
     next();
   },
   createRequestHandler({
-    build,
+    build: build || {},
     mode: process.env.NODE_ENV,
     getLoadContext: () => ({
       // Add any context you need here

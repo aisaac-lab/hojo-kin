@@ -5,15 +5,11 @@
 
 import { drizzle } from 'drizzle-orm/libsql';
 import { createClient } from '@libsql/client';
-import { resolve, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { resolve } from 'path';
 import * as schema from './schema';
 import { eq, and } from 'drizzle-orm';
 import { Result, ok, err } from '../types/result';
 import { DatabaseError, createDatabaseError } from '../types/errors';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 // Database singleton
 let client: ReturnType<typeof createClient> | null = null;

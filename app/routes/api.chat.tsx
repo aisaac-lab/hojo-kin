@@ -701,6 +701,9 @@ export async function action({ request }: ActionFunctionArgs) {
 		// 検証エージェントによる品質チェックとフィードバックループ
 		let finalResponse = latestMessageContent;
 		
+		// 初期レスポンスから引用マークを削除
+		finalResponse = finalResponse.replace(/【\d+:\d+†[^】]+】/g, '');
+		
 		// 検証ループ前のメッセージIDを記録
 		const messagesBeforeValidation = await assistantService.getMessages(currentThreadId);
 		const messageIdsBeforeValidation = new Set(messagesBeforeValidation.data.map(m => m.id));
@@ -736,6 +739,9 @@ export async function action({ request }: ActionFunctionArgs) {
 
 			// 検証結果に基づいて最終的なレスポンスを設定
 			finalResponse = validationResult.bestResponse;
+			
+			// 引用マークを削除（【数字:数字†ファイル名】形式）
+			finalResponse = finalResponse.replace(/【\d+:\d+†[^】]+】/g, '');
 			
 			// 検証ループ後のメッセージを確認し、新しく追加されたメッセージを特定
 			const messagesAfterValidation = await assistantService.getMessages(currentThreadId);
@@ -777,6 +783,9 @@ ${validationResult.clarificationQuestions
 				finalResponse = finalResponse + clarificationSection;
 				console.log('[VALIDATION] Added clarification questions');
 			}
+			
+			// 最終的なレスポンスからも引用マークを再度削除（念のため）
+			finalResponse = finalResponse.replace(/【\d+:\d+†[^】]+】/g, '');
 
 			// 検証で問題が見つかった場合の記録
 			if (

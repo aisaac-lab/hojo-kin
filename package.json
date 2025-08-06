@@ -2,10 +2,11 @@
   "name": "subsidy-search-mvp",
   "private": true,
   "sideEffects": false,
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "remix build",
-    "build:production": "pnpm run setup:production && remix build",
+    "postbuild": "node scripts/verify-build.js",
+    "build:production": "pnpm run setup:production && remix build && node scripts/verify-build.js",
     "dev": "remix dev",
     "start": "bash scripts/start-production.sh",
     "start:dev": "node server.js",
