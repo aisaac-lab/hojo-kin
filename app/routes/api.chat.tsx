@@ -1,5 +1,8 @@
 import { json, type ActionFunctionArgs } from '@remix-run/node';
-import { AssistantService, AssistantServiceError } from '../services/assistant.service';
+import {
+	AssistantService,
+	AssistantServiceError,
+} from '../services/assistant.service';
 import { ValidationAgentService } from '../services/validation-agent.server';
 import type { ChatResponse } from '~/types/chat';
 import type { ReviewContext } from '~/types/review';
@@ -20,21 +23,28 @@ export async function action({ request }: ActionFunctionArgs) {
 			OPENAI_API_KEY: process.env.OPENAI_API_KEY,
 			OPENAI_ASSISTANT_ID: process.env.OPENAI_ASSISTANT_ID,
 		};
-		
+
 		const missingVars = Object.entries(requiredEnvVars)
 			.filter(([_, value]) => !value)
 			.map(([key]) => key);
-		
+
 		if (missingVars.length > 0) {
-			console.error('[API.CHAT] Missing required environment variables:', missingVars);
-			return json({ 
-				error: 'Service configuration error', 
-				details: process.env.NODE_ENV === 'development' 
-					? `Missing environment variables: ${missingVars.join(', ')}` 
-					: 'Please contact support'
-			}, { status: 503 });
+			console.error(
+				'[API.CHAT] Missing required environment variables:',
+				missingVars
+			);
+			return json(
+				{
+					error: 'Service configuration error',
+					details:
+						process.env.NODE_ENV === 'development'
+							? `Missing environment variables: ${missingVars.join(', ')}`
+							: 'Please contact support',
+				},
+				{ status: 503 }
+			);
 		}
-		
+
 		// Log environment info for debugging
 		console.log('[API.CHAT] Environment:', {
 			NODE_ENV: process.env.NODE_ENV,
@@ -44,7 +54,7 @@ export async function action({ request }: ActionFunctionArgs) {
 			hasAssistantId: !!process.env.OPENAI_ASSISTANT_ID,
 			hasVectorStoreId: !!process.env.OPENAI_VECTOR_STORE_ID,
 		});
-		
+
 		// Log request details for debugging
 		console.log('[API.CHAT] Request details:', {
 			method: request.method,
@@ -56,18 +66,18 @@ export async function action({ request }: ActionFunctionArgs) {
 		// Parse and validate request body
 		let requestBody;
 		let threadId, message, userId, filters;
-		
+
 		// Check if the request is FormData or JSON
 		const contentType = request.headers.get('content-type') || '';
-		
+
 		// Try to parse as FormData first (Remix fetcher default)
 		let isParsedAsFormData = false;
-		
+
 		// Special handling for Remix fetcher requests
 		if (request.url.includes('_data=')) {
 			console.log('[API.CHAT] Detected Remix data request');
 		}
-		
+
 		try {
 			// Always try FormData first for Remix fetcher compatibility
 			const formData = await request.clone().formData();
@@ -77,7 +87,7 @@ export async function action({ request }: ActionFunctionArgs) {
 			const filtersStr = formData.get('filters')?.toString() || '{}';
 			filters = JSON.parse(filtersStr);
 			isParsedAsFormData = true;
-			
+
 			console.log('[API.CHAT] Successfully parsed as FormData:', {
 				hasMessage: !!message,
 				hasThreadId: !!threadId,
@@ -87,15 +97,18 @@ export async function action({ request }: ActionFunctionArgs) {
 				contentType,
 			});
 		} catch (formDataError) {
-			console.log('[API.CHAT] FormData parse failed, will try JSON:', formDataError instanceof Error ? formDataError.message : 'Unknown error');
+			console.log(
+				'[API.CHAT] FormData parse failed, will try JSON:',
+				formDataError instanceof Error ? formDataError.message : 'Unknown error'
+			);
 		}
-		
+
 		if (!isParsedAsFormData) {
 			// Handle JSON body
 			try {
 				requestBody = await request.json();
 				({ threadId, message, userId, filters } = requestBody);
-				
+
 				console.log('[API.CHAT] JSON body received:', {
 					hasMessage: !!message,
 					hasThreadId: !!threadId,
@@ -105,10 +118,13 @@ export async function action({ request }: ActionFunctionArgs) {
 				});
 			} catch (parseError) {
 				console.error('[API.CHAT] Failed to parse JSON body:', parseError);
-				return json({ 
-					error: 'Invalid request body',
-					details: 'Request body must be valid JSON'
-				}, { status: 400 });
+				return json(
+					{
+						error: 'Invalid request body',
+						details: 'Request body must be valid JSON',
+					},
+					{ status: 400 }
+				);
 			}
 		}
 
@@ -122,11 +138,20 @@ export async function action({ request }: ActionFunctionArgs) {
 			assistantService = new AssistantService();
 			console.log('[API.CHAT] AssistantService initialized successfully');
 		} catch (serviceError) {
-			console.error('[API.CHAT] Failed to initialize AssistantService:', serviceError);
-			return json({ 
-				error: 'Service initialization failed',
-				details: serviceError instanceof Error ? serviceError.message : 'Unknown error'
-			}, { status: 503 });
+			console.error(
+				'[API.CHAT] Failed to initialize AssistantService:',
+				serviceError
+			);
+			return json(
+				{
+					error: 'Service initialization failed',
+					details:
+						serviceError instanceof Error
+							? serviceError.message
+							: 'Unknown error',
+				},
+				{ status: 503 }
+			);
 		}
 
 		let currentThreadId = threadId;
@@ -700,14 +725,21 @@ export async function action({ request }: ActionFunctionArgs) {
 
 		// 検証エージェントによる品質チェックとフィードバックループ
 		let finalResponse = latestMessageContent;
-		
+
 		// 初期レスポンスから引用マークを削除
 		finalResponse = finalResponse.replace(/【\d+:\d+†[^】]+】/g, '');
-		
+
 		// 検証ループ前のメッセージIDを記録
-		const messagesBeforeValidation = await assistantService.getMessages(currentThreadId);
-		const messageIdsBeforeValidation = new Set(messagesBeforeValidation.data.map(m => m.id));
-		console.log('[VALIDATION] Messages before validation:', messageIdsBeforeValidation.size);
+		const messagesBeforeValidation = await assistantService.getMessages(
+			currentThreadId
+		);
+		const messageIdsBeforeValidation = new Set(
+			messagesBeforeValidation.data.map((m) => m.id)
+		);
+		console.log(
+			'[VALIDATION] Messages before validation:',
+			messageIdsBeforeValidation.size
+		);
 
 		if (latestMessageContent) {
 			const validationAgentService = new ValidationAgentService();
@@ -739,27 +771,37 @@ export async function action({ request }: ActionFunctionArgs) {
 
 			// 検証結果に基づいて最終的なレスポンスを設定
 			finalResponse = validationResult.bestResponse;
-			
+
 			// 引用マークを削除（【数字:数字†ファイル名】形式）
 			finalResponse = finalResponse.replace(/【\d+:\d+†[^】]+】/g, '');
-			
+
 			// 検証ループ後のメッセージを確認し、新しく追加されたメッセージを特定
-			const messagesAfterValidation = await assistantService.getMessages(currentThreadId);
-			const newMessagesDuringValidation = messagesAfterValidation.data.filter(
-				m => !messageIdsBeforeValidation.has(m.id) && m.role === 'assistant'
+			const messagesAfterValidation = await assistantService.getMessages(
+				currentThreadId
 			);
-			
-			console.log('[VALIDATION] New messages during validation:', newMessagesDuringValidation.length);
-			
-			// 検証ループで複数のメッセージが追加された場合、最新のもののみを使用
+			const newMessagesDuringValidation = messagesAfterValidation.data.filter(
+				(m) => !messageIdsBeforeValidation.has(m.id) && m.role === 'assistant'
+			);
+
+			console.log(
+				'[VALIDATION] New messages during validation:',
+				newMessagesDuringValidation.length
+			);
+
+			// 検証ループで複数のメッセージが追加された場合の処理
 			if (newMessagesDuringValidation.length > 1) {
-				console.log('[VALIDATION] Multiple messages detected during validation loop, using only the final response');
-				// 最新のメッセージ（配列の最初の要素）のコンテンツを取得
-				const latestValidationMessage = newMessagesDuringValidation[0];
-				if (latestValidationMessage.content[0]?.type === 'text') {
-					finalResponse = latestValidationMessage.content[0].text.value;
-				}
+				console.log(
+					'[VALIDATION] Multiple messages detected during validation loop'
+				);
+				console.log(
+					'[VALIDATION] Using bestResponse from validation result instead of thread messages'
+				);
+				// 検証結果のbestResponseを使用（スレッドの最新メッセージではなく）
+				// これにより、中間応答が誤って表示されることを防ぐ
 			}
+
+			// 検証ループ中に生成されたメッセージはすべて内部処理用であり、
+			// クライアントには最終的なbestResponseのみを返す
 
 			// 承認されなかった場合で、深掘り質問がある場合は追加
 			if (
@@ -783,7 +825,7 @@ ${validationResult.clarificationQuestions
 				finalResponse = finalResponse + clarificationSection;
 				console.log('[VALIDATION] Added clarification questions');
 			}
-			
+
 			// 最終的なレスポンスからも引用マークを再度削除（念のため）
 			finalResponse = finalResponse.replace(/【\d+:\d+†[^】]+】/g, '');
 
@@ -802,10 +844,12 @@ ${validationResult.clarificationQuestions
 			try {
 				// テーブルの存在を確認（エラーハンドリングのため）
 				console.log('[VALIDATION] Attempting to save validation logs...');
-				
+
 				// 各ループの記録を保存
 				for (const loop of validationResult.loops) {
-					await (await db.insert(validationLoops)).values({
+					await (
+						await db.insert(validationLoops)
+					).values({
 						threadId: currentThreadId,
 						userQuestion: message,
 						loopNumber: loop.loopNumber,
@@ -820,7 +864,9 @@ ${validationResult.clarificationQuestions
 				}
 
 				// 最終的な検証結果を保存
-				await (await db.insert(validationResults)).values({
+				await (
+					await db.insert(validationResults)
+				).values({
 					threadId: currentThreadId,
 					userQuestion: message,
 					initialResponse: latestMessageContent,
@@ -844,8 +890,10 @@ ${validationResult.clarificationQuestions
 		}
 
 		// 一意のレスポンスIDを生成（タイムスタンプ + ランダム文字列）
-		const responseId = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
-		
+		const responseId = `${Date.now()}-${Math.random()
+			.toString(36)
+			.substring(2, 9)}`;
+
 		const response: ChatResponse = {
 			threadId: currentThreadId,
 			messages: finalResponse ? [finalResponse] : [],
@@ -854,47 +902,94 @@ ${validationResult.clarificationQuestions
 		};
 
 		console.log('[API.CHAT] Sending response with ID:', responseId);
+		console.log(
+			'[API.CHAT] Response message count:',
+			response.messages?.length
+		);
+		console.log(
+			'[API.CHAT] Response message length:',
+			finalResponse ? finalResponse.length : 0
+		);
+		console.log(
+			'[API.CHAT] Response preview:',
+			finalResponse ? finalResponse.substring(0, 100) + '...' : 'No response'
+		);
+
+		// 重複補助金のチェック（デバッグ用）
+		if (finalResponse) {
+			const subsidyNames = [];
+			const subsidyNamePattern = /\*\*([^*]+)\*\*/g;
+			let match;
+			while ((match = subsidyNamePattern.exec(finalResponse)) !== null) {
+				const subsidyName = match[1].trim();
+				if (subsidyName.includes('補助金') || subsidyName.includes('助成金')) {
+					subsidyNames.push(subsidyName);
+				}
+			}
+			const uniqueSubsidies = new Set(subsidyNames);
+			if (uniqueSubsidies.size < subsidyNames.length) {
+				console.log(
+					'[API.CHAT] WARNING: Duplicate subsidies detected in response!'
+				);
+				console.log('[API.CHAT] Total subsidies:', subsidyNames.length);
+				console.log('[API.CHAT] Unique subsidies:', uniqueSubsidies.size);
+			}
+		}
+
 		return json(response);
 	} catch (error) {
 		console.error('[API.CHAT] Error:', error);
-		const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+		const errorMessage =
+			error instanceof Error ? error.message : 'Unknown error';
 		const errorStack = error instanceof Error ? error.stack : '';
-		console.error('[API.CHAT] Error details:', { 
-			message: errorMessage, 
+		console.error('[API.CHAT] Error details:', {
+			message: errorMessage,
 			stack: errorStack,
 			type: error?.constructor?.name,
 			// Add more debug info for production
 			timestamp: new Date().toISOString(),
 			env: process.env.NODE_ENV,
 		});
-		
+
 		// Check for specific error types
 		if (error instanceof AssistantServiceError) {
-			return json({ 
-				error: 'Assistant service error',
-				details: `${(error as AssistantServiceError).code}: ${errorMessage}` // Show details in production temporarily for debugging
-			}, { status: 503 });
+			return json(
+				{
+					error: 'Assistant service error',
+					details: `${(error as AssistantServiceError).code}: ${errorMessage}`, // Show details in production temporarily for debugging
+				},
+				{ status: 503 }
+			);
 		}
-		
+
 		// Database connection errors
 		if (errorMessage.includes('Database') || errorMessage.includes('TURSO')) {
-			return json({ 
-				error: 'Database connection error',
-				details: errorMessage // Show details in production temporarily for debugging
-			}, { status: 503 });
+			return json(
+				{
+					error: 'Database connection error',
+					details: errorMessage, // Show details in production temporarily for debugging
+				},
+				{ status: 503 }
+			);
 		}
-		
+
 		// OpenAI API errors
 		if (errorMessage.includes('OpenAI') || errorMessage.includes('API')) {
-			return json({ 
-				error: 'External API error',
-				details: errorMessage // Show details in production temporarily for debugging
-			}, { status: 503 });
+			return json(
+				{
+					error: 'External API error',
+					details: errorMessage, // Show details in production temporarily for debugging
+				},
+				{ status: 503 }
+			);
 		}
-		
-		return json({ 
-			error: 'Failed to process chat message',
-			details: errorMessage // Show details in production temporarily for debugging
-		}, { status: 500 });
+
+		return json(
+			{
+				error: 'Failed to process chat message',
+				details: errorMessage, // Show details in production temporarily for debugging
+			},
+			{ status: 500 }
+		);
 	}
 }

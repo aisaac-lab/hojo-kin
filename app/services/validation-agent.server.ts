@@ -168,6 +168,7 @@ export class ValidationAgentService extends ReviewAgentService {
         console.log(`[VALIDATION] Generated intermediate response for loop ${loopNum}`);
         if (this.defaultConfig.enableLogging) {
           console.log(`[VALIDATION] Intermediate response length: ${currentResponse.length} chars`);
+          console.log(`[VALIDATION] Loop ${loopNum} score:`, reviewResult.scores);
         }
       } else {
         // ask_clarification または approve の場合はループを終了

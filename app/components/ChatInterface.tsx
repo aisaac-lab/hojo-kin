@@ -34,6 +34,8 @@ export function ChatInterface() {
         lastProcessedResponse.current = responseId;
         
         console.log('[ChatInterface] Processing response with ID:', responseId);
+        console.log('[ChatInterface] Message count in response:', fetcher.data.messages.length);
+        console.log('[ChatInterface] First message preview:', fetcher.data.messages[0].substring(0, 100) + '...');
         
         if (fetcher.data.threadId) {
           setThreadId(fetcher.data.threadId);
@@ -44,6 +46,14 @@ export function ChatInterface() {
           role: 'assistant',
           content: fetcher.data.messages[0],
         };
+        
+        // 既存のメッセージと比較して重複を確認
+        const lastMessage = messages.length > 0 ? messages[messages.length - 1] : null;
+        if (lastMessage && lastMessage.role === 'assistant' && lastMessage.content === assistantMessage.content) {
+          console.log('[ChatInterface] WARNING: Duplicate message detected, skipping');
+          return;
+        }
+        
         setMessages((prev) => [...prev, assistantMessage]);
       } else {
         console.log('[ChatInterface] Skipping duplicate response with ID:', responseId);
