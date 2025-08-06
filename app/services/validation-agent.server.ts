@@ -11,8 +11,8 @@ import type { ReviewResult, ReviewContext } from '~/types/review';
 
 export class ValidationAgentService extends ReviewAgentService {
   private defaultConfig: ValidationConfig = {
-    maxLoops: parseInt(process.env.MAX_VALIDATION_LOOPS || '3'),
-    scoreImprovementThreshold: parseInt(process.env.SCORE_IMPROVEMENT_THRESHOLD || '10'),
+    maxLoops: parseInt(process.env.MAX_VALIDATION_LOOPS || '2'), // Reduced from 3 to 2
+    scoreImprovementThreshold: parseInt(process.env.SCORE_IMPROVEMENT_THRESHOLD || '15'), // Increased from 10 to 15
     enableProgressiveHints: process.env.ENABLE_PROGRESSIVE_HINTS !== 'false',
     enableFailureAnalysis: process.env.ENABLE_FAILURE_ANALYSIS !== 'false',
     enableLogging: process.env.ENABLE_VALIDATION_LOGGING !== 'false',
@@ -120,6 +120,16 @@ export class ValidationAgentService extends ReviewAgentService {
         break; // 合格したらループを終了
       }
 
+      // Early exit if scores are already very high (average >= 85)
+      const avgScore = Object.values(reviewResult.scores).reduce((a, b) => a + b, 0) / 4;
+      if (avgScore >= 85 && reviewResult.lowestScore.score >= 65) {
+        if (this.defaultConfig.enableLogging) {
+          console.log(`[VALIDATION] Early exit: High average score ${avgScore.toFixed(1)}`);
+        }
+        successPatterns.push(`Loop ${loopNum}: High average score (${avgScore.toFixed(1)})`);
+        break;
+      }
+
       // 失敗パターンを記録
       const failureReason = `Loop ${loopNum}: ${reviewResult.lowestScore.category} = ${reviewResult.lowestScore.score}`;
       failurePatterns.push(failureReason);
@@ -129,6 +139,14 @@ export class ValidationAgentService extends ReviewAgentService {
           (loopNum > 1 && scoreImprovement < this.defaultConfig.scoreImprovementThreshold)) {
         if (this.defaultConfig.enableLogging) {
           console.log(`[VALIDATION] Ending loops. Final loop: ${loopNum}, Improvement: ${scoreImprovement}`);
+        }
+        break;
+      }
+      
+      // Early exit if no significant improvement is possible
+      if (loopNum > 1 && scoreImprovement < 5 && avgScore >= 75) {
+        if (this.defaultConfig.enableLogging) {
+          console.log(`[VALIDATION] Early exit: Diminishing returns (improvement: ${scoreImprovement})`);
         }
         break;
       }

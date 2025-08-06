@@ -729,6 +729,20 @@ export async function action({ request }: ActionFunctionArgs) {
 		// 初期レスポンスから引用マークを削除
 		finalResponse = finalResponse.replace(/【\d+:\d+†[^】]+】/g, '');
 
+		// Check if we should skip validation for high-confidence responses
+		const skipValidation = process.env.SKIP_VALIDATION === 'true' || shouldSkipValidation(message, finalResponse);
+		
+		console.log('[VALIDATION] Skip validation check:', {
+			message: message.substring(0, 50),
+			hasSubsidyListing: finalResponse.includes('申請可能な補助金は'),
+			skipValidation,
+			envSkip: process.env.SKIP_VALIDATION
+		});
+		
+		if (skipValidation) {
+			console.log('[VALIDATION] Skipping validation for high-confidence response');
+		}
+
 		// 検証ループ前のメッセージIDを記録
 		const messagesBeforeValidation = await assistantService.getMessages(
 			currentThreadId
@@ -741,7 +755,7 @@ export async function action({ request }: ActionFunctionArgs) {
 			messageIdsBeforeValidation.size
 		);
 
-		if (latestMessageContent) {
+		if (latestMessageContent && !skipValidation) {
 			const validationAgentService = new ValidationAgentService();
 			const reviewContext: ReviewContext = {
 				hasFilters:
@@ -845,49 +859,60 @@ ${validationResult.clarificationQuestions
 			const ENABLE_VALIDATION_LOGGING = false;
 			
 			if (ENABLE_VALIDATION_LOGGING) {
-				try {
-					// テーブルの存在を確認（エラーハンドリングのため）
-					console.log('[VALIDATION] Attempting to save validation logs...');
+				// Make validation logging non-blocking
+				Promise.resolve().then(async () => {
+					try {
+						// テーブルの存在を確認（エラーハンドリングのため）
+						console.log('[VALIDATION] Attempting to save validation logs...');
 
-					// 各ループの記録を保存
-					const dbInstance = await db;
-					for (const loop of validationResult.loops) {
-						await (await dbInstance.insert(validationLoops)).values({
+						// 各ループの記録を保存
+						const dbInstance = await db;
+						const loopPromises = validationResult.loops.map(async (loop) => {
+							return (await dbInstance.insert(validationLoops)).values({
+								threadId: currentThreadId,
+								userQuestion: message,
+								loopNumber: loop.loopNumber,
+								reviewScores: JSON.stringify(loop.reviewResult.scores),
+								lowestScoreCategory: loop.reviewResult.lowestScore.category,
+								lowestScoreValue: loop.reviewResult.lowestScore.score,
+								improvementHints: JSON.stringify(loop.improvementHints),
+								scoreImprovement: loop.scoreImprovement,
+								response: loop.reviewResult.improvedResponse || '',
+								action: loop.reviewResult.action,
+							});
+						});
+
+						// Execute all loop insertions in parallel
+						await Promise.all(loopPromises);
+
+						// 最終的な検証結果を保存
+						await (await dbInstance.insert(validationResults)).values({
 							threadId: currentThreadId,
 							userQuestion: message,
-							loopNumber: loop.loopNumber,
-							reviewScores: JSON.stringify(loop.reviewResult.scores),
-							lowestScoreCategory: loop.reviewResult.lowestScore.category,
-							lowestScoreValue: loop.reviewResult.lowestScore.score,
-							improvementHints: JSON.stringify(loop.improvementHints),
-							scoreImprovement: loop.scoreImprovement,
-							response: loop.reviewResult.improvedResponse || '',
-							action: loop.reviewResult.action,
+							initialResponse: latestMessageContent,
+							finalResponse: finalResponse,
+							bestResponse: validationResult.bestResponse,
+							totalLoops: validationResult.finalLoop,
+							totalImprovement: validationResult.totalImprovement,
+							bestScores: JSON.stringify(validationResult.bestScores),
+							failurePatterns: JSON.stringify(validationResult.failurePatterns),
+							successPatterns: JSON.stringify(validationResult.successPatterns),
+							duration: 0, // Duration should be calculated properly
 						});
+						
+						console.log('[VALIDATION] Validation logs saved successfully');
+					} catch (dbError) {
+						console.error(
+							'[VALIDATION LOG ERROR] Failed to save validation logs:',
+							dbError
+						);
+						// ログ保存に失敗してもチャット処理は続行
 					}
-
-					// 最終的な検証結果を保存
-					await (await dbInstance.insert(validationResults)).values({
-						threadId: currentThreadId,
-						userQuestion: message,
-						initialResponse: latestMessageContent,
-						finalResponse: finalResponse,
-						bestResponse: validationResult.bestResponse,
-						totalLoops: validationResult.finalLoop,
-						totalImprovement: validationResult.totalImprovement,
-						bestScores: JSON.stringify(validationResult.bestScores),
-						failurePatterns: JSON.stringify(validationResult.failurePatterns),
-						successPatterns: JSON.stringify(validationResult.successPatterns),
-						duration: 0, // Duration should be calculated properly
-					});
-				} catch (dbError) {
-					console.error(
-						'[VALIDATION LOG ERROR] Failed to save validation logs:',
-						dbError
-					);
-
-					// ログ保存に失敗してもチャット処理は続行
-				}
+				}).catch(err => {
+					console.error('[VALIDATION] Async logging error:', err);
+				});
+				
+				console.log('[VALIDATION] Validation logging initiated (non-blocking)');
 			} else {
 				console.log('[VALIDATION] Validation logging is disabled');
 			}
@@ -996,4 +1021,41 @@ ${validationResult.clarificationQuestions
 			{ status: 500 }
 		);
 	}
+}
+
+// Helper function to determine if validation should be skipped
+function shouldSkipValidation(userMessage: string, assistantResponse: string): boolean {
+	// Skip validation for simple greetings or non-subsidy queries
+	const simplePatterns = [
+		/^(こんにちは|hello|hi|はじめまして|よろしく)/i,
+		/^(ありがとう|thank you|thanks)/i,
+		/^(さようなら|bye|goodbye)/i,
+		/補助金(とは|って何|について教えて)/,
+		/申請方法|申請の流れ/,
+	];
+	
+	if (simplePatterns.some(pattern => pattern.test(userMessage))) {
+		return true;
+	}
+	
+	// Skip validation if response doesn't contain subsidy listings
+	const hasSubsidyListing = assistantResponse.includes('申請可能な補助金は') || 
+		assistantResponse.includes('マッチ度:') ||
+		assistantResponse.includes('補助金名:');
+		
+	if (!hasSubsidyListing) {
+		return true;
+	}
+	
+	// Skip validation for responses with very high subsidy count (likely comprehensive)
+	const subsidyCountMatch = assistantResponse.match(/申請可能な補助金は(\d+)件です/);
+	if (subsidyCountMatch) {
+		const count = parseInt(subsidyCountMatch[1]);
+		if (count >= 20) {
+			// High count responses are likely comprehensive
+			return true;
+		}
+	}
+	
+	return false;
 }

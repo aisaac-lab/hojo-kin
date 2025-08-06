@@ -1,6 +1,10 @@
 import OpenAI from 'openai';
 import type { ReviewResult, ReviewContext } from '~/types/review';
 
+// Singleton instance and cached data
+let cachedSubsidiesData: any[] | null = null;
+let dataLoadPromise: Promise<any[]> | null = null;
+
 export class ReviewAgentService {
 	private openai: OpenAI;
 	private subsidiesData: any[] = [];
@@ -9,10 +13,29 @@ export class ReviewAgentService {
 		this.openai = new OpenAI({
 			apiKey: process.env.OPENAI_API_KEY,
 		});
-		this.loadSubsidiesData();
+		// Use cached data if available, otherwise load it
+		this.initializeSubsidiesData();
 	}
 
-	private async loadSubsidiesData() {
+	private async initializeSubsidiesData() {
+		if (cachedSubsidiesData) {
+			this.subsidiesData = cachedSubsidiesData;
+			return;
+		}
+
+		// If data is being loaded by another instance, wait for it
+		if (dataLoadPromise) {
+			this.subsidiesData = await dataLoadPromise;
+			return;
+		}
+
+		// Load data and cache it
+		dataLoadPromise = this.loadSubsidiesData();
+		this.subsidiesData = await dataLoadPromise;
+		cachedSubsidiesData = this.subsidiesData;
+	}
+
+	private async loadSubsidiesData(): Promise<any[]> {
 		try {
 			// メモリ効率のため、必要最小限のデータのみ読み込む
 			const fs = await import('fs/promises');
@@ -31,7 +54,7 @@ export class ReviewAgentService {
 				// インデックスから補助金名のリストを作成
 				// indexJson.indexが配列として存在
 				const subsidiesArray = indexJson.index || [];
-				this.subsidiesData = subsidiesArray.map((subsidy: any) => ({
+				const loadedData = subsidiesArray.map((subsidy: any) => ({
 					id: subsidy.id,
 					name: subsidy.title || subsidy.name, // titleフィールドを優先
 					title: subsidy.title,
@@ -39,8 +62,9 @@ export class ReviewAgentService {
 				}));
 
 				console.log(
-					`[ReviewAgent] Loaded ${this.subsidiesData.length} subsidies from index`
+					`[ReviewAgent] Loaded ${loadedData.length} subsidies from index (cached)`
 				);
+				return loadedData;
 			} catch (indexError) {
 				// インデックスが存在しない場合は、最小限のデータを読み込む
 				console.warn('[ReviewAgent] Index not found, loading minimal data');
@@ -55,12 +79,13 @@ export class ReviewAgentService {
 				const metadata = JSON.parse(metadataData);
 
 				// 補助金名のリストを作成
-				this.subsidiesData = metadata.subsidies || [];
+				const loadedData = metadata.subsidies || [];
+				return loadedData;
 			}
 		} catch (error) {
 			console.error('[ReviewAgent] Error loading subsidies data:', error);
 			// フォールバック: 固定の補助金リストを使用
-			this.subsidiesData = [
+			return [
 				{ id: 'fallback', name: 'データ読み込みエラー', summary: '' },
 			];
 		}

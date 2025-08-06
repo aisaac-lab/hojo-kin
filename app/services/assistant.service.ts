@@ -247,10 +247,17 @@ export class AssistantService {
 
 	private async waitForRunCompletion(threadId: string, runId: string) {
 		let run = await this.openai.beta.threads.runs.retrieve(threadId, runId);
+		let delay = 100; // Start with 100ms
+		const maxDelay = 1000; // Max 1 second
+		const delayMultiplier = 1.5; // Exponential backoff multiplier
 
 		while (run.status === 'queued' || run.status === 'in_progress') {
-			logger.debug(`Run ${runId} status: ${run.status}`);
-			await new Promise((resolve) => setTimeout(resolve, 1000));
+			logger.debug(`Run ${runId} status: ${run.status}, polling delay: ${delay}ms`);
+			await new Promise((resolve) => setTimeout(resolve, delay));
+			
+			// Exponential backoff: increase delay for next iteration
+			delay = Math.min(delay * delayMultiplier, maxDelay);
+			
 			run = await this.openai.beta.threads.runs.retrieve(threadId, runId);
 		}
 
@@ -301,6 +308,11 @@ export class AssistantService {
 	async getMessages(threadId: string) {
 		logger.debug(`Getting messages for thread ${threadId}`);
 		return await this.openai.beta.threads.messages.list(threadId);
+	}
+
+	// Expose openai instance for streaming (temporary solution)
+	get openaiClient() {
+		return this.openai;
 	}
 
 	async getThread(threadId: string) {

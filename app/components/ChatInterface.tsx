@@ -15,15 +15,27 @@ export function ChatInterface() {
     filters: {},
     activeSection: 'basic'
   });
+  const [isStreaming, setIsStreaming] = useState(false);
+  const [streamingMessage, setStreamingMessage] = useState<string>('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fetcher = useFetcher<ChatResponse>();
   const lastProcessedResponse = useRef<string>('');
+  const eventSourceRef = useRef<EventSource | null>(null);
 
   // Derived state - no need for separate isLoading state
-  const isLoading = fetcher.state === 'submitting' || fetcher.state === 'loading';
+  const isLoading = fetcher.state === 'submitting' || fetcher.state === 'loading' || isStreaming;
 
-  // Handle fetcher response
+  // Cleanup EventSource on unmount
+  useEffect(() => {
+    return () => {
+      if (eventSourceRef.current) {
+        eventSourceRef.current.close();
+      }
+    };
+  }, []);
+
+  // Handle fetcher response (fallback for non-streaming)
   useEffect(() => {
     if (fetcher.state === 'idle' && fetcher.data?.success && fetcher.data.messages && fetcher.data.messages.length > 0) {
       // Use the responseId from the server if available, otherwise create one
@@ -64,7 +76,123 @@ export function ChatInterface() {
   // Auto-scroll on new messages
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+  }, [messages, streamingMessage]);
+
+  const handleStreamingSubmit = async (currentInput: string) => {
+    // Close any existing EventSource
+    if (eventSourceRef.current) {
+      eventSourceRef.current.close();
+    }
+
+    setIsStreaming(true);
+    setStreamingMessage('');
+
+    // Create form data for streaming request
+    const formData = new FormData();
+    formData.append('message', currentInput);
+    formData.append('threadId', threadId || '');
+    formData.append('userId', 'demo-user');
+    formData.append('filters', JSON.stringify(filterState.filters));
+
+    // Convert FormData to URLSearchParams for EventSource
+    const params = new URLSearchParams();
+    formData.forEach((value, key) => {
+      params.append(key, value.toString());
+    });
+
+    // Create EventSource with POST body (using polyfill or fetch + ReadableStream)
+    // For now, we'll use a POST request with fetch API for better compatibility
+    try {
+      const response = await fetch('/api/chat/stream', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const reader = response.body?.getReader();
+      const decoder = new TextDecoder();
+
+      if (!reader) {
+        throw new Error('No response body');
+      }
+
+      let buffer = '';
+      let currentThreadId = threadId;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            try {
+              const data = JSON.parse(line.slice(6));
+              
+              if (data.threadId && !currentThreadId) {
+                currentThreadId = data.threadId;
+                setThreadId(data.threadId);
+              }
+
+              if (data.content) {
+                setStreamingMessage(prev => prev + data.content);
+              }
+            } catch (e) {
+              console.error('Error parsing SSE data:', e);
+            }
+          } else if (line.startsWith('event: ')) {
+            const event = line.slice(7);
+            
+            if (event === 'complete') {
+              // Add the complete message to messages
+              setStreamingMessage(current => {
+                if (current) {
+                  setMessages(prev => [...prev, {
+                    role: 'assistant',
+                    content: current
+                  }]);
+                }
+                return '';
+              });
+              setIsStreaming(false);
+            } else if (event === 'error') {
+              console.error('Streaming error received');
+              setIsStreaming(false);
+              // Fallback to regular submission
+              handleRegularSubmit(currentInput);
+            }
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Streaming error:', error);
+      setIsStreaming(false);
+      setStreamingMessage('');
+      // Fallback to regular submission
+      handleRegularSubmit(currentInput);
+    }
+  };
+
+  const handleRegularSubmit = (currentInput: string) => {
+    // Submit to API
+    const formData = new FormData();
+    formData.append('message', currentInput);
+    formData.append('threadId', threadId || '');
+    formData.append('userId', 'demo-user');
+    formData.append('filters', JSON.stringify(filterState.filters));
+    
+    fetcher.submit(formData, {
+      method: 'post',
+      action: '/api/chat',
+      encType: 'multipart/form-data',
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,18 +212,8 @@ export function ChatInterface() {
       textareaRef.current.style.height = 'auto';
     }
 
-    // Submit to API
-    const formData = new FormData();
-    formData.append('message', currentInput);
-    formData.append('threadId', threadId || '');
-    formData.append('userId', 'demo-user');
-    formData.append('filters', JSON.stringify(filterState.filters));
-    
-    fetcher.submit(formData, {
-      method: 'post',
-      action: '/api/chat',
-      encType: 'multipart/form-data',
-    });
+    // Try streaming first, with fallback to regular submission
+    await handleStreamingSubmit(currentInput);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -128,6 +246,11 @@ export function ChatInterface() {
     setThreadId(null);
     setFilterState({ isOpen: false, filters: {}, activeSection: 'basic' });
     lastProcessedResponse.current = '';
+    setStreamingMessage('');
+    if (eventSourceRef.current) {
+      eventSourceRef.current.close();
+      eventSourceRef.current = null;
+    }
   };
 
   return (
@@ -156,7 +279,7 @@ export function ChatInterface() {
 
       {/* Messages area */}
       <div className="flex-1 overflow-y-auto">
-        {messages.length === 0 && (
+        {messages.length === 0 && !streamingMessage && (
           <div className="flex h-full items-center justify-center">
             <div className="text-center max-w-lg mx-auto px-4">
               <h2 className="text-2xl font-semibold mb-4 text-gray-900">補助金検索アシスタント</h2>
@@ -202,7 +325,15 @@ export function ChatInterface() {
             />
           ))}
 
-          {isLoading && (
+          {/* Streaming message */}
+          {streamingMessage && (
+            <Message
+              role="assistant"
+              content={streamingMessage}
+            />
+          )}
+
+          {isLoading && !streamingMessage && (
             <div className="bg-gray-50">
               <div className="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl md:py-6 lg:px-0 m-auto">
                 <div className="flex-shrink-0 flex flex-col relative items-end">
