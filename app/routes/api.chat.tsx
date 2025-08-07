@@ -8,6 +8,9 @@ import type { ChatResponse } from '~/types/chat';
 import type { ReviewContext } from '~/types/review';
 import { db } from '../db.server';
 import { reviewLogs, validationLoops, validationResults } from '../db/schema';
+import { LRUCache, getResponseCache } from '~/utils/cache';
+import { acceptsGzip, compressResponse, addCompressionHeaders } from '~/utils/compression';
+import { ParallelSearchManager, getParallelSearchManager } from '~/utils/parallel-search';
 import { generateAutoFilter } from '../utils/auto-filter';
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -161,7 +164,31 @@ export async function action({ request }: ActionFunctionArgs) {
 			currentThreadId = thread.id;
 		}
 
+		// Check cache first for non-personalized queries
+		const cache = getResponseCache();
+		const cacheKey = LRUCache.generateKey(message, filters);
+		
+		// Try to get cached response
+		const cachedResponse = cache.get(cacheKey);
+		if (cachedResponse && !threadId) {
+			// Return cached response for new conversations
+			console.log('[API.CHAT] Returning cached response for:', message.substring(0, 50));
+			return json({
+				...cachedResponse,
+				cached: true,
+				threadId: currentThreadId,
+			} as ChatResponse);
+		}
+
 		await assistantService.addMessage(currentThreadId, message, 'user');
+
+		// Check if query can benefit from parallel processing
+		const queries = ParallelSearchManager.splitComplexQuery(message);
+		const useParallelSearch = queries.length > 1 && !threadId; // Only for new conversations
+		
+		if (useParallelSearch) {
+			console.log(`[API.CHAT] Using parallel search with ${queries.length} sub-queries`);
+		}
 
 		// デバッグ: ユーザーメッセージをログ出力
 		console.log('[DEBUG] User message:', message);
@@ -675,56 +702,89 @@ export async function action({ request }: ActionFunctionArgs) {
 				.join('\n')}`;
 		}
 
-		const result = await assistantService.runAssistant(
-			currentThreadId,
-			enhancedInstructions
-		);
+		let finalResponse = '';
+		
+		if (useParallelSearch) {
+			// Execute parallel searches
+			const parallelManager = getParallelSearchManager();
+			const searchResults = await parallelManager.executeSearches(
+				queries,
+				async (query) => {
+					// Create sub-thread for each query
+					const subThread = await assistantService.createThread(userId);
+					await assistantService.addMessage(subThread.id, query.query, 'user');
+					
+					const subResult = await assistantService.runAssistant(
+						subThread.id,
+						enhancedInstructions
+					);
+					
+					// Extract response
+					for (const msg of subResult.messages.data) {
+						if (msg.role === 'assistant' && msg.content[0].type === 'text') {
+							return msg.content[0].text.value;
+						}
+					}
+					return null;
+				}
+			);
+			
+			// Merge parallel results
+			finalResponse = ParallelSearchManager.mergeResults(searchResults);
+			console.log(`[API.CHAT] Parallel search completed in ${Math.max(...searchResults.map(r => r.duration))}ms`);
+		} else {
+			// Single search (existing logic)
+			const result = await assistantService.runAssistant(
+				currentThreadId,
+				enhancedInstructions
+			);
 
-		// Get only the new assistant message(s) created in this run
-		// OpenAI returns messages in reverse chronological order (newest first)
-		let newAssistantMessage = null;
+			// Get only the new assistant message(s) created in this run
+			// OpenAI returns messages in reverse chronological order (newest first)
+			let newAssistantMessage = null;
 
-		// Find the first assistant message that's newer than the last one we saw
-		for (const msg of result.messages.data) {
-			if (msg.role === 'assistant') {
-				if (
-					!result.lastAssistantMessageIdBefore ||
-					msg.id !== result.lastAssistantMessageIdBefore
-				) {
-					newAssistantMessage = msg;
-					break;
-				} else {
-					// We've reached the last message from before, stop here
-					break;
+			// Find the first assistant message that's newer than the last one we saw
+			for (const msg of result.messages.data) {
+				if (msg.role === 'assistant') {
+					if (
+						!result.lastAssistantMessageIdBefore ||
+						msg.id !== result.lastAssistantMessageIdBefore
+					) {
+						newAssistantMessage = msg;
+						break;
+					} else {
+						// We've reached the last message from before, stop here
+						break;
+					}
 				}
 			}
+
+			// Get the content of the new message
+			const latestMessageContent =
+				newAssistantMessage && newAssistantMessage.content[0].type === 'text'
+					? newAssistantMessage.content[0].text.value
+					: '';
+
+			// デバッグ: アシスタントの応答をログ出力
+			console.log(
+				'[DEBUG] Assistant response (truncated):',
+				latestMessageContent.substring(0, 200) + '...'
+			);
+			console.log(
+				'[DEBUG] Total messages in thread:',
+				result.messages.data.length
+			);
+
+			// 応答から補助金件数を抽出してログ出力
+			const subsidyCountMatch =
+				latestMessageContent.match(/申請可能な補助金は(\d+)件です/);
+			if (subsidyCountMatch) {
+				console.log('[DEBUG] Extracted subsidy count:', subsidyCountMatch[1]);
+			}
+
+			// 検証エージェントによる品質チェックとフィードバックループ
+			finalResponse = latestMessageContent;
 		}
-
-		// Get the content of the new message
-		const latestMessageContent =
-			newAssistantMessage && newAssistantMessage.content[0].type === 'text'
-				? newAssistantMessage.content[0].text.value
-				: '';
-
-		// デバッグ: アシスタントの応答をログ出力
-		console.log(
-			'[DEBUG] Assistant response (truncated):',
-			latestMessageContent.substring(0, 200) + '...'
-		);
-		console.log(
-			'[DEBUG] Total messages in thread:',
-			result.messages.data.length
-		);
-
-		// 応答から補助金件数を抽出してログ出力
-		const subsidyCountMatch =
-			latestMessageContent.match(/申請可能な補助金は(\d+)件です/);
-		if (subsidyCountMatch) {
-			console.log('[DEBUG] Extracted subsidy count:', subsidyCountMatch[1]);
-		}
-
-		// 検証エージェントによる品質チェックとフィードバックループ
-		let finalResponse = latestMessageContent;
 
 		// 初期レスポンスから引用マークを削除
 		finalResponse = finalResponse.replace(/【\d+:\d+†[^】]+】/g, '');
@@ -930,6 +990,11 @@ ${validationResult.clarificationQuestions
 			responseId, // レスポンスIDを追加
 		};
 
+		// Cache the successful response (only for non-thread queries)
+		if (!threadId && finalResponse) {
+			cache.set(cacheKey, response);
+		}
+
 		console.log('[API.CHAT] Sending response with ID:', responseId);
 		console.log(
 			'[API.CHAT] Response message count:',
@@ -963,6 +1028,19 @@ ${validationResult.clarificationQuestions
 				console.log('[API.CHAT] Total subsidies:', subsidyNames.length);
 				console.log('[API.CHAT] Unique subsidies:', uniqueSubsidies.size);
 			}
+		}
+
+		// Apply compression if client supports it
+		if (acceptsGzip(request)) {
+			const compressed = await compressResponse(response);
+			return new Response(compressed, {
+				status: 200,
+				headers: {
+					'Content-Type': 'application/json',
+					'Content-Encoding': 'gzip',
+					'Vary': 'Accept-Encoding',
+				},
+			});
 		}
 
 		return json(response);

@@ -225,6 +225,12 @@ export class AssistantService {
 			const run = await this.openai.beta.threads.runs.create(threadId, {
 				assistant_id: this.assistantId,
 				additional_instructions: additionalInstructions,
+				temperature: 0.3, // Lower for more deterministic responses
+				max_prompt_tokens: 2000, // Limit prompt size for faster processing
+				truncation_strategy: {
+					type: 'last_messages',
+					last_messages: 10 // Only consider last 10 messages for context
+				}
 			});
 
 			logger.debug(`Run created: ${run.id}`);
@@ -238,6 +244,30 @@ export class AssistantService {
 		} catch (error) {
 			handleServiceError(
 				'run assistant',
+				error,
+				AssistantServiceError,
+				'RUN_FAILED'
+			);
+		}
+	}
+
+	async runAssistantStreaming(threadId: string, additionalInstructions?: string) {
+		try {
+			logger.debug(`Running assistant streaming on thread ${threadId}`);
+
+			return this.openai.beta.threads.runs.stream(threadId, {
+				assistant_id: this.assistantId,
+				additional_instructions: additionalInstructions,
+				temperature: 0.3, // Lower for more deterministic responses
+				max_prompt_tokens: 2000, // Limit prompt size for faster processing
+				truncation_strategy: {
+					type: 'last_messages',
+					last_messages: 10 // Only consider last 10 messages for context
+				}
+			});
+		} catch (error) {
+			handleServiceError(
+				'run assistant streaming',
 				error,
 				AssistantServiceError,
 				'RUN_FAILED'
