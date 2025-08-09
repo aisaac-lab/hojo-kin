@@ -8,21 +8,46 @@ import {
   type SSEMessage 
 } from '~/utils/streaming';
 import { AssistantService } from '~/services/assistant.service';
-import { generateAutoFilter } from '~/utils/auto-filter';
+import { generateAutoFilter, buildEnhancedInstructions as enhancedInstructionsBuilder } from '~/utils/enhanced-instructions';
 import { messageRepository } from '~/utils/database-simple';
+
+export async function loader() {
+  return new Response('This endpoint only accepts POST requests', { 
+    status: 405,
+    headers: { 'Content-Type': 'text/plain' }
+  });
+}
 
 export async function action({ request }: ActionFunctionArgs) {
   if (request.method !== 'POST') {
     return new Response('Method not allowed', { status: 405 });
   }
 
-  // Parse request body
-  const formData = await request.formData();
-  const message = formData.get('message')?.toString() || '';
-  const threadId = formData.get('threadId')?.toString() || '';
-  const userId = formData.get('userId')?.toString() || '';
-  const filtersStr = formData.get('filters')?.toString() || '{}';
-  const filters = JSON.parse(filtersStr);
+  // Parse request body as JSON
+  let message = '';
+  let threadId = '';
+  let userId = '';
+  let filters = {};
+  
+  try {
+    const json = await request.json();
+    message = json.message || '';
+    threadId = json.threadId || '';
+    userId = json.userId || '';
+    filters = json.filters || {};
+  } catch (error) {
+    // Fallback to FormData if JSON parsing fails
+    try {
+      const formData = await request.formData();
+      message = formData.get('message')?.toString() || '';
+      threadId = formData.get('threadId')?.toString() || '';
+      userId = formData.get('userId')?.toString() || '';
+      const filtersStr = formData.get('filters')?.toString() || '{}';
+      filters = JSON.parse(filtersStr);
+    } catch {
+      return new Response('Invalid request body', { status: 400 });
+    }
+  }
 
   if (!message) {
     return new Response('Message is required', { status: 400 });
@@ -184,73 +209,5 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 function buildEnhancedInstructions(filters: any): string {
-  const parts: string[] = [];
-  
-  // Build filter context
-  let filterContext = '';
-  if (filters.purpose?.mainCategories?.length > 0 || filters.purpose?.keywords?.length > 0) {
-    filterContext += '\n【ユーザーの関心分野】';
-    if (filters.purpose.mainCategories?.length > 0) {
-      filterContext += `\nカテゴリー: ${filters.purpose.mainCategories.join(', ')}`;
-    }
-    if (filters.purpose.keywords?.length > 0) {
-      filterContext += `\nキーワード: ${filters.purpose.keywords.join(', ')}`;
-    }
-  }
-  
-  if (filters.company?.employeeCount) {
-    filterContext += '\n【企業規模】';
-    if (filters.company.employeeCount.min && filters.company.employeeCount.max) {
-      filterContext += `\n従業員数: ${filters.company.employeeCount.min}〜${filters.company.employeeCount.max}名`;
-    } else if (filters.company.employeeCount.max) {
-      filterContext += `\n従業員数: ${filters.company.employeeCount.max}名以下`;
-    } else if (filters.company.employeeCount.min) {
-      filterContext += `\n従業員数: ${filters.company.employeeCount.min}名以上`;
-    }
-  }
-  
-  const baseInstructions = `
-【最重要】file_search ツールを使用して補助金データを検索してください。
-
-【検索の具体例】
-Q: "IT企業で社員数50名以内の助成金を列挙する"
-
-【重要】検索手順:
-1. subsidies-master.json または subsidies-enhanced.json から条件に合う補助金を検索
-2. 複数の結果がある場合は、マッチ度の高い順に整理
-3. 各補助金について以下の情報を含める：
-   - 補助金名
-   - 対象者
-   - 補助金額
-   - 補助率
-   - 申請期限
-   - URL（データに含まれる場合のみ）
-
-【応答形式】
-申請可能な補助金は〇件です。
-
-【内訳】
-- カテゴリー1: ○件
-- カテゴリー2: ○件
-
-条件に合う補助金は以下の通りです。
-
-【マッチ度の高い上位N件】
-1. **補助金名**（マッチ度: ○点/100点）
-   - 内訳：地域(○/30)、カテゴリー(○/25)、金額(○/20)、企業規模(○/15)、その他(○/10)
-   - 対象者：[具体的な対象者]
-   - 補助金額：上限○円
-   - 補助率：○%
-   - 申請期限：○年○月○日
-   - URL：[公式サイトURL]
-
-URLに関する注意事項：
-- 公式サイトのURLを求められた場合、データに含まれているURLを正確に提示する
-- URLが不明な場合は「URLは現在のデータに含まれていません」と明記する
-- 推測や一般的なURLを提供しない
-
-常に日本語で、丁寧かつ分かりやすく回答してください。${filterContext}
-`;
-  
-  return baseInstructions;
+  return enhancedInstructionsBuilder(filters);
 }

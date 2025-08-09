@@ -89,25 +89,22 @@ export function ChatInterface() {
     setIsStreaming(true);
     setStreamingMessage('');
 
-    // Create form data for streaming request
-    const formData = new FormData();
-    formData.append('message', currentInput);
-    formData.append('threadId', threadId || '');
-    formData.append('userId', 'demo-user');
-    formData.append('filters', JSON.stringify(filterState.filters));
+    // Create JSON payload for streaming request
+    const payload = {
+      message: currentInput,
+      threadId: threadId || '',
+      userId: 'demo-user',
+      filters: filterState.filters
+    };
 
-    // Convert FormData to URLSearchParams for EventSource
-    const params = new URLSearchParams();
-    formData.forEach((value, key) => {
-      params.append(key, value.toString());
-    });
-
-    // Create EventSource with POST body (using polyfill or fetch + ReadableStream)
     // For now, we'll use a POST request with fetch API for better compatibility
     try {
       const response = await fetch('/api/chat/stream', {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {

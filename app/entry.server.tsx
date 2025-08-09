@@ -108,7 +108,7 @@ function handleBrowserRequest(
         abortDelay={ABORT_DELAY}
       />,
       {
-        bootstrapModules: ["/build/entry.client.js"],
+        bootstrapScripts: ["/build/manifest-2057A72D.js"],
         onShellReady() {
           shellRendered = true;
           const body = new PassThrough();

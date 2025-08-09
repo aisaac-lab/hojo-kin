@@ -11,7 +11,7 @@ import { reviewLogs, validationLoops, validationResults } from '../db/schema';
 import { LRUCache, getResponseCache } from '~/utils/cache';
 import { acceptsGzip, compressResponse, addCompressionHeaders } from '~/utils/compression';
 import { ParallelSearchManager, getParallelSearchManager } from '~/utils/parallel-search';
-import { generateAutoFilter } from '../utils/auto-filter';
+import { generateAutoFilter, buildEnhancedInstructions as enhancedInstructionsBuilder } from '~/utils/enhanced-instructions';
 
 export async function action({ request }: ActionFunctionArgs) {
 	if (request.method !== 'POST') {
