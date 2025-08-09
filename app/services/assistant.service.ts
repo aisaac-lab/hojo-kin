@@ -286,9 +286,10 @@ export class AssistantService {
 		if (!threadId || !runId) {
 			throw new Error(`Invalid parameters for waitForRunCompletion: threadId=${threadId}, runId=${runId}`);
 		}
-		console.log('DEBUG - waitForRunCompletion called with:', { threadId, runId });
-		console.log('DEBUG - About to call retrieve with threadId:', threadId, 'runId:', runId);
+		console.log('[AssistantService] waitForRunCompletion called with:', { threadId, runId });
+		console.log('[AssistantService] Using OpenAI SDK v5 format: retrieve(runId, { thread_id: threadId })');
 		// OpenAI SDK v5 requires: retrieve(runId, { thread_id: threadId })
+		// NOT: retrieve(threadId, runId) - this is the old v4 format
 		let run = await this.openai.beta.threads.runs.retrieve(runId, { thread_id: threadId } as any);
 		let delay = 100; // Start with 100ms
 		const maxDelay = 1000; // Max 1 second
