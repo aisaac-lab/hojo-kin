@@ -288,16 +288,14 @@ export class AssistantService {
 		}
 		console.log('[AssistantService] waitForRunCompletion called with:', { threadId, runId });
 		
-		// CRITICAL FIX: Ensure parameters are in correct order
-		const firstParam = runId;  // MUST be runId
-		const secondParam = { thread_id: threadId };  // MUST be object with thread_id
+		// CRITICAL FIX: The actual OpenAI SDK v5.12.2 signature appears to be different
+		// Based on error messages, it seems to expect (threadId, runId) not (runId, { thread_id })
+		console.log('[AssistantService] Testing parameter order fix:');
+		console.log('[AssistantService] - threadId:', threadId);
+		console.log('[AssistantService] - runId:', runId);
 		
-		console.log('[AssistantService] OpenAI SDK v5 parameters check:');
-		console.log('[AssistantService] - First param (should be runId):', firstParam);
-		console.log('[AssistantService] - Second param (should be {thread_id}):', secondParam);
-		
-		// OpenAI SDK v5 requires: retrieve(runId, { thread_id: threadId })
-		let run = await this.openai.beta.threads.runs.retrieve(firstParam, secondParam as any);
+		// Try the original v4-style signature which seems to be what v5 actually expects
+		let run = await this.openai.beta.threads.runs.retrieve(threadId as any, runId as any);
 		let delay = 100; // Start with 100ms
 		const maxDelay = 1000; // Max 1 second
 		const delayMultiplier = 1.5; // Exponential backoff multiplier
@@ -321,8 +319,8 @@ export class AssistantService {
 			// Exponential backoff: increase delay for next iteration
 			delay = Math.min(delay * delayMultiplier, maxDelay);
 			
-			// OpenAI SDK v5 requires: retrieve(runId, { thread_id: threadId })
-			run = await this.openai.beta.threads.runs.retrieve(firstParam, secondParam as any);
+			// Use the same parameter order as above
+			run = await this.openai.beta.threads.runs.retrieve(threadId as any, runId as any);
 		}
 
 		if (run.status === 'completed') {
