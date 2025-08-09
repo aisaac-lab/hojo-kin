@@ -34,7 +34,7 @@ async function createSubsidySearchAssistant() {
 
 すべての回答は日本語で行ってください。
       `,
-			model: 'gpt-4.1-mini',
+			model: 'gpt-4o-mini',
 			tools: [{ type: 'file_search' }],
 			tool_resources: {
 				file_search: {
@@ -51,10 +51,20 @@ async function createSubsidySearchAssistant() {
 }
 
 // Run if called directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (require.main === module) {
 	createSubsidySearchAssistant()
-		.then(() => process.exit(0))
-		.catch(() => process.exit(1));
+		.then(({ assistant, vectorStore }) => {
+			console.log('✅ Assistant created successfully!');
+			console.log(`Assistant ID: ${assistant.id}`);
+			console.log(`Vector Store ID: ${vectorStore.id}`);
+			console.log('\nAdd this to your .env file:');
+			console.log(`OPENAI_ASSISTANT_ID="${assistant.id}"`);
+			process.exit(0);
+		})
+		.catch((error) => {
+			console.error('Failed to create assistant:', error);
+			process.exit(1);
+		});
 }
 
 export { createSubsidySearchAssistant };
