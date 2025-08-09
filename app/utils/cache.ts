@@ -60,8 +60,10 @@ export class LRUCache<T> {
     // Remove oldest entry if cache is full
     if (this.cache.size >= this.maxSize && !this.cache.has(key)) {
       const firstKey = this.cache.keys().next().value;
-      this.cache.delete(firstKey);
-      console.log(`[Cache] Evicted oldest entry: ${firstKey?.substring(0, 50)}...`);
+      if (firstKey !== undefined) {
+        this.cache.delete(firstKey);
+        console.log(`[Cache] Evicted oldest entry: ${firstKey.substring(0, 50)}...`);
+      }
     }
 
     this.cache.set(key, {

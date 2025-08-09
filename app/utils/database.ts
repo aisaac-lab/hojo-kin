@@ -4,6 +4,11 @@
 
 import { db } from '../db.server';
 import { createLogger } from './logger';
+import type { 
+  Thread, NewThread, 
+  Message, NewMessage,
+  Subsidy, NewSubsidy 
+} from '../db/schema';
 
 const logger = createLogger('Database');
 
@@ -23,7 +28,7 @@ export interface BaseRepository<T, CreateInput, UpdateInput> {
  * Thread repository
  */
 export const threadRepository = {
-  async create(data: Prisma.ThreadCreateInput) {
+  async create(data: NewThread) {
     try {
       logger.debug('Creating thread', { threadId: data.threadId });
       const thread = await db.thread.create({ data });
@@ -36,10 +41,10 @@ export const threadRepository = {
   },
 
   async findMany(
-    where?: Prisma.ThreadWhereInput,
+    where?: Partial<Thread>,
     options?: {
-      orderBy?: Prisma.ThreadOrderByWithRelationInput;
-      include?: Prisma.ThreadInclude;
+      orderBy?: { [key: string]: 'asc' | 'desc' };
+      include?: { messages?: boolean };
       take?: number;
       skip?: number;
     }
@@ -58,7 +63,7 @@ export const threadRepository = {
     }
   },
 
-  async findUnique(where: Prisma.ThreadWhereUniqueInput) {
+  async findUnique(where: { threadId: string }) {
     try {
       logger.debug('Finding thread', { where });
       const thread = await db.thread.findUnique({ where });
@@ -92,8 +97,8 @@ export const threadRepository = {
   },
 
   async update(
-    where: Prisma.ThreadWhereUniqueInput,
-    data: Prisma.ThreadUpdateInput
+    where: { threadId: string },
+    data: Partial<Thread>
   ) {
     try {
       logger.debug('Updating thread', { where });
@@ -106,7 +111,7 @@ export const threadRepository = {
     }
   },
 
-  async delete(where: Prisma.ThreadWhereUniqueInput) {
+  async delete(where: { threadId: string }) {
     try {
       logger.debug('Deleting thread', { where });
       const thread = await db.thread.delete({ where });
@@ -118,7 +123,7 @@ export const threadRepository = {
     }
   },
 
-  async count(where?: Prisma.ThreadWhereInput) {
+  async count(where?: Partial<Thread>) {
     try {
       logger.debug('Counting threads', { where });
       const count = await db.thread.count({ where });
@@ -135,7 +140,7 @@ export const threadRepository = {
  * Message repository
  */
 export const messageRepository = {
-  async create(data: Prisma.MessageCreateInput) {
+  async create(data: NewMessage) {
     try {
       logger.debug('Creating message', { role: data.role, threadId: data.threadId });
       const message = await db.message.create({ data });
@@ -148,9 +153,9 @@ export const messageRepository = {
   },
 
   async findMany(
-    where?: Prisma.MessageWhereInput,
+    where?: Partial<Message>,
     options?: {
-      orderBy?: Prisma.MessageOrderByWithRelationInput;
+      orderBy?: { [key: string]: 'asc' | 'desc' };
       take?: number;
       skip?: number;
     }
@@ -203,7 +208,7 @@ export const messageRepository = {
  * Subsidy repository
  */
 export const subsidyRepository = {
-  async create(data: Prisma.SubsidyCreateInput) {
+  async create(data: NewSubsidy) {
     try {
       logger.debug('Creating subsidy', { title: data.title });
       const subsidy = await db.subsidy.create({ data });
@@ -215,7 +220,7 @@ export const subsidyRepository = {
     }
   },
 
-  async createMany(data: Prisma.SubsidyCreateManyInput[]) {
+  async createMany(data: NewSubsidy[]) {
     try {
       logger.debug(`Creating ${data.length} subsidies`);
       const result = await db.subsidy.createMany({
@@ -231,12 +236,12 @@ export const subsidyRepository = {
   },
 
   async findMany(
-    where?: Prisma.SubsidyWhereInput,
+    where?: Partial<Subsidy>,
     options?: {
-      orderBy?: Prisma.SubsidyOrderByWithRelationInput;
+      orderBy?: { [key: string]: 'asc' | 'desc' };
       take?: number;
       skip?: number;
-      select?: Prisma.SubsidySelect;
+      select?: { [key: string]: boolean };
     }
   ) {
     try {
@@ -253,7 +258,7 @@ export const subsidyRepository = {
     }
   },
 
-  async findUnique(where: Prisma.SubsidyWhereUniqueInput) {
+  async findUnique(where: { id?: number; jgrantsId?: string }) {
     try {
       logger.debug('Finding subsidy', { where });
       const subsidy = await db.subsidy.findUnique({ where });
@@ -270,8 +275,8 @@ export const subsidyRepository = {
   },
 
   async update(
-    where: Prisma.SubsidyWhereUniqueInput,
-    data: Prisma.SubsidyUpdateInput
+    where: { id: number },
+    data: Partial<Subsidy>
   ) {
     try {
       logger.debug('Updating subsidy', { where });
@@ -285,9 +290,9 @@ export const subsidyRepository = {
   },
 
   async upsert(
-    where: Prisma.SubsidyWhereUniqueInput,
-    create: Prisma.SubsidyCreateInput,
-    update: Prisma.SubsidyUpdateInput
+    where: { jgrantsId: string },
+    create: NewSubsidy,
+    update: Partial<Subsidy>
   ) {
     try {
       logger.debug('Upserting subsidy', { where });
@@ -300,7 +305,7 @@ export const subsidyRepository = {
     }
   },
 
-  async delete(where: Prisma.SubsidyWhereUniqueInput) {
+  async delete(where: { id: number }) {
     try {
       logger.debug('Deleting subsidy', { where });
       const subsidy = await db.subsidy.delete({ where });
@@ -312,7 +317,7 @@ export const subsidyRepository = {
     }
   },
 
-  async deleteMany(where?: Prisma.SubsidyWhereInput) {
+  async deleteMany(where?: Partial<Subsidy>) {
     try {
       logger.debug('Deleting subsidies', { where });
       const result = await db.subsidy.deleteMany({ where });
@@ -324,7 +329,7 @@ export const subsidyRepository = {
     }
   },
 
-  async count(where?: Prisma.SubsidyWhereInput) {
+  async count(where?: Partial<Subsidy>) {
     try {
       logger.debug('Counting subsidies', { where });
       const count = await db.subsidy.count({ where });
@@ -341,7 +346,7 @@ export const subsidyRepository = {
  * Transaction helper
  */
 export async function withTransaction<T>(
-  fn: (tx: Prisma.TransactionClient) => Promise<T>
+  fn: (tx: typeof db) => Promise<T>
 ): Promise<T> {
   try {
     logger.debug('Starting transaction');
