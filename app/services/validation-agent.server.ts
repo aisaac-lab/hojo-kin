@@ -1,5 +1,5 @@
 import { ReviewAgentService } from './review-agent.server';
-import { AssistantService } from './assistant.service';
+import type { AssistantService } from './assistant.service';
 import type { 
   ValidationResult, 
   ValidationLoop, 
