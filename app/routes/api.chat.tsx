@@ -67,8 +67,19 @@ export async function action({ request }: ActionFunctionArgs) {
 		});
 
 		// Parse and validate request body
-		let requestBody;
-		let threadId, message, userId, filters;
+		interface ChatRequestBody {
+			threadId: string;
+			message: string;
+			userId: string;
+			filters?: Record<string, unknown>;
+		}
+		const defaultRequestBody: ChatRequestBody = {
+			threadId: '',
+			message: '',
+			userId: '',
+			filters: {}
+		};
+		const requestBody: ChatRequestBody = { ...defaultRequestBody };
 
 		// Check if the request is FormData or JSON
 		const contentType = request.headers.get('content-type') || '';
@@ -84,19 +95,19 @@ export async function action({ request }: ActionFunctionArgs) {
 		try {
 			// Always try FormData first for Remix fetcher compatibility
 			const formData = await request.clone().formData();
-			message = formData.get('message')?.toString() || '';
-			threadId = formData.get('threadId')?.toString() || '';
-			userId = formData.get('userId')?.toString() || '';
+			requestBody.message = formData.get('message')?.toString() || '';
+			requestBody.threadId = formData.get('threadId')?.toString() || '';
+			requestBody.userId = formData.get('userId')?.toString() || '';
 			const filtersStr = formData.get('filters')?.toString() || '{}';
-			filters = JSON.parse(filtersStr);
+			requestBody.filters = JSON.parse(filtersStr);
 			isParsedAsFormData = true;
 
 			console.log('[API.CHAT] Successfully parsed as FormData:', {
-				hasMessage: !!message,
-				hasThreadId: !!threadId,
-				hasUserId: !!userId,
-				hasFilters: !!filters,
-				messageLength: message?.length,
+				hasMessage: !!requestBody.message,
+				hasThreadId: !!requestBody.threadId,
+				hasUserId: !!requestBody.userId,
+				hasFilters: !!requestBody.filters,
+				messageLength: requestBody.message?.length,
 				contentType,
 			});
 		} catch (formDataError) {
@@ -109,15 +120,15 @@ export async function action({ request }: ActionFunctionArgs) {
 		if (!isParsedAsFormData) {
 			// Handle JSON body
 			try {
-				requestBody = await request.json();
-				({ threadId, message, userId, filters } = requestBody);
+				const body = await request.json() as ChatRequestBody;
+				Object.assign(requestBody, body);
 
 				console.log('[API.CHAT] JSON body received:', {
-					hasMessage: !!message,
-					hasThreadId: !!threadId,
-					hasUserId: !!userId,
-					hasFilters: !!filters,
-					messageLength: message?.length,
+					hasMessage: !!requestBody.message,
+					hasThreadId: !!requestBody.threadId,
+					hasUserId: !!requestBody.userId,
+					hasFilters: !!requestBody.filters,
+					messageLength: requestBody.message?.length,
 				});
 			} catch (parseError) {
 				console.error('[API.CHAT] Failed to parse JSON body:', parseError);
@@ -131,7 +142,7 @@ export async function action({ request }: ActionFunctionArgs) {
 			}
 		}
 
-		if (!message) {
+		if (!requestBody.message) {
 			return json({ error: 'Message is required' }, { status: 400 });
 		}
 
@@ -157,22 +168,22 @@ export async function action({ request }: ActionFunctionArgs) {
 			);
 		}
 
-		let currentThreadId = threadId;
+		let currentThreadId = requestBody.threadId;
 
 		if (!currentThreadId) {
-			const thread = await assistantService.createThread(userId);
+			const thread = await assistantService.createThread(requestBody.userId);
 			currentThreadId = thread.id;
 		}
 
 		// Check cache first for non-personalized queries
 		const cache = getResponseCache();
-		const cacheKey = LRUCache.generateKey(message, filters);
+		const cacheKey = LRUCache.generateKey(requestBody.message, requestBody.filters);
 		
 		// Try to get cached response
 		const cachedResponse = cache.get(cacheKey);
-		if (cachedResponse && !threadId) {
+		if (cachedResponse && !requestBody.threadId) {
 			// Return cached response for new conversations
-			console.log('[API.CHAT] Returning cached response for:', message.substring(0, 50));
+			console.log('[API.CHAT] Returning cached response for:', requestBody.message.substring(0, 50));
 			return json({
 				...cachedResponse,
 				cached: true,
@@ -180,25 +191,25 @@ export async function action({ request }: ActionFunctionArgs) {
 			} as ChatResponse);
 		}
 
-		await assistantService.addMessage(currentThreadId, message, 'user');
+		await assistantService.addMessage(currentThreadId, requestBody.message, 'user');
 
 		// Check if query can benefit from parallel processing
-		const queries = ParallelSearchManager.splitComplexQuery(message);
-		const useParallelSearch = queries.length > 1 && !threadId; // Only for new conversations
+		const queries = ParallelSearchManager.splitComplexQuery(requestBody.message);
+		const useParallelSearch = queries.length > 1 && !requestBody.threadId; // Only for new conversations
 		
 		if (useParallelSearch) {
 			console.log(`[API.CHAT] Using parallel search with ${queries.length} sub-queries`);
 		}
 
 		// デバッグ: ユーザーメッセージをログ出力
-		console.log('[DEBUG] User message:', message);
+		console.log('[DEBUG] User message:', requestBody.message);
 		console.log('[DEBUG] Thread ID:', currentThreadId);
-		console.log('[DEBUG] Filters:', filters);
+		console.log('[DEBUG] Filters:', requestBody.filters);
 
 		// フィルターが指定されていない場合、メッセージから自動生成
-		let effectiveFilters = filters;
-		if (!filters || Object.keys(filters).length === 0) {
-			const autoFilter = generateAutoFilter(message);
+		let effectiveFilters: any = requestBody.filters;
+		if (!requestBody.filters || Object.keys(requestBody.filters).length === 0) {
+			const autoFilter = generateAutoFilter(requestBody.message);
 			if (autoFilter) {
 				effectiveFilters = autoFilter;
 				console.log('[DEBUG] Auto-generated filters:', effectiveFilters);
@@ -432,7 +443,7 @@ export async function action({ request }: ActionFunctionArgs) {
       - 複数のカテゴリーを横断的に検索
       - 見つかった件数が少ない場合は、さらに関連キーワードで再検索
 
-      ユーザーの質問: "${message}"
+      ユーザーの質問: "${requestBody.message}"
 
       回答の原則：
       1. まず、ユーザーが具体的に何を知りたいのか理解する
@@ -711,7 +722,7 @@ export async function action({ request }: ActionFunctionArgs) {
 				queries,
 				async (query) => {
 					// Create sub-thread for each query
-					const subThread = await assistantService.createThread(userId);
+					const subThread = await assistantService.createThread(requestBody.userId);
 					await assistantService.addMessage(subThread.id, query.query, 'user');
 					
 					const subResult = await assistantService.runAssistant(
@@ -719,19 +730,35 @@ export async function action({ request }: ActionFunctionArgs) {
 						enhancedInstructions
 					);
 					
-					// Extract response
-					for (const msg of subResult.messages.data) {
-						if (msg.role === 'assistant' && msg.content[0].type === 'text') {
-							return msg.content[0].text.value;
-						}
+					// Extract response - messages are in reverse chronological order (newest first)
+					console.log(`[API.CHAT] Sub-thread ${subThread.id} messages:`, subResult.messages.data.length);
+					
+					// Find the latest assistant message
+					const assistantMessage = subResult.messages.data.find(msg => 
+						msg.role === 'assistant' && msg.content[0]?.type === 'text'
+					);
+					
+					if (assistantMessage && assistantMessage.content[0]?.type === 'text') {
+						const response = assistantMessage.content[0].text.value;
+						console.log(`[API.CHAT] Sub-thread response preview:`, response.substring(0, 100));
+						return response;
 					}
+					
+					console.log('[API.CHAT] No assistant message found in sub-thread');
 					return null;
 				}
 			);
 			
 			// Merge parallel results
+			console.log('[API.CHAT] Search results before merge:', searchResults.map(r => ({
+				id: r.id,
+				hasResult: !!r.result,
+				resultLength: r.result?.length || 0,
+				error: r.error
+			})));
 			finalResponse = ParallelSearchManager.mergeResults(searchResults);
 			console.log(`[API.CHAT] Parallel search completed in ${Math.max(...searchResults.map(r => r.duration))}ms`);
+			console.log('[API.CHAT] Merged response length:', finalResponse?.length || 0);
 		} else {
 			// Single search (existing logic)
 			const result = await assistantService.runAssistant(
@@ -790,10 +817,10 @@ export async function action({ request }: ActionFunctionArgs) {
 		finalResponse = finalResponse.replace(/【\d+:\d+†[^】]+】/g, '');
 
 		// Check if we should skip validation for high-confidence responses
-		const skipValidation = process.env.SKIP_VALIDATION === 'true' || shouldSkipValidation(message, finalResponse);
+		const skipValidation = process.env.SKIP_VALIDATION === 'true' || shouldSkipValidation(requestBody.message, finalResponse);
 		
 		console.log('[VALIDATION] Skip validation check:', {
-			message: message.substring(0, 50),
+			message: requestBody.message.substring(0, 50),
 			hasSubsidyListing: finalResponse.includes('申請可能な補助金は'),
 			skipValidation,
 			envSkip: process.env.SKIP_VALIDATION
@@ -815,7 +842,7 @@ export async function action({ request }: ActionFunctionArgs) {
 			messageIdsBeforeValidation.size
 		);
 
-		if (latestMessageContent && !skipValidation) {
+		if (finalResponse && !skipValidation) {
 			const validationAgentService = new ValidationAgentService();
 			const reviewContext: ReviewContext = {
 				hasFilters:
@@ -827,8 +854,8 @@ export async function action({ request }: ActionFunctionArgs) {
 			// 検証エージェントでフィードバックループを実行
 			const validationResult =
 				await validationAgentService.validateWithFeedbackLoop(
-					message,
-					latestMessageContent,
+					requestBody.message,
+					finalResponse,
 					currentThreadId,
 					assistantService,
 					reviewContext,
@@ -930,7 +957,7 @@ ${validationResult.clarificationQuestions
 						const loopPromises = validationResult.loops.map(async (loop) => {
 							return (await dbInstance.insert(validationLoops)).values({
 								threadId: currentThreadId,
-								userQuestion: message,
+								userQuestion: requestBody.message,
 								loopNumber: loop.loopNumber,
 								reviewScores: JSON.stringify(loop.reviewResult.scores),
 								lowestScoreCategory: loop.reviewResult.lowestScore.category,
@@ -948,8 +975,8 @@ ${validationResult.clarificationQuestions
 						// 最終的な検証結果を保存
 						await (await dbInstance.insert(validationResults)).values({
 							threadId: currentThreadId,
-							userQuestion: message,
-							initialResponse: latestMessageContent,
+							userQuestion: requestBody.message,
+							initialResponse: finalResponse,
 							finalResponse: finalResponse,
 							bestResponse: validationResult.bestResponse,
 							totalLoops: validationResult.finalLoop,
@@ -991,7 +1018,7 @@ ${validationResult.clarificationQuestions
 		};
 
 		// Cache the successful response (only for non-thread queries)
-		if (!threadId && finalResponse) {
+		if (!requestBody.threadId && finalResponse) {
 			cache.set(cacheKey, response);
 		}
 

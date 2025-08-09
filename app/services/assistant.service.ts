@@ -148,11 +148,13 @@ export class AssistantService {
 
 			logger.info(`Thread created: ${thread.id}`);
 
-			return {
+			const returnValue = {
 				id: thread.id as ThreadId,
 				userId,
 				metadata: threadMetadata,
 			};
+			console.log('DEBUG - createThread returning:', returnValue);
+			return returnValue;
 		} catch (error) {
 			handleServiceError(
 				'create thread',
@@ -212,6 +214,9 @@ export class AssistantService {
 
 	async runAssistant(threadId: string, additionalInstructions?: string) {
 		try {
+			if (!threadId) {
+				throw new Error('threadId is required for runAssistant');
+			}
 			logger.debug(`Running assistant on thread ${threadId}`);
 
 			// Get the ID of the last assistant message before running
@@ -226,15 +231,17 @@ export class AssistantService {
 				assistant_id: this.assistantId,
 				additional_instructions: additionalInstructions,
 				temperature: 0.3, // Lower for more deterministic responses
-				max_prompt_tokens: 2000, // Limit prompt size for faster processing
+				// max_prompt_tokens removed to avoid incomplete runs
 				truncation_strategy: {
 					type: 'last_messages',
 					last_messages: 10 // Only consider last 10 messages for context
 				}
 			});
 
-			logger.debug(`Run created: ${run.id}`);
+			logger.debug(`Run created: ${run.id} for thread: ${threadId}`);
+			console.log('DEBUG - Run object:', JSON.stringify(run, null, 2));
 
+			console.log('DEBUG - Before waitForRunCompletion:', { threadId, runId: run.id });
 			const messages = await this.waitForRunCompletion(threadId, run.id);
 
 			return {
@@ -259,7 +266,7 @@ export class AssistantService {
 				assistant_id: this.assistantId,
 				additional_instructions: additionalInstructions,
 				temperature: 0.3, // Lower for more deterministic responses
-				max_prompt_tokens: 2000, // Limit prompt size for faster processing
+				// max_prompt_tokens removed to avoid incomplete runs
 				truncation_strategy: {
 					type: 'last_messages',
 					last_messages: 10 // Only consider last 10 messages for context
@@ -276,19 +283,38 @@ export class AssistantService {
 	}
 
 	private async waitForRunCompletion(threadId: string, runId: string) {
-		let run = await this.openai.beta.threads.runs.retrieve(threadId, runId);
+		if (!threadId || !runId) {
+			throw new Error(`Invalid parameters for waitForRunCompletion: threadId=${threadId}, runId=${runId}`);
+		}
+		console.log('DEBUG - waitForRunCompletion called with:', { threadId, runId });
+		console.log('DEBUG - About to call retrieve with threadId:', threadId, 'runId:', runId);
+		// OpenAI SDK v5 requires: retrieve(runId, { thread_id: threadId })
+		let run = await this.openai.beta.threads.runs.retrieve(runId, { thread_id: threadId } as any);
 		let delay = 100; // Start with 100ms
 		const maxDelay = 1000; // Max 1 second
 		const delayMultiplier = 1.5; // Exponential backoff multiplier
 
-		while (run.status === 'queued' || run.status === 'in_progress') {
+		// Add timeout check
+		const startTime = Date.now();
+		const maxWaitTime = 60000; // 60 seconds max wait
+
+		while (run.status === 'queued' || run.status === 'in_progress' || run.status === 'requires_action') {
+			// Check for timeout
+			if (Date.now() - startTime > maxWaitTime) {
+				logger.error(`Run ${runId} timed out after ${maxWaitTime}ms`);
+				throw new AssistantServiceError(
+					`Run timed out after ${maxWaitTime / 1000} seconds`,
+					'RUN_TIMEOUT'
+				);
+			}
 			logger.debug(`Run ${runId} status: ${run.status}, polling delay: ${delay}ms`);
 			await new Promise((resolve) => setTimeout(resolve, delay));
 			
 			// Exponential backoff: increase delay for next iteration
 			delay = Math.min(delay * delayMultiplier, maxDelay);
 			
-			run = await this.openai.beta.threads.runs.retrieve(threadId, runId);
+			// OpenAI SDK v5 requires: retrieve(runId, { thread_id: threadId })
+			run = await this.openai.beta.threads.runs.retrieve(runId, { thread_id: threadId } as any);
 		}
 
 		if (run.status === 'completed') {
@@ -320,10 +346,26 @@ export class AssistantService {
 			return messages;
 		}
 
+		// Handle incomplete status specially
+		if (run.status === 'incomplete') {
+			logger.warn(`Run ${runId} incomplete, checking details...`);
+			const incompleteReason = (run as any).incomplete_details?.reason || 'unknown';
+			logger.error(`Run ${runId} incomplete: ${incompleteReason}`);
+			
+			// Try to get partial messages if available
+			const messages = await this.openai.beta.threads.messages.list(threadId);
+			if (messages.data.some(m => m.role === 'assistant')) {
+				logger.info('Returning partial response from incomplete run');
+				return messages;
+			}
+		}
+
 		// Include more error details
 		const errorDetails =
 			run.status === 'failed' && run.last_error
 				? ` - ${run.last_error.code}: ${run.last_error.message}`
+				: run.status === 'incomplete' && (run as any).incomplete_details
+				? ` - ${(run as any).incomplete_details.reason}`
 				: '';
 
 		logger.error(
