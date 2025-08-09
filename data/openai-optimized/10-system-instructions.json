@@ -1,0 +1,20 @@
+{
+  "type": "system",
+  "name": "assistant-instructions",
+  "description": "OpenAI Assistant検索用の指示",
+  "searchStrategy": [
+    "1. ユーザーの質問から地域とカテゴリを特定",
+    "2. 該当する地域ファイル（01-03）を検索",
+    "3. カテゴリファイル（04）で補完検索",
+    "4. インデックス（05-07）で絞り込み",
+    "5. 統計情報（08）で検証"
+  ],
+  "fileStructure": {
+    "01-wards-*": "23区グループ別データ",
+    "02-cities": "市部データ",
+    "03-tokyo-wide": "東京都全域データ",
+    "04-category-*": "カテゴリ別データ",
+    "05-07-index-*": "各種インデックス",
+    "08-09-system-*": "システム情報"
+  }
+}
